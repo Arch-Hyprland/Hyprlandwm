@@ -13,7 +13,7 @@
 
     // Position TOP
     "layer": "top",
-    "margin-top": 14,
+    "margin-top": 4,
     "margin-bottom": 0,
 
     // Position BOTTOM
@@ -22,6 +22,7 @@
     // "margin-bottom": 14,
     
     "layer": "top",
+    "height": 12,
     "margin-left": 0,
     "margin-right": 0,    
     "spacing": 0,
@@ -56,5 +57,30 @@
         "custom/cliphist",
         "custom/exit",
         "clock"
-    ]
+    ],
+
+    // Group Quicklinks
+    "group/quicklinks": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/filemanager",
+            "custom/browser"
+         ]
+    },
+
+    // Group Hardware
+    "group/hardware": {
+        // "orientation": "horizontal",
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-show",
+            "transition-left-to-right": false,
+        },
+        "modules": [
+            "disk",
+            "cpu",
+            "memory"
+        ]
+    }
 }
