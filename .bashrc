@@ -16,7 +16,7 @@ PS1='[\u@\h \W]\$ '
 # -----------------------------------------------------
 # ALIASES
 # -----------------------------------------------------
-
+alias l='ls -la'
 alias c='clear'
 alias nf='neofetch'
 alias pf='pfetch'
@@ -100,6 +100,7 @@ alias res1='xrandr --output DisplayPort-0 --mode 2560x1440 --rate 120'
 alias res2='xrandr --output DisplayPort-0 --mode 1920x1080 --rate 120'
 
 export PATH="/usr/lib/ccache/bin/:$PATH"
+export PATH="$HOME/.local/bin/:$PATH"
 
 # -----------------------------------------------------
 # START STARSHIP
@@ -126,3 +127,6 @@ else
         echo "Start Hyprland with command Hyprland"
     fi
 fi
+
+. "$HOME/.cargo/env"
+

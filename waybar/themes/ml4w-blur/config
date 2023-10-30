@@ -70,6 +70,10 @@
     // Group Hardware
     "group/hardware": {
         "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": false,
+        },
         "modules": [
             "disk",
             "cpu",

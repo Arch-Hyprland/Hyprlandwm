@@ -9,4 +9,9 @@
 # by Stephan Raabe (2023) 
 # ----------------------------------------------------- 
 
-thunar
+if [ -f /usr/bin/nautilus ]; then 
+    nautilus --new-window
+else
+    echo "nautilus is not install, use thunar instead"
+    thunar
+fi
