@@ -72,8 +72,8 @@
         "orientation": "horizontal",
         "modules": [
             "disk",
-            "cpu",
             "memory"
+            "cpu",
         ]
     }
 }

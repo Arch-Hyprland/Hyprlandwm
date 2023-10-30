@@ -116,6 +116,7 @@ cat ~/.cache/wal/sequences
 # PFETCH if on wm
 # -----------------------------------------------------
 echo ""
+
 if [[ $(tty) == *"pts"* ]]; then
     pfetch
 else

@@ -199,8 +199,8 @@ window#waybar.empty #window {
 
 #custom-exit, #custom-exitwlr {
     margin: 0px 20px 0px 0px;
-    padding:0px;
-    font-size:20px;
+    padding: 0px;
+    font-size: 20px;
     color: @iconcolor;
 }
 
@@ -273,7 +273,7 @@ window#waybar.empty #window {
   color: @textcolor1;
   border-radius: 15px;
   padding: 1px 10px 0px 10px;
-  margin: 3px 15px 2px 0px;
+  margin: 3px 15px 3px 0px;
   opacity: 0.8;
   border: 3px solid @bordercolor;
 }
