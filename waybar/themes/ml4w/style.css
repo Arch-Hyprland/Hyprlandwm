@@ -40,7 +40,7 @@ window#waybar {
 
 #workspaces {
   background: @workspacesbackground1;
-  margin: 3px 1px 2px 1px;
+  margin: 2px 1px 3px 1px;
   padding: 0px 1px;
   border-radius: 15px;
   border: 0px;
