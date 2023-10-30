@@ -73,6 +73,7 @@
             "cpu",
             "disk",
             "memory"
+            "cpu",
         ]
     }
 }
