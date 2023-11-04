@@ -259,7 +259,7 @@ window#waybar.empty #window {
   color: @iconcolor;
 }
 
-#memory {
+#cpu {
   margin-right: 10px;
 }
 
@@ -325,14 +325,16 @@ window#waybar.empty #window {
  * Bluetooth
  * ----------------------------------------------------- */
 
-#bluetooth, #bluetooth.on, #bluetooth.connected {
-    background-color: @backgroundlight;
-    font-size: 16px;
-    color: @textcolor2;
-    border-radius: 15px;
-    padding: 1px 10px 1px 10px;
-    margin: 5px 15px 5px 0px;
-    opacity: 0.8;
+#bluetooth,
+#bluetooth.on,
+#bluetooth.connected {
+  background-color: @backgroundlight;
+  font-size: 18px;
+  color: @textcolor2;
+  border-radius: 15px;
+  padding: 1px 10px 1px 8px;
+  margin: 5px 15px 5px 0px;
+  opacity: 0.8;
 }
 
 #bluetooth.off {

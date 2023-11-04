@@ -9,21 +9,6 @@
 // ----------------------------------------------------- 
 //
 {
-  // Workspaces
-  "hyprland/workspaces": {
-    "on-click": "activate",
-    "active-only": false,
-    "all-outputs": true,
-    "format": "{}",
-    "format-icons": {
-      "urgent": "",
-      "active": "",
-      "default": ""
-    },
-    "persistent_workspaces": {
-      "*": 5
-    }
-  },
   // Taskbar
   "wlr/taskbar": {
     "format": "{icon}",
@@ -171,6 +156,7 @@
   // CPU
   "cpu": {
     "format": "􀟪 {usage}% ",
+    "interval": 5,
     "on-click": "alacritty -e htop"
   },
   // Memory
@@ -215,7 +201,7 @@
       "􀛩 ",
       "􀺶 ",
       "􀺸 ",
-      "􀺸 "
+      "􀺸 ",
     ]
   },
   // Pulseaudio
