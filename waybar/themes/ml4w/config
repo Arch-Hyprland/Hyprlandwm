@@ -64,7 +64,8 @@
         "orientation": "horizontal",
         "modules": [
             "custom/filemanager",
-            "custom/browser"
+            "custom/brave",
+            "custom/windowsvm",
          ]
     },
 
@@ -78,8 +79,8 @@
             "transition-left-to-right": false,
         },
         "modules": [
-            "disk",
             "cpu",
+            "disk",
             "memory"
         ]
     }
