@@ -30,4 +30,3 @@ while true; do
         break;;
         * ) echo "Please answer yes or no.";;
     esac
-done

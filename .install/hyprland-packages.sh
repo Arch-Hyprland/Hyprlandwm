@@ -53,4 +53,3 @@ packagesYay=(
     "swaylock-effects" 
     "wlogout"
     "wlr-randr"
-);
