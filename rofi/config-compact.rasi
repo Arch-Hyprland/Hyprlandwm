@@ -39,8 +39,8 @@ window {
     padding:                      0px;
     margin:                       0px; 
     color:                        #FFFFFF;
-    border:                       3px;
-    border-color:                 #FFFFFF;
+    border:                       2px;
+    border-color:                 rgba(100, 114, 125, 0.5);
     cursor:                       "default";
     transparency:                 "real";
     location:                     north;
@@ -162,6 +162,7 @@ element {
     background-color:             @background;
     border-radius:                10px;
     border:                       2px;
+    border-color:                 rgba(100, 114, 125, 0.5);
 }
 
 element normal.normal {
