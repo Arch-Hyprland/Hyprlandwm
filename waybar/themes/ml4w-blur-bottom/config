@@ -71,9 +71,9 @@
     "group/hardware": {
         "orientation": "horizontal",
         "modules": [
+            "cpu",
             "disk",
             "memory"
-            "cpu",
         ]
     }
 }

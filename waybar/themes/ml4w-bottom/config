@@ -19,7 +19,7 @@
     // Position BOTTOM
     "position": "bottom",
     "margin-top": 0,
-    "margin-bottom": 4,
+    "margin-bottom": 6,
     
     "layer": "top",
     "height": 12,
@@ -71,8 +71,8 @@
     "group/hardware": {
         "orientation": "horizontal",
         "modules": [
-            "disk",
             "cpu",
+            "disk",
             "memory"
         ]
     }
