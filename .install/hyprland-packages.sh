@@ -7,7 +7,6 @@ packagesPacman=(
     "chromium" 
     "dunst" 
     "starship"
-    "neovim" 
     "mpv" 
     "freerdp" 
     "xfce4-power-manager" 

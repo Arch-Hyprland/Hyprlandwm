@@ -19,7 +19,7 @@
     // Position BOTTOM
     "position": "bottom",
     "margin-top": 0,
-    "margin-bottom": 4,
+    "margin-bottom": 6,
     
     "layer": "top",
     "height": 12,
@@ -57,5 +57,24 @@
         "custom/cliphist",
         "custom/exit",
         "clock"
-    ]
+    ],
+
+    // Group Quicklinks
+    "group/quicklinks": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/filemanager",
+            "custom/browser"
+         ]
+    },
+
+    // Group Hardware
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": [
+            "cpu",
+            "disk",
+            "memory"
+        ]
+    }
 }
