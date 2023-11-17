@@ -23,4 +23,3 @@ echo -e "${NONE}"
         echo "Setup tty login skipped."
     fi
     echo ""
-fi
