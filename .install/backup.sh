@@ -18,6 +18,7 @@ echo -e "${NONE}"
     if [ -d ~/dotfiles ]; then
         echo "The script has detected an existing dotfiles folder and will try to create a backup into the folder:"
         echo "~/dotfiles-versions/backups/$datets"
+        echo ""
     fi
     if [ ! -L ~/.bashrc ] && [ -f ~/.bashrc ]; then
         echo "The script has detected an existing .bashrc file and will try to create a backup to:" 

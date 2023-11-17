@@ -3,4 +3,3 @@
 # ------------------------------------------------------
 _installPackagesPacman "${packagesPacman[@]}";
 _installPackagesYay "${packagesYay[@]}";
-echo ""

@@ -30,6 +30,7 @@ echo ""
 source .install/library.sh
 source .install/required.sh
 source .install/confirm-start.sh
+source .install/rsync.sh
 source .install/backup.sh
 source .install/preparation.sh
 source .install/profile.sh

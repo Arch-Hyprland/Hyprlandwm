@@ -271,4 +271,3 @@ With <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>S</kbd>, you can switch between 
 
 # Wallpaper repository
 
-You can find my wallpaper collection in the repository https://gitlab.com/stephan-raabe/wallpaper
