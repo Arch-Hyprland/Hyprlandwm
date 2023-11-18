@@ -122,7 +122,7 @@ window#waybar.empty #window {
 #taskbar {
   /* background: @color11; */
   /* background: @backgroundlight; */
-  margin: 3px 15px 3px 0px;
+  margin: 3px 18px 3px 0px;
   padding: 0px;
   /*padding: 2px 3px 1px 3px;*/
   border-radius: 8px;
@@ -175,7 +175,7 @@ window#waybar.empty #window {
 }
 
 #custom-wallpaper, #custom-keybindings {
-    margin-right:23px;
+    margin-right: 20px;
 }
 
 /* -----------------------------------------------------
@@ -184,11 +184,11 @@ window#waybar.empty #window {
 
 #custom-appmenu, #custom-appmenuwlr {
     background-color: @backgrounddark;
-    font-size: 16px;
+    font-size: 17px;
     color: @textcolor1;
     border-radius: 15px;
-    padding: 0px 6px 0px 6px;
-    margin: 3px 15px 3px 14px;
+    padding: 1px 6px 1px 6px;
+    margin: 3px 18px 3px 14px;
     opacity:0.8;
     border: 0px solid @bordercolor;
 }
@@ -353,7 +353,7 @@ window#waybar.empty #window {
   font-size: 16px;
   color: @textcolor2;
   border-radius: 15px;
-  padding: 1px 15px 0px 10px;
+  padding: 1px 10px 0px 10px;
   margin: 5px 15px 5px 0px;
   opacity: 0.8;
 }

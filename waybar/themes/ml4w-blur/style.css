@@ -121,10 +121,9 @@ window#waybar.empty #window {
 #taskbar {
   /* background: @color11; */
   /* background: @backgroundlight; */
-  margin: 3px 15px 3px 0px;
   padding: 0px;
   /*padding: 2px 3px 1px 3px;*/
-  margin: 6px 15px 6px 0px;
+  margin: 6px 18px 6px 0px;
   border-radius: 8px;
   font-weight: normal;
   font-style: normal;
@@ -176,30 +175,31 @@ window#waybar.empty #window {
 
 #custom-wallpaper,
 #custom-keybindings {
-  margin-right: 23px;
+  margin-right: 20px;
 }
 
 /* -----------------------------------------------------
  * Custom Modules
  * ----------------------------------------------------- */
 
-#custom-appmenu, 
-#custom-appmenuwlr{
-    background-color: @backgrounddark;
-    font-size: 16px;
-    color: @textcolor1;
-    border-radius: 15px;
-    padding: 0px 6px 0px 6px;
-    margin: 6px 15px 6px 14px;
-    opacity: 0.8;
-    border: 0px solid @bordercolor;
+#custom-appmenu,
+#custom-appmenuwlr {
+  background-color: @backgrounddark;
+  font-size: 17px;
+  color: @textcolor1;
+  border-radius: 15px;
+  padding: 1px 6px 1px 6px;
+  margin: 6px 18px 6px 14px;
+  opacity: 0.8;
+  border: 0px solid @bordercolor;
 }
 
 /* -----------------------------------------------------
  * Custom Exit
  * ----------------------------------------------------- */
 
-#custom-exit, #custom-exitwlr {
+#custom-exit,
+#custom-exitwlr {
   margin: 0px 20px 0px 0px;
   padding: 0px;
   font-size: 20px;
@@ -355,7 +355,7 @@ window#waybar.empty #window {
   font-size: 16px;
   color: @textcolor2;
   border-radius: 15px;
-  padding: 1px 15px 0px 10px;
+  padding: 1px 10px 0px 10px;
   margin: 8px 15px 8px 0px;
   opacity: 0.8;
 }
