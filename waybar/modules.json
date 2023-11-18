@@ -82,14 +82,14 @@
   },
   // Wallpaper
   "custom/wallpaper": {
-    "format": "",
+    "format": "􀐟",
     "on-click": "~/dotfiles/hypr/scripts/wallpaper.sh select",
     "on-click-right": "~/dotfiles/hypr/scripts/wallpaper.sh",
     "tooltip": false
   },
   // Waybar Themes
   "custom/waybarthemes": {
-    "format": "􀏡",
+    "format": "􀐗",
     "on-click": "~/dotfiles/waybar/themeswitcher.sh",
     "tooltip": false
   },
@@ -119,13 +119,13 @@
   },
   // Brave Launcher
   "custom/brave": {
-    "format": "􀬗",
+    "format": "􀐡",
     "on-click": "brave",
     "tooltip": false
   },
   // Browser Launcher
   "custom/browser": {
-    "format": "􀵲",
+    "format": "􀏜",
     "on-click": "chromium",
     "tooltip": false
   },
