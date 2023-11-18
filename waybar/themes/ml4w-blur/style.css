@@ -189,7 +189,7 @@ window#waybar.empty #window {
   font-size: 17px;
   color: @textcolor1;
   border-radius: 15px;
-  padding: 1px 6px 1px 6px;
+  padding: 1px 5px 1px 5px;
   margin: 6px 18px 6px 14px;
   opacity: 0.8;
   border: 0px solid @bordercolor;

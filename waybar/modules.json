@@ -201,11 +201,11 @@
   // Network
   "network": {
     "format": "{ifname}",
-    "format-wifi": "󱚾 {signalStrength}%",
-    "format-ethernet": "󰀂 {ipaddr}",
+    "format-wifi": "󱚾  {signalStrength}%",
+    "format-ethernet": "󰀂  {ipaddr}",
     "format-disconnected": "􀙥",
-    "tooltip-format": "󰀂 {ifname} via {gwaddri}",
-    "tooltip-format-wifi": "󱚾 {essid} ({signalStrength}%)",
+    "tooltip-format": "󰀂  {ifname} via {gwaddri}",
+    "tooltip-format-wifi": "󱚾  {essid} ({signalStrength}%)",
     "tooltip-format-ethernet": " {ifname} ({ipaddr}/{cidr})",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
@@ -272,6 +272,6 @@
   "user": {
     "format": "{user}",
     "interval": 60,
-    "icon": false,
+    "icon": false
   }
 }
