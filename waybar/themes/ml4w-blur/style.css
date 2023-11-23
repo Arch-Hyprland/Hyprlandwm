@@ -153,24 +153,25 @@ window#waybar.empty #window {
  * Custom Quicklinks
  * ----------------------------------------------------- */
 
-#custom-brave,
-#custom-browser,
-#custom-keybindings,
-#custom-outlook,
-#custom-filemanager,
-#custom-teams,
-#custom-chatgpt,
-#custom-calculator,
-#custom-windowsvm,
-#custom-cliphist,
+#custom-brave, 
+#custom-browser, 
+#custom-keybindings, 
+#custom-outlook, 
+#custom-filemanager, 
+#custom-teams, 
+#custom-chatgpt, 
+#custom-calculator, 
+#custom-windowsvm, 
+#custom-cliphist, 
 #custom-wallpaper,
-#custom-wallpaperwlr,
+#custom-settings,  
+#custom-wallpaperwlr, 
 #custom-waybarthemes {
-  margin-right: 20px;
-  font-size: 20px;
-  font-weight: bold;
-  opacity: 0.8;
-  color: @iconcolor;
+    margin-right: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0.8;
+    color: @iconcolor;
 }
 
 #custom-wallpaper,
