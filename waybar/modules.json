@@ -93,6 +93,12 @@
     "on-click": "~/dotfiles/waybar/themeswitcher.sh",
     "tooltip": false
   },
+  // Settings
+  "custom/settings": {
+    "format": "􀣋",
+    "on-click": "alacritty --class dotfiles-floating -e ~/dotfiles/hypr/settings/settings.sh",
+    "tooltip": false
+  },
   // Keybindings
   "custom/keybindings": {
     "format": "",
@@ -101,7 +107,7 @@
   },
   // Filemanager Launcher
   "custom/filemanager": {
-    "format": "",
+    "format": "􀈕",
     "on-click": "nautilus",
     "tooltip": false
   },
@@ -143,14 +149,14 @@
   },
   // Windows VM
   "custom/windowsvm": {
-    "format": "",
+    "format": "􀎲",
     "on-click": "~/dotfiles/scripts/launchvm.sh",
     "tooltip": false
   },
   // Rofi Application Launcher
   "custom/appmenu": {
     "format": "􀪲",
-    "on-click": "rofi -show drun",
+    "on-click": "rofi -show drun -replace",
     "on-click-right": "~/dotfiles/hypr/scripts/keybindings.sh",
     "tooltip": false
   },
