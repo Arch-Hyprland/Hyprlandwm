@@ -241,4 +241,3 @@ EOF
     esac
 }
 
-_settingsMenu
