@@ -190,7 +190,7 @@ window#waybar.empty #window {
   color: @textcolor1;
   border-radius: 15px;
   padding: 1px 5px 1px 5px;
-  margin: 6px 18px 6px 14px;
+  margin: 6px 20px 6px 10px;
   opacity: 0.8;
   border: 0px solid @bordercolor;
 }
@@ -276,7 +276,7 @@ window#waybar.empty #window {
   color: @textcolor1;
   border-radius: 15px;
   padding: 1px 10px 0px 10px;
-  margin: 6px 15px 6px 0px;
+  margin: 6px 10px 6px 0px;
   opacity: 0.8;
   border: 3px solid @bordercolor;
 }
