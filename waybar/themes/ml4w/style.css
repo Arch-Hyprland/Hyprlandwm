@@ -122,7 +122,7 @@ window#waybar.empty #window {
 #taskbar {
   /* background: @color11; */
   /* background: @backgroundlight; */
-  margin: 3px 18px 3px 0px;
+  margin: 1px 18px 1px 0px;
   padding: 0px;
   /*padding: 2px 3px 1px 3px;*/
   border-radius: 8px;
