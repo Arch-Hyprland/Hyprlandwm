@@ -31,4 +31,3 @@ echo -e "${NONE}"
         echo "More information on how to setup your monitor in the Hyprland Wiki: https://wiki.hyprland.org/Configuring/Monitors/"
         echo ""
     fi
-fi

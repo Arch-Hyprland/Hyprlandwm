@@ -10,4 +10,3 @@ if [ ! -z $1 ] ;then
     fi
 else
     echo "No folder specified. Please use ./sync folder"
-fi
