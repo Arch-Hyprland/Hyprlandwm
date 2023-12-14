@@ -33,9 +33,9 @@
     // Modules Left
     "modules-left": [
         "custom/appmenu",
-        "custom/settings",
-        "custom/waybarthemes",
         "custom/wallpaper",
+        "custom/waybarthemes",
+        "custom/settings",
         "wlr/taskbar",
         "group/quicklinks",
         "hyprland/window"
@@ -50,38 +50,13 @@
     "modules-right": [
         "custom/updates",
         "pulseaudio",
+        "hyprland/language",
         "bluetooth",
         "battery", 
-        "network",
         "group/hardware",
         "custom/cliphist",
+        "network",
         "custom/exit",
         "clock"
-    ],
-
-    // Group Quicklinks
-    "group/quicklinks": {
-        "orientation": "horizontal",
-        "modules": [
-            "custom/filemanager",
-            "custom/brave",
-            "custom/windowsvm",
-         ]
-    },
-
-    // Group Hardware
-    "group/hardware": {
-        // "orientation": "horizontal",
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 500,
-            "children-class": "not-show",
-            "transition-left-to-right": false,
-        },
-        "modules": [
-            "cpu",
-            "disk",
-            "memory"
-        ]
-    }
+    ]
 }

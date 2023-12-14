@@ -78,6 +78,7 @@
     "exec": "~/dotfiles/scripts/updates.sh",
     "restart-interval": 60,
     "on-click": "alacritty -e ~/dotfiles/scripts/installupdates.sh",
+    "on-click-right": "~/dotfiles/.settings/software.sh",
     "tooltip": false
   },
   // Wallpaper
@@ -108,7 +109,7 @@
   // Filemanager Launcher
   "custom/filemanager": {
     "format": "􀈕",
-    "on-click": "nautilus",
+    "on-click": "~/dotfiles/.settings/filemanager.sh",
     "tooltip": false
   },
   // Outlook Launcher
@@ -126,7 +127,7 @@
   // Brave Launcher
   "custom/brave": {
     "format": "􀐡",
-    "on-click": "brave",
+    "on-click": "~/dotfiles/.setttings/browser.sh",
     "tooltip": false
   },
   // Browser Launcher
@@ -187,6 +188,11 @@
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "{:%Y-%m-%d}"
   },
+  // system
+  "custom/system": {
+    "format": "",
+    "tooltip": false
+  },
   // CPU
   "cpu": {
     "format": "􀟪 {usage}% ",
@@ -203,6 +209,48 @@
     "format": "􀨪 {percentage_used}% ",
     "path": "/",
     "on-click": "alacritty -e htop"
+  },
+  //Language
+  "hyprland/language": {
+    "format": "/ K {short}"
+  },
+  // Group Hardware
+  "group/hardware": {
+    // "orientation": "horizontal",
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "not-memory",
+      "transition-left-to-right": false,
+    },
+    "modules": [
+      "cpu",
+      "disk",
+      "memory"
+    ]
+  },
+  // Group Settings
+  "group/settings": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "not-memory",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/settings",
+      "custom/waybarthemes",
+      "custom/wallpaper"
+    ]
+  },
+  // Group Quicklinks
+  "group/quicklinks": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/filemanager",
+      "custom/brave",
+      "custom/windowsvm",
+    ]
   },
   // Network
   "network": {

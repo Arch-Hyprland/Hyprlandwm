@@ -57,24 +57,5 @@
         "custom/cliphist",
         "custom/exit",
         "clock"
-    ],
-
-    // Group Quicklinks
-    "group/quicklinks": {
-        "orientation": "horizontal",
-        "modules": [
-            "custom/filemanager",
-            "custom/browser"
-         ]
-    },
-
-    // Group Hardware
-    "group/hardware": {
-        "orientation": "horizontal",
-        "modules": [
-            "cpu",
-            "disk",
-            "memory"
-        ]
-    }
+    ]
 }
