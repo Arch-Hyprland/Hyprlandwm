@@ -127,7 +127,7 @@
   // Brave Launcher
   "custom/brave": {
     "format": "􀐡",
-    "on-click": "~/dotfiles/.setttings/browser.sh",
+    "on-click": "~/dotfiles/.settings/browser.sh",
     "tooltip": false
   },
   // Browser Launcher
@@ -327,5 +327,13 @@
     "format": "{user}",
     "interval": 60,
     "icon": false
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "tooltip": false,
+    "format-icons":{
+        "activated": "Auto lock OFF",
+        "deactivated": "ON"
+    }
   }
 }

@@ -42,6 +42,7 @@ packagesPacman=(
     "qalculate-gtk"
     "brightnessctl"
     "gum"
+    "man-pages"
 );
 
 packagesYay=(
