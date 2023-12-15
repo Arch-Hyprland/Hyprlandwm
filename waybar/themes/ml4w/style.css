@@ -193,13 +193,11 @@ window#waybar.empty #window {
 }
 
 #idle_inhibitor.activated {
-    background-color: #dc2f2f;
     font-size: 16px;
-    color:#ffffff;
+    color: lightcyan;
     border-radius: 15px;
-    padding: 2px 10px 0px 10px;
-    margin: 5px 15px 5px 0px;
-    opacity:0.8;    
+    padding: 2px 8px 2px 8px;
+    opacity: 0.8;    
 }
 
 /* -----------------------------------------------------

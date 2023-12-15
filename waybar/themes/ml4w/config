@@ -53,10 +53,10 @@
         "hyprland/language",
         "bluetooth",
         "battery", 
+        "idle_inhibitor",
         "group/hardware",
         "custom/cliphist",
         "network",
-        "idle_inhibitor",
         "custom/exit",
         "clock"
     ]

@@ -52,9 +52,9 @@
         "bluetooth",
         "battery", 
         "network",
+        "idle_inhibitor",
         "group/hardware",
         "custom/cliphist",
-        "idle_inhibitor",
         "custom/exit",
         "clock"
     ]
