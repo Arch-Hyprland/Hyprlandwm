@@ -52,10 +52,10 @@
         "pulseaudio",
         "bluetooth",
         "battery", 
-        "network",
+        "idle_inhibitor",
         "group/hardware",
         "custom/cliphist",
-        "idle_inhibitor",
+        "network",
         "custom/exit",
         "clock"
     ]

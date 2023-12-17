@@ -168,7 +168,7 @@ window#waybar.empty #window {
 #custom-wallpaper,
 #custom-system,
 #custom-waybarthemes {
-  margin-right: 20px;
+  margin-right: 14px;
   font-size: 20px;
   font-weight: bold;
   opacity: 0.8;
@@ -178,7 +178,7 @@ window#waybar.empty #window {
 #custom-waybarthemes,
 #custom-settings,
 #custom-system {
-  margin-right: 20px;
+  margin-right: 14px;
 }
 
 /* -----------------------------------------------------
@@ -187,14 +187,14 @@ window#waybar.empty #window {
 
 #idle_inhibitor {
   margin-right: 15px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   opacity: 0.8;
   color: @iconcolor;
 }
 
 #idle_inhibitor.activated {
-  font-size: 16px;
+  font-size: 18px;
   color: lightcyan;
   border-radius: 15px;
   padding: 2px 8px 2px 8px;
@@ -208,11 +208,11 @@ window#waybar.empty #window {
 #custom-appmenu,
 #custom-appmenuwlr {
   background-color: @backgrounddark;
-  font-size: 17px;
+  font-size: 16px;
   color: @textcolor1;
   border-radius: 15px;
-  padding: 1px 5px 1px 5px;
-  margin: 6px 20px 6px 10px;
+  padding: 1px 1px 1px 5px;
+  margin: 6px 14px 6px 10px;
   opacity: 0.8;
   border: 0px solid @bordercolor;
 }
@@ -223,7 +223,7 @@ window#waybar.empty #window {
 
 #custom-exit,
 #custom-exitwlr {
-  margin: 0px 20px 0px 0px;
+  margin: 0px 10px 0px 0px;
   padding: 0px;
   font-size: 20px;
   color: @iconcolor;
@@ -354,19 +354,32 @@ window#waybar.empty #window {
 #bluetooth.on,
 #bluetooth.connected {
   background-color: @backgroundlight;
-  font-size: 18px;
+  font-size: 20px;
   color: @textcolor2;
   border-radius: 15px;
-  padding: 1px 10px 1px 8px;
-  margin: 8px 15px 8px 0px;
+  padding: 1px 11px 1px 9px;
+  margin: 6px 14px 6px 0px;
   opacity: 0.8;
 }
 
 #bluetooth.off {
   background-color: transparent;
-  font-size: 18px;
-  padding: 0px;
+  font-size: 22px;
+  padding: 0px 9px 0px 9px;
   margin: 0px;
+}
+
+/*
+ * language
+ */
+#language {
+  background-color: @backgroundlight;
+  font-size: 20px;
+  color: @textcolor2;
+  border-radius: 15px;
+  padding: 0px 8px 4px 8px;
+  margin: 5px 15px 5px 0px;
+  opacity: 0.8;
 }
 
 /* -----------------------------------------------------
@@ -378,8 +391,8 @@ window#waybar.empty #window {
   font-size: 16px;
   color: @textcolor2;
   border-radius: 15px;
-  padding: 1px 10px 0px 10px;
-  margin: 8px 15px 8px 0px;
+  padding: 2px 9px 0px 9px;
+  margin: 7px 15px 7px 0px;
   opacity: 0.8;
 }
 

@@ -33,6 +33,7 @@
     // Modules Left
     "modules-left": [
         "custom/appmenu",
+        "group/settings",
         "wlr/taskbar",
         "group/quicklinks",
         "hyprland/window"
@@ -49,11 +50,10 @@
         "pulseaudio",
         "bluetooth",
         "battery", 
-        "network",
-        "group/hardware",
-        "group/settings",
-        "custom/cliphist",
         "idle_inhibitor",
+        "group/hardware",
+        "custom/cliphist",
+        "network",
         "custom/exit",
         "clock"
     ]

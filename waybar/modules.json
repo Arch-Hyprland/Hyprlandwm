@@ -63,7 +63,7 @@
   },
   // Cliphist
   "custom/cliphist": {
-    "format": "󱞏",
+    "format": "􀑐 ",
     "on-click": "sleep 0.1 && ~/dotfiles/scripts/cliphist.sh",
     "on-click-right": "sleep 0.1 && ~/dotfiles/scripts/cliphist.sh d",
     "on-click-middle": "sleep 0.1 && ~/dotfiles/scripts/cliphist.sh w",
@@ -71,7 +71,7 @@
   },
   // Updates Count
   "custom/updates": {
-    "format": "􀼣 {}",
+    "format": "􀝗 {}",
     "tooltip-format": "{}",
     "escape": true,
     "return-type": "json",
@@ -83,87 +83,87 @@
   },
   // Wallpaper
   "custom/wallpaper": {
-    "format": "􀐟",
+    "format": "􀐟 ",
     "on-click": "~/dotfiles/hypr/scripts/wallpaper.sh select",
     "on-click-right": "~/dotfiles/hypr/scripts/wallpaper.sh",
     "tooltip": false
   },
   // Waybar Themes
   "custom/waybarthemes": {
-    "format": "􀐗",
+    "format": "􀐗 ",
     "on-click": "~/dotfiles/waybar/themeswitcher.sh",
     "tooltip": false
   },
   // Settings
   "custom/settings": {
-    "format": "􀣋",
+    "format": "􀣋 ",
     "on-click": "alacritty --class dotfiles-floating -e ~/dotfiles/hypr/settings/settings.sh",
     "tooltip": false
   },
   // Keybindings
   "custom/keybindings": {
-    "format": "",
+    "format": " ",
     "on-click": "~/dotfiles/hypr/scripts/keybindings.sh",
     "tooltip": false
   },
   // Filemanager Launcher
   "custom/filemanager": {
-    "format": "􀈕",
+    "format": "􀈕 ",
     "on-click": "~/dotfiles/.settings/filemanager.sh",
     "tooltip": false
   },
   // Outlook Launcher
   "custom/outlook": {
-    "format": "􀍜",
+    "format": "􀍜 ",
     "on-click": "brave --app=https://outlook.office.com/mail/",
     "tooltip": false
   },
   // Teams Launcher
   "custom/teams": {
-    "format": "􁂜",
+    "format": "􁂜 ",
     "on-click": "chromium --app=https://teams.microsoft.com/go",
     "tooltip": false
   },
   // Brave Launcher
   "custom/brave": {
-    "format": "􀐡",
+    "format": "􀐡 ",
     "on-click": "~/dotfiles/.settings/browser.sh",
     "tooltip": false
   },
   // Browser Launcher
   "custom/browser": {
-    "format": "􀏜",
+    "format": "􀏜 ",
     "on-click": "chromium",
     "tooltip": false
   },
   // ChatGPT Launcher
   "custom/chatgpt": {
-    "format": "",
+    "format": " ",
     "on-click": "brave --app=https://chat.openai.com",
     "tooltip": false
   },
   // Calculator
   "custom/calculator": {
-    "format": "",
+    "format": " ",
     "on-click": "qalculate-gtk",
     "tooltip": false
   },
   // Windows VM
   "custom/windowsvm": {
-    "format": "􀎲",
+    "format": "􀎲 ",
     "on-click": "~/dotfiles/scripts/launchvm.sh",
     "tooltip": false
   },
   // Rofi Application Launcher
   "custom/appmenu": {
-    "format": "􀪲",
+    "format": "􀪲 ",
     "on-click": "rofi -show drun -replace",
     "on-click-right": "~/dotfiles/hypr/scripts/keybindings.sh",
     "tooltip": false
   },
   // Power Menu
   "custom/exit": {
-    "format": "",
+    "format": "􀆧 ",
     "on-click": "wlogout",
     "tooltip": false
   },
@@ -255,11 +255,11 @@
   // Network
   "network": {
     "format": "{ifname}",
-    "format-wifi": "󱚾  {signalStrength}%",
-    "format-ethernet": "󰀂  {ipaddr}",
-    "format-disconnected": "􀙥",
-    "tooltip-format": "󰀂  {ifname} via {gwaddri}",
-    "tooltip-format-wifi": "󱚾  {essid} ({signalStrength}%)",
+    "format-wifi": "􀙇 {signalStrength}%",
+    "format-ethernet": "􀌙  {ipaddr}",
+    "format-disconnected": "􀙥 ",
+    "tooltip-format": "􀌙  {ifname} via {gwaddri}",
+    "tooltip-format-wifi": "􀙇 {essid} ({signalStrength}%)",
     "tooltip-format-ethernet": " {ifname} ({ipaddr}/{cidr})",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
@@ -294,14 +294,14 @@
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": " {format_source}",
     "format-source": "{volume}% 􀊱",
-    "format-source-muted": "􀊳",
+    "format-source-muted": "􀊳 ",
     "format-icons": {
-      "headphone": "􀑈",
-      "hands-free": "􀺹",
-      "headset": "􀺹",
-      "phone": "",
-      "portable": "",
-      "car": "",
+      "headphone": "􀑈 ",
+      "hands-free": "􀺹 ",
+      "headset": "􀺹 ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
       "default": [
         "􀊥 ",
         "􀊧 ",
@@ -318,7 +318,7 @@
     "format-connected": "󰂱",
     "tooltip": "true",
     "tooltip-format": "{device_enumerate}",
-    "tooltip-format-enumerate-connected": "􀇳  {device_alias}",
+    "tooltip-format-enumerate-connected": "􀮔  {device_alias}",
     "interval": 30,
     "on-click": "blueman-manager"
   },
@@ -331,9 +331,9 @@
   "idle_inhibitor": {
     "format": "{icon}",
     "tooltip": true,
-    "format-icons":{
-        "activated": "􀐮",
-        "deactivated": "􀐮"
+    "format-icons": {
+      "activated": "􀐮 ",
+      "deactivated": "􀐮 "
     }
   }
 }
