@@ -47,7 +47,7 @@ if [[ $profile == *"Qtile"* ]]; then
 fi
 source .install/pywal.sh
 source .install/wallpaper.sh
-source .install/disabledm.sh
+source .install/displaymanager.sh
 source .install/issue.sh
 source .install/restore.sh
 source .install/vm.sh

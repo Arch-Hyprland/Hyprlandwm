@@ -50,7 +50,9 @@
     "modules-right": [
         "custom/updates",
         "pulseaudio",
+        // START BT TOOGLE
         "bluetooth",
+        // END BT TOOGLE
         "battery", 
         "idle_inhibitor",
         "group/hardware",

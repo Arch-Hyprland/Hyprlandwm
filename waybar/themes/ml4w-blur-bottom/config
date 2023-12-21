@@ -33,7 +33,9 @@
     // Modules Left
     "modules-left": [
         "custom/appmenu",
-        "group/settings",
+        "custom/wallpaper",
+        "custom/waybarthemes",
+        "custom/settings",
         "wlr/taskbar",
         "group/quicklinks",
         "hyprland/window"

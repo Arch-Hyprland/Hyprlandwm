@@ -55,4 +55,6 @@ packagesYay=(
     "wlogout"
     "wlr-randr"
     "pacseek"
+    "sddm-git"
+    "sddm-sugar-candy-git"
 );

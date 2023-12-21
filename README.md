@@ -1,13 +1,13 @@
-# ML4W dotfiles 2.6.2 DEV
+# ML4W dotfiles 2.7 RC2
 
 This is my configuration of Hyprland (Wayland) and Qtile (Xorg & Wayland) for Arch. This package includes an installation script to install and setup the required components.
 
-<a href="https://youtu.be/e9ro_P9rbFk" target="_blank"><img src="screenshots/v26/screenshot-26-1.png" alt="Click to watch on YouTube" /></a>
+<a href="https://youtu.be/e9ro_P9rbFk" target="_blank"><img src="screenshots/v27/screenshot-27-1.png" alt="Click to watch on YouTube" /></a>
 
 PLEASE NOTE: This branch is the rolling release of my dotfiles and includes the latest changes. 
 Please be aware that this version is not a tested release. 
 
-The released dotfiles are tested with Arch Linux, Manjaro Linux, EndeavourOS and Arco Linux.
+The released dotfiles are tested with Arch Linux, Manjaro Linux, EndeavourOS and Arco Linux. (Arco Linux: Please install hyprland-git run my dotfiles.)
 
 You can find the video on YouTube: <a href="https://youtu.be/e9ro_P9rbFk" target="_blank">Dotfiles Configuration and Installation</a>
 
@@ -20,6 +20,8 @@ The script will try to create a backup from an previous dotfiles installation.
 
 PLEASE BACKUP YOUR EXISTING .config FOLDER WITH YOUR DOTFILES BEFORE STARTING THE SCRIPTS FOR INITIONAL INSTALLTION.
 PLEASE READ THIS README until the end before starting the installation.
+
+Please note: To get the default Linux folder structure incl. Downloads, etc please install the packages xdg-user-dirs and run xdg-user-dirs-update.
 
 ## Installation with GIT (Rolling Release of main branch)
 
@@ -50,7 +52,7 @@ git stash; git pull
 
 ```
 
-## Update with GIT (Rolling Release of main branch)
+## Update with GIT (Rolling Release of main branch) (fresh update)
 
 You can also update by deleting the ~/Downloads/dotfiles folder and clone again.
 
@@ -118,6 +120,21 @@ https://wiki.hyprland.org/Nvidia/
 
 That's why NVIDIA GPUs are currently not supported by my dotfiles. But in upcoming releases, I will try to setup Hyprland for NVIDIA based on the article above.
 
+## Display Manager SDDM
+
+The suggested method to start Hyprland is via the tty with the command Hyprland. But I made good experiences with the Display Manager SDDM (https://github.com/sddm/sddm) but you can also install a custom issue to improve the tty based login.
+
+Important is that you use the package sddm-git. You can replace sddm with sddm git with
+```
+yay -S sddm-git
+```
+
+The dotfiles installation script will offer to deactivate the installed display manager and to activate  SDDM. 
+
+The dotfiles package also includes a configuration for the SDDM theme sdd-sugar-candy (https://github.com/Kangie/sddm-sugar-candy) and a configuration to run SDDM in X11 mode to get the best compatibility.
+
+With the Hyprland settings script you can copy the current wallpaper into SDDM and use it as a background.
+
 ## Installation in a KVM virtual machine
 
 Qtile X11 works fine in a KVM virtual machine. The Hyprland performance is low but it's enough for testing new features.
@@ -145,9 +162,9 @@ All keybindings for Qtile: https://gitlab.com/stephan-raabe/dotfiles/-/blob/main
 
 # Hyprland
 
-<a href="https://youtu.be/e9ro_P9rbFk" target="_blank"><img src="screenshots/v26/screenshot-26-1.png" alt="Click to watch on YouTube" /></a>
+<a href="https://youtu.be/e9ro_P9rbFk" target="_blank"><img src="screenshots/v27/screenshot-27-1.png" alt="Click to watch on YouTube" /></a>
 
-<a href="https://youtu.be/e9ro_P9rbFk" target="_blank"><img src="screenshots/v26/screenshot-26-2.png" alt="Click to watch on YouTube" /></a>
+<a href="https://youtu.be/e9ro_P9rbFk" target="_blank"><img src="screenshots/v27/screenshot-27-2.png" alt="Click to watch on YouTube" /></a>
 
 <b><a href="https://gitlab.com/stephan-raabe/dotfiles/-/tree/main/screenshots?ref_type=heads">You can find more screenshots here.</a></b>
 
@@ -206,22 +223,11 @@ Please note that every Arch Linux system is different and I cannot guarantee tha
 - Logout: wlogout 
 - Screenlock: swaylock-effects
 
-# Qtile
+# Qtile X11
 
-## X11 
+<a href="https://youtu.be/e9ro_P9rbFk" target="_blank"><img src="screenshots/v27/screenshot-27-3.png" alt="Click to watch on YouTube" /></a>
 
-<a href="https://youtu.be/e9ro_P9rbFk" target="_blank"><img src="screenshots/v25/screenshot-25-3.png" alt="Click to watch on YouTube" /></a>
-
-<a href="https://youtu.be/e9ro_P9rbFk" target="_blank"><img src="screenshots/v25/screenshot-25-4.png" alt="Click to watch on YouTube" /></a>
-
-## Wayland
-
-<a href="https://youtu.be/e9ro_P9rbFk" target="_blank"><img src="screenshots/v25/screenshot-25-1.png" alt="Click to watch on YouTube" /></a>
-
-<a href="https://youtu.be/e9ro_P9rbFk" target="_blank"><img src="screenshots/v25/screenshot-25-2.png" alt="Click to watch on YouTube" /></a>
-
-<b><a href="https://gitlab.com/stephan-raabe/dotfiles/-/tree/main/screenshots?ref_type=heads">You can find more screenshots here.</a></b>
-
+<a href="https://youtu.be/e9ro_P9rbFk" target="_blank"><img src="screenshots/v27/screenshot-27-4.png" alt="Click to watch on YouTube" /></a>
 
 ## Wallpaper and Pywal
 
@@ -234,8 +240,6 @@ Included is a pywal configuration that changes the color scheme based on a rando
 With <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>S</kbd>, you can switch between the Qtile standard status bar and Polybar and back. 
 
 ## Main Packages
-
-### Qtile X11
 
 - Terminal: alacritty
 - Editor: nvim
@@ -250,24 +254,6 @@ With <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>S</kbd>, you can switch between 
 - Status Bar: Qtile status bar + Polybar (optional)
 - Compositor: picom
 - Screenshots: scrot
-
-### Qtile Wayland
-
-- Terminal: alacritty
-- Editor: nvim
-- Prompt: starship
-- Icons: Font Awesome
-- Launch Menus: Rofi
-- Colorscheme: pywal
-- Browsers: chromium (brave optional)
-- Filemanager: Thunar
-- Cursor: Bibata Modern Ice
-- Icons: Papirus-Icon-Theme
-- Status Bar: Qtile status bar
-- Screenshots: grim & slurp
-- Clipboard Manager: cliphist
-- Logout: rofi power menu
-- Screenlock: swaylock-effects
 
 # Wallpaper repository
 

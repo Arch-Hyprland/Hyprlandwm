@@ -58,5 +58,7 @@ packagesYay=(
     "swww" 
     "qtile-extras"
     "wlr-randr"
-    "pacseek"    
+    "pacseek"
+    "sddm-git"
+    "sddm-sugar-candy-git"        
 );

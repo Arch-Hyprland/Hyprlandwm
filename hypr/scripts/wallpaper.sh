@@ -9,12 +9,30 @@
 # by Stephan Raabe (2023) 
 # ----------------------------------------------------- 
 
+# Cache file for holding the current wallpaper
+cache_file="$HOME/.cache/current_wallpaper"
+rasi_file="$HOME/.cache/current_wallpaper.rasi"
+
+# Create cache file if not exists
+if [ ! -f $cache_file ] ;then
+    touch $cache_file
+    echo "$HOME/wallpaper/default.jpg" > "$cache_file"
+fi
+
+# Create rasi file if not exists
+if [ ! -f $rasi_file ] ;then
+    touch $rasi_file
+    echo "* { current-image: url(\"$HOME/wallpaper/default.jpg\", height); }" > "$rasi_file"
+fi
+
+current_wallpaper=$(cat "$cache_file")
+
 case $1 in
 
     # Load wallpaper from .cache of last session 
     "init")
-        if [ -f ~/.cache/current_wallpaper.jpg ]; then
-            wal -q -c -i ~/.cache/current_wallpaper.jpg
+        if [ -f $cache_file ]; then
+            wal -q -i $current_wallpaper
         else
             wal -q -i ~/wallpaper/
         fi
@@ -22,7 +40,11 @@ case $1 in
 
     # Select wallpaper with rofi
     "select")
-        selected=$(ls -1 ~/wallpaper | grep "jpg" | rofi -dmenu -replace -config ~/dotfiles/rofi/config-wallpaper.rasi)
+
+        selected=$( find "$HOME/wallpaper" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -exec basename {} \; | sort -R | while read rfile
+        do
+            echo -en "$rfile\x00icon\x1f$HOME/wallpaper/${rfile}\n"
+        done | rofi -dmenu -replace -config ~/dotfiles/rofi/config-wallpaper.rasi)
         if [ ! "$selected" ]; then
             echo "No wallpaper selected"
             exit
@@ -44,9 +66,10 @@ source "$HOME/.cache/wal/colors.sh"
 echo "Wallpaper: $wallpaper"
 
 # ----------------------------------------------------- 
-# Copy selected wallpaper into .cache folder
+# Write selected wallpaper into .cache files
 # ----------------------------------------------------- 
-cp $wallpaper ~/.cache/current_wallpaper.jpg
+echo "$wallpaper" > "$cache_file"
+echo "* { current-image: url(\"$wallpaper\", height); }" > "$rasi_file"
 
 # ----------------------------------------------------- 
 # get wallpaper image name
