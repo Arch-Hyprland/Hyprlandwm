@@ -97,7 +97,7 @@
   // Settings
   "custom/settings": {
     "format": "􀣋 ",
-    "on-click": "alacritty --class dotfiles-floating -e ~/dotfiles/hypr/settings/settings.sh",
+    "on-click": "alacritty --class dotfiles-floating -e ~/dotfiles/hypr/start-settings.sh",
     "tooltip": false
   },
   // Keybindings
@@ -263,7 +263,7 @@
     "tooltip-format-ethernet": " {ifname} ({ipaddr}/{cidr})",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
-    "on-click": "alacritty -e nmtui"
+    "on-click": "~/dotfiles/.settings/networkmanager.sh"
   },
   // Battery
   "battery": {

@@ -14,7 +14,7 @@ configuration {
     modi:                       "drun,run";
     font:                       "Fira Sans Bold 10";
     show-icons:                 true;
-	hover-select:               true;
+	  hover-select:               true;
     me-select-entry:            "";
     me-accept-entry:            "MousePrimary";
     drun-display-format:        "{name}";
