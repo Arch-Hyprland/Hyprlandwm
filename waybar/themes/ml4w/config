@@ -37,6 +37,7 @@
         "custom/waybarthemes",
         "custom/settings",
         "wlr/taskbar",
+        // END TASK TOOGLE
         "group/quicklinks",
         "hyprland/window"
     ],
@@ -57,6 +58,9 @@
         "group/hardware",
         "custom/cliphist",
         "network",
+        // START TRAY TOOGLE
+        "tray",
+        // END TRAY TOOGLE
         "custom/exit",
         "clock"
     ]

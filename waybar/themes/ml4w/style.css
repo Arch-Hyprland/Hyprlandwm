@@ -167,7 +167,7 @@ window#waybar.empty #window {
 #custom-cliphist, 
 #custom-wallpaper, 
 #custom-settings, 
-#custom-wallpaper,
+#custom-wallpaper, 
 #custom-system,
 #custom-waybarthemes {
     margin-right: 14px;
@@ -179,6 +179,14 @@ window#waybar.empty #window {
 
 #custom-waybarthemes, #custom-settings, #custom-system {
     margin-right: 14px;
+}
+
+#custom-wallpaper {
+    margin-right:25px;
+}
+
+#custom-waybarthemes, #custom-settings {
+    margin-right:20px;
 }
 
 /* -----------------------------------------------------
@@ -420,7 +428,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #tray {
-  background-color: #2980b9;
+    padding: 0px 15px 0px 0px;
 }
 
 #tray>.passive {

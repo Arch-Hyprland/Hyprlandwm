@@ -3,15 +3,7 @@
 # ------------------------------------------------------
 disman=0
 echo -e "${GREEN}"
-cat <<"EOF"
- ____  _           _               __  __                                   
-|  _ \(_)___ _ __ | | __ _ _   _  |  \/  | __ _ _ __   __ _  __ _  ___ _ __ 
-| | | | / __| '_ \| |/ _` | | | | | |\/| |/ _` | '_ \ / _` |/ _` |/ _ \ '__|
-| |_| | \__ \ |_) | | (_| | |_| | | |  | | (_| | | | | (_| | (_| |  __/ |   
-|____/|_|___/ .__/|_|\__,_|\__, | |_|  |_|\__,_|_| |_|\__,_|\__, |\___|_|   
-            |_|            |___/                            |___/           
-
-EOF
+figlet "Display Manager"
 echo -e "${NONE}"
 if [[ $profile == *"Hyprland"* ]]; then
     echo "IMPORTANT: Starting Hyprland works from tty (terminal) with command Hyprland (recommended)" 
@@ -33,7 +25,12 @@ if [[ $profile == *"Qtile"* ]]; then
     echo ""
 fi
 
-if gum confirm "Do you want to enable/update to sddm?" ;then
+if gum confirm "Do you want to enable/update to sddm-git?" ;then
+
+    # Try to force the installation of sddm-git
+    echo "Install sddm-git"
+    yay -S --noconfirm sddm-git --ask 4
+
     if [ -f /etc/systemd/system/display-manager.service ]; then
         sudo rm /etc/systemd/system/display-manager.service
     fi
@@ -48,16 +45,15 @@ if gum confirm "Do you want to enable/update to sddm?" ;then
     echo "File /etc/sddm.conf.d/sddm.conf updated."
 
     if [ -f /usr/share/sddm/themes/sugar-candy/theme.conf ]; then
-        if [ -f ~/.cache/current_wallpaper.jpg ]; then
-            sudo cp ~/.cache/current_wallpaper.jpg /usr/share/sddm/themes/sugar-candy/Backgrounds/current_wallpaper.jpg
-            echo "Current wallpaper copied into /usr/share/sddm/themes/sugar-candy/Backgrounds/"
-        else
-            sudo cp wallpapers/default.jpg /usr/share/sddm/themes/sugar-candy/Backgrounds/current_wallpaper.jpg
-            echo "Default wallpaper copied into /usr/share/sddm/themes/sugar-candy/Backgrounds/"
-        fi
+
+        # Cache file for holding the current wallpaper
+        sudo cp wallpapers/default.jpg /usr/share/sddm/themes/sugar-candy/Backgrounds/current_wallpaper.jpg
+        echo "Default wallpaper copied into /usr/share/sddm/themes/sugar-candy/Backgrounds/"
 
         sudo cp sddm/theme.conf /usr/share/sddm/themes/sugar-candy/
+        sudo sed -i 's/CURRENTWALLPAPER/'"current_wallpaper.jpg"'/' /usr/share/sddm/themes/sugar-candy/theme.conf
         echo "File theme.conf updated in /usr/share/sddm/themes/sugar-candy/"
+
     fi
 elif [ $? -eq 130 ]; then
     exit 130

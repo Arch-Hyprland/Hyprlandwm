@@ -1,13 +1,11 @@
-# ML4W dotfiles 2.7 RC2
+# ML4W dotfiles 2.7 RC6
 
-This is my configuration of Hyprland (Wayland) and Qtile (Xorg & Wayland) for Arch. This package includes an installation script to install and setup the required components.
+This is my configuration of Hyprland (Wayland) and Qtile (X11) for Arch Linux based distributions. This package includes an installation script to install and setup the required components.
 
 <a href="https://youtu.be/e9ro_P9rbFk" target="_blank"><img src="screenshots/v27/screenshot-27-1.png" alt="Click to watch on YouTube" /></a>
 
 PLEASE NOTE: This branch is the rolling release of my dotfiles and includes the latest changes. 
 Please be aware that this version is not a tested release. 
-
-The released dotfiles are tested with Arch Linux, Manjaro Linux, EndeavourOS and Arco Linux. (Arco Linux: Please install hyprland-git run my dotfiles.)
 
 You can find the video on YouTube: <a href="https://youtu.be/e9ro_P9rbFk" target="_blank">Dotfiles Configuration and Installation</a>
 
@@ -15,11 +13,29 @@ You can find the video on YouTube: <a href="https://youtu.be/e9ro_P9rbFk" target
 
 # Installation
 
-To make it easy for you to get started with my dotfiles, here's a list of recommended next steps.
-The script will try to create a backup from an previous dotfiles installation.
+To make it easy for you to get started with the ML4W dotfiles, here's a list of recommended next steps.
+
+The package includes an installation script install.sh that will guide you through all steps of the installation or update process.
+
+## Supported platforms
+
+The dotfiles are tested with the following Arch based distributions:
+
+- Arch Linux (recommended)
+- Manjaro Linux
+- Arco Linux
+- EndeavourOS
+
+But the installation should work on all Arch Linux based distributions as well.
+
+For Arco Linux users: Please reinstall/force the installation of all packages during the installation/update process of the install script. The script will also offer to remove ttf-ms-fonts if installed to avoid issues with icons on waybar. 
+
+## Before you start
 
 PLEASE BACKUP YOUR EXISTING .config FOLDER WITH YOUR DOTFILES BEFORE STARTING THE SCRIPTS FOR INITIONAL INSTALLTION.
 PLEASE READ THIS README until the end before starting the installation.
+
+The installation script will try to create a backup from an previous dotfiles installation.
 
 Please note: To get the default Linux folder structure incl. Downloads, etc please install the packages xdg-user-dirs and run xdg-user-dirs-update.
 
@@ -122,9 +138,9 @@ That's why NVIDIA GPUs are currently not supported by my dotfiles. But in upcomi
 
 ## Display Manager SDDM
 
-The suggested method to start Hyprland is via the tty with the command Hyprland. But I made good experiences with the Display Manager SDDM (https://github.com/sddm/sddm) but you can also install a custom issue to improve the tty based login.
+The suggested method to start Hyprland is with the tty with the command Hyprland. But I made good experiences with the Display Manager SDDM (https://github.com/sddm/sddm) but you can also install a custom issue to improve the tty based login.
 
-Important is that you use the package sddm-git. You can replace sddm with sddm git with
+Important is that you use the package sddm-git. You can replace sddm with sddm-git with
 ```
 yay -S sddm-git
 ```
@@ -147,13 +163,24 @@ To fix the mouse issue on Hyprland, open the Hyprland settings with <kbd>SUPER</
 
 If you want to install only the core packages of Hyprland as a starting point for your Hyprland experiments please also try my Hyprland Starter script: https://gitlab.com/stephan-raabe/hyprland-starter
 
+## Known issues
+
+In case of missing icons on waybar, it's due to a conflict between several installed fonts (can happen especially on Arco Linux). Please make sure that ttf-ms-fonts is uninstalled and ttf-font-awesome and otf-font-awesome are installed with
+
+```
+yay -R ttf-ms-fonts
+yay -S ttf-font-awesome otf-font-awesome
+```
+
 # Some important key bindings
 
 - <kbd>SUPER</kbd> + <kbd>RETURN</kbd>: Alacritty
-- <kbd>SUPER</kbd> + <kbd>CMD</kbd> + <kbd>RETURN</kbd>: rofi application launcher
+- <kbd>SUPER</kbd> + <kbd>CTRL</kbd> + <kbd>RETURN</kbd>: rofi application launcher
 - <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>W</kbd>: Change wallpaper
 - <kbd>SUPER</kbd> + <kbd>PRINT</kbd>: Screenshot
-- <kbd>SUPER</kbd> + <kbd>CMS</kbd> + <kbd>Q</kbd>: Logout screen
+- <kbd>SUPER</kbd> + <kbd>CTRL</kbd> + <kbd>Q</kbd>: Logout screen
+- <kbd>SUPER</kbd> + <kbd>CTRL</kbd> + <kbd>S</kbd>: Settings script on Hyprland
+- <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>B</kbd>: Reload waybar on Hyprland
 
 All keybindings for Hyprland with right mouse click on Apps in waybar or here: 
 https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/hypr/conf/keybindings.conf

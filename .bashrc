@@ -13,6 +13,9 @@
 [[ $- != *i* ]] && return
 PS1='[\u@\h \W]\$ '
 
+# Define Editor
+export EDITOR=nvim
+
 # -----------------------------------------------------
 # ALIASES
 # -----------------------------------------------------
@@ -20,9 +23,11 @@ alias l='ls -la'
 alias c='clear'
 alias nf='neofetch'
 alias pf='pfetch'
-alias ls='eza -al'
+alias ls='eza -a --icons'
+alias ll='eza -al --icons'
+alias lt='eza -a --tree --level=1 --icons'
 alias shutdown='systemctl poweroff'
-alias v='nvim'
+alias v='$EDITOR'
 alias ts='~/dotfiles/scripts/snapshot.sh'
 alias matrix='cmatrix'
 alias wifi='nmtui'
@@ -74,15 +79,15 @@ alias vmstop='virsh --connect qemu:///system destroy win11'
 # EDIT CONFIG FILES
 # -----------------------------------------------------
 
-alias confq='nvim ~/dotfiles/qtile/config.py'
-alias confp='nvim ~/dotfiles/picom/picom.conf'
-alias confb='nvim ~/dotfiles/.bashrc'
+alias confq='$EDITOR ~/dotfiles/qtile/config.py'
+alias confp='$EDITOR ~/dotfiles/picom/picom.conf'
+alias confb='$EDITOR ~/dotfiles/.bashrc'
 
 # -----------------------------------------------------
 # EDIT NOTES
 # -----------------------------------------------------
 
-alias notes='vim ~/notes.txt'
+alias notes='$EDITOR ~/notes.txt'
 
 # -----------------------------------------------------
 # SYSTEM
