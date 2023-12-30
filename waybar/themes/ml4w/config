@@ -37,7 +37,6 @@
         "custom/waybarthemes",
         "custom/settings",
         "wlr/taskbar",
-        // END TASK TOOGLE
         "group/quicklinks",
         "hyprland/window"
     ],
@@ -51,16 +50,13 @@
     "modules-right": [
         "custom/updates",
         "pulseaudio",
-        "hyprland/language",
         "bluetooth",
         "battery", 
         "idle_inhibitor",
         "group/hardware",
         "custom/cliphist",
-        "network",
-        // START TRAY TOOGLE
         "tray",
-        // END TRAY TOOGLE
+        "network",
         "custom/exit",
         "clock"
     ]

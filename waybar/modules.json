@@ -21,7 +21,9 @@
       "default": ""
     },
     "persistent_workspaces": {
+      // START WORKSPACES
       "*": 5
+      // END WORKSPACES
     }
   },
   // Taskbar
@@ -179,14 +181,16 @@
   },
   // System tray
   "tray": {
-    // "icon-size": 21,
-    "spacing": 10
+    "icon-size": 20,
+    "spacing": 8
   },
   // Clock
   "clock": {
     // "timezone": "America/New_York",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    // START CLOCK FORMAT
     "format-alt": "{:%Y-%m-%d}"
+    // END CLOCK FORMAT
   },
   // system
   "custom/system": {
@@ -216,7 +220,6 @@
   },
   // Group Hardware
   "group/hardware": {
-    // "orientation": "horizontal",
     "orientation": "inherit",
     "drawer": {
       "transition-duration": 500,
@@ -272,7 +275,7 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon}   {capacity}%",
+    "format": "{icon} {capacity}%",
     "format-charging": "  {capacity}%",
     "format-plugged": "  {capacity}%",
     "format-alt": "{icon}  {time}",

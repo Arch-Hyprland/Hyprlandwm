@@ -218,7 +218,7 @@ window#waybar.empty #window {
     font-size: 16px;
     color: @textcolor1;
     border-radius: 15px;
-    padding: 1px 1px 1px 5px;
+    padding: 0px 2px 0px 6px;
     margin: 3px 18px 3px 10px;
     opacity: 0.8;
     border: 0px solid @bordercolor;
@@ -373,19 +373,6 @@ window#waybar.empty #window {
   margin: 0px;
 }
 
-/*
- * language
- */
-#language {
-  background-color: @backgroundlight;
-  font-size: 18px;
-  color: @textcolor2;
-  border-radius: 15px;
-  padding: 0px 8px 4px 8px;
-  margin: 4px 15px 4px 0px;
-  opacity: 0.8;
-}
-
 /* -----------------------------------------------------
  * Battery
  * ----------------------------------------------------- */
@@ -426,9 +413,24 @@ window#waybar.empty #window {
 /* -----------------------------------------------------
  * Tray
  * ----------------------------------------------------- */
+#language {
+  border: 3px solid @backgroundlight;
+  font-size: 16px;
+  color: @textcolor2;
+  border-radius: 15px;
+  padding: 1px 10px 1px 10px;
+  margin: 5px 0px 5px 0px;
+  opacity: 0.8;
+}
 
 #tray {
-    padding: 0px 15px 0px 0px;
+  border: 3px solid @backgroundlight;
+  font-size: 16px;
+  color: @textcolor2;
+  border-radius: 15px;
+  padding: 1px 6px 1px 5px;
+  margin: 5px 14px 5px 0;
+  opacity: 0.8;
 }
 
 #tray>.passive {
