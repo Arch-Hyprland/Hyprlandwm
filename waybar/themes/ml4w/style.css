@@ -181,13 +181,6 @@ window#waybar.empty #window {
     margin-right: 14px;
 }
 
-#custom-wallpaper {
-    margin-right:25px;
-}
-
-#custom-waybarthemes, #custom-settings {
-    margin-right:20px;
-}
 
 /* -----------------------------------------------------
  * Idle Inhibator
