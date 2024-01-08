@@ -55,7 +55,9 @@
         "group/hardware",
         "custom/cliphist",
         "tray",
+        // START NETWORK TOOGLE
         "network",
+        // END NETWORK TOOGLE
         "custom/exit",
         "clock"
     ]

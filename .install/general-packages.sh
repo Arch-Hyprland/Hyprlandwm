@@ -1,6 +1,8 @@
 packagesPacman=(
     "pacman-contrib"
     "vim"
+    "bluez"
+    "bluez-utils"
     "wget"
     "unzip"
     "alacritty" 
@@ -12,7 +14,8 @@ packagesPacman=(
     "freerdp" 
     "xfce4-power-manager" 
     "thunar" 
-    "mousepad" 
+    "mousepad"
+    "noto-fonts" 
     "ttf-font-awesome"
     "otf-font-awesome" 
     "ttf-fira-sans" 
@@ -36,6 +39,11 @@ packagesPacman=(
     "gum"
     "man-pages"
     "xdg-desktop-portal" 
+    "nm-connection-editor"
+    "gvfs"
+    "xdg-user-dirs"
+    "networkmanager"
+    "network-manager-applet"
 );
 
 packagesYay=(

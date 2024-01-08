@@ -1,7 +1,7 @@
 #!/bin/bash
 _getHeader "$name" "$author"
 
-echo "Hide or show the bluetooth icon in ML4W waybar themes."
+echo "Hide or show the bluetooth module in ML4W waybar themes."
 
 # Define File
 targetFile1="$HOME/dotfiles/waybar/themes/ml4w/config"

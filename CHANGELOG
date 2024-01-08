@@ -1,3 +1,15 @@
+Version 2.7.1
+https://gitlab.com/stephan-raabe/dotfiles/-/releases/2.7.1
+--------------------------------------------------------
+Hyprland:
+- Add optional network-manager applet support. Can be activated in Settings script System/nm-applet
+- Show/Hide network module in Settings script
+- New Settings for keyboard (incl. natural_scroll for touchpads)
+- Add ChatGPT Icon to Waybar. Can be disabled in settings
+
+Qtile:
+- Removed polybar from the installation for stability reasons.
+
 Version 2.7
 https://gitlab.com/stephan-raabe/dotfiles/-/releases/2.7
 --------------------------------------------------------

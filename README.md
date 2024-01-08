@@ -1,13 +1,13 @@
-# ML4W dotfiles 2.7
+# ML4W dotfiles 2.7.1
 
 This is my configuration of Hyprland (Wayland) and Qtile (X11) for Arch Linux based distributions. This package includes an installation script to install and setup the required components.
 
-<a href="https://youtu.be/e9ro_P9rbFk" target="_blank"><img src="screenshots/v27/screenshot-27-1.png" alt="Click to watch on YouTube" /></a>
+<a href="https://youtu.be/e9ro_P9rbFk" target="_blank"><img src="screenshots/v271/screenshot-271-1.png" alt="Click to watch on YouTube" /></a>
 
 PLEASE NOTE: This branch is the rolling release of my dotfiles and includes the latest changes. 
 Please be aware that this version is not a tested release. 
 
-You can find the video on YouTube: <a href="https://youtu.be/e9ro_P9rbFk" target="_blank">Dotfiles Configuration and Installation</a>
+You can find the installation video on YouTube: <a href="https://youtu.be/kHG5czrQ7WA" target="_blank">Install Arch Linux with Hyprland & Qtile</a>
 
 [TOC]
 
@@ -39,6 +39,12 @@ The installation script will try to create a backup from an previous dotfiles in
 
 Please note: To get the default Linux folder structure incl. Downloads, etc please install the packages xdg-user-dirs and run xdg-user-dirs-update.
 
+## Reference Installation
+
+The reference installation on the dotfiles is based on Arch Linux installed with a minimal profile. 
+
+Please watch the video on YouTube: https://youtu.be/kHG5czrQ7WA
+
 ## Installation with GIT (Rolling Release of main branch)
 
 ```
@@ -46,7 +52,7 @@ Please note: To get the default Linux folder structure incl. Downloads, etc plea
 cd ~/Downloads
 
 # 2.) Clone the dotfiles repository into the Downloads folder
-git clone https://gitlab.com/stephan-raabe/dotfiles.git
+git clone --depth=1 https://gitlab.com/stephan-raabe/dotfiles.git
 
 # 3.) Change into the dotfiles folder
 cd dotfiles
@@ -80,7 +86,7 @@ cd ~/Downloads
 rm -rf ~/Downloads/dotfiles
 
 # 3.) Clone the dotfiles repository into the Downloads folder
-git clone https://gitlab.com/stephan-raabe/dotfiles.git
+git clone --depth=1 https://gitlab.com/stephan-raabe/dotfiles.git
 
 # 4.) Change into the dotfiles folder
 cd dotfiles
@@ -131,16 +137,28 @@ You can find a template in .install/templates/hook.sh
 
 ## Hyprland & NVIDIA 
 
+Users have reported that Hyprland with dotfiles could be installed successfully on setups with NVDIA GPUs using the nouveau open source drivers. 
+
 There is no official Hyprland support for Nvidia hardware. However, you might make it work properly following this page.
 https://wiki.hyprland.org/Nvidia/
 
-That's why NVIDIA GPUs are currently not supported by my dotfiles. But in upcoming releases, I will try to setup Hyprland for NVIDIA based on the article above.
+## Launch Hyprland from tty
 
-## Display Manager SDDM
+The suggested method to start Hyprland is from tty with the command Hyprland bacause login managers (display managers) are not official supported (https://wiki.hyprland.org/Getting-Started/Master-Tutorial/#launching-hyprland)
 
-The suggested method to start Hyprland is with the tty with the command Hyprland. But I made good experiences with the Display Manager SDDM (https://github.com/sddm/sddm) but you can also install a custom issue to improve the tty based login.
+```
+# Start Hyprland
+Hyprland
+```
+
+You can install a custom tty login issue (layout) with the dotfiles installer.
+
+## Launch Hyprland with a Display Manager
+
+I made good experiences with the Display Manager SDDM (https://github.com/sddm/sddm). Also gdm could work. 
 
 Important is that you use the package sddm-git. You can replace sddm with sddm-git with
+
 ```
 yay -S sddm-git
 ```
@@ -150,6 +168,8 @@ The dotfiles installation script will offer to deactivate the installed display 
 The dotfiles package also includes a configuration for the SDDM theme sdd-sugar-candy (https://github.com/Kangie/sddm-sugar-candy) and a configuration to run SDDM in X11 mode to get the best compatibility.
 
 With the Hyprland settings script you can copy the current wallpaper into SDDM and use it as a background.
+
+Please check the troubleshooting section in case of issues.
 
 ## Installation in a KVM virtual machine
 
@@ -163,7 +183,9 @@ To fix the mouse issue on Hyprland, open the Hyprland settings with <kbd>SUPER</
 
 If you want to install only the core packages of Hyprland as a starting point for your Hyprland experiments please also try my Hyprland Starter script: https://gitlab.com/stephan-raabe/hyprland-starter
 
-## Known issues
+# Troubleshooting
+
+## Missing icons in waybar
 
 In case of missing icons on waybar, it's due to a conflict between several installed fonts (can happen especially on Arco Linux). Please make sure that ttf-ms-fonts is uninstalled and ttf-font-awesome and otf-font-awesome are installed with
 
@@ -171,6 +193,29 @@ In case of missing icons on waybar, it's due to a conflict between several insta
 yay -R ttf-ms-fonts
 yay -S ttf-font-awesome otf-font-awesome
 ```
+
+## SDDM not showing (only black screen with cursor)
+
+Switch to another tty with <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>F3</kbd> Now you can login with your user.
+
+Start Hyprland with Hyprland.
+
+You can try to reinstall all sddm related packages.
+
+```
+yay -S sddm-git sddm-sugar-candy-git
+```
+
+Or you can install another display manager.
+
+To stop, disable and remove sddm service.
+
+```
+sudo systemctl stop sddm.service
+sudo systemctl disable sddm.service
+sudo rm /etc/systemd/system/display-manager.service
+```
+
 
 # Some important key bindings
 
@@ -262,10 +307,6 @@ Included is a pywal configuration that changes the color scheme based on a rando
 
 <kbd>SUPER</kbd> + <kbd>CTRL</kbd> + <kbd>W</kbd> opens rofi with a list of installed wallpapers in ~/wallpaper/ for your individual selection. 
 
-## Qtile status bar switcher
-
-With <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>S</kbd>, you can switch between the Qtile standard status bar and Polybar and back. 
-
 ## Main Packages
 
 - Terminal: alacritty
@@ -278,7 +319,7 @@ With <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>S</kbd>, you can switch between 
 - Filemanager: Thunar
 - Cursor: Bibata Modern Ice
 - Icons: Papirus-Icon-Theme
-- Status Bar: Qtile status bar + Polybar (optional)
+- Status Bar: Qtile status bar
 - Compositor: picom
 - Screenshots: scrot
 

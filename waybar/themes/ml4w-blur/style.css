@@ -424,7 +424,7 @@ window#waybar.empty #window {
 #tray {
   border: 3px solid @backgroundlight;
   font-size: 16px;
-  color: @textcolor2;
+  color: @textcolor3;
   border-radius: 15px;
   padding: 1px 6px 1px 5px;
   margin: 5px 14px 5px 0;
@@ -443,7 +443,7 @@ window#waybar.empty #window {
 /* -----------------------------------------------------
  * Other
  * ----------------------------------------------------- */
-
+/*
 label:focus {
   background-color: #000000;
 }
@@ -459,3 +459,4 @@ label:focus {
 #network.disconnected {
   background-color: #f53c3c;
 }
+*/

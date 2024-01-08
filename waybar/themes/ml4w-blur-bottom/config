@@ -54,6 +54,9 @@
         "pulseaudio",
         "bluetooth",
         "battery", 
+        // START NETWORK TOOGLE
+        "network",
+        // END NETWORK TOOGLE
         "idle_inhibitor",
         "group/hardware",
         "custom/cliphist",
