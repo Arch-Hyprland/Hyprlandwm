@@ -56,16 +56,16 @@
         "bluetooth",
         // END BT TOOGLE
         "battery", 
-        // START NETWORK TOOGLE
-        "network",
-        // END NETWORK TOOGLE
         "idle_inhibitor",
         "group/hardware",
         "custom/cliphist",
-        // START TRAY TOOGLE
-        "tray",
-        // END TRAY TOOGLE
+        // START NETWORK TOOGLE
+        "network",
+        // END NETWORK TOOGLE
         "custom/exit",
-        "clock"
+        "clock",
+        // START TRAY TOOGLE
+        "tray"
+        // END TRAY TOOGLE
     ]
 }

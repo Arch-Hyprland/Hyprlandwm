@@ -32,9 +32,9 @@
     // Modules Left
     "modules-left": [
         "custom/appmenu",
-        "custom/settings",
-        "custom/waybarthemes",
         "custom/wallpaper",
+        "custom/waybarthemes",
+        "custom/settings",
         "wlr/taskbar",
         "group/quicklinks",
         "hyprland/window"
@@ -54,11 +54,11 @@
         "idle_inhibitor",
         "group/hardware",
         "custom/cliphist",
-        "tray",
         // START NETWORK TOOGLE
         "network",
         // END NETWORK TOOGLE
         "custom/exit",
-        "clock"
+        "clock",
+        "tray"
     ]
 }

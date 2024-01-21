@@ -54,17 +54,16 @@
         "pulseaudio",
         "bluetooth",
         "battery", 
-        // START NETWORK TOOGLE
-        "network",
-        // END NETWORK TOOGLE
         "idle_inhibitor",
         "group/hardware",
         "custom/cliphist",
+        // START NETWORK TOOGLE
         "network",
-        // START TRAY TOOGLE
-        "tray",
-        // END TRAY TOOGLE
+        // END NETWORK TOOGLE
         "custom/exit",
-        "clock"
+        "clock",
+        // START TRAY TOOGLE
+        "tray"
+        // END TRAY TOOGLE
     ]
 }

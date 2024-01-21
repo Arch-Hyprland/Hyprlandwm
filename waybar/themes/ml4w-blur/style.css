@@ -20,7 +20,10 @@
  * ----------------------------------------------------- */
 
 * {
-  font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+  font-family: "SF Pro Display", "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 16px;
   border: none;
   border-radius: 0px;
 }
@@ -106,7 +109,6 @@ tooltip label {
   border-radius: 12px;
   color: @textcolor2;
   font-size: 16px;
-  font-weight: normal;
   opacity: 0.8;
 }
 
@@ -354,8 +356,8 @@ window#waybar.empty #window {
 #bluetooth.on,
 #bluetooth.connected {
   background-color: @backgroundlight;
-  font-size: 20px;
-  color: @textcolor2;
+  color: #1523e9;
+  font-size: 22px;
   border-radius: 15px;
   padding: 1px 11px 1px 9px;
   margin: 6px 14px 6px 0px;
@@ -364,6 +366,7 @@ window#waybar.empty #window {
 
 #bluetooth.off {
   background-color: transparent;
+  color: @textcolor2;
   font-size: 22px;
   padding: 0px 9px 0px 9px;
   margin: 0px;
@@ -413,14 +416,19 @@ window#waybar.empty #window {
 
 #tray {
   border: 3px solid @backgroundlight;
+  border-right: none;
   font-size: 16px;
   color: @textcolor3;
-  border-radius: 15px;
+  border-radius: 15px 0 0 15px;
   padding: 1px 6px 1px 5px;
-  margin: 5px 14px 5px 0;
+  margin: 4px 0px 4px 0;
   opacity: 0.8;
 }
-
+#tray menu {
+  border-radius: 12px;
+  background: rgba(43, 48, 59, 0.8);
+  border: 1px solid rgba(100, 114, 125, 0.5);
+}
 #tray>.passive {
   -gtk-icon-effect: dim;
 }
