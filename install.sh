@@ -39,12 +39,7 @@ source .install/rsync.sh
 source .install/backup.sh
 source .install/preparation.sh
 source .install/profile.sh
-if [[ $profile == *"Hyprland"* ]]; then
-    source .install/hyprland-version.sh
-fi
-
 source .install/installer.sh
-
 source .install/general.sh
 source .install/general-packages.sh
 source .install/install-packages.sh
@@ -76,6 +71,7 @@ fi
 if [[ $profile == *"Qtile"* ]]; then
     source .install/qtile-dotfiles.sh
 fi
+source .install/gtk.sh
 source .install/bashrc.sh
 source .install/monitor.sh
 source .install/cleanup.sh

@@ -55,6 +55,12 @@
     },
     "separate-outputs": true
   },
+  // ML4W Welcome App
+  "custom/ml4w-welcome": {
+      "on-click": "~/dotfiles/apps/ML4W_Welcome-x86_64.AppImage",
+      "format": " ",
+      "tooltip": false
+  },
   // Youtube Subscriber Count
   "custom/youtube": {
     "format": " {}",
@@ -128,14 +134,8 @@
   },
   // Brave Launcher
   "custom/brave": {
-    "format": "􀐡 ",
-    "on-click": "~/dotfiles/.settings/browser.sh",
-    "tooltip": false
-  },
-  // Browser Launcher
-  "custom/browser": {
     "format": "􀏜 ",
-    "on-click": "chromium",
+    "on-click": "~/dotfiles/.settings/browser.sh",
     "tooltip": false
   },
   // ChatGPT Launcher

@@ -1,10 +1,10 @@
 #!/bin/bash
 _getHeader "$name" "$author"
 
-echo "Define the start command to start the browser."
+echo "Define the command to open the terminal (Default: alacritty)."
 
 # Define File
-targetFile="$HOME/dotfiles/.settings/browser.sh"
+targetFile="$HOME/dotfiles/.settings/terminal.sh"
 
 # Current Value
 echo "Current Value: $(cat $targetFile)"

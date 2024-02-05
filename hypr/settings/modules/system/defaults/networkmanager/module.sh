@@ -1,10 +1,12 @@
 #!/bin/bash
 _getHeader "$name" "$author"
 
-echo "Define the start command to start the filemanager."
+echo "Define the start command to start the networkmanager (Must be installed on your system)."
+echo "(Default: nm-connection-editor)"
+echo "Possible values: alacritty -e nmtui, nm-connection-editor, etc."
 
 # Define File
-targetFile="$HOME/dotfiles/.settings/filemanager.sh"
+targetFile="$HOME/dotfiles/.settings/networkmanager.sh"
 
 # Current Value
 echo "Current Value: $(cat $targetFile)"

@@ -1,13 +1,14 @@
-# ML4W dotfiles 2.7.1
+# ML4W dotfiles 2.8
 
 This is my configuration of Hyprland (Wayland) and Qtile (X11) for Arch Linux based distributions. This package includes an installation script to install and setup the required components.
 
-<a href="https://youtu.be/e9ro_P9rbFk" target="_blank"><img src="screenshots/v271/screenshot-271-1.png" alt="Click to watch on YouTube" /></a>
+<a href="https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/screenshots/v28/screenshot-28-1.png?ref_type=heads" target="_blank"><img src="screenshots/v28/screenshot-28-1.png" /></a>
 
-PLEASE NOTE: This branch is the rolling release of my dotfiles and includes the latest changes. 
-Please be aware that this version is not a tested release. 
+PLEASE NOTE: This branch is the rolling release of the ML4W dotfiles and includes the latest changes. 
 
-You can find the installation video on YouTube: <a href="https://youtu.be/kHG5czrQ7WA" target="_blank">Install Arch Linux with Hyprland & Qtile</a>
+Latest official release 2.8: <a href="https://youtu.be/6RNaBRSy-Zs" target="_blank">Watch on YouTube</a>
+
+You can find the installation video (Version 2.7.1) on YouTube: <a href="https://youtu.be/kHG5czrQ7WA" target="_blank">Install Arch Linux with Hyprland & Qtile</a>
 
 [TOC]
 
@@ -32,7 +33,7 @@ For Arco Linux users: Please reinstall/force the installation of all packages du
 
 ## Before you start
 
-PLEASE BACKUP YOUR EXISTING .config FOLDER WITH YOUR DOTFILES BEFORE STARTING THE SCRIPTS FOR INITIONAL INSTALLTION.
+PLEASE BACKUP YOUR EXISTING .config FOLDER WITH YOUR DOTFILES BEFORE STARTING THE SCRIPTS FOR INITIAL INSTALLTION.
 PLEASE READ THIS README until the end before starting the installation.
 
 The installation script will try to create a backup from an previous dotfiles installation.
@@ -45,14 +46,14 @@ The reference installation on the dotfiles is based on Arch Linux installed with
 
 Please watch the video on YouTube: https://youtu.be/kHG5czrQ7WA
 
-## Installation with GIT (Rolling Release of main branch)
+## Installation with GIT of Rolling Release
 
 ```
 # 1.) Change into your Downloads folder
 cd ~/Downloads
 
 # 2.) Clone the dotfiles repository into the Downloads folder
-git clone --depth=1 https://gitlab.com/stephan-raabe/dotfiles.git
+git clone https://gitlab.com/stephan-raabe/dotfiles.git
 
 # 3.) Change into the dotfiles folder
 cd dotfiles
@@ -61,10 +62,32 @@ cd dotfiles
 ./install.sh
 
 ```
-## Update with GIT (Rolling Release of main branch)
+
+## Installation with GIT of the latest release
+
+```
+# 1.) Change into your Downloads folder where you have downloaded the release to
+cd ~/Downloads
+
+# 2.) Unzip
+git clone --branch 2.8 https://gitlab.com/stephan-raabe/dotfiles.git
+
+# 3.) Change into the new dotfiles folder
+cd dotfiles
+
+# 4.) Start the installation to update
+./install.sh
+
+```
+
+## Update with GIT
+
 ```
 # 1.) Change into your Downloads folder
 cd ~/Downloads/dotfiles
+
+# Switch to rolling release
+# git checkout origin/main
 
 # 2.) Pull the latest version and update the repository
 git stash; git pull
@@ -74,46 +97,7 @@ git stash; git pull
 
 ```
 
-## Update with GIT (Rolling Release of main branch) (fresh update)
-
-You can also update by deleting the ~/Downloads/dotfiles folder and clone again.
-
-```
-# 1.) Change into your Downloads folder
-cd ~/Downloads
-
-# 2.) Delete existing dotfiles folder from Downloads folder
-rm -rf ~/Downloads/dotfiles
-
-# 3.) Clone the dotfiles repository into the Downloads folder
-git clone --depth=1 https://gitlab.com/stephan-raabe/dotfiles.git
-
-# 4.) Change into the dotfiles folder
-cd dotfiles
-
-# 5.) Start the installation to update
-./install.sh
-
-```
-
-## Installation by downloading the latest release
-
-If you don't want to use the rolling release, you can download the latest release the latest release https://gitlab.com/stephan-raabe/dotfiles/-/releases or choose the the latest tag https://gitlab.com/stephan-raabe/dotfiles/-/tags and download the zip.
-
-```
-# 1.) Change into your Downloads folder where you have downloaded the release to
-cd ~/Downloads
-
-# 2.) Unzip
-unzip dotfiles-2.6.zip
-
-# 3.) Change into the new dotfiles folder
-cd dotfiles-2.6
-
-# 4.) Start the installation to update
-./install.sh
-
-```
+## Dotfiles Installer
 
 You can also use the dotfiles installer script to download and install the latest release: https://gitlab.com/stephan-raabe/installer
 
@@ -183,40 +167,6 @@ To fix the mouse issue on Hyprland, open the Hyprland settings with <kbd>SUPER</
 
 If you want to install only the core packages of Hyprland as a starting point for your Hyprland experiments please also try my Hyprland Starter script: https://gitlab.com/stephan-raabe/hyprland-starter
 
-# Troubleshooting
-
-## Missing icons in waybar
-
-In case of missing icons on waybar, it's due to a conflict between several installed fonts (can happen especially on Arco Linux). Please make sure that ttf-ms-fonts is uninstalled and ttf-font-awesome and otf-font-awesome are installed with
-
-```
-yay -R ttf-ms-fonts
-yay -S ttf-font-awesome otf-font-awesome
-```
-
-## SDDM not showing (only black screen with cursor)
-
-Switch to another tty with <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>F3</kbd> Now you can login with your user.
-
-Start Hyprland with Hyprland.
-
-You can try to reinstall all sddm related packages.
-
-```
-yay -S sddm-git sddm-sugar-candy-git
-```
-
-Or you can install another display manager.
-
-To stop, disable and remove sddm service.
-
-```
-sudo systemctl stop sddm.service
-sudo systemctl disable sddm.service
-sudo rm /etc/systemd/system/display-manager.service
-```
-
-
 # Some important key bindings
 
 - <kbd>SUPER</kbd> + <kbd>RETURN</kbd>: Alacritty
@@ -234,13 +184,41 @@ All keybindings for Qtile: https://gitlab.com/stephan-raabe/dotfiles/-/blob/main
 
 # Hyprland
 
-<a href="https://youtu.be/e9ro_P9rbFk" target="_blank"><img src="screenshots/v27/screenshot-27-1.png" alt="Click to watch on YouTube" /></a>
+<a href="https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/screenshots/v28/screenshot-28-1.png?ref_type=heads" target="_blank"><img src="screenshots/v28/screenshot-28-1.png" /></a>
 
-<a href="https://youtu.be/e9ro_P9rbFk" target="_blank"><img src="screenshots/v27/screenshot-27-2.png" alt="Click to watch on YouTube" /></a>
+<a href="https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/screenshots/v28/screenshot-28-2.png?ref_type=heads" target="_blank"><img src="screenshots/v28/screenshot-28-2.png" /></a>
+
+<a href="https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/screenshots/v28/screenshot-28-3.png?ref_type=heads" target="_blank"><img src="screenshots/v28/screenshot-28-3.png" /></a>
 
 <b><a href="https://gitlab.com/stephan-raabe/dotfiles/-/tree/main/screenshots?ref_type=heads">You can find more screenshots here.</a></b>
 
 <a href="https://youtu.be/e9ro_P9rbFk" target="_blank">Watch on YouTube</a>
+
+## ML4W Welcome App
+
+After starting the ML4W dotfiles for the first time, the ML4W Welcome App appears. This app is the starting point to discover the Hyprland setup.
+
+<img src="screenshots/screenshot-welcome.app.png" />
+
+The welcome screen includes the most important keybindings to open a terminal or a browser.
+
+You can start the ML4W Welcome App by clicking on the L icon on the right side in waybar or be entering ml4w in your terminal (if you're using the .bashrc from the dotfiles).
+
+In the Settings Menu you can access the following functions:
+
+- Update Wallpaper: Opens the wallpaper selector
+- Change Waybar Theme: Opens the waybar theme switcher and gives access to the available themes for the waybar status bar
+- Change GTK Theme: Opens nwg-look to select the theme for GTK 3 applications incl. widgets, icons and cursors
+- Refresh GTK Settings: Reloads the Hyprland GTK configuration (required when changing the mouse cursor)
+- Hyprland Settings: Opens the Hyprland Settings script to customize the look and feel, environment variables, monitor resolution, etc.
+- Network Settings: Select your network configuration incl. WiFi
+- Update your System: Starts the terminal application to update your Arch packages (pacman & yay)
+- Cleanup your System: Removes old orphans and cached files generated during previous installations
+- Reload Waybar: Reloads the waybar
+- Toggle Waybar: You can hide or show waybar when you want to try our other status bars.
+
+You can find the sourcecode of the ML4W Welcome App in this repository:
+https://gitlab.com/stephan-raabe/ml4w-welcome
 
 ## Wallpaper and Pywal
 
@@ -322,6 +300,39 @@ Included is a pywal configuration that changes the color scheme based on a rando
 - Status Bar: Qtile status bar
 - Compositor: picom
 - Screenshots: scrot
+
+# Troubleshooting
+
+## Missing icons in waybar
+
+In case of missing icons on waybar, it's due to a conflict between several installed fonts (can happen especially on Arco Linux). Please make sure that ttf-ms-fonts is uninstalled and ttf-font-awesome and otf-font-awesome are installed with
+
+```
+yay -R ttf-ms-fonts
+yay -S ttf-font-awesome otf-font-awesome
+```
+
+## SDDM not showing (only black screen with cursor)
+
+Switch to another tty with <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>F3</kbd> Now you can login with your user.
+
+Start Hyprland with Hyprland.
+
+You can try to reinstall all sddm related packages.
+
+```
+yay -S sddm-git sddm-sugar-candy-git
+```
+
+Or you can install another display manager.
+
+To stop, disable and remove sddm service.
+
+```
+sudo systemctl stop sddm.service
+sudo systemctl disable sddm.service
+sudo rm /etc/systemd/system/display-manager.service
+```
 
 # Wallpaper repository
 

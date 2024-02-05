@@ -8,6 +8,7 @@ targetFile1="$HOME/dotfiles/waybar/themes/ml4w/config"
 targetFile2="$HOME/dotfiles/waybar/themes/ml4w-blur/config"
 targetFile3="$HOME/dotfiles/waybar/themes/ml4w-blur-bottom/config"
 targetFile4="$HOME/dotfiles/waybar/themes/ml4w-bottom/config"
+targetFile5="$HOME/dotfiles/waybar/themes/ml4w-minimal/config"
 settingsFile="$HOME/dotfiles/.settings/waybar_bluetooth"
 
 # Define Markers
@@ -15,10 +16,12 @@ startMarker="START BT TOOGLE"
 endMarker="END BT TOOGLE"
 
 # Select Value
-customvalue=$(gum choose "SHOW" "HIDE")
+customvalue=$(gum choose "SHOW" "HIDE" "DEFAULT")
 
 if [ ! -z $customvalue ]; then
     if [ "$customvalue" == "SHOW" ] ;then
+        customtext="        \"bluetooth\","
+    elif [ "$customvalue" == "DEFAULT" ] ;then
         customtext="        \"bluetooth\","
     else
         customtext="        \/\/\"bluetooth\","
@@ -28,6 +31,7 @@ if [ ! -z $customvalue ]; then
     _replaceInFile $startMarker $endMarker $customtext $targetFile2
     _replaceInFile $startMarker $endMarker $customtext $targetFile3
     _replaceInFile $startMarker $endMarker $customtext $targetFile4
+    _replaceInFile $startMarker $endMarker $customtext $targetFile5
     _writeSettings $settingsFile $customtext
     
     # Reload Waybar

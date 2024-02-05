@@ -59,6 +59,7 @@
         // END NETWORK TOOGLE
         "custom/exit",
         "clock",
+        "custom/ml4w-welcome",
         "tray"
     ]
 }

@@ -33,9 +33,7 @@
     // Modules Left
     "modules-left": [
         "custom/appmenu",
-        "custom/settings",
-        "custom/waybarthemes",
-        "custom/wallpaper",
+        "group/settings",
         // START TASK TOOGLE
         "wlr/taskbar",
         // END TASK TOOGLE
@@ -64,6 +62,7 @@
         // END NETWORK TOOGLE
         "custom/exit",
         "clock",
+        "custom/ml4w-welcome",
         // START TRAY TOOGLE
         "tray"
         // END TRAY TOOGLE

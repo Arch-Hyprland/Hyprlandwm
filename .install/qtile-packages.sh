@@ -8,6 +8,8 @@ packagesPacman=(
     "nitrogen"
     "python-dbus-next"
     "python-iwlib"
+    "xclip"
+    "xautolock" 
 );
 
 packagesYay=(

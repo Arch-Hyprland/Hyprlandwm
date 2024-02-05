@@ -12,11 +12,9 @@ packagesPacman=(
     "starship"
     "mpv" 
     "freerdp" 
-    "xfce4-power-manager" 
     "thunar" 
     "mousepad"
     "noto-fonts" 
-    "ttf-font-awesome"
     "otf-font-awesome" 
     "ttf-fira-sans" 
     "ttf-fira-code" 
@@ -30,20 +28,22 @@ packagesPacman=(
     "python-click" 
     "pavucontrol" 
     "tumbler" 
-    "xautolock" 
     "blueman"
     "papirus-icon-theme"
+    "breeze-icons"
     "polkit-gnome"
-    "qalculate-gtk"
     "brightnessctl"
     "gum"
     "man-pages"
-    "xdg-desktop-portal" 
+    "xdg-desktop-portal"
     "nm-connection-editor"
     "gvfs"
     "xdg-user-dirs"
     "networkmanager"
     "network-manager-applet"
+    "fuse2"
+    "gtk4"
+    "libadwaita"
 );
 
 packagesYay=(
@@ -51,5 +51,8 @@ packagesYay=(
     "bibata-cursor-theme" 
     "trizen"
     "pacseek"
-    "sddm-sugar-candy-git"
 );
+
+# Removed packages
+# "xfce4-power-manager" 
+# "ttf-font-awesome"

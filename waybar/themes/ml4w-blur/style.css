@@ -183,6 +183,22 @@ window#waybar.empty #window {
   margin-right: 14px;
 }
 
+#custom-ml4w-welcome {
+    margin-right: 15px;
+    background-image: url("../assets/ml4w-icon.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-right: 24px;
+}
+
+#custom-chatgpt {
+    margin-right: 15px;
+    background-image: url("../assets/ai-icon-20.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-right: 24px;
+}
+
 /* -----------------------------------------------------
  * Idle Inhibator
  * ----------------------------------------------------- */
@@ -437,24 +453,3 @@ window#waybar.empty #window {
   -gtk-icon-effect: highlight;
   background-color: #eb4d4b;
 }
-
-/* -----------------------------------------------------
- * Other
- * ----------------------------------------------------- */
-/*
-label:focus {
-  background-color: #000000;
-}
-
-#backlight {
-  background-color: #90b1b1;
-}
-
-#network {
-  background-color: #2980b9;
-}
-
-#network.disconnected {
-  background-color: #f53c3c;
-}
-*/

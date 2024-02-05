@@ -1,4 +1,5 @@
 packagesPacman=(
+    "hyprland"
     "xdg-desktop-portal-hyprland" 
     "waybar" 
     "grim" 
@@ -12,5 +13,5 @@ packagesYay=(
     "swww" 
     "swaylock-effects-git" 
     "wlogout"
-    "wlr-randr"
+    "nwg-look"
 );

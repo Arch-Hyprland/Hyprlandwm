@@ -1,3 +1,30 @@
+Version 2.8
+https://gitlab.com/stephan-raabe/dotfiles/-/releases/2.8
+--------------------------------------------------------
+Hyprland:
+- New Welcome app based on GTK4. Can be launched with the icon on waybar or with the command ml4w
+- nwg-look-bin to define a custom GTK Theme
+- Updated waybar starter theme
+- New waybar idle-inhibator icon
+- New waybar theme ml4w-minimal
+- New window animation variation animation-moving.conf
+- New AI icon to open ChatGPT
+- Hyprland installation with hyprland package only. hyprland-git removed from the installer
+
+Version 2.7.2
+https://gitlab.com/stephan-raabe/dotfiles/-/releases/2.7.2
+--------------------------------------------------------
+Hyprland:
+- New waybar icon to enable/disable swaylock. Left mouse click to toggle swaylock, right mouse click to start swaylock
+- Show/Hide idle_inhibitor module (swaylock) in Settings script
+- Start of swayidle can be deactivated in the settings script
+- New animation variation animation-moving.conf
+
+General:
+- Installation script bug fixing
+- Alias cleanup added to .bashrc for Arch Linux maintenance
+- New Hyprland configuration variation script to roll back to default variations via tty
+
 Version 2.7.1
 https://gitlab.com/stephan-raabe/dotfiles/-/releases/2.7.1
 --------------------------------------------------------

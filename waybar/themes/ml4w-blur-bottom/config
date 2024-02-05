@@ -63,6 +63,7 @@
         "custom/exit",
         "clock",
         // START TRAY TOOGLE
+        "custom/ml4w-welcome",
         "tray"
         // END TRAY TOOGLE
     ]
