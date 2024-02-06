@@ -429,7 +429,7 @@ window#waybar.empty #window {
   border-right: none;
   font-size: 16px;
   color: @textcolor2;
-  border-radius: 15px 0 0 15px;
+  border-radius: 8px 0 0 8px;
   padding: 1px 6px 1px 5px;
   margin: 4px 0px 4px 0px;
   opacity: 0.8;
