@@ -1,1 +1,1 @@
-chromium
+microsoft-edge-dev

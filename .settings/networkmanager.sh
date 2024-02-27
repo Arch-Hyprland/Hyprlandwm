@@ -1,1 +1,2 @@
-nm-connection-editor
+# nm-connection-editor
+alacritty -e "iwctl"
