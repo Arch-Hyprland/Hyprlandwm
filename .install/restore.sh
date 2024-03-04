@@ -20,6 +20,10 @@ _showRestoreOptions() {
         selectedlist+="~/dotfiles/.settings,"
     fi
     if [[ $profile == *"Hyprland"* ]]; then
+        if [ -f ~/dotfiles/hypr/hypridle.conf ]; then
+            restorelist+="~/dotfiles/hypr/hypridle.conf "
+            selectedlist+="~/dotfiles/hypr/hypridle.conf,"
+        fi
         if [ -f ~/dotfiles/hypr/conf/custom.conf ]; then
             restorelist+="~/dotfiles/hypr/conf/custom.conf "
             selectedlist+="~/dotfiles/hypr/conf/custom.conf,"
@@ -108,6 +112,12 @@ _startRestore() {
         fi
     fi
     if [[ $profile == *"Hyprland"* ]]; then
+        if [[ $restoreselect == *"~/dotfiles/hypr/hypridle.conf"* ]] || [[ $restoreselect == *"All"* ]] ; then
+            if [ -f ~/dotfiles/hypr/hypridle.conf ]; then
+                cp ~/dotfiles/hypr/hypridle.conf ~/dotfiles-versions/$version/hypr/
+                echo "Hyprland hypridle.conf restored!"
+            fi
+        fi
         if [[ $restoreselect == *"~/dotfiles/hypr/conf/custom.conf"* ]] || [[ $restoreselect == *"All"* ]] ; then
             if [ -f ~/dotfiles/hypr/conf/custom.conf ]; then
                 cp ~/dotfiles/hypr/conf/custom.conf ~/dotfiles-versions/$version/hypr/conf/
@@ -219,25 +229,6 @@ echo -e "${NONE}"
         customtext="$(cat $settingsFile)"
         _replaceInFile "$startMarker" "$endMarker" "$customtext" "$targetFile"
         echo "Waybar ChatGPT restored."
-    fi
-
-    # Restore Waybar Bluetooth
-    targetFile1="$HOME/dotfiles-versions/$version/waybar/themes/ml4w/config"
-    targetFile2="$HOME/dotfiles-versions/$version/waybar/themes/ml4w-blur/config"
-    targetFile3="$HOME/dotfiles-versions/$version/waybar/themes/ml4w-blur-bottom/config"
-    targetFile4="$HOME/dotfiles-versions/$version/waybar/themes/ml4w-bottom/config"
-    targetFile5="$HOME/dotfiles-versions/$version/waybar/themes/ml4w-minimal/config"
-    settingsFile="$HOME/dotfiles/.settings/waybar_bluetooth"
-    if [ -f $settingsFile ] ;then
-        startMarker="START BT TOOGLE"
-        endMarker="END BT TOOGLE"
-        customtext="$(cat $settingsFile)"
-        _replaceInFile "$startMarker" "$endMarker" "$customtext" "$targetFile1"
-        _replaceInFile "$startMarker" "$endMarker" "$customtext" "$targetFile2"
-        _replaceInFile "$startMarker" "$endMarker" "$customtext" "$targetFile3"
-        _replaceInFile "$startMarker" "$endMarker" "$customtext" "$targetFile4"
-        _replaceInFile "$startMarker" "$endMarker" "$customtext" "$targetFile5"
-        echo "Waybar Bluetooth restored."
     fi
 
     # Restore Waybar Systray

@@ -85,7 +85,7 @@
     "return-type": "json",
     "exec": "~/dotfiles/scripts/updates.sh",
     "restart-interval": 60,
-    "on-click": "alacritty -e ~/dotfiles/scripts/installupdates.sh",
+    "on-click": "alacritty --class dotfiles-floating -e ~/dotfiles/scripts/installupdates.sh",
     "on-click-right": "~/dotfiles/.settings/software.sh",
     "tooltip": false
   },
@@ -259,11 +259,11 @@
   "network": {
     "format": "{ifname}",
     "format-wifi": "􀙇 {signalStrength}%",
-    "format-ethernet": "􀌙  {ipaddr}",
+    "format-ethernet": "􀌙  {ifname}",
     "format-disconnected": "􀙥 ",
     "tooltip-format": "􀌙  {ifname} via {gwaddri}",
-    "tooltip-format-wifi": "􀙇 {essid} ({signalStrength}%)",
-    "tooltip-format-ethernet": " {ifname} ({ipaddr}/{cidr})",
+    "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+    "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
     "on-click": "~/dotfiles/.settings/networkmanager.sh"
@@ -319,6 +319,7 @@
     "format-off": "󰂲",
     "format-on": "󰂰",
     "format-connected": "󰂱",
+    "format-no-controller": "",
     "tooltip": "true",
     "tooltip-format": "{device_enumerate}",
     "tooltip-format-enumerate-connected": "􀮔  {device_alias}",
@@ -337,6 +338,7 @@
     "format-icons": {
       "activated": "􀐮 ",
       "deactivated": "􀐮 "
-    }
+    },
+    "on-click-right": "hyprlock"
   }
 }

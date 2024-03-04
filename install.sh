@@ -39,6 +39,7 @@ source .install/rsync.sh
 source .install/backup.sh
 source .install/preparation.sh
 source .install/installer.sh
+source .install/remove.sh
 source .install/general.sh
 source .install/packages/general-packages.sh
 source .install/install-packages.sh
@@ -49,7 +50,6 @@ if [[ $profile == *"Hyprland"* ]]; then
     echo -e "${NONE}"
     source .install/packages/hyprland-packages.sh
     source .install/install-packages.sh
-    source .install/screenlock.sh
 fi
 if [[ $profile == *"Qtile"* ]]; then
     echo -e "${GREEN}"
@@ -73,6 +73,7 @@ fi
 if [[ $profile == *"Qtile"* ]]; then
     source .install/qtile-dotfiles.sh
 fi
+source .install/apps.sh
 source .install/gtk.sh
 source .install/bashrc.sh
 source .install/cleanup.sh
@@ -82,3 +83,4 @@ figlet "Done"
 echo -e "${NONE}"
 echo "Please reboot your system!"
 echo
+sleep 3
