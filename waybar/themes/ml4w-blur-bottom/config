@@ -10,17 +10,9 @@
 //
 {
     // General Settings
-
-    // Position TOP
-    // "layer": "top",
-    // "margin-top": 0,
-    // "margin-bottom": 0,
-
-    // Position BOTTOM
     "position": "bottom",
     "margin-top": 0,
     "margin-bottom": 0,
-    
     "layer": "top",
     "height": 12,
     "margin-left": 0,
@@ -38,9 +30,9 @@
         "custom/settings",
         // START TASK TOOGLE
         "wlr/taskbar",
-        // END TASK TOOGLE
         "group/quicklinks",
-        "hyprland/window"
+        "hyprland/window",
+        "custom/empty"
     ],
 
     // Modules Center

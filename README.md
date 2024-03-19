@@ -1,10 +1,17 @@
-# ML4W dotfiles 2.8.2
+# ML4W dotfiles 2.8.3
 
 An advanced configuration of Hyprland and Qtile for Arch Linux based distributions. This package includes an installation script to install and setup the required components.
 
-<a href="https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/screenshots/v281/screenshot-281-1.png?ref_type=heads" target="_blank"><img src="screenshots/v281/screenshot-281-1.png" /></a>
+<a href="screenshots/v283/screenshot-283-2.png?ref_type=heads" target="_blank"><img src="screenshots/v283/screenshot-283-2.png" /></a>
 
-You can find the installation video (Version 2.7.1) on YouTube: <a href="https://youtu.be/kHG5czrQ7WA" target="_blank">Install Arch Linux with Hyprland & Qtile</a>
+You can find the overview video (Version 2.8.3) on Youtube: <a href="https://youtu.be/zM2AYue0o8s" target="_blank">ML4W Dotfiles 2.8.3</a>
+
+You can find the installation video (Version 2.8.2) on YouTube: <a href="https://youtu.be/n6Yg232bCOU" target="_blank">Install/Update the ML4W Dotfiles</a>
+
+The ML4W Dotfiles are available as 
+
+- main release (Official release): https://gitlab.com/stephan-raabe/dotfiles
+- rolling release (Development release): https://gitlab.com/stephan-raabe/dotfiles/-/tree/dev
 
 [TOC]
 
@@ -36,6 +43,8 @@ For Arco Linux users: Please reinstall/force the installation of all packages du
 PLEASE BACKUP YOUR EXISTING .config FOLDER WITH YOUR DOTFILES BEFORE STARTING THE SCRIPTS FOR INITIAL INSTALLTION.
 
 The installation script will create a backup from an previous dotfiles installation.
+
+If possible, please create a snapshot of your current system if snapper or Timeshift is installed and available.
 
 ## Reference Installation
 
@@ -82,7 +91,17 @@ git checkout dev
 
 ## Update
 
-Please follow the steps to update from earlier dotfiles versions to 2.8.2
+From 2.8.2 onwards you can use the integrated update feature to update your dotfiles to the main or rolling release whenever you want.
+
+<img src="screenshots/welcome-update-dotfiles.png" />
+
+You can also use the ML4W installer to update to the main-release (Latest Version) or the Rolling Release: https://gitlab.com/stephan-raabe/installer
+
+You can force a clean re-installation of the dotfiles by removing the folder ~/dotfiles before starting the installation.
+
+Please note that you can create a backup of your existing configuration with the backup feature of the install script. It's recommended to remove the folder ~/dotfiles only after creating a backup. 
+
+Please follow the steps to update from earlier dotfiles versions to 2.8.3
 
 ```
 # 1.) Remove existing downloaded dotfiles
@@ -101,16 +120,6 @@ cd dotfiles
 ./install.sh
 
 ```
-
-From 2.8.2 onwards you can use the integrated update feature to update your dotfiles to the main or rolling release whenever you want.
-
-<img src="screenshots/welcome-update-dotfiles.png" />
-
-You can also use the ML4W installer to update to the main-release (Latest Version) or the Rolling Release: https://gitlab.com/stephan-raabe/installer
-
-You can force a clean re-installation of the dotfiles by removing the folder ~/dotfiles before starting the installation.
-
-Please note that you can create a backup of your existing configuration with the backup feature of the install script. It's recommended to remove the folder ~/dotfiles only after creating a backup. 
 
 ## ML4W dotfiles Installer
 
@@ -247,6 +256,21 @@ In the Settings Menu you can access the following functions:
 You can find the sourcecode of the ML4W Welcome App in this repository:
 https://gitlab.com/stephan-raabe/ml4w-welcome
 
+## ML4W Dotfiles Settings App
+
+You can open the ML4W dotfiles settings app with <kbd>SUPER</kbd> + <kbd>CTRL</kbd> + <kbd>S</kbd> to change selected dotfiles configurations and choose from variations for your hyprland.conf to customize your desktop even more.
+
+<img src="screenshots/screenshot-dotfiles-settings-app.png" />
+
+You can create custom variations by copying a file from the ~/dotfiles/hypr/conf subfolders like monitor/default.conf, give the file a custom name (e.g., mymonitor.conf) and select the variation in the dotfiles settings app in the corresponding section.
+
+The ML4W Dotfiles Settings App replaces strings from several configuration files directly or based on replacement comments e.g., // START WORKSPACES That's why you shouldn't remove any of theses comments or markers to ensure full functionality of the app.
+
+You can also edit the file custom.conf which is included at the bottom of the hyprland.conf and can hold you personal configurations.
+
+You can find the sourcecode of the ML4W Dotfiles Settings App in this repository:
+https://gitlab.com/stephan-raabe/ml4w-dotfiles-settings
+
 ## Wallpaper and Pywal
 
 Included is a pywal configuration that changes the color scheme based on a randomly selected wallpaper. With the key binding <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>W</kbd> you can change the wallpaper coming from the folder ~/wallpaper/. 
@@ -260,16 +284,6 @@ In addition, you can switch the Waybar Template with <kbd>SUPER</kbd> + <kbd>CTR
 The templates are available in ~/dotfiles/waybar/themes. You can add your own personal themes into this folder. 
 
 More information here: https://gitlab.com/stephan-raabe/dotfiles/-/tree/main/waybar
-
-## Hyprland settings
-
-You can open the settings script with <kbd>SUPER</kbd> + <kbd>CTRL</kbd> + <kbd>S</kbd> to select variations for your hyprland.conf and customize your desktop even more.
-
-You can create custom variations by copying a file from the ~/dotfiles/hypr/conf subfolders like monitor/default.conf, give the file a custom name (e.g., mymonitor.conf) and select the variation in the settings script in the corresponding section.
-
-You can also edit the file custom.conf which is included at the bottom of the hyprland.conf and can hold you personal configurations.
-
-You can also edit the file directly in the settings script in the section Custom.
 
 ## Screensharing and recording
 
