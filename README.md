@@ -1,14 +1,8 @@
-# ML4W Dotfiles 2.8.3.4
+# ML4W Dotfiles 2.8.4
 
 An advanced configuration of Hyprland and Qtile for Arch Linux based distributions. This package includes an installation script to install and setup the required components.
 
-[![Screenshot](screenshots/v283/screenshot-283-2.png "Title Text")](screenshots/v283/screenshot-283-2.png)
-
-You can find the overview video (Version 2.8.3) on Youtube: [ML4W Dotfiles 2.8.3](https://youtu.be/zM2AYue0o8s)
-
-You can find the installation video (Version 2.8.2) on YouTube: [Install/Update the ML4W Dotfiles](https://youtu.be/n6Yg232bCOU)
-
-> PLEASE NOTE: In case of issues with the latest Hyprland version 0.37.1, please update your ML4W Dotfiles installation to the latest version. See the troubleshooting section for more information.
+[![Screenshot](screenshots/v284/screenshot-284-1.png "Title Text")](screenshots/v283/screenshot-284-1.png)
 
 The ML4W Dotfiles are available as 
 
@@ -19,11 +13,9 @@ The ML4W Dotfiles are available as
 
 # Installation
 
-To make it easy for you to get started with the ML4W dotfiles, here's a list of recommended next steps.
+The package includes an installation script that will guide you through all steps of the installation or update process.
 
-The package includes an installation script install.sh that will guide you through all steps of the installation or update process.
-
-> PLEASE NOTE: Every Linux distribution and setup can be different. Therefore, I cannot guarantee that the installation will work smoothly everywhere. Installation on your own risk.
+> PLEASE NOTE: Every Linux distribution and setup can be different. Therefore, I cannot guarantee that the installation will work everywhere. Installation on your own risk.
 
 ## Supported platforms
 
@@ -44,16 +36,26 @@ The installation should work on all Arch Linux based distributions as well.
 
 **PLEASE BACKUP YOUR EXISTING .config FOLDER WITH YOUR DOTFILES BEFORE STARTING THE SCRIPTS FOR INITIAL INSTALLTION.**
 
-The installation script will create a backup from an previous dotfiles installation.
+The installation script will create a backups from configurations of your .config folder that will be overwritten from the installation procedure and previous ML4W Dotfiles installation.
 
 If possible, please create a snapshot of your current system if snapper or Timeshift is installed and available.
 
-## ML4W Installer App
+## Installation
 
-The easiest way to install the ML4W Dotfiles is to use the ML4W Dotfiles Installer App. [You can download the app here.](https://gitlab.com/stephan-raabe/dotfiles/-/raw/main/apps/ML4W_Dotfiles_Installer.AppImage) (Right click + Save link as...)
+The easiest way to install the ML4W Dotfiles is to use the ML4W Dotfiles Installer App. 
+
+[You can download the app here.](https://gitlab.com/stephan-raabe/dotfiles/-/raw/main/apps/ML4W_Dotfiles_Installer.AppImage) (Right click + Save link as... into your Downloads Folder)
+
+Or with wget if your starting point is a minimal Arch Linux installation without DE:
 
 ```
-# Change to the download location (normally the Downloads folder)
+mkdir ~/Downloads # If Downloads folder doesn't exists
+wget -P ~/Downloads/ https://gitlab.com/stephan-raabe/dotfiles/-/raw/main/apps/ML4W_Dotfiles_Installer.AppImage
+
+```
+
+```
+# Change to the Downloads folder
 cd ~/Downloads
 
 # Make the file executable
@@ -63,78 +65,50 @@ chmod +x ML4W_Dotfiles_Installer.AppImage
 ./ML4W_Dotfiles_Installer.AppImage
 ```
 
-## Installation with GIT
-
-You can also install the dotfiles by cloning the latest main release:
-
-```
-# 1.) Change into your Downloads folder (create the folder if not available)
-cd ~/Downloads
-
-# 2.) Clone the dotfiles repository into the Downloads folder
-git clone --depth=1 https://gitlab.com/stephan-raabe/dotfiles.git
-
-# 3.) Change into the dotfiles folder
-cd dotfiles
-
-# 4.) Start the installation
-./install.sh
-
-```
-
-## Installation with GIT of the rolling release
-
-You can install the dotfiles by cloning the latest development version from the rolling release:
-
-```
-# 1.) Change into your Downloads folder (create the folder if not available)
-cd ~/Downloads
-
-# 2.) Clone the dotfiles repository into the Downloads folder
-git clone https://gitlab.com/stephan-raabe/dotfiles.git
-
-# 3.) Change into the new dotfiles folder
-cd dotfiles
-
-# 4.) Checkout the dev branch
-git checkout dev
-
-# 4.) Start the installation
-./install.sh
-
-```
+Alternatively you can install with GIT.
 
 ## Update
 
-From 2.8.2 onwards you can use the integrated update feature to update your dotfiles to the main or rolling release whenever you want.
+You can use the integrated update feature to update your dotfiles to the main or rolling release whenever you want.
 
 ![Update](screenshots/welcome-update-dotfiles.png "Updates")
 
-You can also use the ML4W installer to update to the main-release (Latest Version) or the Rolling Release: https://gitlab.com/stephan-raabe/installer
+Start the ML4W Welcome App. You will see a notification when an update is available. You can start the update or re-installation of the ML4W Dotfiles at any time.
 
 You can force a clean re-installation of the dotfiles by removing the folder ~/dotfiles before starting the installation.
 
 > Please note that you can create a backup of your existing configuration with the backup feature of the install script. It's recommended to remove the folder ~/dotfiles only after creating a backup. 
 
-Please follow the steps to update from earlier dotfiles versions to 2.8.3
+## Uninstall
 
-```
-# 1.) Remove existing downloaded dotfiles
-rm -rf ~/Downloads/dotfiles
+You can use the integrated uninstallation function (ML4W Dotfiles Uninstaller App) to remove the ML4W Dotfiles from your system.
 
-# 2.) Change into your Downloads folder
-cd ~/Downloads
+Please select "Uninstall Dotfiles" from the ML4W Welcome App or execute ~/dotfiles/uninstall.sh
 
-# 3.) Clone the dotfiles repository into the Downloads folder
-git clone --depth=1 https://gitlab.com/stephan-raabe/dotfiles.git
+The ML4W Dotfiles Uninstaller App will remove the dotfiles folder, related symbolic links and the desktop files of the ML4W Apps.
 
-# 4.) Change into the dotfiles folder
-cd dotfiles
+The script will also try to restore old configurations back into .config if available and restored during the installation of the ML4W Dotfiles.
 
-# 5.) Start the installation
-./install.sh
+## Installation in a KVM virtual machine
 
-```
+Qtile X11 works fine in a KVM virtual machine. The Hyprland performance is low but it's enough for testing new features.
+
+In virt-manager please make sure that 3D acceleration is enabled in Video Virtio and the Listen type is set to None in Display Spice.
+
+To fix the mouse issue on Hyprland, open the Hyprland settings with <kbd>SUPER</kbd> + <kbd>CTRL</kbd> + <kbd>S</kbd> and select in Environments the variation kvm.conf
+
+## Hyprland & NVIDIA 
+
+There is no official Hyprland support for Nvidia hardware. However, you might make it work properly following this page.
+https://wiki.hyprland.org/Nvidia/
+
+Users have reported that Hyprland with dotfiles could be installed successfully on setups with NVDIA GPUs using the nouveau open source drivers. 
+
+Please select the following variation in the settings script (system/environment):
+
+https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/hypr/conf/environments/nvidia.conf
+
+Or set the included environment variables in hyprland.conf
 
 ## Installation Hook
 
@@ -153,19 +127,6 @@ rm -rf ~/dotfiles-versions/$version/nvim/
 This script will for example remove the vim and nvim folder before the installation. The symbolic link will not be created because the source folder doesn't exits.
 
 You can find a template in .install/templates/hook.sh
-
-## Hyprland & NVIDIA 
-
-There is no official Hyprland support for Nvidia hardware. However, you might make it work properly following this page.
-https://wiki.hyprland.org/Nvidia/
-
-Users have reported that Hyprland with dotfiles could be installed successfully on setups with NVDIA GPUs using the nouveau open source drivers. 
-
-Please select the following variation in the settings script (system/environment):
-
-https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/hypr/conf/environments/nvidia.conf
-
-Or set the included environment variables in hyprland.conf
 
 ## Launch Hyprland from tty
 
@@ -202,17 +163,7 @@ In the ML4W Dotfiles Settings App you can define the timeouts for Hyprlock, susp
 
 The selected hypridle configuration can be restored from the ML4W installer during a dotfiles update.
 
-## Installation in a KVM virtual machine
-
-Qtile X11 works fine in a KVM virtual machine. The Hyprland performance is low but it's enough for testing new features.
-
-In virt-manager please make sure that 3D acceleration is enabled in Video Virtio and the Listen type is set to None in Display Spice.
-
-To fix the mouse issue on Hyprland, open the Hyprland settings with <kbd>SUPER</kbd> + <kbd>CTRL</kbd> + <kbd>S</kbd> and select in Environments the variation kvm.conf
-
-## Base Hyprland installation with Hyperland Starter
-
-If you want to install only the core packages of Hyprland as a starting point for your Hyprland experiments please also try my Hyprland Starter script: https://gitlab.com/stephan-raabe/hyprland-starter
+The ML4W Dotfiles are using the recommended configuration from https://wiki.hyprland.org/Hypr-Ecosystem/hypridle/
 
 # Some important key bindings
 
@@ -231,7 +182,7 @@ All keybindings for Hyprland with right mouse click on Apps in waybar or here:
 
 # Hyprland
 
-<a href="https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/screenshots/v28/screenshot-28-1.png?ref_type=heads" target="_blank"><img src="screenshots/v28/screenshot-28-1.png" /></a>
+<a href="https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/screenshots/v284/screenshot-284-1.png?ref_type=heads" target="_blank"><img src="screenshots/v284/screenshot-284-1.png" /></a>
 
 <a href="https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/screenshots/v28/screenshot-28-2.png?ref_type=heads" target="_blank"><img src="screenshots/v28/screenshot-28-2.png" /></a>
 
@@ -292,11 +243,17 @@ With configuration variations, you can customize settings and configurations for
 
 > Please don't edit the shipped configuration variations. These will be overwritten with every update of the ML4W dotfiles. <b>Create your own custom variation instead.</b>
 
-## Wallpaper and Pywal
+## Wallpaper with swww or hyprpaper and Pywal
 
 Included is a pywal configuration that changes the color scheme based on a randomly selected wallpaper. With the key binding <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>W</kbd> you can change the wallpaper coming from the folder ~/wallpaper/. 
 
 <kbd>SUPER</kbd> + <kbd>CTRL</kbd> + <kbd>W</kbd> opens rofi with a list of installed wallpapers in ~/wallpaper/ for your individual selection. 
+
+In case of issues with swww, you can switch between the Wallpaper application swww and hyprpaper. Open the ML4W Dotfiles Settings app and select the tab system. At the top you can find the Wallpaper Engine Selector.
+
+> PLEASE NOTE: A logout and login is required to activate the new wallpaper application.
+
+The hyprpaper engine uses a template stored in dotfiles/.settings/hyprpaper.tpl You can add additional configurations there. The WALLPAPER placeholder will be replaced with the current wallpaper.
 
 ## Waybar themes and themeswitcher
 
@@ -318,6 +275,7 @@ https://gist.github.com/PowerBall253/2dea6ddf6974ba4e5d26c3139ffb7580
 - Terminal: alacritty
 - Editor: nvim
 - Prompt: starship
+- Wallpaper: swww or hyprpaper
 - Icons: Font Awesome
 - Launch Menus: Rofi (Wayland fork)
 - Colorscheme: pywal
@@ -360,11 +318,80 @@ Included is a pywal configuration that changes the color scheme based on a rando
 - Compositor: picom
 - Screenshots: scrot
 
+# Installation/Update with GIT
+
+## Installation with GIT
+
+You can also install the dotfiles by cloning the latest main release:
+
+```
+# 1.) Change into your Downloads folder (create the folder if not available)
+cd ~/Downloads
+
+# 2.) Clone the dotfiles repository into the Downloads folder
+git clone --depth=1 https://gitlab.com/stephan-raabe/dotfiles.git
+
+# 3.) Change into the dotfiles folder
+cd dotfiles
+
+# 4.) Start the installation
+./install.sh
+
+```
+
+## Installation with GIT (Rolling release)
+
+You can install the dotfiles by cloning the latest development version from the rolling release:
+
+```
+# 1.) Change into your Downloads folder (create the folder if not available)
+cd ~/Downloads
+
+# 2.) Clone the dotfiles repository into the Downloads folder
+git clone https://gitlab.com/stephan-raabe/dotfiles.git
+
+# 3.) Change into the new dotfiles folder
+cd dotfiles
+
+# 4.) Checkout the dev branch
+git checkout dev
+
+# 4.) Start the installation
+./install.sh
+
+```
+
+## Update with GIT
+
+Please follow the steps to update from earlier dotfiles versions to 2.8.3
+
+```
+# 1.) Remove existing downloaded dotfiles
+rm -rf ~/Downloads/dotfiles
+
+# 2.) Change into your Downloads folder
+cd ~/Downloads
+
+# 3.) Clone the dotfiles repository into the Downloads folder
+git clone --depth=1 https://gitlab.com/stephan-raabe/dotfiles.git
+
+# 4.) Change into the dotfiles folder
+cd dotfiles
+
+# 5.) Start the installation
+./install.sh
+
+```
+
+# Base Hyprland installation with Hyperland Starter Package
+
+If you want to install only the core packages of Hyprland as a starting point for your Hyprland experiments please also try my Hyprland Starter script: https://gitlab.com/stephan-raabe/hyprland-starter
+
 # Troubleshooting
 
 ## Wallpaper issues (grey or distroyed image) with latest swww 0.9.1
 
-Please install the latest version of the ML4W Dotfiles > 2.8.3.4
+Please install the latest version of the ML4W Dotfiles > 2.8.4
 
 Or replace the swww launch command in /dotfiles/hypr/conf/autostart.conf with
 
@@ -372,22 +399,9 @@ Or replace the swww launch command in /dotfiles/hypr/conf/autostart.conf with
 exec-once = swww init || swww-daemon --format xrgb
 ```
 
-swww is currently extremly under development. Upcoming updates could require different launch commands. I will monitor the development as well and update the dotfiles accordingly.
+> swww is currently extremly under development. Upcoming updates could require different launch commands. I will monitor the development as well and update the dotfiles accordingly.
 
-## Issues after Hyprland 0.37.1 Updates
-
-Hyprland has released the version 0.37.1. This comes with many changes of the system and required dependencies.
-
-Please update to the latest version of the ML4W Dotfiles 2.8.3.2
-
-If you don't have access to Waybar because of overlayed error messages you can start the ML4W app with the application launcher <kbd>SUPER</kbd> + <kbd>CTRL</kbd> + <kbd>RETURN</kbd> and search for the ML4W Welcome App.
-
-Or you open a terminal with <kbd>SUPER</kbd> + <kbd>RETURN</kbd> and enter
-
-```
-ml4w
-```
-Then select in the upper right side menu the entry "Update/ Dotfiles"
+You can use the ML4W Dotfiles Settings app to replace swww with hyprpaper.
 
 ## hypridle and hyprlock is not starting after an update of the dotfiles
 
@@ -443,7 +457,7 @@ sudo rm /etc/systemd/system/display-manager.service
 
 ## Waybar is not loading
 
-There could be a conflict with xdg-desktop-portal-gtk. Please try to remove the package if installed with:
+There could be a conflict with xdg-desktop-portal-gtk or xdg-desktop-portal-gnome. Please try to remove the package if installed with:
 
 ```
 sudo pacman -R xdg-desktop-portal-gtk
