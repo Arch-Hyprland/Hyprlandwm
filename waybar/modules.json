@@ -57,9 +57,9 @@
   },
   // ML4W Welcome App
   "custom/ml4w-welcome": {
-      "on-click": "~/dotfiles/apps/ML4W_Welcome-x86_64.AppImage",
-      "format": " ",
-      "tooltip": false
+    "on-click": "~/dotfiles/apps/ML4W_Welcome-x86_64.AppImage",
+    "format": "􀪲 ",
+    "tooltip": false
   },
   // Youtube Subscriber Count
   "custom/youtube": {
@@ -153,13 +153,13 @@
   },
   // Windows VM
   "custom/windowsvm": {
-    "format": "􀎲 ",
+    "format": "􀑡 ",
     "on-click": "~/dotfiles/scripts/launchvm.sh",
     "tooltip": false
   },
   // Rofi Application Launcher
   "custom/appmenu": {
-    "format": "􀪲 ",
+    "format": "􀈠 ",
     "on-click": "rofi -show drun -replace",
     "on-click-right": "~/dotfiles/hypr/scripts/keybindings.sh",
     "tooltip": false
@@ -276,8 +276,8 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon} {capacity}%",
-    "format-charging": "  {capacity}%",
+    "format": "{icon}{capacity}%",
+    "format-charging": " {capacity}%",
     "format-plugged": "􀡷  {capacity}%",
     "format-alt": "{icon}  {time}",
     // "format-good": "", // An empty format will hide the module
@@ -293,9 +293,9 @@
   // Pulseaudio
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
-    "format": "{icon} {volume}%",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
+    "format": "{icon}{volume}%",
+    "format-bluetooth": "{volume}%{icon}󰂱{format_source}",
+    "format-bluetooth-muted": " {icon}󰂱{format_source}",
     "format-muted": " {format_source}",
     "format-source": "{volume}% 􀊱",
     "format-source-muted": "􀊳 ",

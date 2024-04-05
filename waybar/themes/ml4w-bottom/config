@@ -26,7 +26,6 @@
     // Modules Left
     "modules-left": [
         "custom/appmenu",
-        "group/settings",
         "wlr/taskbar",
         "group/quicklinks",
         "hyprland/window"
@@ -34,8 +33,9 @@
 
     // Modules Center
     "modules-center": [
+        "group/settings",
         "hyprland/workspaces",
-        "custom/empty"
+        "custom/ml4w-welcome"
     ],
 
     // Modules Right    
@@ -52,7 +52,6 @@
         // END NETWORK TOOGLE
         "custom/exit",
         "clock",
-        "custom/ml4w-welcome",
         // START TRAY TOOGLE
         "tray"
         // END TRAY TOOGLE

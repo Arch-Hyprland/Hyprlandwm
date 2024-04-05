@@ -42,7 +42,7 @@ window#waybar {
 
 #workspaces {
   background: @workspacesbackground1;
-  margin: 5px 1px 6px 1px;
+  margin: 5px 15px 6px 1px;
   padding: 0px 1px;
   border-radius: 15px;
   border: 0px;
@@ -170,7 +170,7 @@ window#waybar.empty #window {
 #custom-wallpaper,
 #custom-system,
 #custom-waybarthemes {
-  margin-right: 14px;
+  margin-right: 10px;
   font-size: 20px;
   font-weight: bold;
   opacity: 0.8;
@@ -184,19 +184,19 @@ window#waybar.empty #window {
 }
 
 #custom-ml4w-welcome {
-    margin-right: 15px;
-    background-image: url("../assets/ml4w-icon.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    padding-right: 24px;
+  margin-right: 10px;
+  background-image: url("../assets/ml4w-icon.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-right: 24px;
 }
 
 #custom-chatgpt {
-    margin-right: 15px;
-    background-image: url("../assets/ai-icon-20.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    padding-right: 24px;
+  margin-right: 10px;
+  background-image: url("../assets/ai-icon-20.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-right: 24px;
 }
 
 /* -----------------------------------------------------
@@ -204,7 +204,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #idle_inhibitor {
-  margin-right: 15px;
+  margin-right: 3px;
   font-size: 18px;
   font-weight: bold;
   opacity: 0.8;
@@ -229,8 +229,8 @@ window#waybar.empty #window {
   font-size: 16px;
   color: @textcolor1;
   border-radius: 15px;
-  padding: 1px 1px 1px 5px;
-  margin: 6px 14px 6px 10px;
+  padding: 2px 1px 1px 3px;
+  margin: 6px 15px 6px 10px;
   opacity: 0.8;
   border: 0px solid @bordercolor;
 }
@@ -241,7 +241,7 @@ window#waybar.empty #window {
 
 #custom-exit,
 #custom-exitwlr {
-  margin: 0px 10px 0px 0px;
+  margin: 0px 5px 0px 0px;
   padding: 0px;
   font-size: 20px;
   color: @iconcolor;
@@ -257,7 +257,7 @@ window#waybar.empty #window {
   color: @textcolor2;
   border-radius: 15px;
   padding: 1px 10px 1px 10px;
-  margin: 8px 15px 8px 0px;
+  margin: 8px 5px 8px 0px;
   opacity: 0.8;
 }
 
@@ -285,7 +285,7 @@ window#waybar.empty #window {
   color: @textcolor2;
   border-radius: 15px;
   padding: 2px 10px 0px 10px;
-  margin: 8px 15px 8px 0px;
+  margin: 8px 5px 8px 0px;
   opacity: 0.8;
 }
 
@@ -303,7 +303,7 @@ window#waybar.empty #window {
 }
 
 #cpu {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 /* -----------------------------------------------------
@@ -315,8 +315,8 @@ window#waybar.empty #window {
   font-size: 16px;
   color: @textcolor1;
   border-radius: 15px;
-  padding: 1px 10px 0px 10px;
-  margin: 6px 10px 6px 0px;
+  padding: 3px 8px 3px 8px;
+  margin: 6px 8px 6px 0px;
   opacity: 0.8;
   border: 3px solid @bordercolor;
 }
@@ -330,8 +330,8 @@ window#waybar.empty #window {
   font-size: 16px;
   color: @textcolor2;
   border-radius: 15px;
-  padding: 1px 10px 0px 10px;
-  margin: 8px 15px 8px 0px;
+  padding: 1px 8px 1px 8px;
+  margin: 8px 5px 8px 0px;
   opacity: 0.8;
 }
 
@@ -349,8 +349,8 @@ window#waybar.empty #window {
   font-size: 16px;
   color: @textcolor2;
   border-radius: 15px;
-  padding: 1px 10px 0px 10px;
-  margin: 8px 15px 8px 0px;
+  padding: 1px 8px 1px 8px;
+  margin: 8px 5px 8px 0px;
   opacity: 0.8;
 }
 
@@ -375,8 +375,8 @@ window#waybar.empty #window {
   color: #1523e9;
   font-size: 22px;
   border-radius: 15px;
-  padding: 1px 11px 1px 9px;
-  margin: 6px 14px 6px 0px;
+  padding: 2px 8px 1px 6px;
+  margin: 7px 5px 7px 0px;
   opacity: 0.8;
 }
 
@@ -384,7 +384,7 @@ window#waybar.empty #window {
   background-color: transparent;
   color: @textcolor2;
   font-size: 22px;
-  padding: 0px 9px 0px 9px;
+  padding: 2px 8px 1px 6px;
   margin: 0px;
 }
 
@@ -398,8 +398,8 @@ window#waybar.empty #window {
   font-size: 16px;
   color: @textcolor2;
   border-radius: 15px;
-  padding: 2px 9px 0px 9px;
-  margin: 7px 15px 7px 0px;
+  padding: 1px 8px 1px 8px;
+  margin: 8px 8px 8px 0px;
   opacity: 0.8;
 }
 
@@ -435,16 +435,18 @@ window#waybar.empty #window {
   border-right: none;
   font-size: 16px;
   color: @textcolor3;
-  border-radius: 15px 0 0 15px;
+  border-radius: 8px 0 0 8px;
   padding: 1px 6px 1px 5px;
-  margin: 4px 0px 4px 0;
+  margin: 6px 0px 6px 0;
   opacity: 0.8;
 }
+
 #tray menu {
   border-radius: 12px;
   background: rgba(43, 48, 59, 0.8);
   border: 1px solid rgba(100, 114, 125, 0.5);
 }
+
 #tray>.passive {
   -gtk-icon-effect: dim;
 }

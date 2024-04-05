@@ -27,7 +27,6 @@
         "custom/appmenu",
         "custom/wallpaper",
         "custom/waybarthemes",
-        "custom/settings",
         // START TASK TOOGLE
         "wlr/taskbar",
         "group/quicklinks",
@@ -37,7 +36,9 @@
 
     // Modules Center
     "modules-center": [
-        "hyprland/workspaces"
+        "custom/settings",
+        "hyprland/workspaces",
+        "custom/ml4w-welcome"
     ],
 
     // Modules Right    
@@ -55,7 +56,6 @@
         "custom/exit",
         "clock",
         // START TRAY TOOGLE
-        "custom/ml4w-welcome",
         "tray"
         // END TRAY TOOGLE
     ]
