@@ -36,9 +36,9 @@
 
     // Modules Center
     "modules-center": [
-        "custom/settings",
+        "custom/ml4w-welcome",
         "hyprland/workspaces",
-        "custom/ml4w-welcome"
+        "custom/settings"
     ],
 
     // Modules Right    

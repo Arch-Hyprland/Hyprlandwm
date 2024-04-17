@@ -184,11 +184,9 @@ window#waybar.empty #window {
 }
 
 #custom-ml4w-welcome {
-  margin-right: 10px;
-  background-image: url("../assets/ml4w-icon.png");
+  margin-right: 8px;
   background-repeat: no-repeat;
   background-position: center;
-  padding-right: 24px;
 }
 
 #custom-chatgpt {
