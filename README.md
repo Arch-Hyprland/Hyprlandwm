@@ -1,13 +1,15 @@
-# ML4W Dotfiles 2.8.4
+# ML4W Dotfiles 2.9
 
 An advanced configuration of Hyprland and Qtile for Arch Linux based distributions. This package includes an installation script to install and setup the required components.
 
-[![Screenshot](screenshots/v284/screenshot-284-1.png "Title Text")](screenshots/v283/screenshot-284-1.png)
+[![Screenshot](screenshots/v29/screenshot-29-1.png "Screenshot")](screenshots/v29/screenshot-29-1.png)
 
 The ML4W Dotfiles are available as 
 
 - main release (Official release): [https://gitlab.com/stephan-raabe/dotfiles](https://gitlab.com/stephan-raabe/dotfiles)
 - rolling release (Development release): [https://gitlab.com/stephan-raabe/dotfiles/-/tree/dev](https://gitlab.com/stephan-raabe/dotfiles/-/tree/dev)
+
+YouTube Video  [https://youtu.be/HMxHUvN6VGo](https://youtu.be/HMxHUvN6VGo)
 
 [TOC]
 
@@ -23,12 +25,12 @@ The dotfiles are tested with the following Arch based distributions:
 
 - Arch Linux (recommended)
 - EndeavourOS
+- Garuda Linux
 - Arco Linux
-- Manjaro Linux
 
 The installation should work on all Arch Linux based distributions as well.
 
-> **For Manjaro users:** Hyprland and required components are under ongoing development. That's why it's possible that some packages are not immediatly available on Manjaro e.g., hyprlock or hypridle. But usually, the packages will be published later.
+> **For Manjaro users:** Hyprland and required packages are under ongoing development. That's why it could be possible that some packages are not immediatly available on Manjaro. But usually, the packages will be published later. Maybe you can install required packages manually.
 
 > **For Arco Linux users:** Please reinstall/force the installation of all packages during the installation/update process of the install script. The script will also offer to remove ttf-ms-fonts if installed to avoid issues with icons on waybar. 
 
@@ -44,25 +46,40 @@ If possible, please create a snapshot of your current system if snapper or Times
 
 The easiest way to install the ML4W Dotfiles is to use the ML4W Dotfiles Installer App. 
 
-[You can download the app here.](https://gitlab.com/stephan-raabe/dotfiles/-/raw/main/apps/ML4W_Dotfiles_Installer.AppImage) (Right click + Save link as... into your Downloads Folder)
-
-Or with wget if your starting point is a minimal Arch Linux installation without DE:
+[You can download the app here.](https://gitlab.com/stephan-raabe/dotfiles/-/raw/main/apps/installer.AppImage) (Right click + Save link as... into your Downloads Folder)
 
 ```
-mkdir ~/Downloads # If Downloads folder doesn't exists
-wget -P ~/Downloads/ https://gitlab.com/stephan-raabe/dotfiles/-/raw/main/apps/ML4W_Dotfiles_Installer.AppImage
-
-```
-
-```
-# Change to the Downloads folder
+# 1.) Change to the Downloads folder
 cd ~/Downloads
 
-# Make the file executable
-chmod +x ML4W_Dotfiles_Installer.AppImage
+# 2.) Make the file executable
+chmod +x installer.AppImage
 
-# Start the App from your terminal with
-./ML4W_Dotfiles_Installer.AppImage
+# 3.) Start the App from your terminal with
+./installer.AppImage
+```
+
+Or with download the Installer App with wget if your starting point is a minimal Arch Linux with without DE from tty:
+
+```
+# 0.) Install required packages
+sudo pacman -S wget fuse2 # Only required for Minimal Arch installations. If wget or libfuse.so.2 is not installed. 
+
+# 1.) Create Downloads folder
+mkdir ~/Downloads # If Downloads folder doesn't exists
+
+# 2.) Download the installer
+wget -P ~/Downloads/ https://gitlab.com/stephan-raabe/dotfiles/-/raw/main/apps/installer.AppImage
+
+# 3.) Change to the Downloads folder
+cd ~/Downloads
+
+# 4.) Make the file executable
+chmod +x installer.AppImage
+
+# 5.) Start the App from your terminal with
+./installer.AppImage
+
 ```
 
 Alternatively you can install with GIT.
@@ -182,19 +199,33 @@ All keybindings for Hyprland with right mouse click on Apps in waybar or here:
 
 # Hyprland
 
-<a href="https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/screenshots/v284/screenshot-284-1.png?ref_type=heads" target="_blank"><img src="screenshots/v284/screenshot-284-1.png" /></a>
+[![Screenshot](screenshots/v29/screenshot-29-2.png "Screenshot")](screenshots/v29/screenshot-29-2.png)
 
-<a href="https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/screenshots/v28/screenshot-28-2.png?ref_type=heads" target="_blank"><img src="screenshots/v28/screenshot-28-2.png" /></a>
 
-<a href="https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/screenshots/v28/screenshot-28-3.png?ref_type=heads" target="_blank"><img src="screenshots/v28/screenshot-28-3.png" /></a>
+[![Screenshot](screenshots/v29/screenshot-29-3.png "Screenshot")](screenshots/v29/screenshot-29-3.png)
 
-<b><a href="https://gitlab.com/stephan-raabe/dotfiles/-/tree/main/screenshots?ref_type=heads">You can find more screenshots here.</a></b>
 
-<a href="https://youtu.be/e9ro_P9rbFk" target="_blank">Watch on YouTube</a>
+<a href="https://youtu.be/HMxHUvN6VGo" target="_blank">Watch on YouTube</a>
+
+## ML4W Sidebar
+
+With the ML4W Sidebar you have access to all included ML4W Applications and some system information. In addition, you start the main power features for your system.
+
+You can also start the sidebar from the terminal with 
+```
+ml4w-sidebar
+```
+
+<img src="screenshots/screenshot-sidebar.png" />
 
 ## ML4W Welcome App
 
 After starting the ML4W dotfiles for the first time, the ML4W Welcome App opens. This app is the starting point to discover the Hyprland setup.
+
+You can also start the Welcome App from the terminal with 
+```
+ml4w
+```
 
 <img src="screenshots/screenshot-welcome.app.png" />
 
@@ -232,6 +263,34 @@ You can also edit the file custom.conf which is included at the bottom of the hy
 
 You can find the sourcecode of the ML4W Dotfiles Settings App in this repository:
 https://gitlab.com/stephan-raabe/ml4w-dotfiles-settings
+
+You can also start the Dotfiles App from the terminal with 
+```
+ml4w-settings
+```
+
+## ML4W Hyprland Settings App
+
+This applications supports you to customize your Hyprland installation. You can overwrite the existing configuration with custom values without adding complex configuration files.
+
+[![Screenshot](screenshots/screenshot-hyprland-settings.png "ML4W Hyprland Settings")](screenshots/screenshot.png)
+
+YOu can start the application from the application launcher, the ML4W Sidebar by clicking the ML4W Logo or from the welcome app.
+
+The app shows variables and current values of your running Hyprland.
+
+You can change the values and overwrite the existing values. The change will be axecuted immediatly.
+
+In the Set Variables tab you can see which values you have overwritten and can restore the old values be removing the entry.
+
+You can also start the Hyprland App from the terminal with 
+
+```
+ml4w-hyprland
+```
+
+You can find the sourcecode of the ML4W Hyprland Settings App in this repository:
+https://gitlab.com/stephan-raabe/ml4w-hyprland-settings
 
 ## Hyprland Configuration Variations
 
@@ -275,11 +334,11 @@ https://gist.github.com/PowerBall253/2dea6ddf6974ba4e5d26c3139ffb7580
 - Terminal: alacritty
 - Editor: nvim
 - Prompt: starship
-- Wallpaper: swww or hyprpaper
+- Wallpaper: hyprpaper (swww optional)
 - Icons: Font Awesome
-- Launch Menus: Rofi (Wayland fork)
+- Launch Menus: Rofi (Wayland)
 - Colorscheme: pywal
-- Browsers: chromium (brave optional)
+- Browsers: Chromium
 - Filemanager: Thunar
 - Cursor: Bibata Modern Ice
 - Icons: Papirus-Icon-Theme
@@ -308,14 +367,14 @@ Included is a pywal configuration that changes the color scheme based on a rando
 - Editor: nvim
 - Prompt: starship
 - Icons: Font Awesome
-- Launch Menus: Rofi (Wayland fork)
+- Launch Menus: Rofi
 - Colorscheme: pywal
-- Browsers: chromium (brave optional)
+- Browsers: Chromium
 - Filemanager: Thunar
 - Cursor: Bibata Modern Ice
 - Icons: Papirus-Icon-Theme
 - Status Bar: Qtile status bar
-- Compositor: picom
+- Compositor: picom (optional)
 - Screenshots: scrot
 
 # Installation/Update with GIT
@@ -389,19 +448,25 @@ If you want to install only the core packages of Hyprland as a starting point fo
 
 # Troubleshooting
 
-## Wallpaper issues (grey or distroyed image) with latest swww 0.9.1
+The ML4W Welcome App includes a system diagnosis feature available in the menu with the three dots.
 
-Please install the latest version of the ML4W Dotfiles > 2.8.4
+Please run the diagnosis to see if all essential packages and related commands are available on your system.
 
-Or replace the swww launch command in /dotfiles/hypr/conf/autostart.conf with
+If not, you need to install the missing packages manually.
+
+## rofi (application launcher) is not working
+
+If the installation of rofi-wayland fails in the installation/update procedure please try to install it manually:
 
 ```
-exec-once = swww init || swww-daemon --format xrgb
+yay -S rofi-wayland
 ```
 
-> swww is currently extremly under development. Upcoming updates could require different launch commands. I will monitor the development as well and update the dotfiles accordingly.
+If rofi-wayland isn't available please try rofi:
 
-You can use the ML4W Dotfiles Settings app to replace swww with hyprpaper.
+```
+yay -S rofi
+```
 
 ## hypridle and hyprlock is not starting after an update of the dotfiles
 
