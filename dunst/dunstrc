@@ -34,16 +34,16 @@
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = 600
+    width = 480
 
     # The maximum height of a single notification, excluding the frame.
-    height = (0,300)
+    height = 300
 
     # Position the notification in the top right corner
     origin = top-center
 
     # Offset from the origin
-    offset = 0x10
+    offset = 0x5
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -59,7 +59,7 @@
 
     # Set the progress bar height. This includes the frame, so make sure
     # it's at least twice as big as the frame width.
-    progress_bar_height = 10
+    progress_bar_height = 6
 
     # Set the frame width of the progress bar
     progress_bar_frame_width = 1
@@ -68,10 +68,10 @@
     progress_bar_min_width = 150
 
     # Set the maximum width for the progress bar
-    progress_bar_max_width = 300
+    progress_bar_max_width = 480
 
     # Corner radius for the progress bar. 0 disables rounded corners.
-    progress_bar_corner_radius = 10
+    progress_bar_corner_radius = 3
 
     # Corner radius for the icon image.
     icon_corner_radius = 0
@@ -95,10 +95,10 @@
     padding = 8
 
     # Horizontal padding.
-    horizontal_padding = 8
+    horizontal_padding = 10
 
     # Padding between text and icon.
-    text_icon_padding = 0
+    text_icon_padding = 5
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
@@ -133,7 +133,7 @@
 
     ### Text ###
 
-    font = "Fira Sans Semibold" 9
+    font = "Fira Sans Semibold" 10
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.

@@ -62,14 +62,12 @@
     "format": "􀪲 ",
     "tooltip": false
   },
-
   // ML4W Welcome App
   "custom/ml4w-hyprland-settings": {
-      "on-click": "~/dotfiles/apps/ML4W_Hyprland_Settings-x86_64.AppImage",
-      "format": " ",
-      "tooltip": false
+    "on-click": "~/dotfiles/apps/ML4W_Hyprland_Settings-x86_64.AppImage",
+    "format": " ",
+    "tooltip": false
   },
-    
   // Youtube Subscriber Count
   "custom/youtube": {
     "format": " {}",
@@ -261,7 +259,7 @@
     "orientation": "horizontal",
     "modules": [
       "custom/filemanager",
-      "custom/brave",
+      "custom/browser",
       "custom/windowsvm",
     ]
   },
