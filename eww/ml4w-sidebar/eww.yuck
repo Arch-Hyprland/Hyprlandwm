@@ -87,8 +87,8 @@
 (defwindow ml4wlauncher
            :geometry (geometry :x "0px"
                                :y "0px"
-                               :width "400px"
-                               :height "140px"
+                               :width "380px"
+                               :height "124px"
                                :anchor "top center")
            :stacking "fg"
            :wm-ignore false
@@ -97,9 +97,9 @@
 ;; resources
 (defwindow resources
            :geometry (geometry :x "0px"
-                               :y "126px"
-                               :width "400px"
-                               :height "180px"
+                               :y "106px"
+                               :width "380px"
+                               :height "140px"
                                :anchor "top center")
            :stacking "fg"
            :wm-ignore false
@@ -108,8 +108,8 @@
 ;; powermenu
 (defwindow powermenu
            :geometry (geometry :x "0px"
-                               :y "296px"
-                               :width "400px"
+                               :y "260px"
+                               :width "380px"
                                :height "80px"
                                :anchor "top center")
            :stacking "fg"
