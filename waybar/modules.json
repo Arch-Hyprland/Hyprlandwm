@@ -205,6 +205,17 @@
     "format": "",
     "tooltip": false
   },
+  "custom/recorder": {
+    "format": "{}",
+    "tooltip-format": "{}",
+    "escape": true,
+    "return-type": "json",
+    "exec": "~/dotfiles/scripts/recorderstate.sh",
+    "restart-interval": 1,
+    "on-click": "~/dotfiles/scripts/recorderscreen.sh start",
+    "on-click-right": "~/dotfiles/scripts/recorderscreen.sh stop",
+    "tooltip": true
+  },
   // CPU
   "cpu": {
     "format": "􀟪 {usage}% ",

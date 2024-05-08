@@ -53,8 +53,9 @@ if [[ ! -f "$FILE" ]]; then
 	"${EWW}" --config "$CFG" open ml4wlauncher --screen "$sc"
 	"${EWW}" --config "$CFG" open resources --screen "$sc"
 	"${EWW}" --config "$CFG" open powermenu --screen "$sc"
+	"${EWW}" --config "$CFG" open controlpanel --screen "$sc"
 else
-	${EWW} --config "$CFG" close resources ml4wlauncher powermenu
+	${EWW} --config "$CFG" close resources ml4wlauncher powermenu controlpanel
 	echo ":: Closing widgets"
 	rm "$FILE"
 fi

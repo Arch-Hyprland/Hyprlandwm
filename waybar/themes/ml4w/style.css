@@ -287,6 +287,27 @@ window#waybar.empty #window {
 }
 
 /* -----------------------------------------------------
+ * Custom Recorder
+ * ----------------------------------------------------- */
+
+#custom-recorder {
+  background-color: @backgroundlight;
+  font-size: 16px;
+  color: @textcolor2;
+  border-radius: 8px;
+  padding: 1px 1px 2px 7px;
+  margin: 5px 8px 5px 0px;
+  opacity: 0.9;
+}
+
+#custom-recorder.red {
+  background-color: @color7;
+  border-radius: 12px;
+  padding: 1px 10px 2px 8px;
+  color: #dc00af;
+}
+
+/* -----------------------------------------------------
  * Custom Youtube
  * ----------------------------------------------------- */
 

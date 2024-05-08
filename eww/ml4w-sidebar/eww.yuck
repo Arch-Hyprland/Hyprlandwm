@@ -61,6 +61,12 @@
     )
 )
 
+(defwidget controlpanel []
+  (box :class "win-res"
+    (label :class "res_text" :valign "center" :halign "center" :text "旺铺招租")
+  )
+)
+
 (defwidget powermenu []
   (box :class "win-menu"
     (box :class "op-lock" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
@@ -89,7 +95,7 @@
                                :y "0px"
                                :width "380px"
                                :height "124px"
-                               :anchor "top center")
+                               :anchor "top right")
            :stacking "fg"
            :wm-ignore false
 (ml4wlauncher))
@@ -100,18 +106,29 @@
                                :y "106px"
                                :width "380px"
                                :height "140px"
-                               :anchor "top center")
+                               :anchor "top right")
            :stacking "fg"
            :wm-ignore false
 (resources))
 
-;; powermenu
-(defwindow powermenu
+;; controlpanel
+(defwindow controlpanel
            :geometry (geometry :x "0px"
                                :y "260px"
                                :width "380px"
+                               :height "440px" ;; 140
+                               :anchor "top right")
+           :stacking "fg"
+           :wm-ignore false
+(controlpanel))
+
+;; powermenu
+(defwindow powermenu
+           :geometry (geometry :x "0px"
+                               :y "683px" ;;260
+                               :width "380px"
                                :height "80px"
-                               :anchor "top center")
+                               :anchor "top right")
            :stacking "fg"
            :wm-ignore false
 (powermenu)) 
