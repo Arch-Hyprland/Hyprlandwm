@@ -1,0 +1,159 @@
+
+(defvar SCALE 1.0)
+(defvar CURRENT "")
+(defvar apps '
+[
+  {
+    "name": "msedge",
+    "cmd": "microsoft-edge-dev",
+    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/microsoft-edge.svg",
+    "size": 40
+  },
+  {
+    "name": "code",
+    "cmd": "code",
+    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/vscode.svg",
+    "size": 40
+  },
+  {
+    "name": "idea",
+    "cmd": "/home/unicorn/software/idea/bin/idea.sh",
+    "icon": "/home/unicorn/software/idea/bin/idea.svg",
+    "size": 36
+  },
+  {
+    "name": "pycharm",
+    "cmd": "/home/unicorn/software/pycharm/bin/pycharm.sh",
+    "icon": "/home/unicorn/software/pycharm/bin/pycharm.svg",
+    "size": 36
+  },
+  {
+    "name": "obsidian",
+    "cmd": "obsidian",
+    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/obsidian.svg",
+    "size": 40
+  },
+  {
+    "name": "wechat-beat",
+    "cmd": "wechat",
+    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/wechat.svg",
+    "size": 40
+  },
+  {
+    "name": "virt-manager",
+    "cmd": "virt-manager",
+    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/virt-manager.svg",
+    "size": 38
+  },
+  {
+    "name": "linuxqq",
+    "cmd": "linuxqq",
+    "icon": "/usr/share/icons/linuxqq.png",
+    "size": 40
+  },
+  {
+    "name": "discord",
+    "cmd": "discord",
+    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/discord.svg",
+    "size": 40
+  },
+  {
+    "name": "tiny-rdm",
+    "cmd": "tiny-rdm",
+    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/rdm.svg",
+    "size": 40
+  },
+  {
+    "name": "figma",
+    "cmd": "figma-linux",
+    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/figma.svg",
+    "size": 40
+  },
+  {
+    "name": "yesplaymusic",
+    "cmd": "yesplaymusic",
+    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/gnome-music.svg",
+    "size": 40
+  },
+  {
+    "name": "tableplus",
+    "cmd": "tableplus",
+    "icon": "/opt/tableplus/resource/image/logo.png",
+    "size": 40
+  },
+  {
+    "name": "gimp",
+    "cmd": "gimp",
+    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/gimp.svg",
+    "size": 40
+  },
+  {
+    "name": "inkscape",
+    "cmd": "inkscape",
+    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/inkscape.svg",
+    "size": 40
+  },
+  {
+    "name": "blender",
+    "cmd": "blender",
+    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/blender.svg",
+    "size": 40
+  },
+  {
+    "name": "xmind",
+    "cmd": "xmind",
+    "icon": "/usr/share/icons/hicolor/32x32/apps/xmind.png",
+    "size": 40
+  },
+  {
+    "name": "clash-nyanpasu",
+    "cmd": "clash-nyanpasu",
+    "icon": "/usr/share/icons/hicolor/scalable/apps/clash-nyanpasu.svg",
+    "size": 40
+  },
+  {
+    "name": "alacuritty",
+    "cmd": "alacuritty",
+    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/Alacritty.svg",
+    "size": 40
+  },
+  {
+    "name": "kitty",
+    "cmd": "kitty",
+    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/kitty.svg",
+    "size": 40
+  }
+]'
+)
+
+(defwidget applaunch[name cmd icon size] 
+  (box :orientation 'h' :space-evenly false
+    (revealer :reveal "${CURRENT == name ? true: false}" :transition "crossfade"
+      (box :style "border: 2px solid white; margin: 10px 0px;" )
+    )
+    (eventbox :onhover "${EWW_CMD} update CURRENT=${name}; ${EWW_CMD} update SCALE=1.1" 
+              :onhoverlost "${EWW_CMD} update SCALE=1.0"
+              :onclick "${cmd} &" 
+      (transform :translate-x '${ CURRENT == name ? ((SCALE - 1) * 100) : 0 }%' 
+        (image :path icon :class "icon" :image-width size :image-height size 
+        )
+      )
+    )
+  )
+)
+
+(defwidget docker[]
+  (box :orientation "v" :space-evenly false :class "docker"  
+    (for entry in apps 
+      (applaunch :name "${entry['name']}" :cmd "${entry['cmd']}" :icon "${entry['icon']}" :size "${entry['size']}" )
+    )
+  )
+)
+
+;; ** Windows *************************************************************************
+
+(defwindow docker
+        :geometry (geometry :x "0px" :y "6px"  :width "60px" :anchor "left center")
+        :exclusive true
+        :stacking "fg"
+(docker))

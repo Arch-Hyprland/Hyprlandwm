@@ -115,8 +115,10 @@ if [ "$1" == "init" ] ;then
     echo ":: Init"
 else
     sleep 1
-    dunstify "Changing wallpaper ..." "with image $newwall" -h int:value:25 -h string:x-dunst-stack-tag:wallpaper
-    
+    dunstify -i "wallpapoz" \
+      -h int:value:25 \
+      -h string:x-dunst-stack-tag:wallpaper \
+      "Changing wallpaper ..." "with image $newwall" 
     # ----------------------------------------------------- 
     # Reload Hyprctl.sh
     # -----------------------------------------------------
@@ -129,7 +131,10 @@ fi
 if [ "$1" == "init" ] ;then
     echo ":: Init"
 else
-    dunstify "Creating blurred version ..." "with image $newwall" -h int:value:50 -h string:x-dunst-stack-tag:wallpaper
+    dunstify -i "wallpapoz" \
+        -h int:value:50 \
+        -h string:x-dunst-stack-tag:wallpaper \
+        "Creating blurred version ..." "with image $newwall" 
 fi
 
 magick $wallpaper -resize 75% $blurred
@@ -145,7 +150,10 @@ fi
 if [ "$1" == "init" ] ;then
     echo ":: Init"
 else
-    dunstify "Creating square version ..." "with image $newwall" -h int:value:75 -h string:x-dunst-stack-tag:wallpaper
+    dunstify -i "wallpapoz" \
+        -h int:value:75 \
+        -h string:x-dunst-stack-tag:wallpaper \
+        "Creating square version ..." "with image $newwall" 
 fi
 magick $wallpaper -gravity Center -extent 1:1 $square
 echo ":: Square version created"
@@ -163,7 +171,10 @@ echo "* { current-image: url(\"$blurred\", height); }" > "$rasi_file"
 if [ "$1" == "init" ] ;then
     echo ":: Init"
 else
-    dunstify "Wallpaper procedure complete!" "with image $newwall" -h int:value:100 -h string:x-dunst-stack-tag:wallpaper
+    dunstify -i "wallpapoz" \
+        -h int:value:100 \
+        -h string:x-dunst-stack-tag:wallpaper \
+        "Wallpaper procedure complete!" "with image $newwall" 
 fi
 
 echo "DONE!"

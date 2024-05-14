@@ -142,7 +142,7 @@
   },
   // Brave Launcher
   "custom/browser": {
-    "format": "􀏜 ",
+    "format": "􀥠 ",
     "on-click": "~/dotfiles/.settings/browser.sh",
     "tooltip": false
   },

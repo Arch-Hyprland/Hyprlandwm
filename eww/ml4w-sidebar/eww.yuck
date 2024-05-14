@@ -7,12 +7,83 @@
 (defpoll CPU_USAGE :interval "1s" `../scripts/sys_info.sh --cpu`)
 (defpoll MEM_USAGE :interval "2s" `../scripts/sys_info.sh --mem`)
 (defpoll DISK_USAGE :interval "1s" `../scripts/sys_info.sh --disk`)
+(defvar SYS_INFO "真费劲")
+(defpoll DAY :interval "20h" `date +"%d"`)
+(defpoll MONTH :interval "20h" `date +"%m"`)
+(defpoll YEAR :interval "20h" `date +"%Y"`)
+(defpoll CLOCK :interval "60s" `date +"%H:%M"` )
+(defpoll WHO :interval "20h" `whoami`)
+(defpoll APP_STATE :interval "1s" `./check_state.sh msedge`)
+
 
 ;; Widgets
 
+(defwidget profile []
+  (box :class "win-user" :orientation "h" :space-evenly false :spacing 2
+    (box :orientation "v" :spacing 25 :space-evenly false :valign "center" :class "user"
+      (box :style "background-image: url('../assets/profile.png')" :class "avatar" )
+      (box
+        (label :text "${WHO}" )
+      )
+    )
+    (box
+      (label :text "${SYS_INFO}")
+    )
+  )
+)
+
+(defwidget timewheel[]
+  (box :class "win-res" :orientation "h" :space-evenly false :spacing 2
+    (box :orientation "v"  :space-evenly true 
+      (box  :class "wheel" :orientation "v" :space-evenly true 
+        (label :text "􀐮 ")
+        (label :text "${CLOCK}" )
+      )
+      (box :class "wheel" :orientation "v" :space-evenly true :spacing 20 
+        (label :text "${YEAR}")
+        (label :text "${MONTH} ${DAY}" :style "font-size: 20px")
+      )
+    )
+    (box
+      (calendar :class "calendar" :day "${DAY}" :year "${YEAR}" :month "${MONTH}")
+    )
+  )
+)
+
+(defwidget resources [] 
+    (box :class "win-res"
+        (centerbox :orientation "h"
+            (box :class "res_box" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
+                (box :class "res_circle" :orientation "v" :valign "center" :halign "center"
+                    (circular-progress :class "res_cpu" :value CPU_USAGE :thickness 15
+                        (label :class "res_circle_small" :text "${CPU_USAGE}%" :show-truncated false)
+                    )
+                )
+                (label :class "res_text" :valign "end" :halign "center" :text "CPU")
+            )
+            (box :class "res_box" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
+                (box :class "res_circle" :orientation "v" :valign "center" :halign "center"
+                    (circular-progress :class "res_mem" :value MEM_USAGE :thickness 15
+                        (label :class "res_circle_small" :text "${MEM_USAGE}%" :show-truncated false )
+                    )
+                )
+                (label :class "res_text" :valign "end" :halign "center" :text "MEMORY")
+            )
+            (box :class "res_box" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
+                (box :class "res_circle" :orientation "v" :valign "center" :halign "center"
+                    (circular-progress :class "res_disk" :value DISK_USAGE :thickness 15
+                        (label :class "res_circle_small" :text "${DISK_USAGE}%" :show-truncated false)
+                    )
+                )
+                (label :class "res_text" :valign "end" :halign "center" :text "DISK")
+            )
+        )
+    )
+)
+
 ;; resources
 (defwidget ml4wlauncher [] 
-    (box :class "win-launch"
+    (box :class "win-res"
         (centerbox :orientation "h" 
             (box :class "ml4w-welcome" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
                 (button :style "background-image: url('../assets/ml4w-welcome.png');" :class "ml4w_icon" :valign "center" :halign "center" :onclick "../scripts/launch_app.sh --welcome")
@@ -30,45 +101,9 @@
     )
 )
 
-(defwidget resources [] 
-    (box :class "win-res"
-        (centerbox :orientation "h"
-            (box :class "res_box" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
-                (box :class "res_circle" :orientation "v" :valign "center" :halign "center"
-                    (circular-progress :class "res_cpu" :value CPU_USAGE :thickness 15
-                        (label :class "res_circle_small" :text "CPU")
-                    )
-                )
-                (label :class "res_text" :valign "end" :halign "center" :text "${CPU_USAGE}%")
-            )
-            (box :class "res_box" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
-                (box :class "res_circle" :orientation "v" :valign "center" :halign "center"
-                    (circular-progress :class "res_mem" :value MEM_USAGE :thickness 15
-                        (label :class "res_circle_small" :text "MEMORY")
-                    )
-                )
-                (label :class "res_text" :valign "end" :halign "center" :text "${MEM_USAGE}%")
-            )
-            (box :class "res_box" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
-                (box :class "res_circle" :orientation "v" :valign "center" :halign "center"
-                    (circular-progress :class "res_disk" :value DISK_USAGE :thickness 15
-                        (label :class "res_circle_small" :text "DISK")
-                    )
-                )
-                (label :class "res_text" :valign "end" :halign "center" :text "${DISK_USAGE}%")
-            )
-        )
-    )
-)
-
-(defwidget controlpanel []
-  (box :class "win-res"
-    (label :class "res_text" :valign "center" :halign "center" :text "旺铺招租")
-  )
-)
 
 (defwidget powermenu []
-  (box :class "win-menu"
+  (box :class "win-menu" :valign "start" :space-evenly "true" 
     (box :class "op-lock" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
         (button :tooltip "Lock" :style "background-image: url('../assets/system-lock-screen-symbolic.svg');" :class "powericons" :valign "center" :halign "center" :onclick "../scripts/system.sh lock &")
     )
@@ -87,49 +122,27 @@
   )
 )
 
+(include "./dock.yuck")
+
+;; ** layout **************************************************************************
+
+(defwidget sidebar[]
+  (eventbox :onhoverlost "${EWW_CMD} close sidebar"
+    (box :orientation "v" :valign "start" :class "side" :spacing 0 :space-evenly false
+      (profile)
+      (timewheel)
+      (resources)
+      (ml4wlauncher)
+      (powermenu)
+    )
+  )
+)
+
 
 ;; ** Windows *************************************************************************
 
-(defwindow ml4wlauncher
-           :geometry (geometry :x "0px"
-                               :y "0px"
-                               :width "380px"
-                               :height "124px"
-                               :anchor "top right")
-           :stacking "fg"
-           :wm-ignore false
-(ml4wlauncher))
-
-;; resources
-(defwindow resources
-           :geometry (geometry :x "0px"
-                               :y "106px"
-                               :width "380px"
-                               :height "140px"
-                               :anchor "top right")
-           :stacking "fg"
-           :wm-ignore false
-(resources))
-
-;; controlpanel
-(defwindow controlpanel
-           :geometry (geometry :x "0px"
-                               :y "260px"
-                               :width "380px"
-                               :height "440px" ;; 140
-                               :anchor "top right")
-           :stacking "fg"
-           :wm-ignore false
-(controlpanel))
-
-;; powermenu
-(defwindow powermenu
-           :geometry (geometry :x "0px"
-                               :y "683px" ;;260
-                               :width "380px"
-                               :height "80px"
-                               :anchor "top right")
-           :stacking "fg"
-           :wm-ignore false
-(powermenu)) 
+(defwindow sidebar 
+        :geometry (geometry :x "0px" :y "0px" :width "380px" :height "600px" :anchor "top right")
+        :stacking "fg" 
+(sidebar))
 
