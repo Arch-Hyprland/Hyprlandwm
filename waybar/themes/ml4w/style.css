@@ -20,7 +20,7 @@
  * ----------------------------------------------------- */
 
 * {
-  font-family: "SF Pro Display", "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+  font-family: "SF Pro Display", "Inter Semi Bold", Roboto, Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-style: italic;
   font-size: 16px;
@@ -104,15 +104,19 @@ tooltip label {
 
 #window {
   background: @backgroundlight;
-  margin: 5px 15px 5px 0px;
-  padding: 1px 10px 2px 10px;
+  margin: 4px 15px 4px 0px;
+  padding: 2px 10px 2px 10px;
   border-radius: 12px;
+  border-left: 6px solid @backgroundlight;
+  border-right: 6px solid @backgroundlight;
   color: @textcolor2;
   font-size: 16px;
   opacity: 0.8;
 }
 
 window#waybar.empty #window {
+  border-left: none;
+  border-right: none;
   background-color: transparent;
 }
 
@@ -184,7 +188,8 @@ window#waybar.empty #window {
     color: @iconcolor;
 }
 
-#custom-waybarthemes, #custom-settings, #custom-system {
+#custom-waybarthemes, 
+#custom-system {
     margin-right: 10px;
 }
 
@@ -199,7 +204,7 @@ window#waybar.empty #window {
 
 #custom-ml4w-welcome {
     font-size: 20px;
-    margin-right: 10px;
+    margin-right: 3px;
     background-repeat: no-repeat;
     background-position: center;
 }

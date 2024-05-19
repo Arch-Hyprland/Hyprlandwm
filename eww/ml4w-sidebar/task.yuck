@@ -1,0 +1,32 @@
+(defpoll tasks :interval "10s" `/home/unicorn/go/src/code.unicorn.com/hyprtask/hyprspace | jq`)
+
+(defwidget taskview []
+  (box :space-evenly false :vexpand true
+    (for task in "${tasks}"
+      (box :orientation "v" :space-evenly false
+        (box :class "task-item" :orientation "h" :space-evenly false
+          (for view in "${task.views}"
+            (eventbox :onclick "${EWW_CMD} close taskview;hyprctl dispatch focuswindow address:${view.address}"
+                      :cursor "pointer" :class "item-view" 
+              (box :style "padding: 10px"  
+                (image :path "${view.capture}" :image-width 100)
+              )
+            )
+          )
+        )
+        (box :class "task-label"
+          (label :text "${task.name}")
+        )
+      )
+    )
+  )
+)
+
+;; 任务列表
+
+(defwindow taskview[]
+    :geometry (geometry :x 0 :y 0 :anchor "center center")
+    :exclusive false
+    :stacking "fg"
+    :focusable true
+(taskview))

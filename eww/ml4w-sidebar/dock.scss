@@ -1,0 +1,62 @@
+.app-dock {
+  background-color: #1e1e2e;
+  padding: 8px 0px;
+  opacity: 0.9;
+  border-radius: 16px;
+  border: 1px solid #1e1e22;
+  box-shadow: 0 0 10px #1e1e2e10;
+  transition: all 800ms;
+}
+
+.app-active {
+  border: 1px solid #eeaafa;
+  border-radius: 1px;
+  margin: 10px 0;
+  opacity: 1;
+}
+
+.icon {
+  margin: 2px 0px;
+  padding: 3px 6px;
+}
+
+.icon-box {
+  opacity: 0.9;
+  background-color: #5e3d60;
+  border-radius: 12px;
+  transition: all 0.5s;
+}
+
+.icon-box:hover {
+  background-color: #955d98;
+  opacity: 1;
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+
+.slide {
+  margin: 1px;
+  min-height: 1000px;
+  min-width: 5px;
+  border-radius: 2px;
+  background-color: #1e1e2e;
+  opacity: 0.8;
+}
+
+@keyframes loading {
+
+  0% {
+    opacity: 0.8;
+    margin: 0px;
+  }
+
+  50% {
+    opacity: 0;
+    margin: 30px;
+  }
+
+  100% {
+    opacity: 0.8;
+    margin: 0px;
+  }
+}

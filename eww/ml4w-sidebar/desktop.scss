@@ -1,0 +1,257 @@
+/** 
+* desktop components global style
+*/
+
+.desktop-widget {
+  all: unset;
+  font-family: 'JetBrains Mono Nerd Font', 'JetBrains Mono NL', 'SpaceMono Nerd Font', monospace;
+}
+
+.notes {
+  margin: 10px 5px 5px 5px;
+  border-radius: 16px;
+  opacity: 0.9;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.notes-header {
+  background: #e5b12a;
+  border-radius: 16px 16px 0 0;
+  padding: 10px;
+  color: black;
+  font-size: 20px;
+}
+
+.notes-body {
+  background-color: #3e3f42;
+  min-height: 180px;
+  border-radius: 0 0 16px 16px;
+}
+
+.notes-item {
+  padding: 10px;
+  border-bottom: 1px solid #2f5ce6;
+}
+
+.os-calendar {
+  margin: 10px 5px 5px 5px;
+  opacity: 0.9;
+  min-width: 300px;
+}
+
+.cal-header {
+  background: #c44251;
+  border-radius: 16px 16px 0 0;
+  padding: 10px;
+  color: black;
+  font-size: 20px;
+}
+
+.cal-body {
+  background-color: #3d424e;
+  min-height: 166px;
+  border-radius: 0 0 16px 16px;
+  padding: 10px 5px 2px 5px;
+  font-family: 'Cascadia Code';
+  font-style: italic;
+}
+
+.cal-body calendar {
+  font-size: 15px;
+}
+
+.wheel-box {
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+  background-color: #1e1e2e;
+  opacity: 0.8;
+  margin: 2px 2px;
+  border-radius: 18px;
+}
+
+.clock-icon {
+  background-image: url('../assets/hyprtrails-logo.svg');
+  min-height: 86px;
+  background-size: cover;
+}
+
+.clock-label {
+  font-style: italic;
+  border-radius: 0 0 18px 18px;
+  background-color: #3ea2a4;
+  padding: 3px 5px;
+}
+
+.wel-box {
+  font-size: 18px;
+  background-color: #2a714c;
+  opacity: 0.8;
+  margin: 5px;
+  border-radius: 18px;
+}
+
+.wel-icon {
+  background-image: url('../assets/ml4w-welcome.png');
+  min-height: 86px;
+  background-size: cover;
+}
+
+.wel-label {
+  font-style: italic;
+  border-radius: 0 0 18px 18px;
+  background-color: #3ea2a4;
+  padding: 3px 5px;
+}
+
+.hypr-box {
+  font-size: 18px;
+  font-weight: normal;
+  background-color: #4b6b91;
+  opacity: 0.8;
+  color: #427383;
+  margin: 2px 2px;
+  border-radius: 18px;
+}
+
+.hypr-icon {
+  background-image: url('../assets/hyprland.png');
+  min-height: 92px;
+  background-size: cover;
+}
+
+.hypr-label {
+  font-style: italic;
+  border-radius: 18px 18px 0 0;
+  padding: 3px 0px;
+}
+
+.dot-box {
+  font-size: 18px;
+  background-color: #274f4e;
+  opacity: 0.8;
+  margin: 5px;
+  border-radius: 18px;
+}
+
+.dot-icon {
+  background-image: url('../assets/ml4w-dotfiles-settings.png');
+  min-height: 86px;
+  background-size: cover;
+}
+
+.dot-label {
+  font-style: italic;
+  border-radius: 18px 18px 0 0;
+  background-color: #a0c9b1;
+  padding: 3px 5px;
+}
+
+.plugin-box {
+  font-size: 18px;
+  background-color: #2c2b31;
+  opacity: 0.8;
+  margin: 5px;
+  border-radius: 18px;
+}
+
+.plugin-icon {
+  background-image: url('../assets/hy3-logo.svg');
+  min-height: 86px;
+  background-size: cover;
+}
+
+.plugin-label {
+  font-style: italic;
+  border-radius: 18px 18px 0 0;
+  padding: 3px 5px;
+  background-color: #a0c9b1;
+}
+
+.media-ctl {
+  min-height: 200px;
+  background-color: #1e1e2e;
+  border-radius: 18px;
+  opacity: 0.9;
+  margin: 5px;
+}
+
+.album-left {
+  min-width: 156px;
+  margin: 20px 5px;
+}
+
+.album-center {
+  min-width: 300px;
+  padding: 0px 0px 0 0px;
+  background: #2a1ea1;
+}
+
+.album-right {
+  min-width: 146px;
+  margin: 20px 5px;
+}
+
+.lyrics {
+  min-height: 125px;
+}
+
+.next-icon {
+  background: url("../assets/media-next.svg");
+  background-size: cover;
+}
+
+.ctl-panel {}
+
+.pause-icon {
+  background: url("../assets/media-pause.svg");
+  background-size: cover;
+}
+
+progressbar>trough {
+  min-width: 260px;
+  background-color: #99be2c;
+  border-radius: 2px;
+  min-height: 2px;
+  margin: 0 0 10px 0;
+}
+
+.prev-icon {
+  background: url("../assets/media-prev.svg");
+  min-height: 20px;
+  background-size: cover;
+}
+
+.news {
+  min-width: 200px;
+  padding: 10px;
+  margin: 5px;
+  background-color: #576477;
+  opacity: 0.9;
+  border-radius: 16px;
+  box-shadow: 0 0 10px #3e3f4210;
+}
+
+.tab {
+  padding: 3px 5px 3px 5px;
+  margin: 1px 3px 1px 3px;
+  border-radius: 8px;
+}
+
+.tab.focus {
+  background-color: #7ba9ec;
+  color: #1e1e2e;
+}
+
+.news-item {
+  padding: 5px 0 5px 3px;
+}
+
+.sys-info {
+  background-color: #735982;
+  border-radius: 16px;
+  opacity: 0.8;
+  padding: 10px;
+  margin: 5px;
+}

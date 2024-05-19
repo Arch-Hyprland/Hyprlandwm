@@ -25,7 +25,6 @@
     // Modules Left
     "modules-left": [
         "custom/appmenu",
-        "custom/wallpaper",
         "custom/waybarthemes",
         // START TASK TOOGLE
         "wlr/taskbar",
@@ -36,14 +35,15 @@
 
     // Modules Center
     "modules-center": [
-        "custom/ml4w-welcome",
+        "custom/wallpaper",
         "hyprland/workspaces",
-        "custom/settings"
+        "custom/updates"
     ],
 
     // Modules Right    
     "modules-right": [
-        "custom/updates",
+        "custom/recorder",
+        "custom/settings",
         "pulseaudio",
         "bluetooth",
         "battery", 
@@ -55,6 +55,7 @@
         // END NETWORK TOOGLE
         "custom/exit",
         "clock",
+        "custom/ml4w-welcome",
         // START TRAY TOOGLE
         "tray"
         // END TRAY TOOGLE

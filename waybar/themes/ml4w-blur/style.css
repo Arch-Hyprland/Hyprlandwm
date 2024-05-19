@@ -20,7 +20,7 @@
  * ----------------------------------------------------- */
 
 * {
-  font-family: "SF Pro Display", "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+  font-family: "SF Pro Display", "Inter Semi Bold", Roboto, Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-style: italic;
   font-size: 16px;
@@ -104,15 +104,19 @@ tooltip label {
 
 #window {
   background: @backgroundlight;
-  margin: 8px 15px 8px 0px;
+  margin: 4px 15px 4px 0px;
   padding: 1px 10px 1px 10px;
   border-radius: 12px;
+  border-left: 6px solid @backgroundlight;
+  border-right: 6px solid @backgroundlight;
   color: @textcolor2;
   font-size: 16px;
   opacity: 0.8;
 }
 
 window#waybar.empty #window {
+  border-left: none;
+  border-right: none;
   background-color: transparent;
 }
 
@@ -177,14 +181,22 @@ window#waybar.empty #window {
   color: @iconcolor;
 }
 
-#custom-waybarthemes,
 #custom-settings,
+#custom-cliphist {
+  margin-right: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0.8;
+  color: @iconcolor;
+}
+
+#custom-waybarthemes,
 #custom-system {
-  margin-right: 14px;
+  margin-right: 10px;
 }
 
 #custom-ml4w-welcome {
-  margin-right: 8px;
+  margin-right: 3px;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -279,6 +291,27 @@ window#waybar.empty #window {
 #custom-updates.red {
   background-color: #dc2f2f;
   color: #FFFFFF;
+}
+
+/* -----------------------------------------------------
+ * Custom Recorder
+ * ----------------------------------------------------- */
+
+#custom-recorder {
+  background-color: @backgroundlight;
+  font-size: 16px;
+  color: @textcolor2;
+  border-radius: 8px;
+  padding: 1px 1px 2px 7px;
+  margin: 5px 8px 5px 0px;
+  opacity: 0.9;
+}
+
+#custom-recorder.red {
+  background-color: @color7;
+  border-radius: 12px;
+  padding: 1px 10px 2px 8px;
+  color: #dc00af;
 }
 
 /* -----------------------------------------------------

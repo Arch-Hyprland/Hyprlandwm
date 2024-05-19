@@ -1,19 +1,26 @@
-
 (defvar SCALE 1.0)
 (defvar CURRENT "")
+(defvar HOVER false)
+(defpoll ACTIVE :interval "2s" `hyprctl clients -j | jq '.[]|.class' | tr -d '"' | sort -u`)
 (defvar apps '
 [
   {
-    "name": "msedge",
+    "name": "dockmode",
+    "cmd": "./mode.sh",
+    "icon": "/home/unicorn/.local/share/icons/WhiteSur/apps/scalable/dock.svg",
+    "size": 36
+  },
+  {
+    "name": "edge",
     "cmd": "microsoft-edge-dev",
     "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/microsoft-edge.svg",
-    "size": 40
+    "size": 36
   },
   {
     "name": "code",
     "cmd": "code",
     "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/vscode.svg",
-    "size": 40
+    "size": 36
   },
   {
     "name": "idea",
@@ -31,129 +38,151 @@
     "name": "obsidian",
     "cmd": "obsidian",
     "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/obsidian.svg",
-    "size": 40
-  },
-  {
-    "name": "wechat-beat",
-    "cmd": "wechat",
-    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/wechat.svg",
-    "size": 40
+    "size": 36
   },
   {
     "name": "virt-manager",
     "cmd": "virt-manager",
-    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/virt-manager.svg",
-    "size": 38
+    "icon": "/home/unicorn/.local/share/icons/WhiteSur/apps/scalable/virt-manager.svg",
+    "size": 36
+  },
+  {
+    "name": "clash-nyanpasu",
+    "cmd": "clash-nyanpasu",
+    "icon": "/usr/share/icons/hicolor/32x32/apps/clash-nyanpasu.png",
+    "size": 36
+  },
+  {
+    "name": "wechat",
+    "cmd": "wechat-beta",
+    "icon": "/usr/share/icons/wechat.svg",
+    "size": 36
   },
   {
     "name": "linuxqq",
     "cmd": "linuxqq",
     "icon": "/usr/share/icons/linuxqq.png",
-    "size": 40
+    "size": 36
   },
   {
     "name": "discord",
     "cmd": "discord",
     "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/discord.svg",
-    "size": 40
+    "size": 36
   },
   {
     "name": "tiny-rdm",
     "cmd": "tiny-rdm",
     "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/rdm.svg",
-    "size": 40
+    "size": 36
   },
   {
     "name": "figma",
     "cmd": "figma-linux",
     "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/figma.svg",
-    "size": 40
+    "size": 36
   },
   {
     "name": "yesplaymusic",
     "cmd": "yesplaymusic",
     "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/gnome-music.svg",
-    "size": 40
+    "size": 36
   },
   {
     "name": "tableplus",
     "cmd": "tableplus",
-    "icon": "/opt/tableplus/resource/image/logo.png",
-    "size": 40
+    "icon": "/home/unicorn/.local/share/icons/WhiteSur/apps/scalable/tableplus.svg",
+    "size": 36
   },
   {
     "name": "gimp",
     "cmd": "gimp",
     "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/gimp.svg",
-    "size": 40
+    "size": 36
   },
   {
     "name": "inkscape",
     "cmd": "inkscape",
     "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/inkscape.svg",
-    "size": 40
+    "size": 36
   },
   {
     "name": "blender",
     "cmd": "blender",
     "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/blender.svg",
-    "size": 40
+    "size": 36
   },
   {
     "name": "xmind",
     "cmd": "xmind",
     "icon": "/usr/share/icons/hicolor/32x32/apps/xmind.png",
-    "size": 40
+    "size": 36
   },
   {
-    "name": "clash-nyanpasu",
-    "cmd": "clash-nyanpasu",
-    "icon": "/usr/share/icons/hicolor/scalable/apps/clash-nyanpasu.svg",
-    "size": 40
-  },
-  {
-    "name": "alacuritty",
-    "cmd": "alacuritty",
-    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/Alacritty.svg",
-    "size": 40
+    "name": "alacritty",
+    "cmd": "alacritty",
+    "icon": "/home/unicorn/.local/share/icons/WhiteSur/apps/scalable/alacritty.svg",
+    "size": 36
   },
   {
     "name": "kitty",
     "cmd": "kitty",
     "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/kitty.svg",
-    "size": 40
+    "size": 36
   }
 ]'
 )
 
-(defwidget applaunch[name cmd icon size] 
-  (box :orientation 'h' :space-evenly false
-    (revealer :reveal "${CURRENT == name ? true: false}" :transition "crossfade"
-      (box :style "border: 2px solid white; margin: 10px 0px;" )
+(defwidget applaunch[name cmd icon size mode] 
+  (tooltip
+    (box 
+      (label :text name 
+        :style "background: #1e1e2e; border-radius: 10px; padding: 10px;"
+      )
     )
-    (eventbox :onhover "${EWW_CMD} update CURRENT=${name}; ${EWW_CMD} update SCALE=1.1" 
-              :onhoverlost "${EWW_CMD} update SCALE=1.0"
-              :onclick "${cmd} &" 
-      (transform :translate-x '${ CURRENT == name ? ((SCALE - 1) * 100) : 0 }%' 
-        (image :path icon :class "icon" :image-width size :image-height size 
+    (box :orientation 'h' :space-evenly false :style "padding: 3px 5px 3px 3px;"
+      (revealer :reveal "${arraylength(search(ACTIVE, '(?i)${name}')) > 0 ? true: false}" 
+                :transition "crossfade"
+        (box :class "app-active")
+      )
+      (eventbox :onhover "${EWW_CMD} update CURRENT=${name}; ${EWW_CMD} update SCALE=1.15" 
+                :onhoverlost "${EWW_CMD} update SCALE=1.0"
+                :onclick "${cmd} ${name == 'dockmode' ?  mode : "" } &" 
+                :class "icon-box"
+        ;; :translate-x '${ CURRENT == name ? ((SCALE - 1) * 100) : 0 }%' 
+        (transform 
+          (image :path icon :class "icon" :image-width size :image-height size)
         )
       )
     )
   )
 )
 
-(defwidget docker[]
-  (box :orientation "v" :space-evenly false :class "docker"  
-    (for entry in apps 
-      (applaunch :name "${entry['name']}" :cmd "${entry['cmd']}" :icon "${entry['icon']}" :size "${entry['size']}" )
+(defwidget slide[mode]
+  (box :class "slide" :visible "${ (mode != 'dock') && !HOVER}")
+)
+
+(defwidget dock[mode]
+  (eventbox :onhover "${EWW_CMD} update HOVER=true" :onhoverlost "${EWW_CMD} update HOVER=false"
+    (box :space-evenly false :orientation "h"
+      (slide :mode mode)
+      (box :orientation "v" :space-evenly false :class "app-dock" 
+           :visible "${ mode == 'dock' || (mode == 'hide' && HOVER)}"
+        (for entry in apps 
+          (applaunch :name "${entry['name']}" :cmd "${entry['cmd']}" :icon "${entry['icon']}" :size "${entry['size']}" :mode mode)
+        )
+      )
     )
   )
 )
 
 ;; ** Windows *************************************************************************
 
-(defwindow docker
-        :geometry (geometry :x "0px" :y "6px"  :width "60px" :anchor "left center")
-        :exclusive true
+(defwindow dock [mode]
+        :geometry (geometry :x "0px" 
+                            :y "0px"  
+                            :width "60px" 
+                            :anchor "left center")
+        :exclusive "${ mode == 'dock' ? true : false }"
         :stacking "fg"
-(docker))
+(dock :mode mode))

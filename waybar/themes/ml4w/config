@@ -25,25 +25,23 @@
     // Modules Left
     "modules-left": [
         "custom/appmenu",
-        "custom/wallpaper",
         "custom/waybarthemes",
         "wlr/taskbar",
         "group/quicklinks",
-        "hyprland/window",
-        "custom/empty"
+        "hyprland/window"
     ],
 
     // Modules Center
     "modules-center": [
-        "custom/ml4w-welcome",
+        "custom/wallpaper",
         "hyprland/workspaces",
-        "custom/settings"
+        "custom/updates"
     ],
 
     // Modules Right    
     "modules-right": [
         "custom/recorder",
-        "custom/updates",
+        "custom/settings",
         "pulseaudio",
         "bluetooth",
         "battery", 
@@ -55,6 +53,7 @@
         // END NETWORK TOOGLE
         "custom/exit",
         "clock",
+        "custom/ml4w-welcome",
         "tray"
     ]
 }

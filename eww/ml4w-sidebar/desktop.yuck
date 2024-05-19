@@ -1,0 +1,167 @@
+(defpoll SYS :interval "60s" `hostnamectl hostname`)
+
+(defwidget notes [] 
+  (box :orientation "h" :space-evenly false :valign "start"
+    (box :class "os-calendar" :orientation "v" :space-evenly false
+      (box :class "cal-header"
+        (label :text "${formattime(EWW_TIME, '%Y年%m月')}")
+      )
+      (box :class "cal-body" :space-evenly true :valign "center"
+        (calendar)
+      )
+    )
+    (box :class "notes" :space-evenly false :orientation "v" 
+      (box :class "notes-header"
+        (label :text "备忘录")
+      )
+      (box :class "notes-body" :space-evenly false :orientation "v"
+        (label :class "notes-item" :halign "start" :valign "center"
+              :text "1.todo is my first check in every day up, which means I should do today")
+        (label :class "notes-item" :halign "start" :valign "center"
+              :text "2.todo")
+        (input  )
+      )
+    )
+  )
+)
+
+(defwidget news []
+  (box :class "news" :space-evenly false :orientation "v" :spacing 8
+    (box :class "category" :orientation "h" :space-evenly false
+      (label :class "tab focus" :text "百度") 
+      (label :class "tab" :text "微博") 
+      (label :class "tab" :text "知乎") 
+      (label :class "tab" :text "头条") 
+    )
+    (box :orientation "v" 
+      (box :orientation 'h' :space-evenly true :spacing 5
+        (label :class "news-item" :halign "start"
+            :text "1.Everday, you can lauch much of rabbish message eveywhere")
+        (label :text "500万" :halign "end")
+      )
+      (box :orientation 'h' :space-evenly true :spacing 5
+        (label  :class "news-item" :halign "start"
+            :text "2.This is a normal operation of dust his people in china")
+        (label :text "500万" :halign "end")
+      )
+      (box :orientation 'h' :space-evenly true :spacing 5
+        (label  :class "news-item" :halign "start"
+            :text "3.Rust is amazy to work fine, You should really use it to complete your daily work")
+        (label :text "500万" :halign "end")
+      )
+    )
+  )
+)
+
+(defwidget funbox[] 
+  (box :orientation "v" :space-evenly false
+    (box
+      (label :text "${SYS}" :class "sys-info")
+      (button :onclick "${EWW_CMD} close desktop"
+        (label :text "close")
+      ) 
+    )
+    (box
+      (box :orientation "v" :class "wheel-box" :space-evenly false :spacing 4
+        (box :style "padding: 0px 10px 5px 10px"
+          (button :class "clock-icon" :onclick "" )
+        )
+        (box
+          (label :text "${formattime(EWW_TIME, '%H:%M')}" )
+        )
+      )
+      (box :orientation "v" :class "hypr-box" :space-evenly false :spacing 4
+        (box :style "padding: 10px 16px 4px 16px"
+          (button :class "hypr-icon" :onclick "../scripts/launch_app.sh --hyprland")
+        )
+        (box :class "hypr-label"
+          (label :text "HYPRLAND")
+        )
+      )
+      (box :orientation "v" :class "wel-box" :space-evenly false :spacing 4
+        (box :style "padding: 10px 16px 5px 16px" 
+          (button :class "wel-icon" :onclick "../scripts/launch_app.sh --welcome")
+        )
+        (box :class "wel-label"
+          (label :text "WELCOME")
+        )
+      )
+      (box :orientation "v" :class "dot-box" :space-evenly false :spacing 4
+        (box :class "dot-label" 
+          (label :text "DOTFILES")
+        )
+        (box :style "padding: 5px 16px 10px 16px"
+          (button :class "dot-icon" :onclick "../scripts/launch_app.sh --dotfiles")
+        )
+      )
+      (box :orientation "v" :class "plugin-box" :space-evenly false :spacing 4
+        (box :style "padding: 8px 16px 1px 16px"
+          (button :class "plugin-icon" :onclick "hyprpm reload")
+        )
+        (box :class "hypr-label"
+          (label :text "PLUGIN")
+        )
+      )
+    )
+  )
+)
+
+(defwidget media[] 
+  (box :orientation "h" :space-evenly false :class "media-ctl"
+    (box :orientation "h" :space-evenly true :class "album-left" 
+      (box :orientation "v" :space-evenly false :style "padding: 10px 20px 10px 20px"
+        (image :path '../assets/media-prev.svg' :image-width 100 :image-height 100)
+        (label :text "media-name")
+      )
+    )
+    (box :class "album-center" :space-evenly false :spacing 1 :orientation "v"
+      (label :class "lyrics" )
+      (box :orientation 'v' :space-evenly false :spacing 1 
+        (box :style "padding: 5px 0px; font-size: 10px"
+          (label :class "time-ratio" :text "03:00/05:00" :show-truncated false :halign "end")
+        )
+        (box
+          (progress :value 80.0 :orientation "h" :width 20 :flipped false
+            :class "progress-bar")
+        )
+        (box :orientation "h" :space-evenly true :spacing 5 :class "ctl-panel"
+          (box :style "padding: 1px 36px 1px 36px"
+            (button :class "prev-icon")
+          )
+          (box :style "padding: 1px 36px 1px 36px"
+            (button :class "pause-icon")
+          )
+          (box :style "padding: 1px 36px 1px 36px"
+            (button :class "next-icon")
+          )
+        )
+      )
+    )
+    (box :orientation "h" :space-evenly true :class "album-right" 
+      (box :orientation "v" :space-evenly false :style "padding: 10px 20px 10px 20px"
+        (image :path '../assets/media-next.svg' :image-width 100 :image-height 100)
+        (label :text "media-name")
+      )
+    )
+  )
+)
+
+(defwidget desktop[]
+  (box :class "desktop-widget" :space-evenly false :orientation "v"
+    (notes)
+    (news)
+    (funbox)
+    (media)
+  )
+)
+
+(defwindow desktop[]
+  :geometry (geometry :x "8px"
+                      :y "8px"
+                      :width "25%"
+                      :anchor "top right"
+            )
+    :exclusive false
+    :stacking "bg"
+    :focusable false
+(desktop))

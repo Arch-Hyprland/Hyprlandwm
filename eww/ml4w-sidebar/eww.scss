@@ -1,10 +1,11 @@
 * {
   all: unset;
-  font-family: "Cascadia Code";
-  font-style: italic;
+  // font-family: "Cascadia Code";
+  //font-family: 'JetBrains Mono Nerd Font', 'JetBrains Mono NL', 'SpaceMono Nerd Font', monospace;
+  font-family: 'Inter Semi Bold';
+  // font-style: italic;
   color: #FFFFFF;
 }
-
 
 .win-user {
   background-color: #242424;
@@ -13,10 +14,6 @@
   border-radius: 10px 10px 2px 2px;
   box-shadow: 0 0 4px 2px #000000;
   margin: 8px 8px 1px 8px;
-}
-
-.ml4w-dotfiles {
-  margin: 0 18px 0 18px;
 }
 
 .win-res {
@@ -41,13 +38,6 @@
   color: #FFFFFF;
   border-radius: 100%;
   padding: 0px;
-}
-
-.ml4w_icon {
-  background-repeat: no-repeat;
-  background-size: 48px;
-  min-height: 48px;
-  min-width: 48px;
 }
 
 .res_circle_small {
@@ -79,47 +69,6 @@
   border-radius: 18px;
 }
 
-.calendar {
-  padding: 10px 5px 0 5px;
-  margin-right: 5px;
-  font-family: "MonoLisa";
-  font-style: italic;
-  font-size: 12px;
-  font-weight: bold;
-  background-color: #1e1e2e;
-  opacity: 0.8;
-  border-radius: 18px;
-}
-
-
-.wheel {
-  font-size: 25px;
-  font-weight: normal;
-  background-color: #1e1e2e;
-  opacity: 0.8;
-  padding: 10px;
-  margin: 2px 2px;
-  border-radius: 18px;
-}
-
-.docker {
-  background-color: #1e1e2e;
-  opacity: 0.9;
-  border-radius: 16px;
-}
-
-.icon {
-  padding: 6px 6px;
-}
-
-.res_text {
-  border-radius: 16px;
-  color: #FFFFFF;
-  font-size: 16px;
-  padding: 0px 8px 0px 8px;
-  margin: 0px 0px 0px 0px;
-  font-weight: bold;
-}
 
 .res_cpu {
   color: #19cddb;
@@ -156,3 +105,7 @@
   margin: 1px 8px 1px 8px;
   padding: 12px 0 12px 0;
 }
+
+@import "desktop.scss";
+@import "dock.scss";
+@import "task.scss";

@@ -1,0 +1,38 @@
+.task-item {
+  border-radius: 16px;
+  margin: 10px;
+  border: 2px solid #2e2e2e;
+  background-color: #0a212e;
+  padding: 20px;
+}
+
+.taskview {
+  background-color: #1e1e2e;
+  opacity: 1;
+  border-radius: 16px;
+  padding: 20px;
+  border: 3px solid #1e2e2e;
+  box-shadow: 0 0 4px 2px #1e1e2eee;
+}
+
+.task-label {
+  font-size: 20px;
+  font-family: "Cascadia Code";
+  font-style: italic;
+}
+
+.item-view:focus {
+  border: 1px solid #1e1e2e;
+}
+
+.item-view {
+  opacity: 0.5;
+  border-radius: 16px;
+
+  &:hover {
+    background-color: #0e2a2e;
+    opacity: 1;
+    padding: 10px;
+    transition: all 0.5s;
+  }
+}
