@@ -171,6 +171,8 @@ window#waybar.empty #window {
 #custom-wallpaper,
 #custom-wallpaper,
 #custom-system,
+#custom-hyprshade,
+#custom-hypridle,
 #custom-waybarthemes {
   margin-right: 10px;
   font-size: 20px;
@@ -189,6 +191,10 @@ window#waybar.empty #window {
 }
 
 #custom-waybarthemes,
+#custom-hyprshade {
+    margin-right:12px;
+}
+
 #custom-system {
   margin-right: 10px;
 }

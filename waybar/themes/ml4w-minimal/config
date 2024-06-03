@@ -44,9 +44,10 @@
         "network",
         "group/hardware",
         "custom/cliphist",
+        "custom/hyprshade",
         "custom/widgets",
         "clock",
         "custom/panel"
-        "tray",
+        "tray"
     ]
 }

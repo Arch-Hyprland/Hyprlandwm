@@ -61,13 +61,13 @@
   "custom/widgets": {
     "format": "􀪲 ",
     "on-click": "~/dotfiles/eww/scripts/widgets.sh",
-    "tooltip": false
+    "tooltip-format": "open widgets"
   },
   // ML4W Welcome App
   "custom/ml4w-hyprland-settings": {
     "on-click": "~/dotfiles/apps/ML4W_Hyprland_Settings-x86_64.AppImage",
     "format": " ",
-    "tooltip": false
+    "tooltip-format": "Open Hyprland Settings"
   },
   // Youtube Subscriber Count
   "custom/youtube": {
@@ -83,7 +83,7 @@
     "on-click": "sleep 0.1 && ~/dotfiles/scripts/cliphist.sh",
     "on-click-right": "sleep 0.1 && ~/dotfiles/scripts/cliphist.sh d",
     "on-click-middle": "sleep 0.1 && ~/dotfiles/scripts/cliphist.sh w",
-    "tooltip": false
+    "tooltip": "Clipboard Manager"
   },
   // Updates Count
   "custom/updates": {
@@ -94,28 +94,27 @@
     "exec": "~/dotfiles/scripts/updates.sh",
     "restart-interval": 60,
     "on-click": "alacritty --class dotfiles-floating -e ~/dotfiles/scripts/installupdates.sh",
-    "on-click-right": "~/dotfiles/.settings/software.sh",
-    "tooltip": false
+    "on-click-right": "~/dotfiles/.settings/software.sh"
   },
   // Wallpaper
   "custom/wallpaper": {
     "format": "􀐟 ",
     "on-click": "~/dotfiles/hypr/scripts/wallpaper.sh select",
-    "on-click-right": "~/dotfiles/hypr/scripts/wallpaper.sh",
-    "tooltip": false
+    "on-click-right": "~/dotfiles/hypr/scripts/wallpaper-effects.sh",
+    "tooltip-format": "Left: Select a wallpaper\nRight: Select wallpaper effect"
   },
   // Waybar Themes
   "custom/waybarthemes": {
     "format": "􀐗 ",
     "on-click": "~/dotfiles/waybar/themeswitcher.sh",
-    "tooltip": false
+    "tooltip-format": "Select a waybar theme"
   },
   // Settings
   "custom/settings": {
     "format": "􀣋 ",
     // "on-click": "alacritty --class dotfiles-floating -e ~/dotfiles/hypr/start-settings.sh",
     "on-click": "~/dotfiles/apps/ML4W_Dotfiles_Settings-x86_64.AppImage",
-    "tooltip": false
+    "tooltip-format": "Open Dotfiles Settings"
   },
   // Keybindings
   "custom/keybindings": {
@@ -127,7 +126,7 @@
   "custom/filemanager": {
     "format": "􀈕 ",
     "on-click": "~/dotfiles/.settings/filemanager.sh",
-    "tooltip": false
+    "tooltip-format": "Open the filemanager"
   },
   // Outlook Launcher
   "custom/outlook": {
@@ -145,13 +144,13 @@
   "custom/browser": {
     "format": "􀥠 ",
     "on-click": "~/dotfiles/.settings/browser.sh",
-    "tooltip": false
+    "tooltip-format": "Open the browser"
   },
   // ChatGPT Launcher
   "custom/chatgpt": {
     "format": " ",
     "on-click": "brave --app=https://chat.openai.com",
-    "tooltip": false
+    "tooltip": "Open ChatGOPT"
   },
   // Calculator
   "custom/calculator": {
@@ -170,14 +169,35 @@
     "format": "􀈠 ",
     "on-click": "rofi -show drun -replace",
     "on-click-right": "~/dotfiles/hypr/scripts/keybindings.sh",
-    "tooltip": false
+    "tooltip-format": "Left: Open the application launcher\nRight: Show all keybingings"
   },
   // Power Menu
   "custom/panel": {
     "format": "􀜊 ",
     "on-click": "~/dotfiles/eww/ml4w-sidebar/launch.sh",
-    "tooltip": false
+    "tooltip-format": "Open Control Panel"
   },
+
+    // Hyprshade
+  "custom/hyprshade": {
+      "format": "",
+      "tooltip-format": "Toggle Screen Shader",
+      "on-click": "sleep 0.5; ~/dotfiles/hypr/scripts/hyprshade.sh",
+      "on-click-right": "sleep 0.5; ~/dotfiles/hypr/scripts/hyprshade.sh rofi"
+  },
+
+  // Hypridle inhibitor
+  "custom/hypridle": {
+      "format": "􀐮 ",
+      "return-type": "json",
+      "escape": true,
+      "exec-on-event": true,
+      "interval": 60,
+      "exec": "~/dotfiles/hypr/scripts/hypridle.sh status",
+      "on-click": "~/dotfiles/hypr/scripts/hypridle.sh toggle",
+      "on-click-right": "hyprlock"
+  },
+
   // Keyboard State
   "keyboard-state": {
     "numlock": true,
@@ -195,6 +215,7 @@
   },
   // Clock
   "clock": {
+    "format": "{:%H:%M %a}",
     // "timezone": "America/New_York",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     // START CLOCK FORMAT
@@ -258,7 +279,7 @@
     "drawer": {
       "transition-duration": 300,
       "children-class": "not-memory",
-      "transition-left-to-right": false
+      "transition-left-to-right": true
     },
     "modules": [
       "custom/settings",
@@ -272,7 +293,7 @@
     "modules": [
       "custom/filemanager",
       "custom/browser",
-      "custom/windowsvm",
+      "custom/windowsvm"
     ]
   },
   // Network
@@ -286,7 +307,8 @@
     "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
-    "on-click": "~/dotfiles/.settings/networkmanager.sh"
+    "on-click": "alacritty --class dotfiles-floating -e nmtui",
+    "on-click-right": "~/dotfiles/.settings/networkmanager.sh"
   },
   // Battery
   "battery": {
@@ -351,14 +373,5 @@
     "format": "{user}",
     "interval": 60,
     "icon": false
-  },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "tooltip": true,
-    "format-icons": {
-      "activated": "􀐮 ",
-      "deactivated": "􀐮 "
-    },
-    "on-click-right": "hyprlock"
   }
 }

@@ -10,7 +10,8 @@ packagesPacman=(
     "dunst" 
     "starship"
     "mpv" 
-    "thunar" 
+    "thunar"
+    "nautilus" 
     "mousepad"
     "noto-fonts" 
     "otf-font-awesome" 
@@ -28,7 +29,6 @@ packagesPacman=(
     "python-gobject"
     "pavucontrol" 
     "tumbler" 
-    "blueman"
     "papirus-icon-theme"
     "breeze-icons"
     "polkit-gnome"
@@ -38,6 +38,7 @@ packagesPacman=(
     "nm-connection-editor"
     "gvfs"
     "xdg-user-dirs"
+    "xdg-desktop-portal-gtk"
     "networkmanager"
     "network-manager-applet"
     "xarchiver"
@@ -52,10 +53,11 @@ packagesPacman=(
     "guvcview"
     "jq"
     "rofi-wayland"
+    "fastfetch"
+    "blueman"
 );
 
 packagesYay=(
-    "pfetch" 
     "bibata-cursor-theme" 
     "trizen"
     "pacseek"

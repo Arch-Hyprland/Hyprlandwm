@@ -6,3 +6,5 @@ gtk
 README.md
 CHANGELOG
 LICENSE
+install.sh
+setup.sh
