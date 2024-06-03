@@ -15,59 +15,25 @@
 
 
 (defwidget volume[] 
-  (box :orientation "h" :space-evenly false :style "background: #1e1e2e; opacity: 0.8; border-radius: 14px; padding: 5px; margin: 5px;"
+  (box :orientation "v" :space-evenly false :style "background: #1e1e2e; opacity: 0.8; border-radius: 14px; padding: 5px; margin: 5px;"
     (box :orientation "v"
-      (eventbox :onhover "${EWW_CMD} update AUDIO_OPEN=true"
-                :onhoverlost "${EWW_CMD} update AUDIO_OPEN=false"
-        (box :class "panel-box" :orientation "h" :space-evenly false 
-          (image :icon "volume-level-high" :icon-size "large-toolbar" :class "panel-icon" )
-          (revealer :reveal "${AUDIO_OPEN}" 
-                    :transition "slideleft" :duration "800ms"
-            (scale :value 80 :min 1 :max 100 :orientation "h" 
-                   :onchange "echo {}"
-                   :draw-value true
-                   :class "audio-scale" :flipped false)
-          )
-        )
-      )
       (eventbox :onhover "${EWW_CMD} update BLUE_OPEN=true"
                 :onhoverlost "${EWW_CMD} update BLUE_OPEN=false"
-        (box :class "panel-box" :orientation "h" :space-evenly false 
-          (image :icon "blueman" :icon-size "large-toolbar" :class "panel-icon")
-          (revealer :reveal "${BLUE_OPEN}"
-                    :transition "slideleft" :duration "800ms"
-            (scale :value 80 :min 1 :max 100 :orientation "h" 
-                   :onchange "echo {}"
-                   :draw-value true
-                   :class "blue-scale" :flipped false)
+        (box :class "panel-box" :orientation "v" :space-evenly false 
+          (box :class "panel-box-header" :space-evenly false
+            (image :icon "blueman" :icon-size "large-toolbar" :class "panel-icon")
+            (label :text  "BLUETOOTH" :style "margin: 0 5px")
           )
         )
       )
     )
     (box :orientation "v"
-      (eventbox :onhover "${EWW_CMD} update LIGHT_OPEN=true"
-                :onhoverlost "${EWW_CMD} update LIGHT_OPEN=false"
-        (box :class "panel-box" :orientation "h" :space-evenly false 
-          (image :icon "brightness-low" :icon-size "large-toolbar" :class "panel-icon")
-          (revealer :reveal "${LIGHT_OPEN}"
-                    :transition "slideleft" :duration "800ms"
-            (scale :value 80 :min 1 :max 100 :orientation "h" 
-                   :onchange "echo {}"
-                   :draw-value true
-                   :class "light-scale" :flipped false)
-          )
-        )
-      )
       (eventbox :onhover "${EWW_CMD} update WIFI_OPEN=true"
                 :onhoverlost "${EWW_CMD} update WIFI_OPEN=false"
-        (box :class "panel-box" :orientation "h" :space-evenly false
-          (image :icon "network-wireless" :icon-size "large-toolbar" :class "panel-icon") 
-          (revealer :reveal "${WIFI_OPEN}"
-                    :transition "slideleft" :duration "800ms"
-            (scale :value 80 :min 1 :max 100 :orientation "h"
-                   :onchange "echo {}"
-                   :draw-value true
-                   :class "wifi-scale" :flipped false)
+        (box :class "panel-box" :orientation "v" :space-evenly false
+          (box :class "panel-box-header" :space-evenly false
+            (image :icon "network-wireless" :icon-size "large-toolbar" :class "panel-icon") 
+            (label :text  "WIFI" :style "margin: 0 5px")
           )
         )
       )
@@ -76,30 +42,81 @@
 )
 
 (defwidget switch[]
-  (box :orientation "h"
-    (eventbox
-      (image :icon "" )
-    ) 
+  (box :orientation "h" :space-evenly false :style "background: #1e1e2e; opacity: 0.8; border-radius: 14px; padding: 5px; margin: 5px;"
+    (box :orientation "v"
+      (eventbox
+        (image :icon "notifications" :icon-size "large-toolbar" :class "panel-icon")
+      ) 
+      (eventbox
+        (image :icon "color-picker" :icon-size "large-toolbar" :class "panel-icon")
+      )
+    )
+    (box :orientation "v"
+      (eventbox
+        (image :icon "audio-recorder-on" :icon-size "large-toolbar" :class "panel-icon")
+      )
+      (eventbox
+        (label :text "􀋚 " :class "panel-icon" )
+      )
+    )
   )
 )
 
+(defwidget sound[] 
+  (box :orientation "v" :space-evenly false :class "slide-box" :spacing 2
+    (label :text "Sound" :halign "start")
+    (eventbox :onhover "${EWW_CMD} update AUDIO_OPEN=true"
+              :onhoverlost "${EWW_CMD} update AUDIO_OPEN=false"
+      (box :class "panel-box" :orientation "h" :space-evenly false 
+        (image :icon "volume-level-high" :icon-size "toolbar" :class "slide-icon" )
+        (revealer :reveal true
+                  :transition "slideleft" :duration "800ms"
+          (scale :value 80 :min 1 :max 100 :orientation "h" 
+                 :onchange "echo {}"
+                 :class "audio-scale" :flipped false)
+        )
+        (image :icon "audio-recorder-on" :icon-size "toolbar" :class "audio-icon" )
+      )
+    )
+  )
+
+)
+
+(defwidget display[]
+  (box :orientation "v" :space-evenly false :class "slide-box" :spacing 2
+    (label :text "Display" :halign "start") 
+    (eventbox :onhover "${EWW_CMD} update LIGHT_OPEN=true"
+              :onhoverlost "${EWW_CMD} update LIGHT_OPEN=false"
+      (box :class "panel-box" :orientation "h" :space-evenly false 
+        (image :icon "brightness-low" :icon-size "toolbar" :class "slide-icon")
+        (revealer :reveal true
+                  :transition "slideleft" :duration "800ms"
+          (scale :value 80 :min 1 :max 100 :orientation "h" 
+                 :onchange "echo {}"
+                 :class "light-scale" :flipped false)
+        )
+      )
+    )
+  )
+)
 
 ;; Widgets
 
 (defwidget profile []
-  (box :class "win-user" :orientation "h" :space-evenly false :spacing 2
-    (box :orientation "v" :spacing 25 :space-evenly false :valign "center" :class "user"
-      (box :style "background-image: url('../assets/profile.png')" :class "avatar" )
+  (box :class "win-user" :orientation "v" :space-evenly false :spacing 2
+    (box :orientation "h" :space-evenly false
       (box
+        (volume)
+      )
+      (box :orientation "v" :spacing 25 :space-evenly false :valign "center" :class "user"
+        (box :style "background-image: url('../assets/profile.png')" :class "avatar" )
         (label :text "${WHO}" )
       )
     )
     (box :orientation "v" :space-evenly false
       (box :orientation "v"
-        (volume)
-        (switch)
-      )
-      (box
+        (display)
+        (sound)
       )
     )
   )

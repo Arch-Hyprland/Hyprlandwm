@@ -3,6 +3,7 @@
 (deflisten title "playerctl metadata --follow xesam:title")
 (deflisten curSongTime "playerctl metadata --follow -f '{{duration(position)}}'")
 (deflisten totSongTime "playerctl metadata --follow -f '{{duration(mpris:length)}}'")
+(deflisten WAVE "sh ../../hypr/scripts/cava.sh")
 
 (defwidget notes [] 
   (box :orientation "h" :space-evenly false :valign "start"
@@ -11,7 +12,7 @@
         (label :text "${formattime(EWW_TIME, '%Y年%m月')}")
       )
       (box :class "cal-body" :space-evenly true :valign "center"
-        (calendar)
+        (calendar) 
       )
     )
     (box :class "notes" :space-evenly false :orientation "v" 
@@ -118,8 +119,9 @@
       )
     )
     (box :class "album-center" :space-evenly false :spacing 1 :orientation "v"
-      (box :class "lyrics" 
+      (box :class "lyrics" :orientation "v"
         (label :text "${title}" :class "art-title" :wrap true)
+        (label :text "${WAVE}" )
       )
       (box :orientation 'v' :space-evenly false :spacing 1 
         (box :style "padding: 5px 0px; font-size: 12px"
@@ -169,6 +171,6 @@
                         :anchor "top right"
               )
     :exclusive false
-    :stacking "bg"
+    :stacking "fg"
     :focusable false
 (widgets))

@@ -108,79 +108,82 @@
   padding: 12px 0 12px 0;
 }
 
-.panel-box {
+.panel-box-header {
+  border-radius: 10px 10px 10px 10px;
+  margin: 5px 5px 0 5px;
+  padding: 0 5px;
+  min-width: 160px;
   opacity: 1;
 }
 
 .panel-icon {
   background-color: #373c68;
-  border-radius: 20px;
+  border-radius: 15px;
   min-width: 30px;
   min-height: 30px;
   opacity: 1;
   margin: 5px;
 }
 
+
 .audio-scale highlight {
   all: unset;
-  background-color: #ff5600;
-  border-radius: 6px;
+  background-color: $color6;
+  border-radius: 0 10px 10px 0;
+  transition: all 0.8s;
 }
 
 .audio-scale trough {
   all: unset;
-  border-radius: 8px;
-  background-color: white;
-  min-height: 12px;
-  min-width: 100px;
+  background-color: #373c68;
+  border: 1px solid $background;
+  min-height: 20px;
+  border-radius: 0 10px 10px 0;
+  min-width: 260px;
   transition: all 0.8s;
+}
+
+.audio-icon {
+  background-color: #373c68;
+  border-radius: 10px;
+  min-width: 22px;
+  min-height: 20px;
+  opacity: 1;
+  margin: 5px;
+}
+
+.slide-box {
+  margin: 5px 5px 5px 5px;
+  padding: 5px 10px;
+  background-color: #1e1e2e;
+  opacity: 0.98;
+  border-radius: 10px;
+}
+
+.slide-icon {
+  background-color: #373c68;
+  border: 1px solid $background;
+  border-radius: 10px 0 0 10px;
+  min-width: 26px;
+  min-height: 20px;
+  opacity: 1;
+  margin: 5px 0;
 }
 
 .light-scale highlight {
   all: unset;
-  background-color: #f1aaf1;
-  border-radius: 6px;
+  background-color: $color4;
+  border-radius: 0 10px 10px 0;
   transition: all 0.8s;
 }
 
 .light-scale trough {
   all: unset;
-  border-radius: 8px;
-  background-color: white;
-  min-height: 12px;
-  min-width: 100px;
-  transition: all 0.8s;
-}
-
-.wifi-scale highlight {
-  all: unset;
-  background-color: #6a2ea2;
-  border-radius: 6px;
-  transition: all 0.8s;
-}
-
-.wifi-scale trough {
-  all: unset;
-  border-radius: 8px;
-  background-color: white;
-  min-height: 12px;
-  min-width: 100px;
-  transition: all 0.8s;
-}
-
-.blue-scale highlight {
-  all: unset;
-  background-color: #ff90a1;
-  border-radius: 6px;
-  transition: all 0.8s;
-}
-
-.blue-scale trough {
-  all: unset;
-  border-radius: 8px;
-  background-color: white;
-  min-height: 12px;
-  min-width: 100px;
+  border-radius: 0 10px 10px 0;
+  background-color: #373c68;
+  border: 1px solid $background;
+  min-height: 20px;
+  min-width: 290px;
   transition: all 0.8s;
 }
 

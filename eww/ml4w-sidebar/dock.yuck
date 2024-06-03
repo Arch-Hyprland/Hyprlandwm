@@ -160,15 +160,25 @@
 
 (defwidget dock[mode]
   (eventbox :onhover "${EWW_CMD} update HOVER=true" :onhoverlost "${EWW_CMD} update HOVER=false"
-    (revealer :reveal "${ mode == 'dock' || (mode == 'hide' && HOVER)}"
-              :transition "crossfade" :duration "1.5s"
-      (box :orientation "v" :space-evenly false :class "app-dock" 
-        (for entry in apps 
-          (applaunch :name "${entry['name']}" :cmd "${entry['cmd']}" :icon "${entry['icon']}" :size "${entry['size']}" :mode mode)
+    (box :space-evenly false
+      (slide :mode mode)
+      (revealer :reveal "${ mode == 'dock' || (mode == 'hide' && HOVER)}"
+                :transition "crossfade" :duration "3s"
+                :visible "${ mode == 'dock' || (mode == 'hide' && HOVER)}"
+        (box :orientation "v" :space-evenly false :class "app-dock" 
+          (for entry in apps 
+            (applaunch :name "${entry['name']}" :cmd "${entry['cmd']}" :icon "${entry['icon']}" :size "${entry['size']}" :mode mode)
+          )
         )
       )
     )
   )
+)
+
+(defwidget slide[mode]
+  (box :class "slide" 
+    :style "min-width: 5px; min-height: 1000px"
+    :visible "${ (mode != 'dock') && !HOVER}" )
 )
 
 ;; ** Windows *************************************************************************
@@ -176,7 +186,6 @@
 (defwindow dock [mode]
         :geometry (geometry :x "2px" 
                             :y "0px"  
-                            :width "60px" 
                             :anchor "left center")
         :exclusive "${ mode == 'dock' ? true : false }"
         :stacking "fg"

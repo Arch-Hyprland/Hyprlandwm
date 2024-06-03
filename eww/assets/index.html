@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #1e1e2e90;
+    }
+
+    .dock {
+      display: flex;
+      background-color: #3e2e4e;
+      padding: 10px;
+      margin: 100px;
+      border-radius: 16px;
+      overflow: visible;
+
+    }
+
+    .icon {
+      transition: all 0.8s;
+      margin: 5px 10px;
+    }
+
+    .icon:hover {
+      transition: all 0.8s;
+      transform: translateY(-20px) scale(1.5);
+      margin: 0x 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="dock">
+    <div class="icon">
+      <img src="./application-exit-symbolic-rtl.svg" />
+    </div>
+    <div class="icon">
+      <img src="./system-reboot-symbolic.svg" />
+    </div>
+    <div class="icon">
+      <img src="./system-shutdown-symbolic.svg" />
+    </div>
+    <div class="icon">
+      <img src="./system-lock-screen-symbolic.svg" />
+    </div>
+  </div>
+</body>
+
+</html>
