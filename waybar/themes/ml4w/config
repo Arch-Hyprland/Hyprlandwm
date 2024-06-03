@@ -45,15 +45,14 @@
         "pulseaudio",
         "bluetooth",
         "battery", 
-        "idle_inhibitor",
         "group/hardware",
         "custom/cliphist",
         // START NETWORK TOOGLE
         "network",
         // END NETWORK TOOGLE
-        "custom/exit",
+        "custom/widgets",
         "clock",
-        "custom/ml4w-welcome",
+        "custom/panel",
         "tray"
     ]
 }

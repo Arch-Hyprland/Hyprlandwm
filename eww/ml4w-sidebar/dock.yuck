@@ -6,7 +6,7 @@
 [
   {
     "name": "dockmode",
-    "cmd": "./mode.sh",
+    "cmd": "../scripts/mode.sh",
     "icon": "/home/unicorn/.local/share/icons/WhiteSur/apps/scalable/dock.svg",
     "size": 36
   },
@@ -158,16 +158,11 @@
   )
 )
 
-(defwidget slide[mode]
-  (box :class "slide" :visible "${ (mode != 'dock') && !HOVER}")
-)
-
 (defwidget dock[mode]
   (eventbox :onhover "${EWW_CMD} update HOVER=true" :onhoverlost "${EWW_CMD} update HOVER=false"
-    (box :space-evenly false :orientation "h"
-      (slide :mode mode)
+    (revealer :reveal "${ mode == 'dock' || (mode == 'hide' && HOVER)}"
+              :transition "crossfade" :duration "1.5s"
       (box :orientation "v" :space-evenly false :class "app-dock" 
-           :visible "${ mode == 'dock' || (mode == 'hide' && HOVER)}"
         (for entry in apps 
           (applaunch :name "${entry['name']}" :cmd "${entry['cmd']}" :icon "${entry['icon']}" :size "${entry['size']}" :mode mode)
         )
@@ -179,7 +174,7 @@
 ;; ** Windows *************************************************************************
 
 (defwindow dock [mode]
-        :geometry (geometry :x "0px" 
+        :geometry (geometry :x "2px" 
                             :y "0px"  
                             :width "60px" 
                             :anchor "left center")

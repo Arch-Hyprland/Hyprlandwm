@@ -1,3 +1,5 @@
+@import "../../../.cache/wal/colors.scss";
+
 * {
   all: unset;
   // font-family: "Cascadia Code";
@@ -8,26 +10,26 @@
 }
 
 .win-user {
-  background-color: #242424;
-  opacity: 0.95;
-  border: 1px solid #444444;
+  background-color: #3d424e;
+  opacity: 0.90;
+  border: 1px solid #3d4e4a;
   border-radius: 10px 10px 2px 2px;
-  box-shadow: 0 0 4px 2px #000000;
+  box-shadow: 0 0 4px 2px #3d424e;
   margin: 8px 8px 1px 8px;
 }
 
 .win-res {
-  background-color: #242424;
+  background-color: #3d424e;
   opacity: 0.95;
-  border: 1px solid #444444;
+  border: 1px solid #3d424e;
   border-radius: 2px;
-  box-shadow: 0 0 4px 2px #000000;
+  box-shadow: 0 0 4px 2px #3d424e;
   padding: 10px 0 10px 0;
   margin: 1px 8px 1px 8px;
 }
 
 .res_box {
-  background-color: #242424;
+  background-color: #3d424e;
   border-radius: 12px;
   padding: 8px 8px 8px 8px;
 }
@@ -41,7 +43,7 @@
 }
 
 .res_circle_small {
-  background-color: #242424;
+  background-color: #3d424e;
   border: 0px solid #161616;
   border-radius: 100%;
   color: #FFFFFF;
@@ -62,7 +64,7 @@
 }
 
 .user {
-  margin: 5px;
+  margin: 5px 5px 5px 8px;
   padding: 20px 8px 20px 8px;
   background-color: #1e1e2e;
   opacity: 0.9;
@@ -97,15 +99,91 @@
 }
 
 .win-menu {
-  background-color: #242424;
+  background-color: #3d424e;
   opacity: 0.95;
-  border: 1px solid #444444;
+  border: 1px solid #3d424e;
   border-radius: 2px 2px 10px 10px;
-  box-shadow: 0 0 4px 2px #000000;
+  box-shadow: 0 0 4px 2px #3d424e;
   margin: 1px 8px 1px 8px;
   padding: 12px 0 12px 0;
 }
 
-@import "desktop.scss";
+.panel-box {
+  opacity: 1;
+}
+
+.panel-icon {
+  background-color: #373c68;
+  border-radius: 20px;
+  min-width: 30px;
+  min-height: 30px;
+  opacity: 1;
+  margin: 5px;
+}
+
+.audio-scale highlight {
+  all: unset;
+  background-color: #ff5600;
+  border-radius: 6px;
+}
+
+.audio-scale trough {
+  all: unset;
+  border-radius: 8px;
+  background-color: white;
+  min-height: 12px;
+  min-width: 100px;
+  transition: all 0.8s;
+}
+
+.light-scale highlight {
+  all: unset;
+  background-color: #f1aaf1;
+  border-radius: 6px;
+  transition: all 0.8s;
+}
+
+.light-scale trough {
+  all: unset;
+  border-radius: 8px;
+  background-color: white;
+  min-height: 12px;
+  min-width: 100px;
+  transition: all 0.8s;
+}
+
+.wifi-scale highlight {
+  all: unset;
+  background-color: #6a2ea2;
+  border-radius: 6px;
+  transition: all 0.8s;
+}
+
+.wifi-scale trough {
+  all: unset;
+  border-radius: 8px;
+  background-color: white;
+  min-height: 12px;
+  min-width: 100px;
+  transition: all 0.8s;
+}
+
+.blue-scale highlight {
+  all: unset;
+  background-color: #ff90a1;
+  border-radius: 6px;
+  transition: all 0.8s;
+}
+
+.blue-scale trough {
+  all: unset;
+  border-radius: 8px;
+  background-color: white;
+  min-height: 12px;
+  min-width: 100px;
+  transition: all 0.8s;
+}
+
+@import "widgets.scss";
 @import "dock.scss";
 @import "task.scss";

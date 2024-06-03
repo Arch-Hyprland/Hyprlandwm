@@ -159,62 +159,62 @@ window#waybar.empty #window {
  * Custom Quicklinks
  * ----------------------------------------------------- */
 
-#custom-brave, 
-#custom-browser, 
-#custom-keybindings, 
-#custom-outlook, 
-#custom-filemanager, 
-#custom-teams, 
-#custom-chatgpt, 
-#custom-calculator, 
-#custom-windowsvm, 
-#custom-wallpaper, 
-#custom-wallpaper, 
+#custom-brave,
+#custom-browser,
+#custom-keybindings,
+#custom-outlook,
+#custom-filemanager,
+#custom-teams,
+#custom-chatgpt,
+#custom-calculator,
+#custom-windowsvm,
+#custom-wallpaper,
+#custom-wallpaper,
 #custom-system,
 #custom-waybarthemes {
-    margin-right: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    opacity: 0.8;
-    color: @iconcolor;
+  margin-right: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0.8;
+  color: @iconcolor;
 }
 
-#custom-settings, 
+#custom-settings,
 #custom-cliphist {
-    margin-right: 5px;
-    font-size: 20px;
-    font-weight: bold;
-    opacity: 0.8;
-    color: @iconcolor;
+  margin-right: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0.8;
+  color: @iconcolor;
 }
 
-#custom-waybarthemes, 
+#custom-waybarthemes,
 #custom-system {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 
 #custom-chatgpt {
-    margin-right: 10px;
-    background-image: url("../assets/ai-icon.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    padding-right: 24px;
+  margin-right: 10px;
+  background-image: url("../assets/ai-icon.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-right: 24px;
 }
 
-#custom-ml4w-welcome {
-    font-size: 20px;
-    margin-right: 3px;
-    background-repeat: no-repeat;
-    background-position: center;
+#custom-widgets {
+  font-size: 20px;
+  margin-right: 3px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #custom-ml4w-hyprland-settings {
-    margin-right: 12px;
-    background-image: url("../assets/hyprland-icon.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    padding-right: 16px;
+  margin-right: 12px;
+  background-image: url("../assets/hyprland-icon.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-right: 16px;
 }
 
 /* -----------------------------------------------------
@@ -222,45 +222,46 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #idle_inhibitor {
-    margin-right: 3px;
-    font-size: 18px;
-    font-weight: bold;
-    opacity: 0.8;
-    color: @iconcolor;
+  margin-right: 3px;
+  font-size: 18px;
+  font-weight: bold;
+  opacity: 0.8;
+  color: @iconcolor;
 }
 
 #idle_inhibitor.activated {
-    font-size: 18px;
-    color: lightcyan;
-    border-radius: 15px;
-    padding: 2px 8px 2px 8px;
-    opacity: 0.8;    
+  font-size: 18px;
+  color: lightcyan;
+  border-radius: 15px;
+  padding: 2px 8px 2px 8px;
+  opacity: 0.8;
 }
 
 /* -----------------------------------------------------
  * Custom Modules
  * ----------------------------------------------------- */
 
-#custom-appmenu, #custom-appmenuwlr {
-    background-color: @backgrounddark;
-    font-size: 16px;
-    color: @textcolor1;
-    border-radius: 15px;
-    padding: 2px 1px 1px 3px;
-    margin: 4px 15px 4px 10px;
-    opacity: 0.8;
-    border: 0px solid @bordercolor;
+#custom-appmenu,
+#custom-appmenuwlr {
+  background-color: @backgrounddark;
+  font-size: 16px;
+  color: @textcolor1;
+  border-radius: 15px;
+  padding: 2px 1px 1px 3px;
+  margin: 4px 15px 4px 10px;
+  opacity: 0.8;
+  border: 0px solid @bordercolor;
 }
 
 /* -----------------------------------------------------
  * Custom Exit
  * ----------------------------------------------------- */
 
-#custom-exit {
-    margin: 0px 3px 0px 0px;
-    padding: 0px;
-    font-size: 18px;
-    color: @iconcolor;
+#custom-panel {
+  margin: 0px 3px 0px 0px;
+  padding: 0px;
+  font-size: 18px;
+  color: @iconcolor;
 }
 
 /* -----------------------------------------------------
@@ -330,11 +331,13 @@ window#waybar.empty #window {
  * Hardware Group
  * ----------------------------------------------------- */
 
-#disk,#memory,#cpu {
-    margin:0px;
-    padding:0px;
-    font-size:16px;
-    color:@iconcolor;
+#disk,
+#memory,
+#cpu {
+  margin: 0px;
+  padding: 0px;
+  font-size: 16px;
+  color: @iconcolor;
 }
 
 #cpu {
@@ -489,4 +492,3 @@ window#waybar.empty #window {
   -gtk-icon-effect: highlight;
   background-color: #eb4d4b;
 }
-

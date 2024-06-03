@@ -1,36 +1,39 @@
+@use "../../../.cache/wal/colors.scss";
+
 .task-item {
   border-radius: 16px;
   margin: 10px;
-  border: 2px solid #2e2e2e;
-  background-color: #0a212e;
-  padding: 20px;
+  border: 2px solid $color1;
+  box-shadow: 0 0 10px 2px $color1;
+  background-color: $color1;
+  padding: 15px;
 }
 
 .taskview {
   background-color: #1e1e2e;
-  opacity: 1;
-  border-radius: 16px;
+  opacity: 0.85;
+  border: 6px solid $color1;
+  box-shadow: 0 0 0px 0px $color1;
+  border-radius: 30px;
   padding: 20px;
-  border: 3px solid #1e2e2e;
-  box-shadow: 0 0 4px 2px #1e1e2eee;
 }
 
 .task-label {
-  font-size: 20px;
+  font-size: 18px;
   font-family: "Cascadia Code";
   font-style: italic;
 }
 
 .item-view:focus {
-  border: 1px solid #1e1e2e;
+  border: 1px solid $color4;
 }
 
 .item-view {
-  opacity: 0.5;
+  opacity: 0.8;
   border-radius: 16px;
 
   &:hover {
-    background-color: #0e2a2e;
+    background-color: $color4;
     opacity: 1;
     padding: 10px;
     transition: all 0.5s;

@@ -52,14 +52,10 @@
   background-color: #3d424e;
   min-height: 166px;
   border-radius: 0 0 16px 16px;
-  padding: 10px 5px 2px 5px;
-  font-family: 'Cascadia Code';
+  padding: 5px 5px 2px 5px;
   font-style: italic;
 }
 
-.cal-body calendar {
-  font-size: 15px;
-}
 
 .wheel-box {
   font-size: 30px;
@@ -178,23 +174,54 @@
 }
 
 .album-left {
-  min-width: 156px;
-  margin: 20px 5px;
+  min-width: 220px;
 }
 
 .album-center {
-  min-width: 300px;
+  min-width: 410px;
   padding: 0px 0px 0 0px;
+  border-radius: 0 16px 16px 0;
   background: #2a1ea1;
 }
 
-.album-right {
-  min-width: 146px;
-  margin: 20px 5px;
+.art-cover {
+  background-size: cover;
+  border-radius: 16px 0 0 10px;
+}
+
+.art-title {
+  padding: 15px 0 0 0;
+}
+
+.time-ratio {
+  margin-right: 10px;
 }
 
 .lyrics {
-  min-height: 125px;
+  min-height: 120px;
+}
+
+.media-btn {
+  min-height: 30px;
+  padding: 0px 46px;
+}
+
+.media-box {
+  padding: 0 20px;
+  opacity: 0.6;
+  transition: all 0.5s;
+  border-radius: 10px;
+}
+
+.media-box:hover {
+  background-color: #2a1eaf;
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+.prev-icon {
+  background: url("../assets/media-prev.svg");
+  background-size: cover;
 }
 
 .next-icon {
@@ -202,26 +229,26 @@
   background-size: cover;
 }
 
-.ctl-panel {}
-
 .pause-icon {
   background: url("../assets/media-pause.svg");
   background-size: cover;
 }
 
-progressbar>trough {
+.progress-bar highlight {
+  all: unset;
+  background-color: white;
+  min-height: 10px;
+}
+
+.progress-bar trough {
+  all: unset;
   min-width: 260px;
   background-color: #99be2c;
   border-radius: 2px;
   min-height: 2px;
-  margin: 0 0 10px 0;
+  margin: 0 0 3px 0;
 }
 
-.prev-icon {
-  background: url("../assets/media-prev.svg");
-  min-height: 20px;
-  background-size: cover;
-}
 
 .news {
   min-width: 200px;
@@ -250,7 +277,17 @@ progressbar>trough {
 
 .sys-info {
   background-color: #735982;
-  border-radius: 16px;
+  border-radius: 1px 16px 16px 1px;
+  border-left: 5px solid #eeeaaf;
+  opacity: 0.8;
+  padding: 10px;
+  margin: 5px;
+}
+
+.close-button {
+  background-color: #735982;
+  border-radius: 16px 1px 1px 16px;
+  border-right: 5px solid #eeeaaf;
   opacity: 0.8;
   padding: 10px;
   margin: 5px;

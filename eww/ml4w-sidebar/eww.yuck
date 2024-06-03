@@ -8,6 +8,80 @@
 (defpoll MEM_USAGE :interval "2s" `../scripts/sys_info.sh --mem`)
 (defpoll DISK_USAGE :interval "1s" `../scripts/sys_info.sh --disk`)
 (defpoll WHO :interval "20h" `whoami`)
+(defvar AUDIO_OPEN false)
+(defvar LIGHT_OPEN false)
+(defvar BLUE_OPEN false)
+(defvar WIFI_OPEN false)
+
+
+(defwidget volume[] 
+  (box :orientation "h" :space-evenly false :style "background: #1e1e2e; opacity: 0.8; border-radius: 14px; padding: 5px; margin: 5px;"
+    (box :orientation "v"
+      (eventbox :onhover "${EWW_CMD} update AUDIO_OPEN=true"
+                :onhoverlost "${EWW_CMD} update AUDIO_OPEN=false"
+        (box :class "panel-box" :orientation "h" :space-evenly false 
+          (image :icon "volume-level-high" :icon-size "large-toolbar" :class "panel-icon" )
+          (revealer :reveal "${AUDIO_OPEN}" 
+                    :transition "slideleft" :duration "800ms"
+            (scale :value 80 :min 1 :max 100 :orientation "h" 
+                   :onchange "echo {}"
+                   :draw-value true
+                   :class "audio-scale" :flipped false)
+          )
+        )
+      )
+      (eventbox :onhover "${EWW_CMD} update BLUE_OPEN=true"
+                :onhoverlost "${EWW_CMD} update BLUE_OPEN=false"
+        (box :class "panel-box" :orientation "h" :space-evenly false 
+          (image :icon "blueman" :icon-size "large-toolbar" :class "panel-icon")
+          (revealer :reveal "${BLUE_OPEN}"
+                    :transition "slideleft" :duration "800ms"
+            (scale :value 80 :min 1 :max 100 :orientation "h" 
+                   :onchange "echo {}"
+                   :draw-value true
+                   :class "blue-scale" :flipped false)
+          )
+        )
+      )
+    )
+    (box :orientation "v"
+      (eventbox :onhover "${EWW_CMD} update LIGHT_OPEN=true"
+                :onhoverlost "${EWW_CMD} update LIGHT_OPEN=false"
+        (box :class "panel-box" :orientation "h" :space-evenly false 
+          (image :icon "brightness-low" :icon-size "large-toolbar" :class "panel-icon")
+          (revealer :reveal "${LIGHT_OPEN}"
+                    :transition "slideleft" :duration "800ms"
+            (scale :value 80 :min 1 :max 100 :orientation "h" 
+                   :onchange "echo {}"
+                   :draw-value true
+                   :class "light-scale" :flipped false)
+          )
+        )
+      )
+      (eventbox :onhover "${EWW_CMD} update WIFI_OPEN=true"
+                :onhoverlost "${EWW_CMD} update WIFI_OPEN=false"
+        (box :class "panel-box" :orientation "h" :space-evenly false
+          (image :icon "network-wireless" :icon-size "large-toolbar" :class "panel-icon") 
+          (revealer :reveal "${WIFI_OPEN}"
+                    :transition "slideleft" :duration "800ms"
+            (scale :value 80 :min 1 :max 100 :orientation "h"
+                   :onchange "echo {}"
+                   :draw-value true
+                   :class "wifi-scale" :flipped false)
+          )
+        )
+      )
+    )
+  )
+)
+
+(defwidget switch[]
+  (box :orientation "h"
+    (eventbox
+      (image :icon "" )
+    ) 
+  )
+)
 
 
 ;; Widgets
@@ -20,9 +94,13 @@
         (label :text "${WHO}" )
       )
     )
-    (box :orientation "v"
-      (label :text "${HOVER}")
-      (label :text "${ACTIVE}")
+    (box :orientation "v" :space-evenly false
+      (box :orientation "v"
+        (volume)
+        (switch)
+      )
+      (box
+      )
     )
   )
 )
@@ -33,7 +111,7 @@
     (centerbox :orientation "h"
       (box :class "res_box" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
         (box :class "res_circle" :orientation "v" :valign "center" :halign "center"
-          (circular-progress :class "res_cpu" :value CPU_USAGE :thickness 15
+          (circular-progress :class "res_cpu" :value "${CPU_USAGE?:0}":thickness 15
             (label :class "res_circle_small" :text "${CPU_USAGE}%" :show-truncated false)
           )
         )
@@ -41,7 +119,7 @@
       )
       (box :class "res_box" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
         (box :class "res_circle" :orientation "v" :valign "center" :halign "center"
-          (circular-progress :class "res_mem" :value MEM_USAGE :thickness 15
+          (circular-progress :class "res_mem" :value "${MEM_USAGE?:0}" :thickness 15
             (label :class "res_circle_small" :text "${MEM_USAGE}%" :show-truncated false )
           )
         )
@@ -49,7 +127,7 @@
       )
       (box :class "res_box" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
         (box :class "res_circle" :orientation "v" :valign "center" :halign "center"
-          (circular-progress :class "res_disk" :value DISK_USAGE :thickness 15
+          (circular-progress :class "res_disk" :value "${DISK_USAGE?:0}" :thickness 15
             (label :class "res_circle_small" :text "${DISK_USAGE}%" :show-truncated false)
           )
         )
@@ -81,13 +159,13 @@
 )
 
 (include "./dock.yuck")
-(include "./desktop.yuck")
+(include "./widgets.yuck")
 (include "./task.yuck")
 
 ;; ** layout **************************************************************************
 
 (defwidget sidebar[]
-  (eventbox :onhoverlost "./launch.sh"
+  (eventbox :onhoverlost ""
     (box :orientation "v" :valign "start" :class "side" :spacing 0 :space-evenly false
       (profile)
       (resources)

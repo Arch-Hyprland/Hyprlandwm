@@ -34,7 +34,9 @@
     "on-click": "activate",
     "on-click-middle": "close",
     "ignore-list": [
-      "Alacritty"
+      "Alacritty",
+      "Fcitx5 Input Window",
+      ""
     ],
     "app_ids-mapping": {
       "firefoxdeveloperedition": "firefox-developer-edition"
@@ -55,11 +57,10 @@
     },
     "separate-outputs": true
   },
-  // ML4W Welcome App
-  "custom/ml4w-welcome": {
-    "on-click": "sleep 0.1 && ~/dotfiles/eww/ml4w-sidebar/launch.sh",
-    "on-click-right": "sleep 0.1 && ~/dotfiles/apps/ML4W_Welcome-x86_64.AppImage",
+  // widgets
+  "custom/widgets": {
     "format": "􀪲 ",
+    "on-click": "~/dotfiles/eww/scripts/widgets.sh",
     "tooltip": false
   },
   // ML4W Welcome App
@@ -172,9 +173,9 @@
     "tooltip": false
   },
   // Power Menu
-  "custom/exit": {
-    "format": "􀆧 ",
-    "on-click": "wlogout",
+  "custom/panel": {
+    "format": "􀜊 ",
+    "on-click": "~/dotfiles/eww/ml4w-sidebar/launch.sh",
     "tooltip": false
   },
   // Keyboard State
@@ -295,9 +296,9 @@
       "critical": 15
     },
     "format": "{icon}{capacity}%",
-    "format-charging": " {capacity}%",
+    "format-charging": "􀢋 {capacity}%",
     "format-plugged": "􀡷  {capacity}%",
-    "format-alt": "{icon}  {time}",
+    "format-alt": "{icon} {time}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
     "format-icons": [

@@ -44,10 +44,9 @@
         "network",
         "group/hardware",
         "custom/cliphist",
-        "idle_inhibitor",
-        "custom/exit",
+        "custom/widgets",
         "clock",
+        "custom/panel"
         "tray",
-        "custom/ml4w-welcome"
     ]
 }

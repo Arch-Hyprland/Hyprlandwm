@@ -195,18 +195,18 @@ window#waybar.empty #window {
   margin-right: 10px;
 }
 
-#custom-ml4w-welcome {
+#custom-widgets {
   margin-right: 3px;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 #custom-ml4w-hyprland-settings {
-    margin-right: 12px;
-    background-image: url("../assets/hyprland-icon.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    padding-right: 16px;
+  margin-right: 12px;
+  background-image: url("../assets/hyprland-icon.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-right: 16px;
 }
 
 #custom-chatgpt {
@@ -257,8 +257,7 @@ window#waybar.empty #window {
  * Custom Exit
  * ----------------------------------------------------- */
 
-#custom-exit,
-#custom-exitwlr {
+#custom-panel {
   margin: 0px 5px 0px 0px;
   padding: 0px;
   font-size: 20px;

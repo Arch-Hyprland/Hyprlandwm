@@ -2,7 +2,7 @@
 
 (defwidget taskview []
   (box :space-evenly false :vexpand true
-    (for task in "${tasks}"
+    (for task in "${tasks?:[]}"
       (box :orientation "v" :space-evenly false
         (box :class "task-item" :orientation "h" :space-evenly false
           (for view in "${task.views}"
