@@ -103,7 +103,7 @@ tooltip label {
  * ----------------------------------------------------- */
 
 #window {
-  background: @backgroundlight;
+  background: rgba(43, 48, 59, 0.8);
   margin: 4px 15px 4px 0px;
   padding: 1px 10px 1px 10px;
   border-radius: 12px;
@@ -194,7 +194,7 @@ window#waybar.empty #window {
 
 #custom-waybarthemes,
 #custom-hyprshade {
-    margin-right:12px;
+  margin-right: 12px;
 }
 
 #custom-system {

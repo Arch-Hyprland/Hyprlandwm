@@ -71,7 +71,7 @@
   },
   // Youtube Subscriber Count
   "custom/youtube": {
-    "format": " {}",
+    "format": "􀵩 {}",
     "exec": "python ~/private/youtube.py",
     "restart-interval": 600,
     "on-click": "brave https://studio.youtube.com",
@@ -118,7 +118,7 @@
   },
   // Keybindings
   "custom/keybindings": {
-    "format": " ",
+    "format": "􀇳 ",
     "on-click": "~/dotfiles/hypr/scripts/keybindings.sh",
     "tooltip": false
   },
@@ -148,13 +148,13 @@
   },
   // ChatGPT Launcher
   "custom/chatgpt": {
-    "format": " ",
+    "format": "􀉩 ",
     "on-click": "brave --app=https://chat.openai.com",
     "tooltip": "Open ChatGOPT"
   },
   // Calculator
   "custom/calculator": {
-    "format": " ",
+    "format": "􀓪 ",
     "on-click": "qalculate-gtk",
     "tooltip": false
   },
@@ -177,35 +177,32 @@
     "on-click": "~/dotfiles/eww/ml4w-sidebar/launch.sh",
     "tooltip-format": "Open Control Panel"
   },
-
-    // Hyprshade
+  // Hyprshade
   "custom/hyprshade": {
-      "format": "",
-      "tooltip-format": "Toggle Screen Shader",
-      "on-click": "sleep 0.5; ~/dotfiles/hypr/scripts/hyprshade.sh",
-      "on-click-right": "sleep 0.5; ~/dotfiles/hypr/scripts/hyprshade.sh rofi"
+    "format": "􀇁 ",
+    "tooltip-format": "Toggle Screen Shader",
+    "on-click": "sleep 0.5; ~/dotfiles/hypr/scripts/hyprshade.sh",
+    "on-click-right": "sleep 0.5; ~/dotfiles/hypr/scripts/hyprshade.sh rofi"
   },
-
   // Hypridle inhibitor
   "custom/hypridle": {
-      "format": "􀐮 ",
-      "return-type": "json",
-      "escape": true,
-      "exec-on-event": true,
-      "interval": 60,
-      "exec": "~/dotfiles/hypr/scripts/hypridle.sh status",
-      "on-click": "~/dotfiles/hypr/scripts/hypridle.sh toggle",
-      "on-click-right": "hyprlock"
+    "format": "􀍽 ",
+    "return-type": "json",
+    "escape": true,
+    "exec-on-event": true,
+    "interval": 60,
+    "exec": "~/dotfiles/hypr/scripts/hypridle.sh status",
+    "on-click": "~/dotfiles/hypr/scripts/hypridle.sh toggle",
+    "on-click-right": "hyprlock"
   },
-
   // Keyboard State
   "keyboard-state": {
     "numlock": true,
     "capslock": true,
     "format": "{name} {icon}",
     "format-icons": {
-      "locked": "",
-      "unlocked": ""
+      "locked": "􀎡 ",
+      "unlocked": "􀎥 "
     }
   },
   // System tray
@@ -224,7 +221,7 @@
   },
   // system
   "custom/system": {
-    "format": "",
+    "format": "􀟛 ",
     "tooltip": false
   },
   "custom/recorder": {
@@ -344,9 +341,9 @@
       "headphone": "􀑈 ",
       "hands-free": "􀺹 ",
       "headset": "􀺹 ",
-      "phone": " ",
-      "portable": " ",
-      "car": " ",
+      "phone": "􀌾 ",
+      "portable": "􀖎 ",
+      "car": "􀙘 ",
       "default": [
         "􀊥 ",
         "􀊧 ",

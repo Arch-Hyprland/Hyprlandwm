@@ -85,7 +85,8 @@ newwall=$(echo $wallpaper | sed "s|$wallpaper_folder/||g")
 # Reload waybar with new colors
 # -----------------------------------------------------
 ~/dotfiles/waybar/launch.sh
-
+sleep 1
+~/dotfiles/eww/scripts/mode.sh reload
 # ----------------------------------------------------- 
 # Set the new wallpaper
 # -----------------------------------------------------
