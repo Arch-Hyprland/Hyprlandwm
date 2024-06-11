@@ -24,7 +24,7 @@
   },
   {
     "name": "idea",
-    "cmd": "/home/unicorn/software/idea/bin/idea.sh",
+    "cmd": "/home/unicorn/software/idea/bin/idea",
     "icon": "/home/unicorn/software/idea/bin/idea.svg",
     "size": 36
   },

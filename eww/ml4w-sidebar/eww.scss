@@ -110,9 +110,9 @@
 
 .panel-box-header {
   border-radius: 10px 10px 10px 10px;
-  margin: 5px 5px 0 5px;
-  padding: 0 5px;
-  min-width: 160px;
+  margin: 1px;
+  padding: 3px;
+  min-width: 120px;
   opacity: 1;
 }
 
@@ -122,7 +122,7 @@
   min-width: 30px;
   min-height: 30px;
   opacity: 1;
-  margin: 5px;
+  margin: 2px;
 }
 
 
@@ -185,6 +185,26 @@
   min-height: 20px;
   min-width: 290px;
   transition: all 0.8s;
+}
+
+.check-item {
+  padding: 3px;
+  margin: 0px 5px;
+  border-radius: 5px;
+}
+
+.check-value {
+  padding: 3px;
+  margin: 2px 5px;
+  border-radius: 10px;
+  background-color: $color1;
+}
+
+.plugin-switch {
+  margin: 5px;
+  padding: 8px 5px;
+  border-radius: 16px;
+  background-color: #1e1e2e;
 }
 
 @import "widgets.scss";

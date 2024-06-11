@@ -8,33 +8,24 @@
 (defpoll MEM_USAGE :interval "2s" `../scripts/sys_info.sh --mem`)
 (defpoll DISK_USAGE :interval "1s" `../scripts/sys_info.sh --disk`)
 (defpoll WHO :interval "20h" `whoami`)
-(defvar AUDIO_OPEN false)
-(defvar LIGHT_OPEN false)
-(defvar BLUE_OPEN false)
-(defvar WIFI_OPEN false)
+(defpoll PLUGIN :interval "60s" `/home/unicorn/dotfiles/eww/scripts/b.sh | jq`)
 
 
 (defwidget volume[] 
-  (box :orientation "v" :space-evenly false :style "background: #1e1e2e; opacity: 0.8; border-radius: 14px; padding: 5px; margin: 5px;"
+  (box :orientation "v" :space-evenly false :style "background: #1e1e2e; opacity: 0.8; border-radius: 14px; padding: 2px; margin: 5px 5px 5px 2px;"
     (box :orientation "v"
-      (eventbox :onhover "${EWW_CMD} update BLUE_OPEN=true"
-                :onhoverlost "${EWW_CMD} update BLUE_OPEN=false"
-        (box :class "panel-box" :orientation "v" :space-evenly false 
-          (box :class "panel-box-header" :space-evenly false
-            (image :icon "blueman" :icon-size "large-toolbar" :class "panel-icon")
-            (label :text  "BLUETOOTH" :style "margin: 0 5px")
-          )
+      (eventbox 
+        (box :class "panel-box-header" :space-evenly false
+          (image :icon "blueman" :icon-size "large-toolbar" :class "panel-icon")
+          (label :text  "BLUETOOTH" :style "margin: 0 5px")
         )
       )
     )
     (box :orientation "v"
-      (eventbox :onhover "${EWW_CMD} update WIFI_OPEN=true"
-                :onhoverlost "${EWW_CMD} update WIFI_OPEN=false"
-        (box :class "panel-box" :orientation "v" :space-evenly false
-          (box :class "panel-box-header" :space-evenly false
-            (image :icon "network-wireless" :icon-size "large-toolbar" :class "panel-icon") 
-            (label :text  "WIFI" :style "margin: 0 5px")
-          )
+      (eventbox 
+        (box :class "panel-box-header" :space-evenly false
+          (image :icon "network-wireless-hotspot" :icon-size "large-toolbar" :class "panel-icon") 
+          (label :text  "WIFI" :style "margin: 0 5px")
         )
       )
     )
@@ -42,22 +33,18 @@
 )
 
 (defwidget switch[]
-  (box :orientation "h" :space-evenly false :style "background: #1e1e2e; opacity: 0.8; border-radius: 14px; padding: 5px; margin: 5px;"
-    (box :orientation "v"
-      (eventbox
-        (image :icon "notifications" :icon-size "large-toolbar" :class "panel-icon")
+  (box :orientation "v" :space-evenly true :class "plugin-switch"
+    (for item in "${PLUGIN?:[]}"
+      (box :orientation "h" :space-evenly false 
+        (checkbox :class "check-value"
+          :checked "${item.value}"
+          :onchecked "hyprpm enable ${item.name}"
+          :onunchecked "hyprpm disable ${item.name}"
+        )
+        (box 
+          (label :text "${item.name}" :class "check-item") 
+        )
       ) 
-      (eventbox
-        (image :icon "color-picker" :icon-size "large-toolbar" :class "panel-icon")
-      )
-    )
-    (box :orientation "v"
-      (eventbox
-        (image :icon "audio-recorder-on" :icon-size "large-toolbar" :class "panel-icon")
-      )
-      (eventbox
-        (label :text "􀋚 " :class "panel-icon" )
-      )
     )
   )
 )
@@ -65,8 +52,7 @@
 (defwidget sound[] 
   (box :orientation "v" :space-evenly false :class "slide-box" :spacing 2
     (label :text "Sound" :halign "start")
-    (eventbox :onhover "${EWW_CMD} update AUDIO_OPEN=true"
-              :onhoverlost "${EWW_CMD} update AUDIO_OPEN=false"
+    (eventbox 
       (box :class "panel-box" :orientation "h" :space-evenly false 
         (image :icon "volume-level-high" :icon-size "toolbar" :class "slide-icon" )
         (revealer :reveal true
@@ -75,7 +61,7 @@
                  :onchange "echo {}"
                  :class "audio-scale" :flipped false)
         )
-        (image :icon "audio-recorder-on" :icon-size "toolbar" :class "audio-icon" )
+        (image :icon "microphone-sensitivity-high" :icon-size "toolbar" :class "audio-icon" )
       )
     )
   )
@@ -85,8 +71,7 @@
 (defwidget display[]
   (box :orientation "v" :space-evenly false :class "slide-box" :spacing 2
     (label :text "Display" :halign "start") 
-    (eventbox :onhover "${EWW_CMD} update LIGHT_OPEN=true"
-              :onhoverlost "${EWW_CMD} update LIGHT_OPEN=false"
+    (eventbox 
       (box :class "panel-box" :orientation "h" :space-evenly false 
         (image :icon "brightness-low" :icon-size "toolbar" :class "slide-icon")
         (revealer :reveal true
@@ -105,19 +90,12 @@
 (defwidget profile []
   (box :class "win-user" :orientation "v" :space-evenly false :spacing 2
     (box :orientation "h" :space-evenly false
-      (box
-        (volume)
-      )
-      (box :orientation "v" :spacing 25 :space-evenly false :valign "center" :class "user"
-        (box :style "background-image: url('../assets/profile.png')" :class "avatar" )
-        (label :text "${WHO}" )
-      )
+      (switch)
+      (volume)
     )
     (box :orientation "v" :space-evenly false
-      (box :orientation "v"
-        (display)
-        (sound)
-      )
+      (display)
+      (sound)
     )
   )
 )
