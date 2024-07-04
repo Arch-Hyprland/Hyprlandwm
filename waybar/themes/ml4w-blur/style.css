@@ -175,6 +175,16 @@ window#waybar.empty #window {
 #custom-system,
 #custom-hyprshade,
 #custom-hypridle,
+#custom-quicklink1,
+#custom-quicklink2,
+#custom-quicklink3,
+#custom-quicklink4,
+#custom-quicklink5,
+#custom-quicklink6,
+#custom-quicklink7,
+#custom-quicklink8,
+#custom-quicklink9,
+#custom-quicklink10,
 #custom-waybarthemes {
   margin-right: 10px;
   font-size: 20px;
@@ -201,6 +211,10 @@ window#waybar.empty #window {
   margin-right: 10px;
 }
 
+#custom-wallpaper {
+    margin-right:10px;
+}
+
 #custom-widgets {
   margin-right: 3px;
   background-repeat: no-repeat;
@@ -216,11 +230,12 @@ window#waybar.empty #window {
 }
 
 #custom-chatgpt {
-  margin-right: 10px;
-  background-image: url("../assets/ai-icon-20.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  padding-right: 24px;
+    margin-right: 12px;
+    background-image: url("../assets/openai.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; 
+    padding-right: 16px;
 }
 
 /* -----------------------------------------------------

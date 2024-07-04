@@ -86,7 +86,6 @@
 )
 
 ;; Widgets
-
 (defwidget profile []
   (box :class "win-user" :orientation "v" :space-evenly false :spacing 2
     (box :orientation "h" :space-evenly false
@@ -169,19 +168,10 @@
   )
 )
 
-
 ;; ** Windows *************************************************************************
 
 (defwindow sidebar 
         :geometry (geometry :x "0px" :y "0px" :width "380px" :height "600px" :anchor "top right")
         :stacking "fg" 
 (sidebar))
-
-
-
-
-
-
-
-
 

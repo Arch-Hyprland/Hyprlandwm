@@ -136,6 +136,16 @@ window#waybar.empty #window {
 #custom-system,
 #custom-hyprshade,
 #custom-hypridle,
+#custom-quicklink1,
+#custom-quicklink2,
+#custom-quicklink3,
+#custom-quicklink4,
+#custom-quicklink5,
+#custom-quicklink6,
+#custom-quicklink7,
+#custom-quicklink8,
+#custom-quicklink9,
+#custom-quicklink10,
 #custom-waybarthemes {
     margin-right: 23px;
     font-size: 14px;
@@ -185,11 +195,12 @@ window#waybar.empty #window {
 
 
 #custom-ml4w-welcome {
-    margin-right: 15px;
-    background-image: url("../assets/ml4w-icon-20.png");
-    background-repeat: no-repeat;
+    margin-right: 12px;
+    background-image: url("../assets/ml4w-icon.svg");
     background-position: center;
-    padding-right: 24px;
+    background-repeat: no-repeat;
+    background-size: contain; 
+    padding-right: 20px;
 }
 
 #custom-ml4w-hyprland-settings {

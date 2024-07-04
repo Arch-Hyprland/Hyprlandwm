@@ -63,52 +63,56 @@ if [ -z "${dmsel}" ] ;then
 fi
 if [ "$dmsel" == "Install sddm and theme" ] ;then
 
+    if [ -d /usr/share/sddm/themes/sugar-candy/ ] ;then
+        sudo rm -rf /usr/share/sddm/themes/sugar-candy/
+        echo ":: Sugar Candy folder removed"
+    fi
+
     disman=0
     # Try to force the installation of sddm
-    echo ":: Install sddm"
-    yay -S --noconfirm sddm --ask 4
-
+    echo ":: Installing sddm"
+    sudo pacman -S --noconfirm --needed sddm qt5-graphicaleffects qt5-quickcontrols2 qt5-svg --ask 4
+    
     # Enable sddm
     if [ -f /etc/systemd/system/display-manager.service ]; then
         sudo rm /etc/systemd/system/display-manager.service
     fi
     sudo systemctl enable sddm.service
 
-    # Create sddm.conf.d folder
-    if [ ! -d /etc/sddm.conf.d/ ]; then
-        sudo mkdir /etc/sddm.conf.d
-        echo ":: Folder /etc/sddm.conf.d created."
-    fi
+    echo 
+    if gum confirm "Do you want to install the sddm-sugar-candy theme?" ;then
+        echo ":: Installing sddm-sugar-candy-git"
 
-    # Copy sddm.conf
-    sudo cp sddm/sddm.conf /etc/sddm.conf.d/
-    echo ":: File /etc/sddm.conf.d/sddm.conf updated."
+        if [ -d ~/Downloads/sddm-sugar-candy ] ;then
+            rm -rf ~/Downloads/sddm-sugar-candy
+            echo ":: ~/Downloads/sddm-sugar-candy removed"
+        fi 
+        wget -P ~/Downloads/sddm-sugar-candy https://github.com/Kangie/sddm-sugar-candy/archive/refs/heads/master.zip
+        echo ":: Download of sddm-sugar-candy complete"
+        unzip -o -q ~/Downloads/sddm-sugar-candy/master.zip -d ~/Downloads/sddm-sugar-candy
+        echo ":: Unzip of sddm-sugar-candy complete"
+        sudo cp -r ~/Downloads/sddm-sugar-candy/sddm-sugar-candy-master /usr/share/sddm/themes/sugar-candy
+        echo ":: sddm-sugar-candy copied to target location"
 
-    # Download and install sugar candy theme if not exists
-    if [ ! -d /usr/share/sddm/themes/sugar-candy ]; then
-        if [ -f ~/Downloads/sddm-sugar-candy-master.zip ] ;then
-            rm ~/Downloads/sddm-sugar-candy-master.zip
+        if [ ! -d /etc/sddm.conf.d/ ]; then
+            sudo mkdir /etc/sddm.conf.d
+            echo "Folder /etc/sddm.conf.d created."
         fi
-        wget -P ~/Downloads/ https://framagit.org/MarianArlt/sddm-sugar-candy/-/archive/master/sddm-sugar-candy-master.zip
-        if [ -f ~/Downloads/sddm-sugar-candy-master.zip ] ;then
-            unzip -o -q ~/Downloads/sddm-sugar-candy-master.zip -d ~/Downloads/
-            if [ ! -d /usr/share/sddm/themes/sugar-candy ] ;then
-                sudo mkdir -p /usr/share/sddm/themes/sugar-candy
-            fi
-            sudo cp -r ~/Downloads/sddm-sugar-candy-master/* /usr/share/sddm/themes/sugar-candy
-            echo ":: SDDM Sugar Candy Theme installed"
-        else
-            echo "ERROR: Sugar Candy Download not found"
-        fi
-    fi    
 
-    # Install background wallpaper for sddm
-    if [ -f /usr/share/sddm/themes/sugar-candy/theme.conf ]; then
-        sudo cp wallpapers/default.jpg /usr/share/sddm/themes/sugar-candy/Backgrounds/current_wallpaper.jpg
-        echo ":: Default wallpaper copied into /usr/share/sddm/themes/sugar-candy/Backgrounds/"
-        sudo cp sddm/theme.conf /usr/share/sddm/themes/sugar-candy/
-        sudo sed -i 's/CURRENTWALLPAPER/'"current_wallpaper.jpg"'/' /usr/share/sddm/themes/sugar-candy/theme.conf
-        echo ":: File theme.conf updated in /usr/share/sddm/themes/sugar-candy/"
+        sudo cp sddm/sddm.conf /etc/sddm.conf.d/
+        echo "File /etc/sddm.conf.d/sddm.conf updated."
+
+        if [ -f /usr/share/sddm/themes/sugar-candy/theme.conf ]; then
+
+            # Cache file for holding the current wallpaper
+            sudo cp wallpapers/default.jpg /usr/share/sddm/themes/sugar-candy/Backgrounds/current_wallpaper.jpg
+            echo "Default wallpaper copied into /usr/share/sddm/themes/sugar-candy/Backgrounds/"
+
+            sudo cp sddm/theme.conf /usr/share/sddm/themes/sugar-candy/
+            sudo sed -i 's/CURRENTWALLPAPER/'"current_wallpaper.jpg"'/' /usr/share/sddm/themes/sugar-candy/theme.conf
+            echo "File theme.conf updated in /usr/share/sddm/themes/sugar-candy/"
+
+        fi
     fi
 
 elif [ "$dmsel" == "Deactivate current display manager" ] ;then

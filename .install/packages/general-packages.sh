@@ -6,7 +6,6 @@ packagesPacman=(
     "wget"
     "unzip"
     "alacritty" 
-    "chromium" 
     "dunst" 
     "starship"
     "mpv" 
