@@ -1,3 +1,25 @@
+Version 2.9.5RL
+--------------------------------------------------------
+- Add backlight module to waybar for laptop users
+
+Version 2.9.4
+https://github.com/mylinuxforwork/dotfiles/milestone/1?closed=1
+--------------------------------------------------------
+- EWW replaced with AGS. New ML4W Sidebar based on AGS
+- New hook.sh and post.sh installation scripts. https://github.com/mylinuxforwork/dotfiles/wiki/Hook-and-Post-Installation-Scripts
+- Add Flatpak installation option to the installation script https://github.com/mylinuxforwork/dotfiles/issues/43
+- Position of dunst can be changed in the ML4W Dotfiles App
+- Screenshot script based on grimblast. 
+- New screenshot editor pinta added to package list. Editor can be changed in teh ML4W Dotfiles app and in dotfiles/.settings/screenshot-editor.sh
+
+Version 2.9.3
+https://github.com/mylinuxforwork/dotfiles/blob/main/CHANGELOG.md
+--------------------------------------------------------
+- ML4W .bashrc can be extended by adding a file .bashrc_custom in your home directory to create custom aliases and more
+- Adding Missioncontrol as new systeminfo app
+- New animation variation animations-dynamic.conf. Requires some resources and is therefore not recommended for installations on virtual machines or slower systems. Can be selected in the ML4W Dotfiles Settings app.
+- New repository folder structure. All configuration dotfiles are now separated from the installer in the folder dotfiles
+
 Version 2.9.2.1
 https://gitlab.com/stephan-raabe/dotfiles/-/releases/2.9.2.1
 --------------------------------------------------------

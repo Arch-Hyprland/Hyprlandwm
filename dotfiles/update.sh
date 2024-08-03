@@ -1,4 +1,11 @@
 #!/bin/bash
+#  _   _           _       _       
+# | | | |_ __   __| | __ _| |_ ___ 
+# | | | | '_ \ / _` |/ _` | __/ _ \
+# | |_| | |_) | (_| | (_| | ||  __/
+#  \___/| .__/ \__,_|\__,_|\__\___|
+#       |_|                        
+# 
 clear
 
 repo="mylinuxforwork/dotfiles"
@@ -17,86 +24,27 @@ get_latest_zip() {
     sed -E 's/.*"([^"]+)".*/\1/'                                    # Pluck JSON value
 }
 
-# Check if package is installed
-_isInstalledPacman() {
-    package="$1";
-    check="$(sudo pacman -Qs --color always "${package}" | grep "local" | grep "${package} ")";
-    if [ -n "${check}" ] ; then
-        echo 0; #'0' means 'true' in Bash
-        return; #true
-    fi;
-    echo 1; #'1' means 'false' in Bash
-    return; #false
-}
-
-# Install required packages
-_installPackagesPacman() {
-    toInstall=();
-    for pkg; do
-        if [[ $(_isInstalledPacman "${pkg}") == 0 ]]; then
-            echo ":: ${pkg} is already installed.";
-            continue;
-        fi;
-        toInstall+=("${pkg}");
-    done;
-    if [[ "${toInstall[@]}" == "" ]] ; then
-        # echo "All pacman packages are already installed.";
-        return;
-    fi;
-    printf "Package not installed:\n%s\n" "${toInstall[@]}";
-    sudo pacman --noconfirm -S "${toInstall[@]}";
-}
-
-# Required packages for the installer
-packages=(
-    "wget"
-    "unzip"
-    "gum"
-    "rsync"
-    "git"
-)
-
 latest_version=$(get_latest_release)
 
-# Some colors
-GREEN='\033[0;32m'
-NONE='\033[0m'
-
-# Header
-echo -e "${GREEN}"
-cat <<"EOF"
- ___           _        _ _           
-|_ _|_ __  ___| |_ __ _| | | ___ _ __ 
- | || '_ \/ __| __/ _` | | |/ _ \ '__|
- | || | | \__ \ || (_| | | |  __/ |   
-|___|_| |_|___/\__\__,_|_|_|\___|_|   
-                                      
-EOF
-echo "for ML4W Dotfiles $latest_version"
+sleep 1
+figlet "Update"
 echo
-echo -e "${NONE}"
-echo "This script will support you to download and install the ML4W Dotfiles".
+echo "to ML4W Dotfiles $(get_latest_release)"
+if [ ! -d $HOME/Downloads ] ;then
+    echo "ERROR:: $HOME/Downloads folder not found."
+    exit
+fi
 echo
-while true; do
-    read -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn): " yn
-    case $yn in
-        [Yy]* )
-            echo ":: Installation started."
-            echo
-        break;;
-        [Nn]* ) 
-            echo ":: Installation canceled."
-            exit;
-        break;;
-        * ) echo ":: Please answer yes or no.";;
-    esac
-done
-
-# Create Downloads folder if not exists
-if [ ! -d ~/Downloads ] ;then
-    mkdir ~/Downloads
-    echo ":: Downloads folder created"
-fi 
+if gum confirm "Do you want to start the update now?" ;then
+    echo ":: Update started"
+    echo
+elif [ $? -eq 130 ]; then
+    echo ":: Update canceled"
+    exit
+else
+    echo ":: Update canceled"
+    exit
+fi
 
 # Remove existing download folder and zip files 
 if [ -f $HOME/Downloads/dotfiles-main.zip ] ;then
@@ -120,23 +68,6 @@ fi
 if [ -d $HOME/Downloads/dotfiles-dev ] ;then
     rm -rf $HOME/Downloads/dotfiles-dev
 fi
-
-# Synchronizing package databases
-sudo pacman -Sy
-echo
-
-# Install required packages
-echo ":: Checking that required packages are installed..."
-_installPackagesPacman "${packages[@]}";
-
-# Double check rsync
-if ! command -v rsync &> /dev/null; then
-    echo ":: Force rsync installation"
-    sudo pacman -S rsync --noconfirm
-else
-    echo ":: rsync double checked"
-fi
-echo
 
 # Select the dotfiles version
 echo "Please choose between: "
