@@ -104,8 +104,8 @@ tooltip label {
 
 #window {
   background: rgba(43, 48, 59, 0.8);
-  margin: 4px 15px 4px 0px;
-  padding: 1px 10px 1px 10px;
+  margin: 8px 15px 8px 0px;
+  padding: 2px 10px 2px 10px;
   border-radius: 12px;
   border-left: 6px solid @backgroundlight;
   border-right: 6px solid @backgroundlight;
@@ -129,7 +129,7 @@ window#waybar.empty #window {
   /* background: @backgroundlight; */
   padding: 0px;
   /*padding: 2px 3px 1px 3px;*/
-  margin: 6px 18px 6px 0px;
+  margin: 6px 12px 6px 0px;
   border-radius: 8px;
   font-weight: normal;
   font-style: normal;
@@ -216,6 +216,7 @@ window#waybar.empty #window {
 }
 
 #custom-widgets {
+  font-size: 18px;
   margin-right: 3px;
   background-repeat: no-repeat;
   background-position: center;
@@ -268,8 +269,8 @@ window#waybar.empty #window {
   font-size: 16px;
   color: @textcolor1;
   border-radius: 15px;
-  padding: 2px 1px 1px 3px;
-  margin: 6px 15px 6px 10px;
+  padding: 3px 1px 1px 3px;
+  margin: 7px 15px 7px 10px;
   opacity: 0.8;
   border: 0px solid @bordercolor;
 }
@@ -323,7 +324,7 @@ window#waybar.empty #window {
   color: @textcolor2;
   border-radius: 8px;
   padding: 1px 1px 2px 7px;
-  margin: 5px 8px 5px 0px;
+  margin: 8px 8px 8px 0px;
   opacity: 0.9;
 }
 
@@ -374,8 +375,8 @@ window#waybar.empty #window {
   font-size: 16px;
   color: @textcolor1;
   border-radius: 15px;
-  padding: 3px 8px 3px 8px;
-  margin: 6px 8px 6px 0px;
+  padding: 1px 8px 1px 8px;
+  margin: 8px 8px 8px 0px;
   opacity: 0.8;
   border: 3px solid @bordercolor;
 }
