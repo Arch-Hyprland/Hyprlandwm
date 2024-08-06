@@ -8,7 +8,7 @@
 (defpoll MEM_USAGE :interval "2s" `../scripts/sys_info.sh --mem`)
 (defpoll DISK_USAGE :interval "1s" `../scripts/sys_info.sh --disk`)
 (defpoll WHO :interval "20h" `whoami`)
-(defpoll PLUGIN :interval "60s" `/home/unicorn/dotfiles/eww/scripts/plugins.sh | jq`)
+(defpoll PLUGIN :interval "60s" `/home/unicorn/.config/eww/scripts/plugins.sh | jq`)
 
 
 (defwidget volume[] 

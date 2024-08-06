@@ -1,0 +1,39 @@
+.launcher-bg {
+  background-color: $background;
+  opacity: 0.6;
+  border-radius: 20px;
+  padding: 100px;
+}
+
+.app-scroll {
+
+}
+.app-box {
+}
+
+.app-item {
+  background-color: $color0;
+  opacity: 1;
+  border-radius: 16px;
+}
+
+.app-item:hover{
+  background-color: #1a1a2a;
+  color: $color3;
+}
+
+.app-detail {
+  padding: 10px;
+}
+
+.app-icon {
+  border-radius: 16px;
+  opacity: 1.0;
+}
+
+.app-name {
+  padding: 8px 0 0 0;
+  font-family: "Inter Semi Bold";
+  font-size: 20;
+  color: $cursor;
+}
