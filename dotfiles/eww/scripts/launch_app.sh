@@ -9,4 +9,3 @@ else
     echo "ERROR: $1 not found"
 fi
 
-$HOME/dotfiles/eww/ml4w-sidebar/launch.sh &
