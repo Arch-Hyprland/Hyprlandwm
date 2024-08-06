@@ -64,6 +64,15 @@ else
     echo ":: post.sh already exists"
 fi
 
+# Copy automation.tpl
+cp install/templates/automation.tpl ~/dotfiles-versions/
+echo ":: automation.tpl created"
+
+# Copy activate.sh
+cp install/templates/activate.sh ~/dotfiles-versions/
+chmod +x ~/dotfiles-versions/activate.sh
+echo ":: activate.sh updated"
+
 # Prepare library folder
 cp install/includes/scripts.sh ~/dotfiles-versions/library/
 echo ":: scripts.sh for $version updated in ~/dotfiles-versions/library"
@@ -72,3 +81,6 @@ if [ ! -f ~/dotfiles-versions/library/version.sh ] ;then
 fi
 echo "$version" > ~/dotfiles-versions/library/version.sh
 echo ":: version.sh updated with $version"
+
+# Write dot folder into settings
+echo "$dot_folder" > ~/dotfiles-versions/$version/.config/ml4w/settings/dotfiles-folder.sh
