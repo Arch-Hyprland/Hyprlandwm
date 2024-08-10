@@ -1,6 +1,7 @@
 # ------------------------------------------------------
 # Prepare dotfiles
 # ------------------------------------------------------
+
 echo -e "${GREEN}"
 figlet "Preparation"
 echo -e "${NONE}"
@@ -69,7 +70,7 @@ cp install/templates/automation.tpl ~/dotfiles-versions/
 echo ":: automation.tpl created"
 
 # Copy activate.sh
-cp install/templates/activate.sh ~/dotfiles-versions/
+cp activate.sh ~/dotfiles-versions/
 chmod +x ~/dotfiles-versions/activate.sh
 echo ":: activate.sh updated"
 

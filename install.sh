@@ -7,6 +7,7 @@ version=$(cat dotfiles/.config/ml4w/version/name)
 install_directory=$(pwd)
 source install/includes/colors.sh
 source install/includes/library.sh
+
 clear
 
 # ----------------------------------------------------- 
@@ -55,26 +56,16 @@ else
     source install/automation/updatesystem.sh
 fi 
 
+clear
+
 # ----------------------------------------------------- 
-# Dotfiles target folder
+# Install profile
 # ----------------------------------------------------- 
-if [ -z $automation_dotfilesfolder ] ;then
-    source install/dotfiles.sh
+if [ -z $automation_profile ] ;then
+    source install/profile.sh
 else
-    source install/automation/dotfiles.sh
+    source install/automation/profile.sh
 fi
-# ----------------------------------------------------- 
-# Backup files
-# ----------------------------------------------------- 
-if [ -z $automation_backup ] ;then
-    source install/backup.sh
-else
-    source install/automation/backup.sh
-fi
-# ----------------------------------------------------- 
-# Prepare files for the installation
-# ----------------------------------------------------- 
-source install/preparation.sh
 
 # ----------------------------------------------------- 
 # Decide on installation method
@@ -100,24 +91,43 @@ source install/remove.sh
 source install/general.sh
 
 # ----------------------------------------------------- 
-# Install profile
+# Check executables of important apps
 # ----------------------------------------------------- 
-if [ -z $automation_profile ] ;then
-    source install/profile.sh
+if [ -z $automation_diagnosis ] ;then
+    source install/diagnosis.sh
 else
-    source install/automation/profile.sh
+    if [[ "$automation_diagnosis" = true ]] ;then
+        source install/automation/diagnosis.sh
+    fi
 fi
 
 # ----------------------------------------------------- 
-# Install flatpak
+# Post Installation
 # ----------------------------------------------------- 
-if [ -z $automation_flatpak ] ;then
-    source install/flatpak.sh
+source install/postinstall.sh
+
+clear
+
+# ----------------------------------------------------- 
+# Dotfiles target folder
+# ----------------------------------------------------- 
+if [ -z $automation_dotfilesfolder ] ;then
+    source install/dotfiles.sh
 else
-    if [[ "$automation_flatpak" = true ]] ;then
-        source install/automation/flatpak.sh
-    fi
+    source install/automation/dotfiles.sh
 fi
+# ----------------------------------------------------- 
+# Backup files
+# ----------------------------------------------------- 
+if [ -z $automation_backup ] ;then
+    source install/backup.sh
+else
+    source install/automation/backup.sh
+fi
+# ----------------------------------------------------- 
+# Prepare files for the installation
+# ----------------------------------------------------- 
+source install/preparation.sh
 
 # ----------------------------------------------------- 
 # Check if running in Qemu VM
@@ -127,6 +137,7 @@ if [ -z $automation_vm ] ;then
 else
     source install/automation/vm.sh
 fi
+
 # ----------------------------------------------------- 
 # Install Display Manager
 # -----------------------------------------------------
@@ -244,17 +255,6 @@ source install/apps.sh
 # Final cleanup
 # ----------------------------------------------------- 
 source install/cleanup.sh
-
-# ----------------------------------------------------- 
-# Check executables of important apps
-# ----------------------------------------------------- 
-if [ -z $automation_diagnosis ] ;then
-    source install/diagnosis.sh
-else
-    if [[ "$automation_diagnosis" = true ]] ;then
-        source install/automation/diagnosis.sh
-    fi
-fi
 
 # ----------------------------------------------------- 
 # Execute post.sh if exists

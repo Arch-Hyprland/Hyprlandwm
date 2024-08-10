@@ -1,8 +1,11 @@
-#!/bin/bash
+# ------------------------------------------------------
+# Define dotfiles folder
+# ------------------------------------------------------
+
 dot_folder="dotfiles"
 dot_files_update=1
 echo -e "${GREEN}"
-figlet "Folder"
+figlet "ML4W Dotfiles"
 echo -e "${NONE}"
 
 _define_dotfiles_folder() {
@@ -39,7 +42,7 @@ if [ -f ~/.config/ml4w/settings/dotfiles-folder.sh ] ;then
     echo ":: An existing ML4W Dotfiles folder has been detected: ~/$(cat ~/.config/ml4w/settings/dotfiles-folder.sh)"
     echo ":: You can update your existing ML4W Dotfiles in $(cat ~/.config/ml4w/settings/dotfiles-folder.sh) or install in a new folder."
     echo
-    if gum confirm "Do you want to start the update in $(cat ~/.config/ml4w/settings/dotfiles-folder.sh)"; then
+    if gum confirm "Do you want to start the update in ~/$(cat ~/.config/ml4w/settings/dotfiles-folder.sh)"; then
         dot_folder=$(cat ~/.config/ml4w/settings/dotfiles-folder.sh)
         dot_files_update=0
     elif [ $? -eq 130 ]; then

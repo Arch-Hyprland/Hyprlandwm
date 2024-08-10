@@ -1,6 +1,7 @@
 # ------------------------------------------------------
 # Select installation profile
 # ------------------------------------------------------
+
 echo -e "${GREEN}"
 figlet "Profile"
 echo -e "${NONE}"
@@ -14,19 +15,5 @@ if [ -z "${profile}" ] ;then
 else
     echo ":: Profile/s selected:" $profile
 fi
+echo
 
-# Install selected profiles
-if [[ $profile == *"Hyprland"* ]]; then
-    echo -e "${GREEN}"
-    figlet "Hyprland"
-    echo -e "${NONE}"
-    source install/packages/hyprland-packages.sh
-    source install/install_packages.sh
-fi
-if [[ $profile == *"Qtile"* ]]; then
-    echo -e "${GREEN}"
-    figlet "Qtile"
-    echo -e "${NONE}"
-    source install/packages/qtile-packages.sh
-    source install/install_packages.sh
-fi

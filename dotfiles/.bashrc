@@ -4,15 +4,9 @@
 #  _| |_) | (_| \__ \ | | | | | (__ 
 # (_)_.__/ \__,_|___/_| |_|_|  \___|
 # 
-# by Stephan Raabe (2024)
-# -----------------------------------------------------
-# ~/.bashrc
 # -----------------------------------------------------
 # You can add your custom configuration by creating a file ~/.bashrc_custom
-
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
-PS1='[\u@\h \W]\$ '
+# -----------------------------------------------------
 
 # Define Editor
 export EDITOR=nvim

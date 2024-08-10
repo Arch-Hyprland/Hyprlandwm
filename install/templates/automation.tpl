@@ -1,5 +1,5 @@
 #!/bin/bash
-# Find the latest automation variables here:
+# Find the latest automation parameters here:
 # https://github.com/mylinuxforwork/dotfiles/wiki/Automation-of-the-installation-and-update
 
 # -----------------------------------------------------
@@ -43,13 +43,6 @@ automation_installation=true
 # Hyprland,Qtile: Will install Hyprland and Qtile
 # -----------------------------------------------------
 automation_profile="Hyprland"
-
-# -----------------------------------------------------
-# FLATPAK
-# true: Flatpak will be installed
-# true: Flatpak will be skipped
-# -----------------------------------------------------
-automation_flatpak=false
 
 # -----------------------------------------------------
 # VM SUPPORT
