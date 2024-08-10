@@ -9,7 +9,7 @@
   color: #FFFFFF;
 }
 
-.win-user {
+.win-box {
   background-color: #3d424e;
   opacity: 0.90;
   border: 1px solid #3d4e4a;
@@ -41,13 +41,13 @@
 	margin: 10px;
 }
 
-.res_box {
+.res-box {
   background-color: #3d424e;
   border-radius: 12px;
   padding: 8px 8px 8px 8px;
 }
 
-.res_circle {
+.res-circle {
   background-color: #FFFFFF;
   border: 0px solid #161616;
   color: #FFFFFF;
@@ -55,7 +55,7 @@
   padding: 0px;
 }
 
-.res_circle_small {
+.res-circle-small {
   background-color: #3d424e;
   border: 0px solid #161616;
   border-radius: 100%;
@@ -64,61 +64,43 @@
   min-width: 30px;
 }
 
-.side {
-  opacity: 0.9;
-  border-radius: 10px;
-}
-
-.avatar {
-  min-height: 120px;
-  min-width: 120px;
-  background-size: cover;
-  border-radius: 60px;
-}
-
-.user {
-  margin: 5px 5px 5px 8px;
-  padding: 20px 8px 20px 8px;
-  background-color: #1e1e2e;
-  opacity: 0.9;
-  border-radius: 18px;
-}
-
-
-.res_cpu {
+.res-cpu {
   color: #19cddb;
 }
 
-.res_mem {
+.res-mem {
   color: #a5deb7;
 }
 
-.res_disk {
+.res-disk {
   color: #cfb3ff;
 }
 
-.powericons {
-  background-repeat: no-repeat;
-  background-size: 30px;
-  min-height: 30px;
-  min-width: 30px;
-}
-
-.closeicon {
-  background-repeat: no-repeat;
-  background-size: 16px;
-  min-height: 16px;
-  min-width: 16px;
-}
-
 .win-menu {
-  background-color: #3d424e;
+  background-color:  #3d424e;
   opacity: 0.95;
   border: 1px solid #3d424e;
   border-radius: 2px 2px 10px 10px;
   box-shadow: 0 0 4px 2px #3d424e;
   margin: 1px 8px 1px 8px;
-  padding: 12px 0 12px 0;
+  padding: 3px 0 6px 0;
+}
+
+.menu-box {
+  padding: 0 8px;
+  border-radius: 10px;
+}
+
+.menu-layer:hover {
+  border-radius: 10px;
+  background-color: $color2;
+  transition: 0.8s;
+  opacity: 0.9;
+}
+.menu-icon{
+  border-radius: 8px;
+  padding: 5px;
+  margin: 2px;
 }
 
 .panel-box-header {
@@ -131,13 +113,35 @@
 
 .panel-icon {
   background-color: #373c68;
-  border-radius: 15px;
-  min-width: 30px;
-  min-height: 30px;
+  border-radius: 18px;
+  min-width: 36px;
+  min-height: 36px;
   opacity: 1;
   margin: 2px;
 }
 
+.switch-icon {
+  background-color: #373c68;
+  border-radius: 8px;
+  min-width: 40px;
+  min-height: 36px;
+  opacity: 1;
+  margin: 5px 5px;
+
+}
+
+.func-switch {
+  margin: 0 5px 0 5px;
+  padding: 5px;
+  border-radius: 16px;
+  background-color: #1E1E2E;
+}
+.switch-box:hover {
+  border-radius: 10px;
+  margin: 0px;
+  opacity: 0.8;
+  background-color: #373c68;
+}
 
 .audio-scale highlight {
   all: unset;
@@ -152,17 +156,8 @@
   border: 1px solid $background;
   min-height: 20px;
   border-radius: 0 10px 10px 0;
-  min-width: 260px;
+  min-width: 290px;
   transition: all 0.8s;
-}
-
-.audio-icon {
-  background-color: #373c68;
-  border-radius: 10px;
-  min-width: 22px;
-  min-height: 20px;
-  opacity: 1;
-  margin: 5px;
 }
 
 .slide-box {
@@ -200,26 +195,8 @@
   transition: all 0.8s;
 }
 
-.check-item {
-  padding: 3px;
-  margin: 0px 5px;
-  border-radius: 5px;
-}
-
-.check-value {
-  padding: 3px;
-  margin: 2px 5px;
-  border-radius: 10px;
-  background-color: $color1;
-}
-
-.plugin-switch {
-  margin: 5px;
-  padding: 8px 5px;
-  border-radius: 16px;
-  background-color: #1e1e2e;
-}
 
 @import "widgets.scss";
 @import "dock.scss";
 @import "task.scss";
+@import "launcher.scss";

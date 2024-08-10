@@ -178,7 +178,7 @@
   // Power Menu
   "custom/panel": {
     "format": "􀜊 ",
-    "on-click": "~/.config/eww/ml4w-sidebar/launch.sh",
+    "on-click": "~/.config/eww/scripts/startup.sh",
     "tooltip-format": "Open Control Panel"
   },
   // Hyprshade

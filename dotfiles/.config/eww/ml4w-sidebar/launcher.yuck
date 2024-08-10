@@ -1,18 +1,26 @@
+(defpoll entrys :interval "10m" `/home/unicorn/codelib/RustCode/app-service/target/debug/app-service app`)
 
 (defwidget appItem[name cmd icon size] 
-  (box :orientation "h" :space-evenly false :class "app-detail" 
-    (eventbox :class "app-item" :space-evenly false 
-      (box :orientation 'v' :space-evenly false  :style "padding: 15px 20px"
+  (box :orientation "h" :space-evenly true :class "app-detail" 
+    (eventbox :class "app-item" 
+      (box :orientation 'v' :space-evenly false :style "padding: 25px 20px"
         (eventbox :onhover "" 
                   :onhoverlost ""
-                  :onclick "${cmd} &" 
+                  :onclick "${cmd} & ../scripts/applaucher.sh &" 
                   :cursor "pointer"
                   :class "app-icon"
           (transform 
-            (image :path icon :class "icon" :image-width 80:image-height 80)
+                     
+            (image :path "${icon}" :class "icon" 
+              :icon-size "dialog" 
+              :image-width "80" 
+              :image-height "80"
+            )
           )
         )
-        (label :text name :class "app-name")
+        (label :text name :class "app-name" 
+              :limit-width 10
+        )
       )
     )
   )
@@ -21,11 +29,17 @@
 (defwidget container[]
   (box :class "launcher-bg"
     (scroll :vscroll true :hscroll false :class "app-scroll"
-      (box :orientation "h" :space-evenly false :class "app-box" 
+      (box :orientation "v" :space-evenly false :class "app-box" 
            :valign "start" 
            :halign "center"
-        (for entry in apps 
-          (appItem :name "${entry['name']}" :cmd "${entry['cmd']}" :icon "${entry['icon']}" :size "${entry['size']}")
+        (for entry in {entrys?:[]} 
+          (box :orientation "h" :space-evenly true :class "app-box" 
+               :valign "start" 
+               :halign "start"
+            (for app in entry
+              (appItem :name "${app['name']}" :cmd "${app['cmd']}" :icon "${app['icon']}" :size "${app['size']}")
+            )
+          )
         )
       )
     )
@@ -38,7 +52,7 @@
         :geometry (geometry :x "0px" 
                             :y "0px"  
                             :width "100%"
-                            :height "96%"
+                            :height "95%"
                             :anchor "center center")
         :exclusive false
         :stacking "overlay"

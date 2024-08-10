@@ -5,135 +5,119 @@
 (defvar apps '
 [
   {
-    "name": "dockmode",
-    "cmd": "../scripts/mode.sh",
-    "icon": "/home/unicorn/.local/share/icons/WhiteSur/apps/scalable/dock.svg",
-    "size": 36
+    "path": "/home/unicorn/.local/share/icons/WhiteSur/apps/scalable",
+    "name": "applaucher",
+    "cmd": "../scripts/applaucher.sh",
+    "icon": "launch"
   },
   {
-    "name": "edge",
+    "name": "dockmode",
+    "cmd": "../scripts/mode.sh",
+    "icon": "dock"
+  },
+  {
+    "name": "msedge",
     "cmd": "microsoft-edge-dev",
-    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/microsoft-edge.svg",
-    "size": 36
+    "icon": "microsoft-edge"
   },
   {
     "name": "code",
     "cmd": "code",
-    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/vscode.svg",
-    "size": 36
+    "icon": "vscode"
   },
   {
     "name": "idea",
     "cmd": "/home/unicorn/software/idea/bin/idea",
-    "icon": "/home/unicorn/software/idea/bin/idea.svg",
-    "size": 36
+    "icon": "idea"
   },
   {
     "name": "pycharm",
     "cmd": "/home/unicorn/software/pycharm/bin/pycharm.sh",
-    "icon": "/home/unicorn/software/pycharm/bin/pycharm.svg",
-    "size": 36
+    "icon": "pycharm"
   },
   {
     "name": "obsidian",
     "cmd": "obsidian",
-    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/obsidian.svg",
-    "size": 36
+    "icon": "obsidian"
   },
   {
     "name": "virt-manager",
     "cmd": "virt-manager",
-    "icon": "/home/unicorn/.local/share/icons/WhiteSur/apps/scalable/virt-manager.svg",
-    "size": 36
+    "icon": "virt-manager"
   },
   {
     "name": "clash-nyanpasu",
     "cmd": "clash-nyanpasu",
-    "icon": "/usr/share/icons/hicolor/32x32/apps/clash-nyanpasu.png",
-    "size": 36
+    "icon": "clash-nyanpasu"
   },
   {
     "name": "wechat",
     "cmd": "wechat-beta",
-    "icon": "/usr/share/icons/wechat.svg",
-    "size": 36
+    "icon": "wechat"
   },
   {
     "name": "linuxqq",
     "cmd": "linuxqq",
-    "icon": "/usr/share/icons/linuxqq.png",
-    "size": 36
+    "icon": "linuxqq"
   },
   {
     "name": "discord",
     "cmd": "discord",
-    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/discord.svg",
-    "size": 36
+    "icon": "discord"
   },
   {
     "name": "tiny-rdm",
-    "cmd": "tiny-rdm",
-    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/rdm.svg",
-    "size": 36
+    "cmd": "/home/unicorn/Applications/tiny-rdm_1.1.14_linux_amd64_5191665ad46241c553991a924d3f6956.AppImage %U",
+    "icon": "asc-de"
   },
   {
     "name": "figma",
     "cmd": "figma-linux",
-    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/figma.svg",
-    "size": 36
+    "icon": "figma"
   },
   {
     "name": "yesplaymusic",
     "cmd": "yesplaymusic",
-    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/gnome-music.svg",
-    "size": 36
+    "icon": "yesplaymusic"
   },
   {
     "name": "tableplus",
     "cmd": "tableplus",
-    "icon": "/home/unicorn/.local/share/icons/WhiteSur/apps/scalable/tableplus.svg",
-    "size": 36
+    "icon": "tableplus"
   },
   {
     "name": "gimp",
     "cmd": "gimp",
-    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/gimp.svg",
-    "size": 36
+    "icon": "gimp"
   },
   {
     "name": "inkscape",
     "cmd": "inkscape",
-    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/inkscape.svg",
-    "size": 36
+    "icon": "inkscape"
   },
   {
     "name": "blender",
     "cmd": "blender",
-    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/blender.svg",
-    "size": 36
+    "icon": "blender"
   },
   {
     "name": "xmind",
     "cmd": "xmind",
-    "icon": "/usr/share/icons/hicolor/32x32/apps/xmind.png",
-    "size": 36
+    "icon": "xmind"
   },
   {
     "name": "alacritty",
     "cmd": "alacritty",
-    "icon": "/home/unicorn/.local/share/icons/WhiteSur/apps/scalable/alacritty.svg",
-    "size": 36
+    "icon": "alacritty"
   },
   {
     "name": "kitty",
     "cmd": "kitty",
-    "icon": "/usr/share/icons/Papirus-Dark/24x24/apps/kitty.svg",
-    "size": 36
+    "icon": "kitty"
   }
 ]'
 )
-
-(defwidget applaunch[name cmd icon size mode] 
+(defwidget applaunch[path name cmd icon mode] 
   (tooltip
     (box 
       (label :text name 
@@ -151,7 +135,7 @@
                 :class "icon-box"
         ;; :translate-x '${ CURRENT == name ? ((SCALE - 1) * 100) : 0 }%' 
         (transform 
-          (image :path icon :class "icon" :image-width size :image-height size)
+          (image :icon icon :icon-size "dnd" :class "icon" :image-width "60" :image-height "60")
         )
       )
     )
@@ -166,8 +150,8 @@
                 :transition "crossfade" :duration "3s"
                 :visible "${ mode == 'dock' || (mode == 'hide' && HOVER)}"
         (box :orientation "v" :space-evenly false :class "app-dock" 
-          (for entry in apps 
-            (applaunch :name "${entry['name']}" :cmd "${entry['cmd']}" :icon "${entry['icon']}" :size "${entry['size']}" :mode mode)
+          (for entry in {apps} 
+            (applaunch :path "${entry['path']}" :name "${entry['name']}" :cmd "${entry['cmd']}" :icon "${entry['icon']}" :size "${entry['size']}" :mode mode)
           )
         )
       )

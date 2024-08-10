@@ -8,7 +8,6 @@
 (defpoll MEM_USAGE :interval "2s" `../scripts/sys_info.sh --mem`)
 (defpoll DISK_USAGE :interval "1s" `../scripts/sys_info.sh --disk`)
 (defpoll WHO :interval "20h" `whoami`)
-(defpoll PLUGIN :interval "60s" `/home/unicorn/.config/eww/scripts/plugins.sh | jq`)
 
 
 (defwidget volume[] 
@@ -16,16 +15,16 @@
     (box :orientation "v"
       (eventbox 
         (box :class "panel-box-header" :space-evenly false
-          (image :icon "blueman" :icon-size "large-toolbar" :class "panel-icon")
-          (label :text  "BLUETOOTH" :style "margin: 0 5px")
+          (image :icon "bluetooth-symbolic" :icon-size "large-toolbar" :class "panel-icon")
+          (label :text  "BLUETOOTH" :style "margin: 0 5px; padding: 0 10px" )
         )
       )
     )
     (box :orientation "v"
       (eventbox 
         (box :class "panel-box-header" :space-evenly false
-          (image :icon "network-wireless-hotspot" :icon-size "large-toolbar" :class "panel-icon") 
-          (label :text  "WIFI" :style "margin: 0 5px")
+          (image :icon "am-wireless-symbolic" :icon-size "large-toolbar" :class "panel-icon") 
+          (label :text  "WIFI" :style "margin: 0 5px; padding: 0 10px")
         )
       )
     )
@@ -33,18 +32,28 @@
 )
 
 (defwidget switch[]
-  (box :orientation "v" :space-evenly true :class "plugin-switch"
-    (for item in "${PLUGIN?:[]}"
-      (box :orientation "h" :space-evenly false 
-        (checkbox :class "check-value"
-          :checked "${item.value}"
-          :onchecked "hyprpm enable ${item.name}"
-          :onunchecked "hyprpm disable ${item.name}"
-        )
-        (box 
-          (label :text "${item.name}" :class "check-item") 
-        )
-      ) 
+  (box :orientation "v" :space-evenly true :class "func-switch"
+    (box :orientation "h"
+      (eventbox :class "switch-box"
+        (image :icon "system-hibernate-symbolic" :icon-size "large-toolbar" :class "switch-icon")
+      )
+      (eventbox :class "switch-box" :onclick "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+        (image :icon "ephy-permission-microphone-symbolic" :icon-size "large-toolbar" :class "switch-icon")
+      )
+      (eventbox :class "switch-box"
+        (image :icon "notification-alert-symbolic" :icon-size "large-toolbar" :class "switch-icon")
+      )
+    )
+    (box :orientation "h"
+      (eventbox :class "switch-box"
+        (image :icon "object-blend-mode-symbolic" :icon-size "large-toolbar" :class "switch-icon")
+      )
+      (eventbox :class "switch-box"
+        (image :icon "layers-button-symbolic" :icon-size "large-toolbar" :class "switch-icon")
+      )
+      (eventbox :class "switch-box"
+        (image :icon "camera-symbolic" :icon-size "large-toolbar" :class "switch-icon")
+      )
     )
   )
 )
@@ -57,15 +66,13 @@
         (image :icon "volume-level-high" :icon-size "toolbar" :class "slide-icon" )
         (revealer :reveal true
                   :transition "slideleft" :duration "800ms"
-          (scale :value 80 :min 1 :max 100 :orientation "h" 
-                 :onchange "echo {}"
+          (scale :value 80 :min 1 :max 150 :orientation "h" 
+                 :onchange "pactl set-sink-volume @DEFAULT_SINK@ {}%"
                  :class "audio-scale" :flipped false)
         )
-        (image :icon "microphone-sensitivity-high" :icon-size "toolbar" :class "audio-icon" )
       )
     )
   )
-
 )
 
 (defwidget display[]
@@ -77,7 +84,7 @@
         (revealer :reveal true
                   :transition "slideleft" :duration "800ms"
           (scale :value 80 :min 1 :max 100 :orientation "h" 
-                 :onchange "echo {}"
+                 :onchange "brightnessctl -q s {}%"
                  :class "light-scale" :flipped false)
         )
       )
@@ -87,7 +94,7 @@
 
 ;; Widgets
 (defwidget profile []
-  (box :class "win-user" :orientation "v" :space-evenly false :spacing 2
+  (box :class "win-box" :orientation "v" :space-evenly false :spacing 2
     (box :orientation "h" :space-evenly false
       (switch)
       (volume)
@@ -103,29 +110,29 @@
 (defwidget resources [] 
   (box :class "win-res"
     (centerbox :orientation "h"
-      (box :class "res_box" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
-        (box :class "res_circle" :orientation "v" :valign "center" :halign "center"
-          (circular-progress :class "res_cpu" :value "${CPU_USAGE?:0}":thickness 15
-            (label :class "res_circle_small" :text "${CPU_USAGE}%" :show-truncated false)
+      (box :class "res-box" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
+        (box :class "res-circle" :orientation "v" :valign "center" :halign "center"
+          (circular-progress :class "res-cpu" :value "${CPU_USAGE?:0}":thickness 15
+            (label :class "res-circle-small" :text "${CPU_USAGE}%" :show-truncated false)
           )
         )
-        (label :class "res_text" :valign "end" :halign "center" :text "CPU")
+        (label :class "res-text" :valign "end" :halign "center" :text "CPU")
       )
-      (box :class "res_box" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
-        (box :class "res_circle" :orientation "v" :valign "center" :halign "center"
-          (circular-progress :class "res_mem" :value "${MEM_USAGE?:0}" :thickness 15
-            (label :class "res_circle_small" :text "${MEM_USAGE}%" :show-truncated false )
+      (box :class "res-box" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
+        (box :class "res-circle" :orientation "v" :valign "center" :halign "center"
+          (circular-progress :class "res-mem" :value "${MEM_USAGE?:0}" :thickness 15
+            (label :class "res-circle-small" :text "${MEM_USAGE}%" :show-truncated false )
           )
         )
-        (label :class "res_text" :valign "end" :halign "center" :text "MEMORY")
+        (label :class "res-text" :valign "end" :halign "center" :text "MEMORY")
       )
-      (box :class "res_box" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
-        (box :class "res_circle" :orientation "v" :valign "center" :halign "center"
-          (circular-progress :class "res_disk" :value "${DISK_USAGE?:0}" :thickness 15
-            (label :class "res_circle_small" :text "${DISK_USAGE}%" :show-truncated false)
+      (box :class "res-box" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
+        (box :class "res-circle" :orientation "v" :valign "center" :halign "center"
+          (circular-progress :class "res-disk" :value "${DISK_USAGE?:0}" :thickness 15
+            (label :class "res-circle-small" :text "${DISK_USAGE}%" :show-truncated false)
           )
         )
-        (label :class "res_text" :valign "end" :halign "center" :text "DISK")
+        (label :class "res-text" :valign "end" :halign "center" :text "DISK")
       )
     )
   )
@@ -134,20 +141,35 @@
 
 (defwidget powermenu []
   (box :class "win-menu" :valign "start" :space-evenly "true" 
-    (box :class "op-lock" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
-        (button :tooltip "Lock" :style "background-image: url('../assets/system-lock-screen-symbolic.svg');" :class "powericons" :valign "center" :halign "center" :onclick "../scripts/system.sh lock &")
+    (box :class "menu-box" 
+      (eventbox :onclick "../scripts/system.sh lock &"  :class "menu-layer"
+        (image :tooltip "Lock" :class "menu-icon"
+          :icon "system-lock-screen-symbolic" :icon-size "dnd" )
+      )
     )
-    (box :class "op-logout" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
-        (button :tooltip "Logout" :style "background-image: url('../assets/application-exit-symbolic-rtl.svg');" :class "powericons" :valign "center" :halign "center" :onclick "../scripts/system.sh logout &")
+    (box :class "menu-box" 
+      (eventbox :onclick "../scripts/system.sh logout &" :class "menu-layer"
+        (image :tooltip "Logout" :class "menu-icon"
+          :icon "application-exit-rtl-symbolic" :icon-size "dnd")
+      )
     )
-    (box :class "op-suspend" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
-        (button :tooltip "Suspend" :style "background-image: url('../assets/media-playback-pause-symbolic.svg');" :class "powericons" :valign "center" :halign "center" :onclick "../scripts/system.sh suspend &")
+    (box :class "menu-box" 
+      (eventbox :onclick "../scripts/system.sh suspend &" :class "menu-layer"
+        (image :tooltip "Suspend"  :class "menu-icon"
+          :icon "takeabreak-symbolic" :icon-size "dnd")
+      )
     )
-    (box :class "op-reboot" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
-        (button :tooltip "Reboot" :style "background-image: url('../assets/system-reboot-symbolic.svg');" :class "powericons" :valign "center" :halign "center" :onclick "../scripts/system.sh reboot &")
+    (box :class "menu-box"   
+      (eventbox :onclick "../scripts/system.sh reboot &"  :class "menu-layer"
+        (image :tooltip "Reboot" :class "menu-icon"
+          :icon "system-reboot-symbolic" :icon-size "dnd")
+      )
     )
-    (box :class "op-shutdown" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
-        (button :tooltip "Shutdown" :style "background-image: url('../assets/system-shutdown-symbolic.svg');" :class "powericons" :valign "center" :halign "center" :onclick "../scripts/system.sh shutdown &")
+    (box :class "menu-box" 
+      (eventbox :onclick "../scripts/system.sh shutdown &"  :class "menu-layer"
+        (image :tooltip "Shutdown" :class "menu-icon"
+          :icon "system-shutdown-symbolic" :icon-size "dnd")
+      )
     )
   )
 )
@@ -155,6 +177,7 @@
 (include "./dock.yuck")
 (include "./widgets.yuck")
 (include "./task.yuck")
+(include "./launcher.yuck")
 
 ;; ** layout **************************************************************************
 
@@ -171,7 +194,7 @@
 ;; ** Windows *************************************************************************
 
 (defwindow sidebar 
-        :geometry (geometry :x "0px" :y "0px" :width "380px" :height "600px" :anchor "top right")
+        :geometry (geometry :x "5px" :y "5px"  :anchor "top right")
         :stacking "fg" 
 (sidebar))
 
