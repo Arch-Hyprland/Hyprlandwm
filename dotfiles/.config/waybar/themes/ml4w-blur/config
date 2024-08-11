@@ -50,12 +50,9 @@
         "battery", 
         "group/hardware",
         "custom/cliphist",
-        // START NETWORK TOOGLE
         "network",
-        // END NETWORK TOOGLE
         "custom/widgets",
         "clock",
-        "custom/hyprshade",
         "custom/panel",
         "tray"
     ]

@@ -137,7 +137,7 @@ calendar:selected {
 }
 
 .hypr-icon {
-  background-image: url('../assets/hyprland.png');
+  background-image: url('../assets/hyprland.svg');
   min-height: 92px;
   background-size: cover;
 }
@@ -205,40 +205,32 @@ calendar:selected {
   background-color: #2c2b31;
 }
 
-.media-ctl {
-  min-height: 100px;
-  background-color: #1e1e2e;
-  border-radius: 18px;
+.album-center {
+  border-radius: 16px;
+  background: #2a1ea1;
   opacity: 0.9;
   margin: 5px;
 }
 
-.album-left {
-  min-width: 156px;
-}
-
-.album-center {
-  min-width: 350px;
-  padding: 0px 0px 0px 0px;
-  border-radius: 0 16px 16px 0;
-  background: #2a1ea1;
-}
-
 .art-cover {
+  min-width: 160px;
+  min-height: 80px;
   background-size: cover;
-  border-radius: 16px 0 0 16px;
+  border-radius: 16px 0 0 0;
 }
 
 .art-title {
-  padding: 12px 0 0 0;
+  font-size: 12px;
+  padding: 10px;
 }
 
 .time-ratio {
+  font-size: 12px;
   margin-right: 10px;
 }
 
-.lyrics {
-  min-height: 100px;
+.music-visual {
+  min-height: 96px;
 }
 
 .media-box {
@@ -254,37 +246,21 @@ calendar:selected {
 }
 
 .media-btn {
-  min-height: 30px;
-  margin: 10px 40px;
+  margin: 10px;
 }
 
-.prev-icon {
-  background: url("../assets/media-prev.svg");
-  background-size: cover;
-}
-
-.next-icon {
-  background: url("../assets/media-next.svg");
-  background-size: cover;
-}
-
-.pause-icon {
-  background: url("../assets/media-pause.svg");
-  background-size: cover;
-}
-
-.progress-bar highlight {
+.music-bar > highlight {
   all: unset;
-  background-color: white;
-  min-height: 5px;
+  color: $color9;
+  min-height: 3px;
+  border-radius: 3px;
 }
 
-.progress-bar trough {
+.music-bar > trough {
   all: unset;
-  min-width: 200px;
-  background-color: #99be2c;
-  border-radius: 2px;
-  min-height: 5px;
+  background-color: $background;
+  min-height: 3px;
+  border-radius: 3px;
 }
 
 

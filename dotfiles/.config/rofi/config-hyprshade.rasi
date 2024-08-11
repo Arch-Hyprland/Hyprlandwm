@@ -28,16 +28,16 @@ configuration {
 }
 
 /* ---- Load font ---- */
-@import "~/.config/ml4w/settings/rofi-font.rasi"
+@import "~/dotfiles/.settings/rofi-font.rasi"
 
 /* ---- Load pywal colors (custom wal template) ---- */
 @import "~/.cache/wal/colors-rofi-pywal"
 
 /* ---- Load wallpaper ---- */
-@import "~/.config/ml4w/cache/current_wallpaper.rasi"
+@import "~/.cache/current_wallpaper.rasi"
 
 /* ---- Load border width ---- */
-@import "~/.config/ml4w/settings/rofi-border.rasi"
+@import "~/dotfiles/.settings/rofi-border.rasi"
 
 /* ---- Window ---- */
 window {
@@ -49,7 +49,7 @@ window {
     margin:                       0px; 
     color:                        #FFFFFF;
     border:                       @border-width;
-    border-color:                 #FFFFFF;
+    border-color:                 rgba(100, 114, 125, 0.5);
     cursor:                       "default";
     transparency:                 "real";
     location:                     center;
@@ -172,6 +172,7 @@ element {
     background-color:             @background;
     border-radius:                10px;
     border:                       @border-width;
+    border-color:                 rgba(100, 114, 125, 0.5);
 }
 
 element normal.normal {

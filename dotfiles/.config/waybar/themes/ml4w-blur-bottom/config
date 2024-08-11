@@ -29,7 +29,6 @@
     "modules-left": [
         "custom/appmenu",
         "custom/waybarthemes",
-        // START TASK TOOGLE
         "wlr/taskbar",
         "group/links",
         "hyprland/window",
@@ -53,15 +52,10 @@
         "battery", 
         "group/hardware",
         "custom/cliphist",
-        "custom/hyprshade",
-        // START NETWORK TOOGLE
         "network",
-        // END NETWORK TOOGLE
         "custom/widgets",
         "clock",
         "custom/panel",
-        // START TRAY TOOGLE
         "tray"
-        // END TRAY TOOGLE
     ]
 }

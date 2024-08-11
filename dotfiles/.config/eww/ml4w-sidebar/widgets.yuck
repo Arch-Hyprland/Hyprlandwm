@@ -86,8 +86,8 @@
             )
           )
           (box :orientation "v" :class "hypr-box" :space-evenly false :spacing 4
-            (box :style "padding: 10px 16px 4px 16px"
-              (button :class "hypr-icon" :onclick "../scripts/launch_app.sh --hyprland")
+            (box :style "padding: 10px 27px 4px 27px"
+              (button :class "hypr-icon" :onclick "../scripts/app.sh --hyprland")
             )
             (box :class "hypr-label"
               (label :text "HYPRLAND")
@@ -97,7 +97,7 @@
         (box  ; 横向两个应用
           (box :orientation "v" :class "wel-box" :space-evenly false :spacing 4
             (box :style "padding: 10px 16px 5px 16px" 
-              (button :class "wel-icon" :onclick "../scripts/launch_app.sh --welcome")
+              (button :class "wel-icon" :onclick "../scripts/app.sh --welcome")
             )
             (box :class "wel-label"
               (label :text "WELCOME")
@@ -108,7 +108,7 @@
               (label :text "DOTFILES")
             )
             (box :style "padding: 5px 16px 10px 16px"
-              (button :class "dot-icon" :onclick "../scripts/launch_app.sh --dotfiles")
+              (button :class "dot-icon" :onclick "../scripts/app.sh --dotfiles")
             )
           )
         )
@@ -150,38 +150,57 @@
 )
 
 (defwidget media[] 
-  (box :orientation "h" :space-evenly false :class "media-ctl"
-    (box :orientation "h" :space-evenly true :class "album-left" 
-      (box :orientation "v" :space-evenly false 
-        (box :class "art-cover" :style "background: url('${art}') no-repeat" :height 182
+  (box :orientation "v" :class "album-center" :space-evenly false 
+    (box :orientation "h" :space-evenly false :style "padding: 0 0 5px 0" :spacing 2
+      (box :orientation "v" :space-evenly false :class "album-left" 
+        (box :class "art-cover" :style "background: url('${art?:'../assets/music-default.png'}') no-repeat")
+      )
+      (box :class "music-visual" :orientation "v"
+        (label :text "${title?:'没有正在播放的内容'}" :class "art-title" :wrap true)
+        (label :text "${WAVE}" )
+      )
+    )
+    (box :orientation 'h' :space-evenly false :spacing 1 :valign "center"
+      (box :style "padding: 0px 0px 0px 8px;"
+        (label :class "time-ratio" :show-truncated false :halign "end"
+          :text "${curSongTime?:'00:00'}" 
+        )
+      )
+      (box :valign "center"
+        (progress :value 80  :max 100 :min 1 :width 400 
+          :orientation "h" 
+          :class "music-bar"
+        )
+      )
+      (box :style "padding: 0px 0px 0px 8px;"
+        (label :class "time-ratio" :show-truncated false :halign "end"
+          :text "${totSongTime?:'00:00'}"
         )
       )
     )
-    (box :class "album-center" :space-evenly false :spacing 1 :orientation "v"
-      (box :class "lyrics" :orientation "v"
-        (label :text "${title}" :class "art-title" :wrap true)
-        (label :text "${WAVE}" )
+    (box :orientation "h" :space-evenly true 
+      (eventbox :class "media-box"  :onclick "playerctl previous"
+        (image  :icon "media-seek-backward-symbolic" :class "media-btn"
+                :icon-size "large-toolbar"
+        )
       )
-      (box :orientation 'v' :space-evenly false :spacing 1 
-        (box :style "padding: 5px 0px; font-size: 12px"
-          (label :class "time-ratio" :show-truncated false :halign "end"
-            :text "${curSongTime}/${totSongTime}" 
-          )
+      (eventbox :class "media-box"  :onclick "playerctl previous"
+        (image  :icon "media-skip-forward-symbolic-rtl"  :class "media-btn"
+                :icon-size "large-toolbar")
+      )
+      (eventbox :class "media-box" :onclick "playerctl play-pause"
+        (image  :icon "screencast-stop-symbolic" :class "media-btn"
+                :icon-size "large-toolbar"
         )
-        (box
-          (progress :value 30 :orientation "h" :width 20 :flipped false
-            :class "progress-bar")
+      )
+      (eventbox :class "media-box" :onclick "playerctl next"
+        (image :icon "media-skip-backward-symbolic-rtl" :class "media-btn"
+               :icon-size "large-toolbar"
         )
-        (box :orientation "h" :space-evenly true 
-          (eventbox :class "media-box" 
-            (button :class "prev-icon media-btn" :onclick "playerctl previous")
-          )
-          (eventbox :class "media-box" 
-            (button :class "pause-icon media-btn":onclick "playerctl play-pause")
-          )
-          (eventbox :class "media-box" 
-            (button :class "next-icon media-btn" :onclick "playerctl next")
-          )
+      )
+      (eventbox :class "media-box" :onclick "playerctl next"
+        (image :icon "media-seek-forward-symbolic" :class "media-btn"
+               :icon-size "large-toolbar"
         )
       )
     )

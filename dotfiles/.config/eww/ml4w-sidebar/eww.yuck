@@ -34,8 +34,8 @@
 (defwidget switch[]
   (box :orientation "v" :space-evenly true :class "func-switch"
     (box :orientation "h"
-      (eventbox :class "switch-box"
-        (image :icon "system-hibernate-symbolic" :icon-size "large-toolbar" :class "switch-icon")
+      (eventbox :class "switch-box" :onclick "~/.config/hypr/scripts/hyprshade.sh &"
+        (image :icon "night-light-symbolic" :icon-size "large-toolbar" :class "switch-icon")
       )
       (eventbox :class "switch-box" :onclick "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
         (image :icon "ephy-permission-microphone-symbolic" :icon-size "large-toolbar" :class "switch-icon")
@@ -45,10 +45,10 @@
       )
     )
     (box :orientation "h"
-      (eventbox :class "switch-box"
+      (eventbox :class "switch-box" :onclick "~/.config/hypr/scripts/toggleallfloat.sh &"
         (image :icon "object-blend-mode-symbolic" :icon-size "large-toolbar" :class "switch-icon")
       )
-      (eventbox :class "switch-box"
+      (eventbox :class "switch-box" :onclick "~/.config/hypr/scripts/hyprshade.sh rofi &"
         (image :icon "layers-button-symbolic" :icon-size "large-toolbar" :class "switch-icon")
       )
       (eventbox :class "switch-box"
