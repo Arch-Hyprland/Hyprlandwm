@@ -38,8 +38,6 @@ packagesPacman=(
     "nm-connection-editor"
     "gvfs"
     "xdg-user-dirs"
-    "networkmanager"
-    "network-manager-applet"
     "xarchiver"
     "thunar-archive-plugin"
     "zip"
@@ -62,6 +60,8 @@ packagesPacman=(
     "firefox"
 );
 
+# "networkmanager"
+# "network-manager-applet"
 packagesYay=(
     "bibata-cursor-theme" 
     "trizen"

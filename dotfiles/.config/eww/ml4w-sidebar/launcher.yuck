@@ -1,4 +1,4 @@
-(defpoll entrys :interval "10m" `/home/unicorn/codelib/RustCode/app-service/target/debug/app-service app`)
+(defpoll entrys :interval "10m" `../bin/app-service app`)
 
 (defwidget appItem[name cmd icon size] 
   (box :orientation "h" :space-evenly true :class "app-detail" 

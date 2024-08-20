@@ -38,13 +38,8 @@ if [[ ! $(pidof eww) ]]; then
   fi
 fi
 
-if [ -f "$HOME"/dotfiles/.settings/eww-monitor.sh ] && [ $(cat "$HOME/dotfiles/.settings/eww-monitor.sh") != "auto" ]; then
-  echo ":: Using monitor id from $HOME/dotfiles/.settings/eww-monitor.sh"
-  sc=$(cat "$HOME"/dotfiles/.settings/eww-monitor.sh)
-else
-  echo ":: Autodetect current focused monitor."
-  sc=$(python "$HOME"/dotfiles/hypr/scripts/active-monitor.py)
-fi
+# current screen 
+sc=$("$HOME"/.config/eww/scripts/curscreen.sh)
 if [[ ! -f "$FILE" ]]; then
   touch "$FILE"
   echo ":: Opening on Monitor $sc"

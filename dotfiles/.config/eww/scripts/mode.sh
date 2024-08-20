@@ -13,6 +13,4 @@ if [[ $(pidof eww) ]]; then
   elif [ "$1" == "reload" ]; then
     "${EWW}" --config "$CFG" reload
   fi
-else
-  sh "./launch.sh"
 fi

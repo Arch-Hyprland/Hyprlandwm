@@ -26,7 +26,7 @@ _start() {
   CHOICE=$(echo -e "$MONITORS" | rofi   \
       -dmenu \
       -replace \
-      -config ~/dotfiles/rofi/config-screenshot.rasi \
+      -config ~/.config/rofi/config-screenshot.rasi \
       -i -no-show-icons \
       -l $(echo "${NUM}+1" | bc) \
       -width $(echo "20*${NUM}" | bc) \

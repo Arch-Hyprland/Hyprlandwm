@@ -127,7 +127,7 @@ hyprpaper & > /dev/null 2>&1
 killall ags
 ags &
 killall eww
-~/dotfiles/hypr/scripts/eww.sh
+sh ~/.config/hypr/scripts/eww.sh
 
 # ----------------------------------------------------- 
 # Created blurred wallpaper
