@@ -49,12 +49,12 @@
 ;; ** Windows *************************************************************************
 
 (defwindow AppLauncher
-        :geometry (geometry :x "0px" 
-                            :y "0px"  
+        :geometry (geometry :x "0" 
+                            :y "0"  
                             :width "100%"
-                            :height "95%"
-                            :anchor "center center")
+                            :height "100%"
+                            :anchor "bottom center")
         :exclusive false
-        :stacking "overlay"
+        :stacking "fg"
         :focusable false
 (container))

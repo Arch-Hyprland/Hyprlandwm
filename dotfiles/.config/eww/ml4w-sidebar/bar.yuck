@@ -1,0 +1,131 @@
+(defpoll workspaces :interval "1s" `../scripts/hyprctl-interact.sh workspaces`)
+(defpoll ACTIVEWS :interval "1s" `../scripts/hyprctl-interact.sh activeworkspace`)
+(defpoll activewindow :interval "1s" `../scripts/hyprctl-interact.sh activewindow `)
+(defpoll RECORDER :interval "1s" `~/.config/ml4w/scripts/recorderstate.sh`)
+
+(defwidget left[] 
+  (box :halign "start" :space-evenly false :spacing 10 :class "left-section" 
+    (eventbox :onclick "../scripts/applaucher.sh"
+      (box
+        (image :icon "folder-apple-symbolic" :icon-size "large-toolbar")
+      )
+    )
+    (box :orientation "v" :width "120" :halign "start" :space-evenly false :valign "center"
+      (label :text "${activewindow.title}" :style "font-size: 14px" :halign "start") 
+      (label :text "${activewindow.class}" :style "font-size: 12px" :halign "start")
+    )
+  )
+)
+
+(defwidget center[]
+  (box :space-evenly false :halign "center" :spacing 8
+    (eventbox 
+      (box
+        (image :icon "folder-visiting-symbolic" :icon-size "large-toolbar")
+      )
+    )
+    (box :class "window" :space-evenly false :halign "center" :valign "center" :spacing 2
+      (for w in {workspaces?:[]} 
+        (box :class "${ACTIVEWS.id == w.id ? 'workactive' : 'work'}"
+          (label :text "${w.id}")
+        )
+      )
+    ) 
+  )
+)
+
+(defwidget right[]
+  
+  (box :space-evenly "false" :spacing 6 :halign "end" :class "right-section"
+    (box  :class "top-widget"
+      (systray :orientation "h" :spacing 5 :space-evenly true
+               :icon-size 24 :prepend-new true
+      )
+    )
+    (eventbox :class "top-item" 
+              :onclick "~/.config/ml4w/scripts/recorderscreen.sh start &"
+              :onrightclick "~/.config/ml4w/scripts/recorderscreen.sh stop &"
+      (box :class "top-widget"
+        (label :text "${RECORDER.text}"  :class "record-${RECORDER.class}")
+      )
+    )
+    (eventbox :onclick "~/.config/ml4w/scripts/cliphist.sh" :class "top-item" 
+              :onrightclick "~/.config/ml4w/scripts/cliphist.sh d &"
+              :onmiddleclick "~/.config/ml4w/scripts/cliphist.sh w &"
+      (box :class "top-widget"
+        (image :icon "edit-paste-symbolic" :icon-size "large-toolbar")
+      )
+    )
+    (eventbox :class "top-item" :onclick "../scripts/widgets.sh"
+      (box :class "top-widget"
+        (image :icon "on-screen-keyboard-symbolic" :icon-size "large-toolbar")
+      )
+    )
+    (eventbox :class "top-item"
+      (box :class "top-widget"
+        (image :icon "audio-input-microphone-low-symbolic" :icon-size "large-toolbar")
+      )
+    )
+    (eventbox :class "top-item"
+      (box :class "top-widget"
+        (image :icon "blueberry-tray-active-symbolic" :icon-size "large-toolbar") 
+      )
+    )
+    (eventbox :class "top-item"
+      (box :class "top-widget"
+        (image :icon "network-wireless-symbolic" :icon-size "large-toolbar") 
+      )
+    )
+    (eventbox :class "top-item"
+      (box :class "top-widget"
+        (image :icon "ephy-audio-playing-symbolic" :icon-size "large-toolbar") 
+      )
+    )
+    (eventbox :class "top-item"
+      (box :class "top-widget"
+        (image :icon "alt-critical-notif-symbolic" :icon-size "large-toolbar") 
+      )
+    )
+    (eventbox :class "top-item"
+      (box :space-evenly false :spacing 5 :class "top-widget"
+        (image :icon "battery-${
+                  round((EWW_BATTERY.BAT0.capacity)/20, 0)*20
+                }-charging-symbolic" 
+               :icon-size "large-toolbar"
+        )
+        (label :text "${EWW_BATTERY.BAT0.capacity}%" :style "font-size: 20px")
+      )
+    )
+    (eventbox :class "top-item" :onclick "../scripts/startup.sh"
+      (box :class "top-widget"
+        (image :icon "gnome-tweak-tool-symbolic" :icon-size "large-toolbar")
+      )
+    )
+    (eventbox :class "top-item"
+      (box :space-evenly false :spacing 5 :class "top-widget"
+        (label :text "${formattime(EWW_TIME, '%Y-%m-%d  %H:%M')}" :style "font-size: 20px")
+      )
+    )
+  )
+)
+
+(defwidget bar[]
+  (box :class "top-bar" 
+    (left)
+    (center)
+    (right)
+  )
+)
+
+(defwindow bar[]
+  :geometry (geometry 
+    :x "0" 
+    :y "0" 
+    :width "100%"
+    :height "32"
+    :anchor "top center"
+  )
+  :exclusive true
+  :stacking "fg"
+ (bar)
+)

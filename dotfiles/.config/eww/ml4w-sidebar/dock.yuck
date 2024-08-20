@@ -61,59 +61,14 @@
     "icon": "linuxqq"
   },
   {
-    "name": "discord",
-    "cmd": "discord",
-    "icon": "discord"
-  },
-  {
-    "name": "tiny-rdm",
-    "cmd": "/home/unicorn/Applications/tiny-rdm_1.1.14_linux_amd64_5191665ad46241c553991a924d3f6956.AppImage %U",
-    "icon": "asc-de"
-  },
-  {
-    "name": "figma",
-    "cmd": "figma-linux",
-    "icon": "figma"
-  },
-  {
-    "name": "yesplaymusic",
-    "cmd": "yesplaymusic",
-    "icon": "yesplaymusic"
-  },
-  {
     "name": "tableplus",
     "cmd": "tableplus",
     "icon": "tableplus"
   },
   {
-    "name": "gimp",
-    "cmd": "gimp",
-    "icon": "gimp"
-  },
-  {
-    "name": "inkscape",
-    "cmd": "inkscape",
-    "icon": "inkscape"
-  },
-  {
     "name": "blender",
     "cmd": "blender",
     "icon": "blender"
-  },
-  {
-    "name": "xmind",
-    "cmd": "xmind",
-    "icon": "xmind"
-  },
-  {
-    "name": "alacritty",
-    "cmd": "alacritty",
-    "icon": "alacritty"
-  },
-  {
-    "name": "kitty",
-    "cmd": "kitty",
-    "icon": "kitty"
   }
 ]'
 )
@@ -141,6 +96,29 @@
     )
   )
 )
+(defwidget taskcapture[path name cmd icon mode] 
+  (tooltip
+    (box 
+      (label :text name 
+        :style "background: #1e1e2e; border-radius: 10px; padding: 10px;"
+      )
+    )
+    (box :orientation 'h' :space-evenly false :style "padding: 3px 5px 3px 3px;"
+      (revealer :reveal "${arraylength(search(ACTIVE, '(?i)${name}')) > 0 ? true: false}" 
+                :transition "crossfade"
+        (box :class "app-active")
+      )
+      (eventbox :onhover "${EWW_CMD} update CURRENT=${name}" 
+                :onclick "hyprctl dispatch focuswindow address:${cmd}" 
+                :class "icon-box"
+        ;; :translate-x '${ CURRENT == name ? ((SCALE - 1) * 100) : 0 }%' 
+        (transform 
+          (image :path path :class "icon" :image-width "32" :image-height "32")
+        )
+      )
+    )
+  )
+)
 
 (defwidget dock[mode]
   (eventbox :onhover "${EWW_CMD} update HOVER=true" :onhoverlost "${EWW_CMD} update HOVER=false"
@@ -152,6 +130,14 @@
         (box :orientation "v" :space-evenly false :class "app-dock" 
           (for entry in {apps} 
             (applaunch :path "${entry['path']}" :name "${entry['name']}" :cmd "${entry['cmd']}" :icon "${entry['icon']}" :size "${entry['size']}" :mode mode)
+          )
+          (box :style "background: #1E2E1E; border-radius: 2px" :width "40" :height 3 :valign "center" :halign "center")
+          (for task in {tasks?:[]}
+            (box :orientation "v"
+              (for view in {task.views} 
+                (taskcapture :path "${view.capture}" :name "${task['name']}" :cmd "${view.address}" :icon "" :mode mode)
+              )
+            )
           )
         )
       )
@@ -168,8 +154,8 @@
 ;; ** Windows *************************************************************************
 
 (defwindow dock [mode]
-        :geometry (geometry :x "2px" 
-                            :y "0px"  
+        :geometry (geometry :x "2" 
+                            :y "0"  
                             :anchor "left center")
         :exclusive "${ mode == 'dock' ? true : false }"
         :stacking "fg"

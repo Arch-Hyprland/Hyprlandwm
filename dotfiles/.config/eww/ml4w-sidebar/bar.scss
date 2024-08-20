@@ -1,0 +1,64 @@
+.top-bar {
+  background: $color4;
+  opacity: 0.6;
+}
+.window {
+  background: grey;
+  opacity: 0.8;
+  padding: 3px;
+  margin: 5px;
+  border-radius: 16px;
+  color: $color4;
+}
+
+.workactive {
+    background-color: $color3;
+    color: $color2;
+    opacity: 1;
+    padding: 2px 20px;
+    border-radius: 15px;
+    transition: 0.5s all ease-in;
+}
+
+.work {
+  background: $color3;
+  padding: 2px 8px;
+  border-radius: 50%;
+  transition: 0.5s all ease-in;
+}
+
+.left-section {
+  margin-left: 10px;
+}
+
+.center-section {
+}
+
+.right-section {
+  margin: 1px 5px 1px 0px;
+  padding: 1px 0 1px 0;
+}
+
+.top-widget {
+  margin: 1px 0px;
+  padding: 1px 5px;
+}
+
+.top-item:hover {
+  padding: 0 8px;
+  border-radius: 6px;
+  background-color: $color6;
+}
+
+.record-white {
+  font-size: 20px;
+  color: white;
+}
+
+.record-red {
+  font-size: 20px;
+  color: #cf44c4;
+  background-color: grey;
+  padding: 0 8px;
+  border-radius: 8px;
+}

@@ -1,4 +1,4 @@
-@import "../../../.cache/wal/colors.scss";
+@import "/home/unicorn/.cache/wal/colors.scss";
 
 * {
   all: unset;
@@ -29,7 +29,7 @@
 }
 
 .winrow {
-	padding:20px 0px 20px 0px;
+	padding:20px 0px;
 }
 
 .closebox {
@@ -131,7 +131,7 @@
 }
 
 .func-switch {
-  margin: 0 5px 0 5px;
+  margin: 0 5px;
   padding: 5px;
   border-radius: 16px;
   background-color: #1E1E2E;
@@ -200,3 +200,4 @@
 @import "dock.scss";
 @import "task.scss";
 @import "launcher.scss";
+@import "bar.scss";

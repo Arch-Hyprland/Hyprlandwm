@@ -8,14 +8,14 @@
           (for view in "${task.views}"
             (eventbox :onclick "${EWW_CMD} close taskview;hyprctl dispatch focuswindow address:${view.address}"
                       :cursor "pointer" :class "item-view" 
-              (box :style "padding: 10px"  
-                (image :path "${view.capture}" :image-width 100)
+              (box :style "padding: 2px"  
+                (image :path "${view.capture}" :image-width 80)
               )
             )
           )
         )
-        (box :class "task-label"
-          (label :text "${task.name}")
+        (box 
+          (label :text "${task.name}" :class "task-label")
         )
       )
     )

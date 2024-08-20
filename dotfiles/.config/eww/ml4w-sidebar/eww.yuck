@@ -177,12 +177,12 @@
 (include "./dock.yuck")
 (include "./widgets.yuck")
 (include "./task.yuck")
-(include "./launcher.yuck")
-
+;(include "./launcher.yuck")
+(include "./bar.yuck")
 ;; ** layout **************************************************************************
 
 (defwidget sidebar[]
-  (eventbox :onhoverlost ""
+  (eventbox :onhoverlost "../scripts/startup.sh"
     (box :orientation "v" :valign "start" :class "side" :spacing 0 :space-evenly false
       (profile)
       (resources)
@@ -194,7 +194,7 @@
 ;; ** Windows *************************************************************************
 
 (defwindow sidebar 
-        :geometry (geometry :x "5px" :y "5px"  :anchor "top right")
+        :geometry (geometry :x "5" :y "5"  :anchor "top right")
         :stacking "fg" 
 (sidebar))
 

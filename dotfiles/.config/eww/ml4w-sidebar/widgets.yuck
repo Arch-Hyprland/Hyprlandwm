@@ -167,7 +167,7 @@
         )
       )
       (box :valign "center"
-        (progress :value 80  :max 100 :min 1 :width 400 
+        (progress :value 80 :width 400 :flipped false
           :orientation "h" 
           :class "music-bar"
         )
@@ -217,12 +217,11 @@
 )
 
 (defwindow widgets[]
-    :geometry (geometry :x "8px"
-                        :y "8px"
-                        :width "200px"
+    :geometry (geometry :x "20"
+                        :y "20"
                         :anchor "top right"
               )
     :exclusive false
-    :stacking "fg"
+    :stacking "bg"
     :focusable false
 (widgets))
