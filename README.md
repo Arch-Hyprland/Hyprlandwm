@@ -2,23 +2,45 @@
 
 An advanced configuration of Hyprland for Arch Linux based distributions. This package includes an installation script to install and setup the required components.
 
-![image](https://github.com/user-attachments/assets/a52b2256-2cc7-4dd5-a22c-827a84c8c291)
+![image](https://github.com/user-attachments/assets/093f9968-8bd0-4ec8-930e-199804c0c7ae)
 
-YouTube Video [https://youtu.be/_S0C53xaoAo](https://youtu.be/_S0C53xaoAo)
+YouTube Video [https://youtu.be/6B4Kf30CWLg](https://youtu.be/6B4Kf30CWLg)
 
 ## Installation
 
 The installation should work on all Arch Linux based distributions. [You can find more information here](hhttps://github.com/mylinuxforwork/dotfiles/wiki).
 
-The easiest way is to use the setup.sh script. The script will download all files from GitLab and start the installation automatically.
-
-Just copy/enter the following command into your terminal.
-
-```
-bash <(curl -s https://raw.githubusercontent.com/mylinuxforwork/dotfiles/main/setup.sh)
-```
-
 > PLEASE NOTE: Every Linux distribution, setup and personal configuration can be different. Therefore, I cannot guarantee that the ML4W Dotfiles will work everywhere. Installation at your own risk.
+
+> **For Arco Linux users**: Please install hyprutils first with `yay -S extra/hyprutils`
+
+### Main Release
+
+You can use your preferred AUR helper.
+
+```
+yay -S ml4w-hyprland
+```
+
+After the installation, you can start the setup with
+
+```
+ml4w-hyprland-setup
+```
+
+### Rolling Release (Latest commits)
+
+You can use your preferred AUR helper.
+
+```
+yay -S ml4w-hyprland-git
+```
+
+After the installation, you can start the setup with
+
+```
+ml4w-hyprland-setup
+```
 
 ## Documentation (Wiki)
 
@@ -32,7 +54,7 @@ You can also visit the [ML4W Discord Server](https://discord.gg/c4fJK7Za3g) to s
 
 ## Screenshots
 
-![image](https://github.com/user-attachments/assets/d85c0910-45fc-440c-9911-a2c2b4d32c12)
+![image](https://github.com/user-attachments/assets/041375a8-8698-455d-865e-f818d5b69af8)
 
 ## Wallpaper repository
 

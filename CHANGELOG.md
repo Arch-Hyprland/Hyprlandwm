@@ -1,3 +1,16 @@
+Version 2.9.6
+--------------------------------------------------------
+- ML4W Dotfiles now available as AUR: ml4w-hyprland (latest release) and ml4w-hyprland-git (rolling release with latest commits)
+- ~/dotfiles-versions folder renamed to ~/.ml4w-hyprland
+- Switch between bash and zsh from the ML4W Welcome App (Settings -> System -> Change shell)
+- New modular and extendable bashrc structure in ~/.config/bashrc
+- .bashrc_custom moved into folder ~/.config/bashrc/bashrc_custom
+- New modular and extendable zshrc structure in ~/.config/zshrc
+- Gnome Calculator (SUPER+CTRL+C) and Emoji Picker Smile (SUPER+CTRL+C) added (Can be changed in the ML4W Dotfiles Settings App)
+- Add Swapsplit keybinding: SUPER + K
+- Folder and filename format for screenshots can be defined in screenshot-filename.sh and screenshot-folder.sh in ~/.config/ml4w/settings/
+- The installer detects the AUR Helper in use. You can use paru instead of yay by installing paru and add paru to ~/.config/ml4w/settings/aur.sh
+
 Version 2.9.5
 --------------------------------------------------------
 - The folder name and location of the dotfiles folder can be now individual defined during the update and installation.
