@@ -9,7 +9,7 @@
             (eventbox :onclick "${EWW_CMD} close taskview;hyprctl dispatch focuswindow address:${view.address}"
                       :cursor "pointer" :class "item-view" 
               (box :style "padding: 2px"  
-                (image :path "${view.capture}" :image-width 80)
+                (image :path "${view.capture}" :image-width 100)
               )
             )
           )

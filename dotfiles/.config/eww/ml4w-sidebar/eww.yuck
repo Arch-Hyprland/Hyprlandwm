@@ -177,7 +177,7 @@
 (include "./dock.yuck")
 (include "./widgets.yuck")
 (include "./task.yuck")
-;(include "./launcher.yuck")
+(include "./launcher.yuck")
 (include "./bar.yuck")
 ;; ** layout **************************************************************************
 
