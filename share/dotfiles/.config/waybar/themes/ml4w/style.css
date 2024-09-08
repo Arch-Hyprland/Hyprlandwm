@@ -447,10 +447,10 @@ window#waybar.empty #window {
 #bluetooth.on,
 #bluetooth.connected {
   background-color: @backgroundlight;
-  font-size: 20px;
+  font-size: 22px;
   color: #1523e9;
   border-radius: 15px;
-  padding: 2px 8px 1px 5px;
+  padding: 0px 10px 0px 5px;
   margin: 5px 5px 5px 0px;
   opacity: 0.8;
 }
