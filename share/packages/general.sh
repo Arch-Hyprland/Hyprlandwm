@@ -49,6 +49,7 @@ packagesPacman=(
     "stow"
     "zsh"
     "fzf"
+    "htop"
     "zsh-completions"
 );
 

@@ -96,8 +96,8 @@
     "escape": true,
     "return-type": "json",
     "exec": "~/.config/ml4w/scripts/updates.sh",
-    "restart-interval": 60,
-    "on-click": "alacritty --class dotfiles-floating -e ~/.config/ml4w/scripts/installupdates.sh",
+    "restart-interval": 1800,
+    "on-click": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e ~/.config/ml4w/scripts/installupdates.sh",
     "on-click-right": "~/.config/ml4w/settings/software.sh"
   },
   // Wallpaper
@@ -217,11 +217,8 @@
   // Clock
   "clock": {
     "format": "{:%H:%M %a}",
-    // "timezone": "America/New_York",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    // START CLOCK FORMAT
-    "format-alt": "{:%Y-%m-%d}"
-    // END CLOCK FORMAT
+    "on-click": "ags -t calendar",
+    "tooltip": false
   },
   // system
   "custom/system": {
@@ -242,19 +239,21 @@
   // CPU
   "cpu": {
     "format": "􀟪 {usage}% ",
-    "on-click": "~/.config/ml4w/settings/systeminfo.sh"
+    "on-click-right": "~/.config/ml4w/settings/systeminfo.sh",
+    "on-click": "~/.config/ml4w/settings/system-monitor.sh"
   },
   // Memory
   "memory": {
     "format": "􀢙 {}% ",
-    "on-click": "~/.config/ml4w/settings/systeminfo.sh"
+    "on-click-right": "~/.config/ml4w/settings/systeminfo.sh",
+    "on-click": "~/.config/ml4w/settings/system-monitor.sh"
   },
   // Harddisc space used
   "disk": {
     "interval": 30,
     "format": "􀨪 {percentage_used}% ",
     "path": "/",
-    "on-click": "~/.config/ml4w/settings/systeminfo.sh"
+    "on-click": "~/.config/ml4w/settings/system-monitor.sh"
   },
   //Language
   "hyprland/language": {

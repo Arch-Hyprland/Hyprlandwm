@@ -61,7 +61,8 @@
         "hyprland/workspaces",
         "group/links",
         "group/settings",
-        "group/quicklinks"
+        "group/quicklinks",
+        "custom/empty"
     ],
 
     // Modules Center
@@ -73,7 +74,7 @@
     // Modules Right    
     "modules-right": [
         "pulseaudio",
-        "backlight",
+        //"backlight",
         "bluetooth",
         "battery", 
         "network",

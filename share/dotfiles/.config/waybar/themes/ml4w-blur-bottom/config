@@ -47,7 +47,7 @@
         "custom/recorder",
         "custom/settings",
         "pulseaudio",
-        "backlight",
+        //"backlight",
         "bluetooth",
         "battery", 
         "group/hardware",
