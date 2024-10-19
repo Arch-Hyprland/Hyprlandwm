@@ -25,7 +25,7 @@
 
     // Updates Count
     "custom/updates": {
-        "format": " {}",
+        "format": "􀝗 {}",
         "escape": true,
         "return-type": "json",
         "exec": "~/.config/ml4w/scripts/updates.sh",
@@ -57,32 +57,32 @@
 
     // Modules Left
     "modules-left": [
-        "custom/appmenuicon",
-        "hyprland/workspaces",
+        "custom/appmenu",
+        "custom/waybarthemes",
+        "wlr/taskbar",
         "group/links",
-        "group/settings",
-        "group/quicklinks",
-        "custom/empty"
+        "hyprland/window",
     ],
 
     // Modules Center
     "modules-center": [
-        "hyprland/window",
+        "custom/wallpaper",
+        "hyprland/workspaces",
         "custom/updates",
     ],
 
     // Modules Right    
     "modules-right": [
+        "tray",
         "pulseaudio",
-        //"backlight",
+        "backlight",
         "bluetooth",
         "battery", 
         "network",
         "group/hardware",
         "custom/cliphist",
         "custom/widgets",
-        "clock",
-        "custom/panel"
-        "tray"
+        "custom/panel",
+        "clock"
     ]
 }

@@ -38,6 +38,7 @@
     "ignore-list": [
       "Alacritty",
       "kitty",
+      "Fcitx5 Input Window",
       ""
     ],
     "app_ids-mapping": {
@@ -83,7 +84,7 @@
   },
   // Cliphist
   "custom/cliphist": {
-    "format": "􀑐 ",
+    "format": "􀟾 ",
     "on-click": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh",
     "on-click-right": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh d",
     "on-click-middle": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh w",
@@ -218,7 +219,11 @@
   "clock": {
     "format": "{:%H:%M %a}",
     "on-click": "ags -t calendar",
-    "tooltip": false
+    // "timezone": "America/New_York",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    // START CLOCK FORMAT
+    "format-alt": "{:%Y-%m-%d}"
+    // END CLOCK FORMAT
   },
   // system
   "custom/system": {

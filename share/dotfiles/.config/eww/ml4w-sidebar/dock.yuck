@@ -17,12 +17,12 @@
   },
   {
     "name": "msedge",
-    "cmd": "microsoft-edge-dev",
+    "cmd": "microsoft-edge-dev --enable-wayland-ime",
     "icon": "microsoft-edge"
   },
   {
-    "name": "code",
-    "cmd": "code",
+    "name": "vscode",
+    "cmd": "code --enable-wayland-ime",
     "icon": "vscode"
   },
   {
@@ -37,7 +37,7 @@
   },
   {
     "name": "obsidian",
-    "cmd": "obsidian",
+    "cmd": "obsidian --enable-wayland-ime",
     "icon": "obsidian"
   },
   {
@@ -57,7 +57,7 @@
   },
   {
     "name": "linuxqq",
-    "cmd": "linuxqq",
+    "cmd": "linuxqq --enable-wayland-ime",
     "icon": "linuxqq"
   },
   {

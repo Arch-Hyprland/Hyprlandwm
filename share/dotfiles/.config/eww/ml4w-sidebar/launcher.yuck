@@ -1,4 +1,4 @@
-(defpoll entrys :interval "10m" `../bin/app-service app`)
+(defpoll entrys :interval "10m" `export GTK_THEME=WhiteSur; ../bin/app-service app`)
 
 (defwidget appItem[name cmd icon size] 
   (box :orientation "h" :space-evenly true :class "app-detail" 

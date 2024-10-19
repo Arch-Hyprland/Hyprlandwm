@@ -29,7 +29,7 @@
  * ----------------------------------------------------- */
 
 * {
-    font-family: "Fira Sans semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: "SF Pro Display", "Inter Semi Bold", "Fira Sans semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     border: none;
     border-radius: 0px;
 }
@@ -46,19 +46,29 @@ window#waybar {
  * Workspaces 
  * ----------------------------------------------------- */
 
- #workspaces {
-    margin: 3px 7px 3px 3px;
-    border: 0px;
-    font-size: 14px;
-    color: @textcolor1;
+#workspaces {
+  background: @workspacesbackground1;
+  opacity: 0.6;
+  margin: 8px 15px 8px 1px;
+  padding: 0px 1px;
+  border-radius: 15px;
+  border: 0px;
+  font-weight: bold;
+  font-style: normal;
+  opacity: 0.8;
+  font-size: 16px;
+  color: @textcolor1;
 }
 
 #workspaces button {
-    border: 0px;
-    margin:4px 5px 4px 0px;
-    padding:0px 4px 0px 4px;
-    color: @textcolor3;
-    transition: all 0.5s ease-in-out;
+  padding: 0px 3px;
+  margin: 2px 3px;
+  border-radius: 15px;
+  border: 0px;
+  color: @textcolor1;
+  background-color: @workspacesbackground2;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.4;
 }
 
 #workspaces button.active {
@@ -148,10 +158,16 @@ window#waybar.empty #window {
 #custom-quicklink9,
 #custom-quicklink10,
 #custom-waybarthemes {
-    margin-right: 16px;
-    font-size: 14px;
+    margin-right: 10px;
+    font-size: 18px;
     font-weight: bold;
     color: @iconcolor;
+}
+
+
+#custom-settings,
+#custom-cliphist {
+  margin-right: 5px;
 }
 
 #custom-tools {
@@ -239,10 +255,10 @@ window#waybar.empty #window {
  * Custom Modules
  * ----------------------------------------------------- */
 
-#custom-appmenuicon {
+#custom-appmenu {
     font-size: 20px;
     color: @textcolor;
-    margin: 0px 15px 0px 10px;
+    margin: 0px 10px 0px 10px;
 }
 
 /* -----------------------------------------------------
@@ -261,10 +277,14 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #custom-updates {
-    font-size: 14px;
-    color: @textcolor;
+    font-size: 16px;
+    opacity: .6;
+    color: @textcolor2;
     border-radius: 15px;
-    margin: 0px 15px 0px 0px;
+    margin: 8px 5px 8px 0px;
+    padding: 2px 8px 2px 8px;
+    background-color: @workspacesbackground2;
+
 }
 
 #custom-updates.green {
@@ -297,9 +317,14 @@ window#waybar.empty #window {
  #disk,#memory,#cpu,#language {
     margin:0px;
     padding:0px;
-    font-size:14px;
+    font-size: 16px;
     color:@iconcolor;
 }
+
+#cpu {
+    margin-right: 6px;
+}
+
 
 #language {
     margin-right:10px;
@@ -320,10 +345,9 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
  #backlight {
-    font-size: 14px;
+    font-size: 16px;
     color: @textcolor;
-    border-radius: 15px;
-    margin: 0px 15px 0px 0px;
+    margin: 0px 10px 0px 0px;
     background-color: transparent;
 }
 
@@ -332,7 +356,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
  #pulseaudio {
-    font-size: 14px;
+    font-size: 16px;
     color: @textcolor;
     border-radius: 15px;
     margin: 0px 15px 0px 0px;
@@ -347,10 +371,10 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #network {
-    font-size: 14px;
+    font-size: 16px;
     color: @textcolor;
     border-radius: 15px;
-    margin: 0px 15px 0px 0px;
+    margin: 0px 5px 0px 0px;
 }
 
 #network.ethernet {
@@ -366,7 +390,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
  #bluetooth, #bluetooth.on, #bluetooth.connected {
-    font-size: 14px;
+    font-size: 18px;
     color: @textcolor;
     border-radius: 15px;
     margin: 10px 15px 10px 0px;
@@ -383,10 +407,10 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #battery {
-    font-size: 14px;
+    font-size: 16px;
     color: @textcolor;
     border-radius: 15px;
-    margin: 10px 15px 10px 0px;
+    margin: 10px 5px 10px 0px;
 }
 
 #battery.charging, #battery.plugged {
@@ -407,6 +431,21 @@ window#waybar.empty #window {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+
+#custom-widgets {
+  font-size: 16px;
+  margin-right: 3px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#custom-panel {
+  margin: 0px 5px 0px 0px;
+  padding: 0px;
+  font-size: 18px;
+  color: @iconcolor;
 }
 
 /* -----------------------------------------------------

@@ -9,23 +9,30 @@
   color: #FFFFFF;
 }
 
+.side {
+  opacity: 0.6;
+  margin: 0px;
+  border: 2px solid #3d4e4a;
+  border-radius: 14px;
+}
+
 .win-box {
   background-color: #3d424e;
   opacity: 0.90;
   border: 1px solid #3d4e4a;
-  border-radius: 10px 10px 2px 2px;
+  border-radius: 12px 12px 2px 2px;
   box-shadow: 0 0 4px 2px #3d424e;
-  margin: 8px 8px 1px 8px;
+  margin: 1px;
 }
 
 .win-res {
   background-color: #3d424e;
-  opacity: 0.95;
+  opacity: 0.9;
   border: 1px solid #3d424e;
   border-radius: 2px;
   box-shadow: 0 0 4px 2px #3d424e;
   padding: 10px 0 10px 0;
-  margin: 1px 8px 1px 8px;
+  margin: 1px;
 }
 
 .winrow {
@@ -80,9 +87,9 @@
   background-color:  #3d424e;
   opacity: 0.95;
   border: 1px solid #3d424e;
-  border-radius: 2px 2px 10px 10px;
+  border-radius: 2px 2px 12px 12px;
   box-shadow: 0 0 4px 2px #3d424e;
-  margin: 1px 8px 1px 8px;
+  margin: 1px;
   padding: 3px 0 6px 0;
 }
 
