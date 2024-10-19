@@ -82,6 +82,13 @@
     "on-click": "xdg-open https://studio.youtube.com",
     "tooltip": false
   },
+
+    // Tools
+  "custom/tools": {
+    "format": "",
+    "tooltip-format": "Tools"
+  },
+
   // Cliphist
   "custom/cliphist": {
     "format": "􀟾 ",
@@ -97,7 +104,7 @@
     "escape": true,
     "return-type": "json",
     "exec": "~/.config/ml4w/scripts/updates.sh",
-    "restart-interval": 1800,
+    "interval": 1800,
     "on-click": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e ~/.config/ml4w/scripts/installupdates.sh",
     "on-click-right": "~/.config/ml4w/settings/software.sh"
   },
@@ -117,7 +124,7 @@
   // Settings
   "custom/settings": {
     "format": "􀣋 ",
-    "on-click": "~/.config/ml4w/apps/ML4W_Dotfiles_Settings-x86_64.AppImage",
+    "on-click": "com.ml4w.dotfilessettings",
     "tooltip-format": "ML4W Dotfiles Settings"
   },
   // Keybindings

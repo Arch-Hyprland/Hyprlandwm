@@ -22,7 +22,7 @@ _confirmKeyboard() {
     echo "Keyboard layout: $keyboard_layout"
     echo "Keyboard variant: $keyboard_variant"
     echo
-    if gum confirm "Do you want proceed with this keyboard setup?" --affirmative "Proceed" --negative "Change" ;then
+    if gum confirm "Do you want to proceed with this keyboard setup?" --affirmative "Proceed" --negative "Change" ;then
         return 0
     elif [ $? -eq 130 ]; then
         exit 130
@@ -58,26 +58,27 @@ _keyboard_confirm() {
 
         if gum confirm "Are you using a laptop and would you like to enable the laptop presets?"; then
             cp $template_directory/keyboard-laptop.conf $ml4w_directory/$version/.config/hypr/conf/keyboard.conf
-            echo "source = ~/.config/hypr/conf/layouts/laptop.conf" >  $ml4w_directory/$version/.config/hypr/conf/layout.conf
+            echo "source = ~/.config/hypr/conf/layouts/laptop.conf" > $ml4w_directory/$version/.config/hypr/conf/layout.conf
         elif [ $? -eq 130 ]; then
             echo ":: Installation canceled."
             exit 130
         else
             cp $template_directory/keyboard-default.conf $ml4w_directory/$version/.config/hypr/conf/keyboard.conf
         fi
-        cp $template_directory/autostart.sh $ml4w_directory/$version/.config/qtile/autostart.sh
 
         SEARCH="KEYBOARD_LAYOUT"
         REPLACE="$keyboard_layout"
         sed -i "s/$SEARCH/$REPLACE/g" $ml4w_directory/$version/.config/hypr/conf/keyboard.conf
+
+        # Set french keyboard variation
+        if [[ "$keyboard_layout" == "fr" ]] ;then
+            echo "source = ~/.config/hypr/conf/keybindings/fr.conf" > $ml4w_directory/$version/.config/hypr/conf/keybinding.conf
+            echo ":: Optimized keybindings for french keyboard layout"
+        fi
 
         SEARCH="KEYBOARD_VARIANT"
         REPLACE="$keyboard_variant"
         sed -i "s/$SEARCH/$REPLACE/g" $ml4w_directory/$version/.config/hypr/conf/keyboard.conf
-
-        SEARCH="KEYBOARD_LAYOUT"
-        REPLACE="$keyboard_layout"
-        sed -i "s/$SEARCH/$REPLACE/g" $ml4w_directory/$version/.config/qtile/autostart.sh
 
         echo
         echo ":: Keyboard setup complete."

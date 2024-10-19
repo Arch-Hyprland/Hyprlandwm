@@ -352,6 +352,10 @@ _replaceInFile() {
 
 # replaceTextInFile $customtext $targetFile
 _replaceTextInFile() {
+    # Set function parameters
+    customtext="$1"
+    targetFile=$2
+
     echo $customtext > $targetFile
 }
 
@@ -388,7 +392,7 @@ _replaceLineInFile() {
             sed -i "$line_found i $new_string" $file_path            
 
         else
-            echo "ERROR: Target line not found."
+            echo "ERROR: Target line not found for $find_string."
             sleep 2
         fi   
 

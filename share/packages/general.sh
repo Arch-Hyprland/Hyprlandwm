@@ -1,13 +1,15 @@
 packagesPacman=(
     "pacman-contrib"
+    "rsync"
     "sed"
     "vim"
     "bluez"
     "bluez-utils"
     "wget"
     "unzip"
-    "alacritty" 
-    "dunst" 
+    "kitty" 
+    "dunst"
+    "libnotify" 
     "starship"
     "noto-fonts" 
     "otf-font-awesome" 
@@ -51,13 +53,12 @@ packagesPacman=(
     "fzf"
     "htop"
     "zsh-completions"
+    "nautilus"
 );
 
 # "networkmanager"
 # "network-manager-applet"
 packagesAUR=(
-    "bibata-cursor-theme" 
-    "trizen"
-    "pacseek"
-    "oh-my-posh"
+    "bibata-cursor-theme"
+    "nautilus-open-any-terminal" 
 );

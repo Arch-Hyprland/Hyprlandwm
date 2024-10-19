@@ -264,8 +264,7 @@ window#waybar.empty #window {
  * Custom Modules
  * ----------------------------------------------------- */
 
-#custom-appmenu,
-#custom-appmenuwlr {
+#custom-appmenu {
   background-color: @backgrounddark;
   font-size: 16px;
   color: @textcolor1;

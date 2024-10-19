@@ -2,7 +2,10 @@
 # Clean up
 # ------------------------------------------------------
 
-echo ":: Starting Cleanup"
+echo -e "${GREEN}"
+figlet -f smslant "Clean up"
+echo -e "${NONE}"
+
 # Check for ttf-ms-fonts
 if [[ $(_isInstalledPacman "ttf-ms-fonts") == 0 ]]; then
     echo "The script has detected ttf-ms-fonts. This can cause conflicts with icons in Waybar."
@@ -33,6 +36,17 @@ if [ -d ~/$dot_folder/hypr/settings/ ] ;then
     rm -rf ~/dotfiles/hypr/settings
     echo ":: ~/dotfiles/hypr/settings removed."
 fi
+
+if [ -f ~/.local/share/applications/ml4w-welcome.desktop ] ;then
+    rm ~/.local/share/applications/ml4w-welcome.desktop
+fi
+if [ -f ~/.local/share/applications/ml4w-dotfiles-settings.desktop ] ;then
+    rm ~/.local/share/applications/ml4w-dotfiles-settings.desktop
+fi
+if [ -f ~/.local/share/applications/ml4w-hyprland-settings.desktop ] ;then
+    rm ~/.local/share/applications/ml4w-hyprland-settings.desktop
+fi
+
 
 # Create default folder structure
 xdg-user-dirs-update

@@ -42,6 +42,10 @@ window#waybar {
     transition-duration: .5s;
 }
 
+.modules-left {
+    padding-left: 10px;
+}
+
 /* -----------------------------------------------------
  * Workspaces 
  * ----------------------------------------------------- */
