@@ -1,30 +1,10 @@
 #!/bin/bash
-#  ____  _          _ _ 
-# / ___|| |__   ___| | |
-# \___ \| '_ \ / _ \ | |
-#  ___) | | | |  __/ | |
-# |____/|_| |_|\___|_|_|
-#                       
-
-sleep 1
-
-_isInstalledYay() {
-    package="$1";
-    check="$(yay -Qs --color always "${package}" | grep "local" | grep "\." | grep "${package} ")";
-    if [ -n "${check}" ] ; then
-        echo 0; #'0' means 'true' in Bash
-        return; #true
-    fi;
-    echo 1; #'1' means 'false' in Bash
-    return; #false
-}
-
 clear
 figlet -f smslant "Shell"
 
 echo ":: Please select your preferred shell"
 echo
-shell=$(gum choose "bash" "zsh" "Cancel")
+shell=$(gum choose "bash" "zsh" "CANCEL")
 # ----------------------------------------------------- 
 # Activate bash
 # ----------------------------------------------------- 
@@ -38,6 +18,7 @@ if [[ $shell == "bash" ]] ;then
     echo ":: Shell is now bash."
 
     gum spin --spinner dot --title "Please reboot your system." -- sleep 3
+    _selectCategory
 
 # ----------------------------------------------------- 
 # Activate zsh
@@ -88,11 +69,11 @@ elif [[ $shell == "zsh" ]] ;then
     fi
 
     gum spin --spinner dot --title "Please reboot your system." -- sleep 3
-
+    _selectCategory
 # ----------------------------------------------------- 
 # Cencel
 # ----------------------------------------------------- 
 else
     echo ":: Changing shell canceled"
-    exit
+    _selectCategory
 fi

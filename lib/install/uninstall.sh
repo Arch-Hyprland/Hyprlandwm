@@ -74,9 +74,6 @@ fi
 if test -L ~/.config/alacritty ;then
     rm $HOME/.config/alacritty
 fi
-if test -L ~/.config/starship ;then
-    rm $HOME/.config/starship
-fi
 if test -L ~/.config/nvim ;then
     rm $HOME/.config/nvim
 fi
@@ -92,8 +89,38 @@ fi
 if test -L ~/.config/waypaper ;then
     rm $HOME/.config/waypaper
 fi
+if test -L ~/.config/nwg-dock-hyprland ;then
+    rm $HOME/.config/nwg-dock-hyprland
+fi
 if test -L ~/.config/ags ;then
     rm $HOME/.config/ags
+fi
+if test -L ~/.config/kitty ;then
+    rm $HOME/.config/kitty
+fi
+if test -L ~/.config/bashrc ;then
+    rm $HOME/.config/bashrc
+fi
+if test -L ~/.config/zshrc ;then
+    rm $HOME/.config/zshrc
+fi
+if test -L ~/.config/gtk-3.0 ;then
+    rm $HOME/.config/gtk-3.0
+fi
+if test -L ~/.config/gtk-4.0 ;then
+    rm $HOME/.config/gtk-4.0
+fi
+if test -L ~/.config/qt6ct ;then
+    rm $HOME/.config/qt6ct
+fi
+if test -L ~/.config/ml4w ;then
+    rm $HOME/.config/ml4w
+fi
+if test -L ~/.config/ohmyposh ;then
+    rm $HOME/.config/ohmyposh
+fi
+if test -L ~/.config/xsettingsd ;then
+    rm $HOME/.config/xsettingsd
 fi
 echo ":: Symlinks removed"
 

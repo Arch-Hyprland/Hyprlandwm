@@ -25,6 +25,7 @@ alias cleanup='~/.config/ml4w/scripts/cleanup.sh'
 alias ml4w='com.ml4w.welcome'
 alias ml4w-settings='com.ml4w.dotfilessettings'
 alias ml4w-hyprland='com.ml4w.hyprland.settings'
+alias ml4w-options='ml4w-hyprland-setup -m options'
 alias ml4w-sidebar='ags -t sidebar'
 alias ml4w-diagnosis='~/.config/hypr/scripts/diagnosis.sh'
 alias ml4w-hyprland-diagnosis='~/.config/hypr/scripts/diagnosis.sh'
@@ -37,19 +38,6 @@ alias ml4w-update='~/.config/ml4w/update.sh'
 
 alias Qtile='startx'
 # Hyprland with Hyprland
-
-# -----------------------------------------------------
-# Git
-# -----------------------------------------------------
-alias gs="git status"
-alias ga="git add"
-alias gc="git commit -m"
-alias gp="git push"
-alias gpl="git pull"
-alias gst="git stash"
-alias gsp="git stash; git pull"
-alias gcheck="git checkout"
-alias gcredential="git config credential.helper store"
 
 # -----------------------------------------------------
 # Scripts

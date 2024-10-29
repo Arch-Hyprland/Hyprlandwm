@@ -141,6 +141,14 @@ sh ~/.config/hypr/scripts/eww.sh
 ~/.config/waybar/launch.sh
 
 # ----------------------------------------------------- 
+# Pywalfox
+# -----------------------------------------------------
+
+if type pywalfox > /dev/null 2>&1; then
+    pywalfox update
+fi
+
+# ----------------------------------------------------- 
 # Created blurred wallpaper
 # -----------------------------------------------------
 

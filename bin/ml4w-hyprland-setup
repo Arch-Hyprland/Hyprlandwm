@@ -30,6 +30,8 @@ else
 fi
 
 install_directory="$lib_directory/install"
+options_directory="$lib_directory/options"
+diagnosis_directory="$lib_directory/diagnosis"
 dotfiles_directory="$share_directory/dotfiles"
 apps_directory="$share_directory/apps"
 template_directory="$share_directory/templates"
@@ -65,6 +67,17 @@ _run_fullinstall() {
 }
 
 # ----------------------------------------------------- 
+# Run full installation with NVIDIA drivers
+# ----------------------------------------------------- 
+_run_nvidia() {
+    source $install_directory/header.sh
+    echo ":: With NVIDIA driver installation"
+    source $install_directory/packages.sh
+    source $install_directory/nvidia.sh
+    source $install_directory/dotfiles.sh
+}
+
+# ----------------------------------------------------- 
 # Check for update
 # ----------------------------------------------------- 
 _check_update() {
@@ -94,8 +107,15 @@ _run_dotfiles() {
 # ----------------------------------------------------- 
 # Run unstaller
 # ----------------------------------------------------- 
-_run_optional() {
-    source $install_directory/optional.sh
+_run_options() {
+    source $options_directory/options.sh
+}
+
+# ----------------------------------------------------- 
+# Run diagnosis
+# ----------------------------------------------------- 
+_run_diagnosis() {
+    source $diagnosis_directory/diagnosis.sh
 }
 
 # ----------------------------------------------------- 
@@ -140,14 +160,20 @@ else
                     packages)
                         _run_packages
                     ;;
+                    nvidia)
+                        _run_nvidia
+                    ;;
                     dotfiles)
                         _run_dotfiles
                     ;;
                     uninstall)
                         _run_uninstall
                     ;;
-                    optional)
-                        _run_optional
+                    options)
+                        _run_options
+                    ;;
+                    diagnosis)
+                        _run_diagnosis
                     ;;
                     update)
                         _run_update
@@ -164,12 +190,14 @@ else
                 echo ":: ML4W Dotfiles for Hyprland Version $version"
                 echo
                 echo "-m full: Run full installation"
+                echo "-m nvidia: Run full installation with NVIDA Driver installation"
                 echo "-m packages: Run installation of packages only"
                 echo "-m dotfiles: Run the setup of the dotfiles only"
-                echo "-m options: Install optional packages"
+                echo "-m options: Install package options"
+                echo "-m diagnosis: Run diagnosis"
                 echo "-m update: Check for new updates"
-                echo "-m unstall: Will uninstall the dotfiles"
-                echo "-m activate: Activate an existing dotfiles folder"
+                echo "-m uninstall: Will uninstall the dotfiles"
+                echo "-m activate: Activate another existing dotfiles folder"
                 echo
                 echo "-v: Current version of the ML4W Dotfiles for Hyprland"
             ;;

@@ -1,8 +1,18 @@
+Version 2.9.6.5
+--------------------------------------------------------
+- NVIDIA driver installation script added. Start the installation with ml4w-hyprland-setup -m nvidia
+
 Version 2.9.6.4
 --------------------------------------------------------
 - Kitty is the new default terminal (Replace alacritty with kitty in the ML4W Settings App/Default terminal)
+- Kitty is supporting pywal colors
+- New installation options script to install additional packages. Can be opened from the ML4W Welcome App.
+- Added pywalfox support to color Firefox based on wallpaper colors
 - Fixed eza icons on zsh terminal 
 - Subfolders in .config can be protected with an empty file PROTECTED
+- OhMyPosh promt replaces Starship prompt
+- Networkmanager applet can be toggled with right click on waybar network module
+- Three more blue light screen shaders with different intensities
 
 Version 2.9.6.3
 --------------------------------------------------------
