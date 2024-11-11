@@ -177,8 +177,10 @@
   },
   // Rofi Application Launcher
   "custom/appmenu": {
+    // START APPS LABEL
     "format": "􀈠 ",
-    "on-click": "rofi -show drun -replace",
+    // END APPS LABEL
+    "on-click": "sleep 0.2;pkill rofi || rofi -show drun -replace",
     "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
     "tooltip-format": "Left: Open the application launcher\nRight: Show all keybingings"
   },
@@ -320,7 +322,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
     "on-click": "~/.config/ml4w/settings/networkmanager.sh",
-    "on-click-right": "~/.config/ml4w/scripts/nm-applet.sh toggle",
+    "on-click-right": "~/.config/ml4w/scripts/nm-applet.sh toggle"
   },
   // Battery
   "battery": {
