@@ -40,21 +40,26 @@ window#waybar {
  * Workspaces 
  * ----------------------------------------------------- */
 
+.modules-center {
+  background: @bordercolor;
+  opacity: 0.9;
+  border-radius: 18px;
+  padding: 2px 6px 2px 10px;
+  margin: 2px 5px 5px 5px;
+}
+
 #workspaces {
-  background: @workspacesbackground1;
-  margin: 2px 15px 2px 1px;
-  padding: 0px 1px;
-  border-radius: 15px;
-  border: 0px;
-  font-weight: bold;
+  border-left: 3px solid @textcolor2;
+  border-right: 3px solid @textcolor2;
+  padding: 2px 8px;
+  margin: 0px 8px;
   opacity: 0.8;
-  font-size: 16px;
   color: @textcolor1;
 }
 
 #workspaces button {
   padding: 0px 5px;
-  margin: 4px 3px;
+  margin: 0px 3px;
   border-radius: 15px;
   border: 0px;
   color: @textcolor1;
@@ -174,8 +179,6 @@ window#waybar.empty #window {
 #custom-chatgpt,
 #custom-calculator,
 #custom-windowsvm,
-#custom-wallpaper,
-#custom-wallpaper,
 #custom-system,
 #custom-hyprshade,
 #custom-hypridle,
@@ -198,13 +201,23 @@ window#waybar.empty #window {
   color: @iconcolor;
 }
 
-#custom-settings,
 #custom-cliphist {
   margin-right: 5px;
   font-size: 20px;
   font-weight: bold;
   opacity: 0.8;
   color: @iconcolor;
+}
+#custom-wallpaper {
+  font-size: 18px;
+  opacity: 0.8;
+  color: @textcolor2;
+}
+
+#custom-settings {
+  font-size: 18px;
+  font-weight: bold;
+  color: @textcolor2;
 }
 
 #custom-hyprshade {
@@ -214,8 +227,6 @@ window#waybar.empty #window {
 #custom-system {
   margin-right: 10px;
 }
-
-
 #custom-chatgpt {
     margin-right: 12px;
     background-image: url("../assets/openai.svg");
@@ -295,8 +306,8 @@ window#waybar.empty #window {
   font-size: 16px;
   color: @textcolor2;
   border-radius: 15px;
-  padding: 1px 10px 1px 10px;
-  margin: 5px 5px 5px 0px;
+    margin: 5px 8px 5px 0px;
+  padding: 0 10px;
   opacity: 0.8;
 }
 
@@ -376,9 +387,9 @@ window#waybar.empty #window {
   color: @textcolor1;
   border-radius: 15px;
   padding: 1px 10px 1px 10px;
-  margin: 3px 5px 3px 0px;
+  margin: 5px 5px 5px 0px;
   opacity: 0.8;
-  border: 3px solid @bordercolor;
+  border: 0px solid @bordercolor;
 }
 
 /* -----------------------------------------------------

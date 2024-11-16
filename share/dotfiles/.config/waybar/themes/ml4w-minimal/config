@@ -61,7 +61,7 @@
         "custom/waybarthemes",
         "wlr/taskbar",
         "group/links",
-        "hyprland/window",
+"hyprland/window",
     ],
 
     // Modules Center
@@ -73,12 +73,12 @@
 
     // Modules Right    
     "modules-right": [
-        "tray",
+"tray",
         "pulseaudio",
-        "backlight",
+//"backlight",
         "bluetooth",
         "battery", 
-        "network",
+"network",
         "group/hardware",
         "custom/cliphist",
         "custom/widgets",

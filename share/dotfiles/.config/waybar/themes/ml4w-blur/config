@@ -28,22 +28,22 @@
     "modules-left": [
         "custom/appmenu",
         "custom/waybarthemes",
-        "wlr/taskbar",
+        //"wlr/taskbar",
         "group/links",
-        "hyprland/window"
+        "hyprland/window",
     ],
 
     // Modules Center
     "modules-center": [
         "custom/wallpaper",
         "hyprland/workspaces",
-        "custom/updates"
+        "custom/settings"
     ],
 
     // Modules Right    
     "modules-right": [
+        "custom/updates",
         "custom/recorder",
-        "custom/settings",
         "pulseaudio",
         //"backlight",
         "bluetooth",
@@ -54,6 +54,6 @@
         "custom/widgets",
         "clock",
         "custom/panel",
-        "tray"
+        "tray",
     ]
 }
