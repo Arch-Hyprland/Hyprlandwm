@@ -40,26 +40,29 @@ window#waybar {
  * ----------------------------------------------------- */
 
 .modules-center {
-  background: @bordercolor;
-  opacity: 0.9;
+  background-color: @bordercolor;
+  opacity: 0.7;
   border-radius: 18px;
-  padding: 2px 6px 2px 10px;
-  margin: 5px 5px 6px 5px;
+  padding: 0px 4px 0px 6px;
+  margin: 7px 5px 7px 5px;
+  border-left: 7px solid @textcolor2;
+  border-right: 7px solid @textcolor2;
 }
 
 #workspaces {
-  border-left: 3px solid @textcolor2;
-  border-right: 3px solid @textcolor2;
+  border-left: 2px solid @textcolor2;
+  border-right: 2px solid @textcolor2;
+  border-radius: 3px;
   padding: 2px 8px;
-  margin: 0px 8px;
+  margin: 0px 6px;
   opacity: 0.8;
   color: @textcolor1;
 }
 
 #workspaces button {
-  padding: 0px 5px;
-  margin: 0px 3px;
-  border-radius: 15px;
+  padding: 0px 3px 1px 2px;
+  margin: 0px 1px;
+  border-radius: 8px;
   border: 0px;
   color: @textcolor1;
   background-color: @workspacesbackground2;
@@ -70,8 +73,8 @@ window#waybar {
 #workspaces button.active {
   color: @textcolor1;
   background: @workspacesbackground2;
-  border-radius: 15px;
-  min-width: 40px;
+  border-radius: 8px;
+  min-width: 25px;
   transition: all 0.3s ease-in-out;
   opacity: 1.0;
 }
@@ -79,9 +82,10 @@ window#waybar {
 #workspaces button:hover {
   color: @textcolor1;
   background: @workspacesbackground2;
-  border-radius: 15px;
+  border-radius: 8px;
   opacity: 0.7;
 }
+
 
 /* -----------------------------------------------------
  * Tooltips
