@@ -68,6 +68,13 @@
     "tooltip-format": "open widgets"
   },
   // ML4W Welcome App
+  "custom/ml4w-welcome": {
+    "on-click": "ags toggle sidebar",
+    "on-click-right": "sleep 0.1 && ~/.config/ml4w/apps/ML4W_Welcome-x86_64.AppImage",
+    "format": " ",
+    "tooltip-format": "Open Sidebar"
+  },
+  // ML4W Welcome App
   "custom/ml4w-hyprland-settings": {
     "on-click": "ags -t sidebar",
     "on-click-right": "sleep 0.1 && ~/.config/ml4w/apps/ML4W_Hyprland_Settings-x86_64.AppImage",
@@ -82,13 +89,6 @@
     "on-click": "xdg-open https://studio.youtube.com",
     "tooltip": false
   },
-
-    // Tools
-  "custom/tools": {
-    "format": "",
-    "tooltip-format": "Tools"
-  },
-
   // Cliphist
   "custom/cliphist": {
     "format": "􀟾 ",
@@ -227,7 +227,7 @@
   // Clock
   "clock": {
     "format": "{:%H:%M %a}",
-    "on-click": "ags -t calendar",
+    "on-click": "ags toggle calendar",
     // "timezone": "America/New_York",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     // START CLOCK FORMAT

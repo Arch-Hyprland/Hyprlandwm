@@ -42,11 +42,11 @@ packages=(
     "hyprshade"
     "waypaper"
     "grimblast-git"
-    "aylurs-gtk-shell"
     "bibata-cursor-theme-bin"
     "pacseek"
     "otf-font-awesome" 
     "ttf-fira-sans" 
     "ttf-fira-code" 
-    "ttf-firacode-nerd" 
+    "ttf-firacode-nerd"
+    "aylurs-gtk-shell" 
 );
