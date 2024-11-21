@@ -52,7 +52,7 @@
   },
   {
     "name": "wechat",
-    "cmd": "wechat-beta",
+    "cmd": "wechat",
     "icon": "wechat"
   },
   {

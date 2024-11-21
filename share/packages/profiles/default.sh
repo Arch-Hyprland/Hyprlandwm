@@ -14,7 +14,6 @@ packages=(
     "imagemagick"
     "jq"
     "xclip"    
-    "firefox"
     "kitty"
     "neovim"
     "htop"

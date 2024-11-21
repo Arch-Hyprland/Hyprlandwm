@@ -3,7 +3,7 @@
 hyprpm list | awk '
   BEGIN { b="start" } 
   {
-    if($0~/Plugin \w+/){ b=$4; a[b]=0}; 
+    if($0~/Plugin \w+/){ b=$3; a[b]=0}; 
       if($0~/enabled: /){ a[b]=$3}
   }
   END { 
