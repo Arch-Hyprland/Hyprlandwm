@@ -1,72 +1,64 @@
 @import "/home/unicorn/.cache/wal/colors.scss";
 
+// $win_background: #0d0b42;
+$win_background: $color7;
+$hover_menu: $color3;
+$box_background: $color1;
+$block_background: #cccccc;
+$slide_color: #fcfcfc;
 * {
   all: unset;
   // font-family: "Cascadia Code";
   //font-family: 'JetBrains Mono Nerd Font', 'JetBrains Mono NL', 'SpaceMono Nerd Font', monospace;
   font-family: 'Inter Semi Bold';
   // font-style: italic;
-  color: #FFFFFF;
+  color: $foreground;
 }
 
 .side {
-  opacity: 0.6;
+  background-color: rgba($win_background, 0.3); 
   margin: 0px;
-  border: 2px solid #3d4e4a;
-  border-radius: 14px;
+  border: 1px solid rgba($win_background, 0.3);
+  padding: 8px;
+  border-radius: 12px 12px 12px 12px;
+  box-shadow: 0 0 20px rgba($background, 0.7);
 }
 
 .win-box {
-  background-color: #3d424e;
-  opacity: 0.90;
-  border: 1px solid #3d4e4a;
-  border-radius: 12px 12px 2px 2px;
-  box-shadow: 0 0 4px 2px #3d424e;
-  margin: 1px;
+  border-bottom: 1px solid rgba($win_background, 0.3);
+  padding: 6px 0 10px 0;
 }
 
 .win-res {
-  background-color: #3d424e;
-  opacity: 0.9;
-  border: 1px solid #3d424e;
+  border-bottom: 1px solid rgba($win_background, 0.3);
   border-radius: 2px;
-  box-shadow: 0 0 4px 2px #3d424e;
   padding: 10px 0 10px 0;
-  margin: 1px;
+}
+
+.win-menu {
+  padding: 10px 0 6px 0;
 }
 
 .winrow {
 	padding:20px 0px;
 }
 
-.closebox {
-	background-color: #242424;
-	opacity: 0.85;
-	border: 1px solid #444444;
-	border-radius: 12px;
-	box-shadow: 0 0 4px 2px #000000;
-	margin: 10px;
-}
-
 .res-box {
-  background-color: #3d424e;
   border-radius: 12px;
-  padding: 8px 8px 8px 8px;
+  padding: 8px;
 }
 
 .res-circle {
-  background-color: #FFFFFF;
-  border: 0px solid #161616;
-  color: #FFFFFF;
+  background-color: rgba($slide_color, 0.7);
+  color: $block_background;
   border-radius: 100%;
   padding: 0px;
 }
 
 .res-circle-small {
-  background-color: #3d424e;
-  border: 0px solid #161616;
+  background-color: rgba($background, 0.6);
   border-radius: 100%;
-  color: #FFFFFF;
+  color: $block_background;
   padding: 30px;
   min-width: 30px;
 }
@@ -83,14 +75,12 @@
   color: #cfb3ff;
 }
 
-.win-menu {
-  background-color:  #3d424e;
-  opacity: 0.95;
-  border: 1px solid #3d424e;
-  border-radius: 2px 2px 12px 12px;
-  box-shadow: 0 0 4px 2px #3d424e;
-  margin: 1px;
-  padding: 3px 0 6px 0;
+.control-box {
+  background-color: rgba($block_background, 0.2);
+  box-shadow: 0 0 3px rgba($background, 0.5);
+  border-radius: 14px; 
+  padding: 2px; 
+  margin: 5px 5px 5px 2px;
 }
 
 .menu-box {
@@ -100,7 +90,7 @@
 
 .menu-layer:hover {
   border-radius: 10px;
-  background-color: $color2;
+  background-color: rgba($hover_menu, 0.6);
   transition: 0.8s;
   opacity: 0.9;
 }
@@ -111,93 +101,93 @@
 }
 
 .panel-box-header {
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 10px;
   margin: 1px;
-  padding: 3px;
+  padding: 3px 3px;
   min-width: 120px;
-  opacity: 1;
 }
 
 .panel-icon {
-  background-color: #373c68;
+  background-color: $box_background;
   border-radius: 18px;
   min-width: 36px;
   min-height: 36px;
-  opacity: 1;
   margin: 2px;
 }
 
 .switch-icon {
-  background-color: #373c68;
+  background-color: $box_background;
   border-radius: 8px;
   min-width: 40px;
   min-height: 36px;
-  opacity: 1;
   margin: 5px 5px;
 
 }
 
 .func-switch {
-  margin: 0 5px;
+  margin: 5px 5px;
   padding: 5px;
   border-radius: 16px;
-  background-color: #1E1E2E;
+  background-color: rgba($block_background, 0.2);
+  box-shadow: 0 0 3px rgba($background, 0.5);
 }
+
 .switch-box:hover {
   border-radius: 10px;
   margin: 0px;
   opacity: 0.8;
-  background-color: #373c68;
+  background-color: rgba($hover_menu, 0.6);
+}
+
+.panel-box {
+  border-radius: 12px;
+  padding: 2px;
+  min-height: 24px;
+  background-color: rgba($background, 0.2);
 }
 
 .audio-scale highlight {
   all: unset;
-  background-color: $color6;
-  border-radius: 0 10px 10px 0;
+  background-color: rgba($slide_color, 0.7);
+  border-radius: 0 12px 12px 0;
   transition: all 0.8s;
 }
 
 .audio-scale trough {
   all: unset;
-  background-color: #373c68;
-  border: 1px solid $background;
-  min-height: 20px;
-  border-radius: 0 10px 10px 0;
+  min-height: 24px;
+  border-radius:  12px;
   min-width: 290px;
   transition: all 0.8s;
 }
 
 .slide-box {
   margin: 5px 5px 5px 5px;
-  padding: 5px 10px;
-  background-color: #1e1e2e;
-  opacity: 0.98;
-  border-radius: 10px;
+  padding: 10px;
+  background-color: rgba($block_background, 0.2);
+  box-shadow: 0 0 3px rgba($background, 0.5);
+  border-radius: 12px;
 }
 
 .slide-icon {
-  background-color: #373c68;
-  border: 1px solid $background;
-  border-radius: 10px 0 0 10px;
-  min-width: 26px;
-  min-height: 20px;
-  opacity: 1;
-  margin: 5px 0;
+  background-color: rgba($slide_color, 0.7);
+  border-radius:  12px 0  0 12px;
+  color: $background;
+  min-width: 24px;
+  min-height: 24px;
 }
 
 .light-scale highlight {
   all: unset;
-  background-color: $color4;
-  border-radius: 0 10px 10px 0;
+  background-color: rgba($slide_color, 0.7);
+  border-radius: 0 12px 12px 0;
   transition: all 0.8s;
 }
 
 .light-scale trough {
   all: unset;
-  border-radius: 0 10px 10px 0;
-  background-color: #373c68;
-  border: 1px solid $background;
-  min-height: 20px;
+  border-radius: 0 12px 12px 0;
+  min-height: 24px;
   min-width: 290px;
   transition: all 0.8s;
 }

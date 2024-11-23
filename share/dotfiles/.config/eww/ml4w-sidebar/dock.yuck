@@ -113,7 +113,7 @@
                 :class "icon-box"
         ;; :translate-x '${ CURRENT == name ? ((SCALE - 1) * 100) : 0 }%' 
         (transform 
-          (image :path path :class "icon" :image-width "32" :image-height "32")
+          (image :icon path :class "icon" :icon-size "dnd")
         )
       )
     )
@@ -135,7 +135,7 @@
           (for task in {tasks?:[]}
             (box :orientation "v"
               (for view in {task.views} 
-                (taskcapture :path "${view.capture}" :name "${task['name']}" :cmd "${view.address}" :icon "" :mode mode)
+                (taskcapture :path "${view.class}" :name "${task['name']}" :cmd "${view.address}" :icon "" :mode mode)
               )
             )
           )

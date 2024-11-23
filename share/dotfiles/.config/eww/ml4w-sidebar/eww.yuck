@@ -11,7 +11,7 @@
 
 
 (defwidget volume[] 
-  (box :orientation "v" :space-evenly false :style "background: #1e1e2e; opacity: 0.8; border-radius: 14px; padding: 2px; margin: 5px 5px 5px 2px;"
+  (box :orientation "v" :space-evenly false :class "control-box" 
     (box :orientation "v"
       (eventbox 
         (box :class "panel-box-header" :space-evenly false
@@ -63,7 +63,7 @@
     (label :text "Sound" :halign "start")
     (eventbox 
       (box :class "panel-box" :orientation "h" :space-evenly false 
-        (image :icon "volume-level-high" :icon-size "toolbar" :class "slide-icon" )
+        (image :icon "audio-volume-high-symbolic" :icon-size "toolbar" :class "slide-icon" )
         (revealer :reveal true
                   :transition "slideleft" :duration "800ms"
           (scale :value 80 :min 1 :max 150 :orientation "h" 
@@ -80,7 +80,7 @@
     (label :text "Display" :halign "start") 
     (eventbox 
       (box :class "panel-box" :orientation "h" :space-evenly false 
-        (image :icon "brightness-low" :icon-size "toolbar" :class "slide-icon")
+        (image :icon "night-light-symbolic" :icon-size "toolbar" :class "slide-icon")
         (revealer :reveal true
                   :transition "slideleft" :duration "800ms"
           (scale :value 80 :min 1 :max 100 :orientation "h" 
@@ -95,7 +95,7 @@
 ;; Widgets
 (defwidget profile []
   (box :class "win-box" :orientation "v" :space-evenly false :spacing 2
-    (box :orientation "h" :space-evenly false
+    (box :orientation "h" :space-evenly true
       (switch)
       (volume)
     )

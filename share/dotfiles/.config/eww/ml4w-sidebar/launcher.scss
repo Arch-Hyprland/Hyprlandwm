@@ -1,6 +1,6 @@
 .launcher-bg {
-  background-color: $background;
-  opacity: 0.6;
+  background-color: rgba($background, 0.6);
+  opacity: 0.95;
   border-radius: 10px 10px 0 0;
   padding: 100px;
 }

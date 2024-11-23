@@ -1,0 +1,19 @@
+exclusive = false
+icon_size = 48
+# anchor window to screen edge
+anchor_left = false
+anchor_right = false
+anchor_top = false
+anchor_bottom = false
+
+# margin of window to screen edge
+margin_top = 0
+margin_bottom = 0
+margin_left = 0
+margin_right = 0
+
+# set width or height (-1 is unset)
+width = 800
+height = 600
+
+

@@ -1,4 +1,4 @@
-(defpoll tasks :interval "10s" `/home/unicorn/go/src/code.unicorn.com/hyprtask/hyprspace | jq`)
+(defpoll tasks :interval "10s" `/home/unicorn/go/src/code.unicorn.com/hyprtask/hyprtask | jq`)
 
 (defwidget taskview []
   (box :space-evenly false :vexpand true
@@ -9,7 +9,7 @@
             (eventbox :onclick "${EWW_CMD} close taskview;hyprctl dispatch focuswindow address:${view.address}"
                       :cursor "pointer" :class "item-view" 
               (box :style "padding: 2px"  
-                (image :path "${view.capture}" :image-width 100)
+                (image :icon "${view.class}" :icon-size "dialog" :image-width "60" :image-heigh "60")
               )
             )
           )

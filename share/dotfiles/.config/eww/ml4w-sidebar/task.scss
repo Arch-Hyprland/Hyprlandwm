@@ -1,17 +1,22 @@
+$task_background: #cfcfcf;
+$task_group_background: #fcfcfc;
+
+.taskview {
+  background-color: rgba($task_background, 0.2);
+  opacity: 0.95;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba($background, 0.5);
+}
 
 .task-item {
   border-radius: 16px;
   margin: 5px;
-  background-color: $color1;
+  background-color: rgba($task_group_background, 0.2);
+  box-shadow: 0 0 5px rgba($background, 0.2);
   padding: 5px;
 }
 
-.taskview {
-  background-color: $color10;
-  opacity: 0.95;
-  border-radius: 30px;
-  padding: 30px;
-}
 
 .task-label {
   font-size: 18px;
@@ -21,7 +26,7 @@
 }
 
 .item-view:focus {
-  border: 1px solid $color4;
+  border: 1px solid $color6;
 }
 
 .item-view {
@@ -29,7 +34,7 @@
   border-radius: 16px;
 
   &:hover {
-    background-color: $color4;
+    background-color: $color6;
     opacity: 1;
     padding: 5px;
     transition: all 0.5s;

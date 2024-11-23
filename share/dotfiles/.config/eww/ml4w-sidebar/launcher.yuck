@@ -10,7 +10,6 @@
                   :cursor "pointer"
                   :class "app-icon"
           (transform 
-                     
             (image :path "${icon}" :class "icon" 
               :icon-size "dialog" 
               :image-width "80" 
