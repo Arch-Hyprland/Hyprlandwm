@@ -10,13 +10,12 @@
 .notes {
   margin: 5px;
   border-radius: 16px;
-  opacity: 0.9;
   font-weight: bold;
   font-style: normal;
 }
 
 .notes-header {
-  background: #e5b12a;
+  background: rgba(#e5b12a, 0.7);
   border-radius: 16px 16px 0 0;
   padding: 10px;
   color: black;
@@ -25,7 +24,7 @@
 
 .notes-body {
   padding: 0 5px 8px 5px;
-  background-color: #3e3f42;
+  background-color: rgba(#3e3f42, 0.8);
   min-height: 190px;
   min-width: 200px;
   border-radius: 0 0 16px 16px;
@@ -33,7 +32,7 @@
 
 .notes-item {
   padding: 10px;
-  border-bottom: 1px solid #2f5ce6;
+  border-bottom: 1px solid rgba(#2f5ce6, 0.7);
 }
 
 .editor-icon {
@@ -52,19 +51,18 @@
 
 .os-calendar {
   margin: 5px;
-  opacity: 0.8;
   font-size: 12px;
 }
 
 .cal-header {
-  background: #c44251;
+  background: rgba(#c44251, 0.9);
   border-radius: 16px 16px 0 0;
   padding: 10px;
   font-size: 20px;
 }
 
 .cal-body {
-  background-color: #3d424e;
+  background-color: rgba(#3d424e, 0.8);
   border-radius: 0 0 16px 16px;
   font-size: 15px;
 }
@@ -171,7 +169,7 @@ calendar:selected {
 
 .plugin-box {
   font-size: 18px;
-  background-color: #1e1e2e;
+  background-color: rgba(#1e1e2e, 0.8);
   opacity: 0.8;
   margin: 0 5px;
   border-radius: 16px 16px 0 0;
@@ -194,7 +192,7 @@ calendar:selected {
   padding: 3px;
   margin: 2px 5px;
   border-radius: 10px;
-  background-color: $color1;
+  background-color: rgba($color1, 0.8);
 }
 
 .plugin-switch {
@@ -202,12 +200,12 @@ calendar:selected {
   padding: 5px;
   min-height: 213px;
   border-radius: 0 0 16px 16px;
-  background-color: #2c2b31;
+  background-color: rgba(#2c2b31, 0.8);
 }
 
 .album-center {
   border-radius: 16px;
-  background: #2a1ea1;
+  background: rgba(#2a1ea1, 0.8);
   opacity: 0.9;
   margin: 5px;
 }
@@ -249,7 +247,7 @@ calendar:selected {
   margin: 10px;
 }
 
-.music-bar > highlight {
+.music-bar  highlight {
   all: unset;
   color: $color9;
   min-height: 3px;
@@ -268,8 +266,7 @@ calendar:selected {
   min-width: 100px;
   padding: 10px;
   margin: 5px;
-  background-color: #576477;
-  opacity: 0.9;
+  background-color: rgba(#576477, 0.8);
   border-radius: 16px;
   box-shadow: 0 0 10px #3e3f4210;
 }

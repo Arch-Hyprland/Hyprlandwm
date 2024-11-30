@@ -1,3 +1,6 @@
+
+$app-hover: #cfcfcf;
+
 .launcher-bg {
   background-color: rgba($background, 0.6);
   opacity: 0.95;
@@ -12,14 +15,15 @@
 }
 
 .app-item {
-  background-color: $color0;
-  opacity: 1;
+  background-color: transparent;
   border-radius: 16px;
+  transition: all 0.5s;
 }
 
 .app-item:hover{
-  background-color: #1a1a2a;
+  background-color: rgba($app-hover, 0.2);
   color: $color3;
+  transition: all 0.5s;
 }
 
 .app-detail {

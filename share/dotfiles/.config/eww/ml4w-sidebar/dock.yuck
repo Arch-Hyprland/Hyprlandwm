@@ -22,7 +22,7 @@
   },
   {
     "name": "vscode",
-    "cmd": "code --enable-wayland-ime",
+    "cmd": "/home/unicorn/software/vscode/code --enable-wayland-ime",
     "icon": "vscode"
   },
   {

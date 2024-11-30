@@ -217,8 +217,8 @@
 )
 
 (defwindow widgets[]
-    :geometry (geometry :x "20"
-                        :y "20"
+    :geometry (geometry :x "5"
+                        :y "100"
                         :anchor "top right"
               )
     :exclusive false
