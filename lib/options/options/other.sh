@@ -1,9 +1,9 @@
 #!/bin/bash
 clear
 echo -e "${GREEN}"
-figlet -f smslant "Other"
+figlet -f smslant "More"
 echo -e "${NONE}"
-source $packages_directory/options/other.sh
+source $packages_directory/$install_platform/options/other.sh
 toInstall=""
 selectedInstall=""
 
@@ -15,8 +15,8 @@ if [ -z "$optionalSelect" ] ;then
 elif [ $optionalSelect == "CANCEL" ]; then
     _selectCategory
 else
-    if [[ ! $(_isInstalledAUR "$optionalSelect") == 0 ]]; then
-        $aur_helper -S $optionalSelect
+    if [[ ! $(_isInstalled "$optionalSelect") == 0 ]]; then
+        _installPackage $optionalSelect
     fi
     if [ $optionalSelect == "pinta" ]; then
         echo 'pinta' > "$HOME/.config/ml4w/settings/screenshot-editor.sh"

@@ -1,63 +1,85 @@
 # ------------------------------------------------------
 # Toggle SDDM
 # ------------------------------------------------------
+_writeLogHeader "SDDM"
+_writeHeader "SDDM"
 
-echo -e "${GREEN}"
-figlet -f smslant "SDDM"
-echo -e "${NONE}"
+current_display_manager=""
+
+_detectCurrentDisplayManager() {
+    execstart=$(grep 'ExecStart=' /etc/systemd/system/display-manager.service)
+    arrIN=(${execstart//\// })
+    for i in "${arrIN[@]}"; do
+        current_display_manager=$i
+    done
+}
+
+_enterDisplayManager() {
+    _writeMessage "Enter the name of your the display manager manually (e.g., gdm)"
+    current_display_manager=$(gum input)
+}
+
+_confirmCurrentDisplayManager() {
+    _detectCurrentDisplayManager
+    _writeLogTerminal 0 "The script has detected $current_display_manager as your current display manager"
+    if gum confirm "Is this correct" ;then
+        _writeLogTerminal 1 "$current_disyplay_manager confirmed"
+    else
+        _enterDisplayManager
+    fi
+}
+
+_installSDDM() {
+
+    _writeLog 0 "Installing sddm"
+    source $packages_directory/$install_platform/sddm.sh
+    _installPackages "${packages[@]}"
+
+    sudo systemctl disable $current_display_manager
+    sudo systemctl enable sddm
+
+}
+
+_disableDisplayManager() {
+    sudo systemctl disable $current_display_manager
+    _writeLog 0 "Current display manager deactivated."
+}
 
 if [ -z $automation_displaymanager ] ;then
+    _detectCurrentDisplayManager
+    
     if [ -f /etc/systemd/system/display-manager.service ]; then
         disman=0
-        echo "You have already installed a display manager. If your display manager is working fine, you can keep the current setup."
-        echo "How do you want to proceed?"
+        _writeLogTerminal 0 "You have already installed a display manager."
+        _writeMessage "If your display manager is working fine, you can keep the current setup."
         echo
         dmsel=$(gum choose "Keep current setup" "Deactivate current display manager" "Install sddm")
     else
         disman=1
-        echo "There is no display manager installed on your system. You're starting Hyprland with commands on tty."
-        echo "How do you want to proceed?"
+        _writeLogTerminal 0 "There is no display manager installed on your system." 
+        _writeLogMessage "You're starting Hyprland with commands on tty."
         echo
         dmsel=$(gum choose "Keep current setup" "Install sddm")
     fi
 
     if [ -z "${dmsel}" ] ;then
-        echo ":: Installation canceled."
+        _writeCancel
         exit
     fi
 
     if [ "$dmsel" == "Install sddm" ] ;then
-
-        disman=0
-        # Try to force the installation of sddm
-        echo ":: Installing sddm"
-        sudo pacman -S --noconfirm --needed sddm qt5-graphicaleffects qt5-quickcontrols2 qt5-svg --ask 4
-        
-        # Enable sddm
-        if [ -f /etc/systemd/system/display-manager.service ]; then
-            sudo rm /etc/systemd/system/display-manager.service
-        fi
-        sudo systemctl enable sddm.service
-        echo 
-
+        _confirmCurrentDisplayManager
+        _installSDDM
     elif [ "$dmsel" == "Deactivate current display manager" ] ;then
-
-        sudo rm /etc/systemd/system/display-manager.service
-        echo ":: Current display manager deactivated."
-        disman=1
-
+        _disableDisplayManager
     elif [ "$dmsel" == "Keep current setup" ] ;then
-
-        echo ":: sddm setup skipped."
-
+        _writeSkipped
     else
-
-        echo ":: sddm setup skipped."
-
+        _writeSkipped
     fi
 else
     if [[ "$automation_displaymanager" = true ]] ;then
-        echo ":: AUTOMATION: Keep current setup of Display Manager"
+        _writeLogTerminal 0 "AUTOMATION: Keep current setup of Display Manager"
         disman=0
     fi
 fi
