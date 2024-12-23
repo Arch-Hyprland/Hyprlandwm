@@ -2,7 +2,9 @@
 
 An advanced configuration of Hyprland for Arch Linux based distributions. This package includes an installation script to install and setup the required components.
 
-![image](https://github.com/user-attachments/assets/bd63665d-b32d-4632-90a4-58b46c212caf)
+![image](https://github.com/user-attachments/assets/47ed1ae0-a660-46f3-9bf5-917da0d3f675)
+
+> About the screenshot: The dock can be enabled in the Dotfiles Settings app. The waybar theme is ML4W Modern Light.
 
 YouTube Video [https://youtu.be/6B4Kf30CWLg](https://youtu.be/6B4Kf30CWLg)
 
@@ -21,13 +23,17 @@ bash <(curl -s https://raw.githubusercontent.com/mylinuxforwork/dotfiles/main/se
 
 You can also install the main release with your preferred AUR helper. 
 
+```
 yay -S ml4w-hyprland
 ml4w-hyprland-setup
+```
 
 You can install the rolling release with
 
+```
 yay -S ml4w-hyprland-git
 ml4w-hyprland-setup
+```
 
 Please rebuild all packages to emsure that you get the latest commit. 
 
@@ -52,7 +58,7 @@ You can also visit the [ML4W Discord Server](https://discord.gg/c4fJK7Za3g) to s
 
 ## Screenshots
 
-![image](https://github.com/user-attachments/assets/17132db9-c6c7-454c-b56f-02fe467bc27d)
+![image](https://github.com/user-attachments/assets/5f638a4c-e811-4f07-aa7f-e2669149c1c7)
 
 ## Wallpaper repository
 
@@ -62,8 +68,10 @@ You can find my wallpaper collection in the repository https://github.com/mylinu
 
 THANK YOU very much for all your support, contributions and ideas:
 
-- Diana Ward: https://github.com/dianaw353
+- Tattwamashi Nayak: https://github.com/ElectroPerf
+- Filippo Aceto: https://gitlab.com/filippoaceto
 - Don Williams: https://github.com/dwilliam62
+- Diana Ward: https://github.com/dianaw353
 - Leo: https://github.com/eljejer
 - Guido De Gobbis
 - Teodor Orzechowski: https://gitlab.com/sq6gtt
@@ -81,6 +89,7 @@ Thanks to all YouTube subscribers for all your great feedback.
 
 The following projects have inspired me:
 
+- https://github.com/JaKooLit/Hyprland-Dots
 - https://github.com/prasanthrangan/hyprdots
 - https://github.com/sudo-harun/dotfiles
 - https://github.com/dianaw353/hyprland-configuration-rootfs

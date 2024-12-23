@@ -88,7 +88,7 @@
     "on-click": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh",
     "on-click-right": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh d",
     "on-click-middle": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh w",
-    "tooltip": "Clipboard Manager"
+    "tooltip-format": "Left: Open clipboard Manager\nRight: Delete an entry\nMiddle: Clear list"
   },
   // Updates Count
   "custom/updates": {
@@ -221,11 +221,8 @@
   "clock": {
     "format": "{:%H:%M %a}",
     "on-click": "ags toggle calendar",
-    // "timezone": "America/New_York",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    // START CLOCK FORMAT
-    "format-alt": "{:%Y-%m-%d}"
-    // END CLOCK FORMAT
+    "timezone": "",
+    "tooltip": false
   },
   // system
   "custom/system": {
@@ -306,11 +303,11 @@
   // Network
   "network": {
     "format": "{ifname}",
-    "format-wifi": "􀙇 {signalStrength}%",
+    "format-wifi": "􀙇 {essid} ({signalStrength}%)",
     "format-ethernet": "􀌙  {ifname}",
     "format-disconnected": "􀙥 ",
     "tooltip-format": "􀌙  {ifname} via {gwaddri}",
-    "tooltip-format-wifi": "􀙇  name : {essid}\nIPAdress : {ipaddr}\nStrength : {signalStrength}%\nFrequent : {frequency}MHz\nUp : {bandwidthUpBits} Down : {bandwidthDownBits}",
+    "tooltip-format-wifi": "􀙇  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
     "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,

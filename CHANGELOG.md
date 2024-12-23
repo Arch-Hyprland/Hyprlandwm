@@ -1,3 +1,14 @@
+Version 2.9.7.1
+--------------------------------------------------------
+- New horizontal wlogout layout
+- Hibernate option removed. Requires individual system setup
+- Timezone for waybar clock can be set individually in the ML4W Settings App
+- Installation of nwg-hyprland-dock via installation options
+- nwg-hyprland-dock can be toggled in settings app
+- New Waybar Theme ml4w-modern (+ versions)
+- New Rofi Layout for App Launcher
+- New Terminal prompt theme
+ 
 Version 2.9.7.0
 --------------------------------------------------------
 - Fedora support added. Please see the installation instruction on https://github.com/mylinuxforwork/dotfiles/wiki
