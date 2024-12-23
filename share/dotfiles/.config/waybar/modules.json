@@ -74,13 +74,6 @@
     "format": " ",
     "tooltip-format": "Open Sidebar"
   },
-  // ML4W Welcome App
-  "custom/ml4w-hyprland-settings": {
-    "on-click": "ags -t sidebar",
-    "on-click-right": "sleep 0.1 && ~/.config/ml4w/apps/ML4W_Hyprland_Settings-x86_64.AppImage",
-    "format": " ",
-    "tooltip-format": "Open Hyprland Settings"
-  },
   // Youtube Subscriber Count
   "custom/youtube": {
     "format": "􀵩 {}",
