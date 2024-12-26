@@ -463,7 +463,7 @@ window#waybar.empty #window {
   font-size: 22px;
   color: #1523e9;
   border-radius: 15px;
-  padding: 0px 10px 0px 5px;
+  padding: 0px 8px 0px 8px;
   margin: 5px 5px 5px 0px;
   opacity: 0.8;
 }
@@ -472,8 +472,7 @@ window#waybar.empty #window {
   background-color: transparent;
   color: @textcolor2;
   font-size: 20px;
-  padding: 2px 8px 1px 5px;
-  margin: 0px;
+  padding: 0px 8px 0px 8px;
 }
 
 /* -----------------------------------------------------
