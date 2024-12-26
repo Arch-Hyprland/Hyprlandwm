@@ -104,7 +104,7 @@
   // Wallpaper
   "custom/wallpaper": {
     "format": "􀐟 ",
-    "on-click": "waypaper",
+    "on-click": "bash -c waypaper &",
     "on-click-right": "~/.config/hypr/scripts/wallpaper-effects.sh",
     "tooltip-format": "Left: Select a wallpaper\nRight: Select wallpaper effect"
   },
@@ -199,8 +199,7 @@
     "exec-on-event": true,
     "interval": 60,
     "exec": "~/.config/hypr/scripts/hypridle.sh status",
-    "on-click": "~/.config/hypr/scripts/hypridle.sh toggle",
-    "on-click-right": "hyprlock"
+    "on-click": "~/.config/hypr/scripts/hypridle.sh toggle"
   },
   // Keyboard State
   "keyboard-state": {
