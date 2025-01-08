@@ -59,7 +59,7 @@
 )
 
 (defwidget sound[] 
-  (box :orientation "v" :space-evenly false :class "slide-box" :spacing 2
+  (box :orientation "v" :space-evenly false :class "slide-box" :spacing 5
     (label :text "Sound" :halign "start")
     (eventbox 
       (box :class "panel-box" :orientation "h" :space-evenly false 
@@ -76,7 +76,7 @@
 )
 
 (defwidget display[]
-  (box :orientation "v" :space-evenly false :class "slide-box" :spacing 2
+  (box :orientation "v" :space-evenly false :class "slide-box" :spacing 5
     (label :text "Display" :halign "start") 
     (eventbox 
       (box :class "panel-box" :orientation "h" :space-evenly false 
@@ -95,7 +95,7 @@
 ;; Widgets
 (defwidget profile []
   (box :class "win-box" :orientation "v" :space-evenly false :spacing 2
-    (box :orientation "h" :space-evenly true
+    (box :orientation "h" :space-evenly true :spacing 5
       (switch)
       (volume)
     )

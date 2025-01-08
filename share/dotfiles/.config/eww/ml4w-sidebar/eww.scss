@@ -1,7 +1,8 @@
 @import "/home/unicorn/.cache/wal/colors.scss";
 
-// $win_background: #0d0b42;
-$win_background: $color7;
+// $win_background: #3f3f3f;
+// $win_background: #aeaeae;
+$win_background: $color5;
 $hover_menu: $color3;
 $box_background: $color1;
 $block_background: #cccccc;
@@ -12,27 +13,28 @@ $slide_color: #fcfcfc;
   //font-family: 'JetBrains Mono Nerd Font', 'JetBrains Mono NL', 'SpaceMono Nerd Font', monospace;
   font-family: 'Inter Semi Bold';
   // font-style: italic;
-  color: $foreground;
+  color: $slide_color;
 }
 
 .side {
-  background-color: rgba($win_background, 0.3); 
-  margin: 0px;
-  border: 1px solid rgba($win_background, 0.3);
-  padding: 8px;
-  border-radius: 12px 12px 12px 12px;
-  box-shadow: 0 0 20px rgba($background, 0.7);
+  background-color: rgba($win_background, 0.5); 
+  margin: 3px;
+  border: 2px solid rgba($win_background, 0.5);
+  padding: 10px;
+  min-width: 400px;
+  border-radius: 26px 26px 26px 26px;
+  box-shadow: 0 0 20px rgba($win_background, 0.3);
 }
 
 .win-box {
-  border-bottom: 1px solid rgba($win_background, 0.3);
-  padding: 6px 0 10px 0;
+  border-bottom: 1px solid rgba($win_background, 0.5);
+  padding: 2px 0 10px 0;
 }
 
 .win-res {
-  border-bottom: 1px solid rgba($win_background, 0.3);
+  border-bottom: 1px solid rgba($win_background, 0.5);
   border-radius: 2px;
-  padding: 10px 0 10px 0;
+  padding: 8px 0 0px 0;
 }
 
 .win-menu {
@@ -56,9 +58,8 @@ $slide_color: #fcfcfc;
 }
 
 .res-circle-small {
-  background-color: rgba($background, 0.6);
+  background-color: rgba($background, 0.5);
   border-radius: 100%;
-  color: $block_background;
   padding: 30px;
   min-width: 30px;
 }
