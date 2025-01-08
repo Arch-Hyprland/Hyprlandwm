@@ -38,54 +38,44 @@ window#waybar {
 /* -----------------------------------------------------
  * Workspaces 
  * ----------------------------------------------------- */
-
 .modules-center {
-  background-color: @bordercolor;
-  opacity: 0.7;
-  border-radius: 18px;
-  padding: 0px 4px 0px 6px;
+  padding: 0px 6px 0px 10px;
   margin: 7px 5px 7px 5px;
-  border-left: 7px solid @textcolor2;
-  border-right: 7px solid @textcolor2;
 }
 
 #workspaces {
   border-left: 2px solid @textcolor2;
   border-right: 2px solid @textcolor2;
-  border-radius: 3px;
-  padding: 2px 8px;
-  margin: 0px 6px;
-  opacity: 0.8;
+  border-radius: 16px;
+  background: alpha(@bordercolor, 0.8);
+  padding: 2px 12px;
+  margin: 0px 8px;
   color: @textcolor1;
 }
 
 #workspaces button {
-  padding: 0px 3px 1px 2px;
+  padding: 1px 4px 1px 4px;
   margin: 0px 1px;
-  border-radius: 8px;
+  border-radius: 16px;
   border: 0px;
   color: @textcolor1;
-  background-color: @workspacesbackground2;
+  background-color: alpha(@workspacesbackground2, 0.4);
   transition: all 0.3s ease-in-out;
-  opacity: 0.4;
 }
 
 #workspaces button.active {
   color: @textcolor1;
-  background: @workspacesbackground2;
-  border-radius: 8px;
-  min-width: 25px;
+  background: alpha(@workspacesbackground2, 1.0);
+  border-radius: 12px;
+  min-width: 40px;
   transition: all 0.3s ease-in-out;
-  opacity: 1.0;
 }
 
 #workspaces button:hover {
   color: @textcolor1;
-  background: @workspacesbackground2;
-  border-radius: 8px;
-  opacity: 0.7;
+  background: alpha(@workspacesbackground2, 0.7);
+  border-radius: 12px;
 }
-
 
 /* -----------------------------------------------------
  * Tooltips
@@ -222,13 +212,23 @@ window#waybar.empty #window {
   margin-right: 5px;
 }
 
-#custom-system {
-  margin-right: 10px;
+#custom-wallpaper {
+  background: @bordercolor;
+  border-radius: 16px;
+  font-size: 16px;
+  opacity: 0.8;
+  padding: 0 0px 1px 4px;
+  margin: 1px 0px;
+  color: @textcolor2;
 }
 
-#custom-wallpaper {
-  font-size: 18px;
-  opacity: 0.8;
+#custom-settings {
+  background: @bordercolor;
+  border-radius: 16px;
+  padding: 0 0px 1px 4px;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 1px 0px;
   color: @textcolor2;
 }
 
@@ -466,8 +466,8 @@ window#waybar.empty #window {
   color: #1523e9;
   font-size: 22px;
   border-radius: 15px;
-  padding: 1px 10px 1px 6px;
-  margin: 7px 5px 7px 0px;
+  padding: 1px 8px 1px 8px;
+  margin: 8px 5px 8px 0px;
   opacity: 0.8;
 }
 
@@ -475,7 +475,7 @@ window#waybar.empty #window {
   background-color: transparent;
   color: @textcolor2;
   font-size: 22px;
-  padding: 2px 8px 1px 6px;
+  padding: 1px 8px 1px 8px;
   margin: 0px;
 }
 

@@ -41,11 +41,6 @@ window#waybar {
  * ----------------------------------------------------- */
 
 .modules-center {
-  border-left: 7px solid @textcolor2;
-  border-right: 7px solid @textcolor2;
-  background: @bordercolor;
-  opacity: 0.7;
-  border-radius: 18px;
   padding: 0px 6px 0px 10px;
   margin: 4px 5px 3px 5px;
 }
@@ -53,38 +48,35 @@ window#waybar {
 #workspaces {
   border-left: 2px solid @textcolor2;
   border-right: 2px solid @textcolor2;
-  border-radius: 3px;
-  padding: 2px 8px;
+  border-radius: 16px;
+  background: alpha(@bordercolor, 0.6);
+  padding: 2px 12px;
   margin: 0px 8px;
-  opacity: 0.8;
   color: @textcolor1;
 }
 
 #workspaces button {
-  padding: 0px 3px 1px 3px;
-  margin: 0px 1px;
-  border-radius: 8px;
+  padding: 0px 3px 1px 4px;
+  margin: 1px 1px;
+  border-radius: 16px;
   border: 0px;
   color: @textcolor1;
-  background-color: @backgroundlight;
+  background-color: alpha(@backgroundlight, 0.4);
   transition: all 0.3s ease-in-out;
-  opacity: 0.4;
 }
 
 #workspaces button.active {
   color: @textcolor1;
-  background: @backgroundlight;
-  border-radius: 8px;
-  min-width: 25px;
+  background: alpha(@backgroundlight, 1.0);
+  border-radius: 12px;
+  min-width: 40px;
   transition: all 0.3s ease-in-out;
-  opacity: 1.0;
 }
 
 #workspaces button:hover {
   color: @textcolor1;
-  background: @backgroundlight;
+  background: alpha(@backgroundlight, 0.7);
   border-radius: 8px;
-  opacity: 0.7;
 }
 
 /* -----------------------------------------------------
@@ -212,14 +204,22 @@ window#waybar.empty #window {
   color: @iconcolor;
 }
 #custom-wallpaper {
-  font-size: 18px;
+  background: @bordercolor;
+  border-radius: 16px;
+  font-size: 16px;
   opacity: 0.8;
+  padding: 0 0px 1px 4px;
+  margin: 1px 0px;
   color: @textcolor2;
 }
 
 #custom-settings {
-  font-size: 18px;
+  background: @bordercolor;
+  border-radius: 16px;
+  padding: 0 0px 1px 4px;
+  font-size: 16px;
   font-weight: bold;
+  margin: 1px 0px;
   color: @textcolor2;
 }
 
