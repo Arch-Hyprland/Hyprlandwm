@@ -16,7 +16,7 @@ echo "This script will support you to uninstall the ML4W Dotfiles in ~/$dot_fold
 echo "Only the ML4W Dotfiles related files and folders will be removed."
 echo "Packages are not uninstalled. You have to uninstall packages manually if needed."
 echo "Your login manager (display manager) will stay untouched. Please remove it manually if needed."
-echo 
+echo
 if gum confirm "DO YOU WANT TO START THE UNINSTALLATION NOW?" ;then
     echo ":: Uninstallation started."
 elif [ $? -eq 130 ]; then
@@ -37,8 +37,8 @@ else
     echo ":: Backup skipped."
 fi
 
-if [ ! -z $dot_folder ] ;then
-    if [ -f ~/.config/ml4w/settings/dotfiles-folder.sh ] ;then
+if [ ! -z $dot_folder ]; then
+    if [ -f ~/.config/ml4w/settings/dotfiles-folder.sh ]; then
         rm -rf $HOME/$dot_folder
         echo ":: $HOME/$dot_folder removed"
     fi
@@ -120,50 +120,24 @@ echo ":: Symlinks removed"
 
 # Uninstall the ML4W Apps
 
-app_name="com.ml4w.welcome"
-if [ -f /usr/share/applications/$app_name.desktop ] ;then
-    sudo rm /usr/share/applications/$app_name.desktop
-fi
-if [ -f $HOME/.local/share/applications/$app_name.desktop ] ;then
-    sudo rm /usr/share/applications/$app_name.desktop
-fi
-if [ -f /usr/share/icons/hicolor/128x128/apps/$app_name.png ] ;then
-    sudo rm /usr/share/icons/hicolor/128x128/apps/$app_name.png
-fi
-if [ -f /usr/bin/$app_name ] ;then
-    sudo rm /usr/bin/$app_name
-fi
-echo ":: ML4W Welcome App uninstalled successfully"
-
-app_name="com.ml4w.dotfilessettings"
-if [ -f /usr/share/applications/$app_name.desktop ] ;then
-    sudo rm /usr/share/applications/$app_name.desktop
-fi
-if [ -f $HOME/.local/share/applications/$app_name.desktop ] ;then
-    sudo rm /usr/share/applications/$app_name.desktop
-fi
-if [ -f /usr/share/icons/hicolor/128x128/apps/$app_name.png ] ;then
-    sudo rm /usr/share/icons/hicolor/128x128/apps/$app_name.png
-fi
-if [ -f /usr/bin/$app_name ] ;then
-    sudo rm /usr/bin/$app_name
-fi
-echo ":: ML4W Settings App uninstalled successfully"
+flatpak uninstall com.ml4w.welcome
+flatpak uninstall com.ml4w.calendar
+flatpak uninstall com.ml4w.sidebar
+flatpak uninstall com.ml4w.settings
 
 app_name="com.ml4w.hyprland.settings"
-if [ -f /usr/share/applications/$app_name.desktop ] ;then
+if [ -f /usr/share/applications/$app_name.desktop ]; then
     sudo rm /usr/share/applications/$app_name.desktop
 fi
-if [ -f $HOME/.local/share/applications/$app_name.desktop ] ;then
+if [ -f $HOME/.local/share/applications/$app_name.desktop ]; then
     sudo rm /usr/share/applications/$app_name.desktop
 fi
-if [ -f /usr/share/icons/hicolor/128x128/apps/$app_name.png ] ;then
+if [ -f /usr/share/icons/hicolor/128x128/apps/$app_name.png ]; then
     sudo rm /usr/share/icons/hicolor/128x128/apps/$app_name.png
 fi
-if [ -f /usr/bin/$app_name ] ;then
+if [ -f /usr/bin/$app_name ]; then
     sudo rm /usr/bin/$app_name
 fi
-echo ":: ML4W Hyprland Settings App uninstalled successfully"
 
 echo ":: ML4W Apps removed"
 

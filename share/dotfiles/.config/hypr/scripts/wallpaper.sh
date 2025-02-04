@@ -126,12 +126,18 @@ killall eww
 sh ~/.config/hypr/scripts/eww.sh
 
 # ----------------------------------------------------- 
-# Pywalfox
+# Update Pywalfox
 # -----------------------------------------------------
 
 if type pywalfox > /dev/null 2>&1; then
     pywalfox update
 fi
+
+# ----------------------------------------------------- 
+# Update SwayNC
+# -----------------------------------------------------
+sleep 0.1
+swaync-client -rs
 
 # ----------------------------------------------------- 
 # Created blurred wallpaper
@@ -168,11 +174,3 @@ echo "* { current-image: url(\"$blurredwallpaper\", height); }" > "$rasifile"
 echo ":: Generate new cached wallpaper square-$wallpaperfilename"
 magick $tmpwallpaper -gravity Center -extent 1:1 $squarewallpaper
 cp $squarewallpaper $generatedversions/square-$wallpaperfilename.png
-
-# ----------------------------------------------------- 
-# Reload AGS
-# -----------------------------------------------------
-
-ags quit &
-sleep 0.2
-ags run &

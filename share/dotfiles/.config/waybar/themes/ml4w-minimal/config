@@ -12,7 +12,6 @@
     // General Settings
     "layer": "top",
     "margin-bottom": 0,
-    "layer": "top",
     "margin-left": 0,
     "margin-right": 0,    
     "spacing": 0,
@@ -61,28 +60,31 @@
         "custom/waybarthemes",
         "wlr/taskbar",
         "group/links",
-"hyprland/window",
+        "hyprland/window"
     ],
 
     // Modules Center
     "modules-center": [
         "custom/wallpaper",
         "hyprland/workspaces",
-        "custom/updates",
+        "custom/updates"
     ],
 
     // Modules Right    
     "modules-right": [
-"tray",
+        "tray",
         "pulseaudio",
-//"backlight",
+        //"backlight",
         "bluetooth",
         "battery", 
-"network",
+        "network",
         "group/hardware",
         "custom/cliphist",
         "custom/widgets",
         "custom/panel",
-        "clock"
+        "clock",
+        "group/tools",
+        "tray",
+        "custom/notification"
     ]
 }

@@ -69,10 +69,9 @@
   },
   // ML4W Welcome App
   "custom/ml4w-welcome": {
-    "on-click": "sleep 0.1 && ~/.config/ml4w/settings/ml4w-sidebar.sh",
-    "on-click-right": "sleep 0.1 && com.ml4w.welcome",
+    "on-click": "flatpak run com.ml4w.sidebar",
     "format": " ",
-    "tooltip-format": "Open Sidebar"
+    "tooltip-format": "Open ML4W Sidebar App"
   },
   // Youtube Subscriber Count
   "custom/youtube": {
@@ -184,6 +183,28 @@
     "on-click": "~/.config/eww/scripts/startup.sh",
     "tooltip-format": "Open Control Panel"
   },
+  // SwayNC
+  "custom/notification": {
+    "tooltip-format": "Left: Notifications\nRight: Do not disturb",
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+
   // Hyprshade
   "custom/hyprshade": {
     "format": "􀇁 ",
@@ -219,7 +240,7 @@
   // Clock
   "clock": {
     "format": "{:%H:%M %a}",
-    "on-click": "ags toggle calendar",
+    "on-click": "flatpak run com.ml4w.calendar",
     "timezone": "",
     "tooltip": false
   },

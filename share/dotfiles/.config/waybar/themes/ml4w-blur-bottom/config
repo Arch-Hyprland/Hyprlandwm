@@ -55,6 +55,7 @@
         "custom/widgets",
         "clock",
         "custom/panel",
-        "tray",
+        "custom/notification",
+        "tray"
     ]
 }

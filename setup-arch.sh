@@ -1,27 +1,40 @@
 #!/bin/bash
 clear
 
+# ----------------------------------------------------- 
+# Repository
+# -----------------------------------------------------
 repo="mylinuxforwork/dotfiles"
+
+# ----------------------------------------------------- 
+# Download Folder
+# -----------------------------------------------------
+download_folder="$HOME/.ml4w"
+
+# Create download_folder if not exists
+if [ ! -d $download_folder ]; then
+    mkdir -p $download_folder
+fi
 
 # Get latest tag from GitHub
 get_latest_release() {
   curl --silent "https://api.github.com/repos/$repo/releases/latest" | # Get latest release from GitHub api
-    grep '"tag_name":' |                                            # Get tag line
-    sed -E 's/.*"([^"]+)".*/\1/'                                    # Pluck JSON value
+    grep '"tag_name":' |                                               # Get tag line
+    sed -E 's/.*"([^"]+)".*/\1/'                                       # Pluck JSON value
 }
 
 # Get latest zip from GitHub
 get_latest_zip() {
   curl --silent "https://api.github.com/repos/$repo/releases/latest" | # Get latest release from GitHub api
     grep '"zipball_url":' |                                            # Get tag line
-    sed -E 's/.*"([^"]+)".*/\1/'                                    # Pluck JSON value
+    sed -E 's/.*"([^"]+)".*/\1/'                                       # Pluck JSON value
 }
 
 # Check if package is installed
 _isInstalled() {
     package="$1";
     check="$(sudo pacman -Qs --color always "${package}" | grep "local" | grep "${package} ")";
-    if [ -n "${check}" ] ; then
+    if [ -n "${check}" ]; then
         echo 0; #'0' means 'true' in Bash
         return; #true
     fi;
@@ -62,11 +75,11 @@ _installYay() {
     _installPackages "base-devel"
     SCRIPT=$(realpath "$0")
     temp_path=$(dirname "$SCRIPT")
-    git clone https://aur.archlinux.org/yay.git ~/Downloads/yay
-    cd ~/Downloads/yay
+    git clone https://aur.archlinux.org/yay.git $download_folder/yay
+    cd $download_folder/yay
     makepkg -si
     cd $temp_path
-    _writeLogTerminal 1 "yay has been installed successfully."
+    echo ":: yay has been installed successfully."
 }
 
 # Required packages for the installer
@@ -102,48 +115,65 @@ while true; do
             echo ":: Installation started."
             echo
         break;;
-        [Nn]* ) 
+        [Nn]* )
             echo ":: Installation canceled"
             exit;
         break;;
-        * ) 
+        * )
             echo ":: Please answer yes or no."
         ;;
     esac
 done
 
-# Create Downloads folder if not exists
-if [ ! -d ~/Downloads ]; then
-    mkdir ~/Downloads
-    echo ":: Downloads folder created"
-fi 
+# Create Download folder if not exists
+if [ ! -d $download_folder ]; then
+    mkdir -p $download_folder
+    echo ":: $download_folder folder created"
+fi
 
-# Remove existing download folder and zip files 
-if [ -f $HOME/Downloads/dotfiles-main.zip ]; then
-    rm $HOME/Downloads/dotfiles-main.zip
+# Remove existing download folder and zip files
+if [ -f $download_folder/dotfiles-main.zip ]; then
+    rm $download_folder/dotfiles-main.zip
 fi
-if [ -f $HOME/Downloads/dotfiles-dev.zip ]; then
-    rm $HOME/Downloads/dotfiles-dev.zip
+if [ -f $download_folder/dotfiles-dev.zip ]; then
+    rm $download_folder/dotfiles-dev.zip
 fi
-if [ -f $HOME/Downloads/dotfiles.zip ]; then
-    rm $HOME/Downloads/dotfiles.zip
+if [ -f $download_folder/dotfiles.zip ]; then
+    rm $download_folder/dotfiles.zip
 fi
-if [ -d $HOME/Downloads/dotfiles ]; then
-    rm -rf $HOME/Downloads/dotfiles
+if [ -d $download_folder/dotfiles ]; then
+    rm -rf $download_folder/dotfiles
 fi
-if [ -d $HOME/Downloads/dotfiles_temp ]; then
-    rm -rf $HOME/Downloads/dotfiles_temp
+if [ -d $download_folder/dotfiles_temp ]; then
+    rm -rf $download_folder/dotfiles_temp
 fi
-if [ -d $HOME/Downloads/dotfiles-main ]; then
-    rm -rf $HOME/Downloads/dotfiles-main
+if [ -d $download_folder/dotfiles-main ]; then
+    rm -rf $download_folder/dotfiles-main
 fi
-if [ -d $HOME/Downloads/dotfiles-dev ]; then
-    rm -rf $HOME/Downloads/dotfiles-dev
+if [ -d $download_folder/dotfiles-dev ]; then
+    rm -rf $download_folder/dotfiles-dev
 fi
 
 # Synchronizing package databases
 sudo pacman -Sy
 echo
+
+# pacman
+if [ -f /etc/pacman.conf ] && [ ! -f /etc/pacman.conf.ml4w.bkp ]; then
+    echo -e "\033[0;32m[PACMAN]\033[0m adding extra spice to pacman..."
+
+    sudo cp /etc/pacman.conf /etc/pacman.conf.ml4w.bkp
+    sudo sed -i "/^#Color/c\Color\nILoveCandy
+    /^#VerbosePkgLists/c\VerbosePkgLists
+    /^#ParallelDownloads/c\ParallelDownloads = 5" /etc/pacman.conf
+    sudo sed -i '/^#\[multilib\]/,+1 s/^#//' /etc/pacman.conf
+
+    sudo pacman -Syyu
+    sudo pacman -Fy
+
+else
+    echo -e "\033[0;33m[SKIP]\033[0m pacman is already configured..."
+fi
 
 # Install required packages
 echo ":: Checking that required packages are installed..."
@@ -172,7 +202,7 @@ elif [ "$version" == "rolling-release" ]; then
     yay -S ml4w-hyprland-git
 elif [ "$version" == "CANCEL" ]; then
     echo ":: Setup canceled"
-    exit 130    
+    exit 130
 else
     echo ":: Setup canceled"
     exit 130

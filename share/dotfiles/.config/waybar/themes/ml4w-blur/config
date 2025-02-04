@@ -13,7 +13,6 @@
     "layer": "top",
     "margin-top": 0,
     "margin-bottom": 0,
-    "layer": "top",
     "margin-left": 0,
     "margin-right": 0,    
     "spacing": 0,
@@ -30,7 +29,7 @@
         "custom/waybarthemes",
         //"wlr/taskbar",
         "group/links",
-        "hyprland/window",
+        "hyprland/window"
     ],
 
     // Modules Center
@@ -54,6 +53,7 @@
         "custom/widgets",
         "clock",
         "custom/panel",
-        "tray",
+        "custom/notification",
+        "tray"
     ]
 }

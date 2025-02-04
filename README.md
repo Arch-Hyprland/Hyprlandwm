@@ -1,16 +1,17 @@
 # ML4W Dotfiles for Hyprland
+> Version 2.9.8 BETA3 (Please install the main release to get latest stable release)
 
-An advanced configuration of Hyprland for Arch Linux based distributions. This package includes an installation script to install and setup the required components.
+An advanced configuration of Hyprland for Arch Linux based distributions. This package includes an installation script to install and set up the required components.
 
-![image](https://github.com/user-attachments/assets/1b7fec1f-d864-4017-815c-103d657e3686)
+![image](https://github.com/user-attachments/assets/c1af2d8a-142b-4285-9b63-92862a7868c5)
 
-> About the screenshot: The dock can be enabled in the Dotfiles Settings app. The waybar theme is ML4W Modern Light.
+> About the screenshot: The dock can be enabled in the ML4W Sidebar or Settings app. The waybar theme is ML4W Modern White.
 
-YouTube Video https://youtu.be/siy2vL94yd0
+YouTube Video https://youtu.be/sVFnd5LAYAc
 
 ## Recommendation
 
-I recommend to install a base Hyprland system before installing the ML4W Hyprland Dotfiles. Then you have a stable starting point and can test Hyprland on your system before. Hyprland is complex, under ongoing development and requires additional components. 
+I recommend to install a base Hyprland system before installing the ML4W Hyprland Dotfiles. Then you have a stable starting point and can test Hyprland on your system beforehand. Hyprland is complex, under ongoing development, and requires additional components.
 
 You can find the Hyprland Installation instructions here: https://wiki.hyprland.org/Getting-Started/Installation/
 
@@ -18,14 +19,19 @@ You can find the Hyprland Installation instructions here: https://wiki.hyprland.
 
 The installation should work on all Arch Linux and Fedora based distributions (>2.9.7.0). [You can find more information here](https://github.com/mylinuxforwork/dotfiles/wiki).
 
-> PLEASE NOTE: Every Linux distribution, setup and personal configuration can be different. Therefore, I cannot guarantee that the ML4W Dotfiles will work everywhere. You can install this at your own risk.
+> PLEASE NOTE: Every Linux distribution, setup, and personal configuration can be different. Therefore, I cannot guarantee that the ML4W Dotfiles will work everywhere. You can install this at your own risk.
 
 Please make sure that your system is up-to-date.
 
 ### Arch Linux (based)
+
+IMPORTANT: Please make sure that all your system packages are updated before running the installation script.
+
 ```
 bash <(curl -s https://raw.githubusercontent.com/mylinuxforwork/dotfiles/main/setup-arch.sh)
 ```
+
+YouTube Video https://youtu.be/sVFnd5LAYAc
 
 You can also install the main release with your preferred AUR helper. 
 
@@ -44,6 +50,9 @@ ml4w-hyprland-setup
 Please rebuild all packages to ensure that you get the latest commit. 
 
 ### Fedora Linux (based)
+
+IMPORTANT: Please make sure that all your system and packages are updated before running the installation script.
+
 ```
 bash <(curl -s https://raw.githubusercontent.com/mylinuxforwork/dotfiles/main/setup-fedora.sh)
 ```
@@ -64,7 +73,7 @@ You can also visit the [ML4W Discord Server](https://discord.gg/c4fJK7Za3g) to s
 
 ## Screenshots
 
-![image](https://github.com/user-attachments/assets/47ed1ae0-a660-46f3-9bf5-917da0d3f675)
+![image](https://github.com/user-attachments/assets/2c2e34c5-b63a-4d44-86a8-36ba03211c09)
 
 ## Wallpaper repository
 
