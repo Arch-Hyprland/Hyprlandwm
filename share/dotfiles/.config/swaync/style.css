@@ -14,14 +14,15 @@
 /* Control Center */
 
 .control-center {
-    border: 3px solid @bordercolor;
+    border: 2px solid alpha(@fontcolor, 0.1);
     padding: 10px;
+    background-color: alpha(@background, 0.5);
 }
 
 button {
     border: 0px;
     min-width: 35px;
-    background: @buttoncolor;
+    background: alpha(@buttoncolor, 0.2);
 }
 
 .notification-group-header {
@@ -35,8 +36,8 @@ button {
 /* Notification */
 
 .notification {
-    border: 3px solid @bordercolor;
-	border-radius: 10px;
+    border: 3px solid alpha(@bordercolor, 0.3);
+	  border-radius: 10px;
     padding:10px;
 }
 
