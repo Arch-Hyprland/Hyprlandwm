@@ -64,44 +64,44 @@ _selectCategory() {
     echo "If your desired package is not listed, you can install it with your package manager "
     echo "and set it as default application in the ML4W Settings App."
     echo
-    echo "- SDDM:" $(_checkSddm) "/ SDDM Theme:" $(_checkSddmTheme)    
+    echo "- SDDM:" $(_checkSddm) "/ SDDM Theme:" $(_checkSddmTheme)
     echo "- Shell: "$SHELL "/ Terminal:" $(_checkCurrent terminal.sh)
-    echo "- File manager:" $(_checkCurrent filemanager.sh) 
-    echo "- Browser:" $(_checkCurrent browser.sh) 
-    echo "- System monitor:" $(_checkCurrent system-monitor.sh)     
+    echo "- File manager:" $(_checkCurrent filemanager.sh)
+    echo "- Browser:" $(_checkCurrent browser.sh)
+    echo "- System monitor:" $(_checkCurrent system-monitor.sh)
     echo
     category=$(gum choose "shell" "terminal" "file manager" "browser" "pywalfox" "system monitor" "more" "REBOOT" "CANCEL")
     case ${category} in
         terminal)
             source $options_directory/options/terminal.sh
-        ;;
+            ;;
         "file manager")
             source $options_directory/options/filemanager.sh
-        ;;
+            ;;
         "system monitor")
             source $options_directory/options/system-monitor.sh
-        ;;
+            ;;
         browser)
             source $options_directory/options/browser.sh
-        ;;
+            ;;
         more)
             source $options_directory/options/other.sh
-        ;;
+            ;;
         shell)
             source $options_directory/options/shell.sh
-        ;;
+            ;;
         pywalfox)
             source $options_directory/options/pywalfox.sh
-        ;;
+            ;;
         REBOOT)
             reboot
-        ;;
+            ;;
         CANCEL)
             exit
-        ;;
+            ;;
         *)
             exit
-        ;;
+            ;;
     esac
 }
 

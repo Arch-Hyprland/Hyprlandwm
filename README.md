@@ -1,5 +1,5 @@
 # ML4W Dotfiles for Hyprland
-> Version 2.9.8 BETA3 (Please install the main release to get latest stable release)
+> Version 2.9.8 RC1 (Please install the main release to get latest stable release)
 
 An advanced configuration of Hyprland for Arch Linux based distributions. This package includes an installation script to install and set up the required components.
 
@@ -27,33 +27,33 @@ Please make sure that your system is up-to-date.
 
 IMPORTANT: Please make sure that all your system packages are updated before running the installation script.
 
-```
+```shell
 bash <(curl -s https://raw.githubusercontent.com/mylinuxforwork/dotfiles/main/setup-arch.sh)
 ```
 
 YouTube Video https://youtu.be/sVFnd5LAYAc
 
-You can also install the main release with your preferred AUR helper. 
+You can also install the main release with your preferred AUR helper.
 
-```
+```shell
 yay -S ml4w-hyprland
 ml4w-hyprland-setup
 ```
 
 You can install the rolling release with
 
-```
+```shell
 yay -S ml4w-hyprland-git
 ml4w-hyprland-setup
 ```
 
-Please rebuild all packages to ensure that you get the latest commit. 
+Please rebuild all packages to ensure that you get the latest commit.
 
 ### Fedora Linux (based)
 
 IMPORTANT: Please make sure that all your system and packages are updated before running the installation script.
 
-```
+```shell
 bash <(curl -s https://raw.githubusercontent.com/mylinuxforwork/dotfiles/main/setup-fedora.sh)
 ```
 

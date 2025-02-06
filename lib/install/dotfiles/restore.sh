@@ -39,7 +39,7 @@ _restoreItem() {
     if [[ $restoreselect == *"$1"* ]]; then
         if [ -d $HOME/$dot_folder/$1 ]; then
             _writeLog 0 "Restore Folder $1"
-            rsync -a -I $HOME/$dot_folder/$1/ $ml4w_directory/$version/$1/ &>> $(_getLogFile)
+            rsync -a -I $HOME/$dot_folder/$1/ $ml4w_directory/$version/$1/ &>>$(_getLogFile)
         elif [ -f $HOME/$dot_folder/$1 ]; then
             _writeLog 0 "Restore File $1"
             cp $HOME/$dot_folder/$1 $ml4w_directory/$version/$1
@@ -53,20 +53,19 @@ _showRestoreOptions() {
     echo
     restorelist=""
 
-    for item in "${restore_arr[@]}"
-    do
+    for item in "${restore_arr[@]}"; do
         _writeToRestoreList "$item"
-    done 
+    done
 
     restoreselect=$(gum choose --no-limit --height 20 --cursor-prefix "( ) " --selected-prefix "(x) " --unselected-prefix "( ) " --selected="$selectedlist" $restorelist)
     if [ ! -z "$restoreselect" ]; then
-        echo "Selected to restore:" 
+        echo "Selected to restore:"
         echo "$restoreselect"
         echo ""
         confirmrestore=$(gum choose "Start restore" "Change restore" "Skip restore")
         if [ "$confirmrestore" == "Start restore" ]; then
             _startRestore
-        elif [ "$confirmrestore" == "Change restore" ]; then 
+        elif [ "$confirmrestore" == "Change restore" ]; then
             _showRestoreOptions
         else
             _writeSkipped
@@ -79,7 +78,7 @@ _showRestoreOptions() {
             _writeCancel
             exit
         fi
-        if [ "$confirmrestore" == "Change restore" ]; then 
+        if [ "$confirmrestore" == "Change restore" ]; then
             echo ""
             _showRestoreOptions
         else
@@ -90,8 +89,7 @@ _showRestoreOptions() {
 }
 
 _restore_automation() {
-    for item in "${restore_arr[@]}"
-    do
+    for item in "${restore_arr[@]}"; do
         restoreselect+="$item "
     done
     _startRestore
@@ -99,8 +97,7 @@ _restore_automation() {
 
 _startRestore() {
 
-    for item in "${restore_arr[@]}"
-    do
+    for item in "${restore_arr[@]}"; do
         _restoreItem "$item"
     done
 

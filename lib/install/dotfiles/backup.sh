@@ -89,10 +89,10 @@ _showBackup() {
             fi
         fi
     done
-    echo 
+    echo
     # Start Backup
     if [ -z $automation_backup ]; then
-        if gum confirm "Do you want to create a backup?" ;then
+        if gum confirm "Do you want to create a backup?"; then
             _create_backup
         elif [ $? -eq 130 ]; then
             exit 130

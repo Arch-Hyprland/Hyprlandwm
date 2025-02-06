@@ -25,7 +25,7 @@ _confirmCurrentDisplayManager() {
     _detectCurrentDisplayManager
     if [ ! -z $current_display_manager ]; then
         _writeLogTerminal 0 "The script has detected $current_display_manager as your current display manager"
-        if gum confirm "Is this correct" ;then
+        if gum confirm "Is this correct"; then
             _writeLogTerminal 1 "$current_disyplay_manager confirmed"
         else
             _enterDisplayManager
@@ -51,7 +51,7 @@ _disableDisplayManager() {
 
 if [ -z $automation_displaymanager ]; then
     _detectCurrentDisplayManager
-    
+
     if [ -f /etc/systemd/system/display-manager.service ]; then
         disman=0
         _writeLogTerminal 0 "You have already installed a display manager."
@@ -60,7 +60,7 @@ if [ -z $automation_displaymanager ]; then
         dmsel=$(gum choose "Keep current setup" "Deactivate current display manager" "Install sddm")
     else
         disman=1
-        _writeLogTerminal 0 "There is no display manager installed on your system." 
+        _writeLogTerminal 0 "There is no display manager installed on your system."
         _writeMessage "You're starting Hyprland with commands on tty."
         echo
         dmsel=$(gum choose "Keep current setup" "Install sddm")

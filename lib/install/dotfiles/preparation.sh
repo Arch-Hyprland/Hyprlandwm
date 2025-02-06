@@ -34,7 +34,7 @@ rsync -a -I --exclude-from=$includes_directory/excludes.txt $share_directory/dot
 
 # Check copy success
 if [[ $(_isFolderEmpty $ml4w_directory/$version/) == 0 ]]; then
-    _writeLogTerminal 2 "AN ERROR HAS OCCURED. Preparation of $ml4w_directory/$version/ failed" 
+    _writeLogTerminal 2 "AN ERROR HAS OCCURED. Preparation of $ml4w_directory/$version/ failed"
     _writeLog 2 "Please check that rsync is installad on your system."
     _writeLog 2 "Execution of rsync -a -I --exclude-from=$includes_directory/excludes.txt . $ml4w_directory/$version/ is required."
     exit
@@ -83,12 +83,12 @@ REPLACE="$ml4w_directory"
 sed -i "s|$SEARCH|$REPLACE|g" $ml4w_directory/library/scripts.sh
 
 if [ $install_platform == "arch" ]; then
-    echo "$aur_helper" > $ml4w_directory/$version/.config/ml4w/settings/aur.sh
+    echo "$aur_helper" >$ml4w_directory/$version/.config/ml4w/settings/aur.sh
     if [ -f ~/.config/ml4w/settings/aur.sh ]; then
-        echo "$aur_helper" > $HOME/.config/ml4w/settings/aur.sh
+        echo "$aur_helper" >$HOME/.config/ml4w/settings/aur.sh
     fi
     _writeLog 1 "AUR Helper updated with $aur_helper"
 fi
 
 # Write dot folder into settings
-echo "$dot_folder" > $ml4w_directory/$version/.config/ml4w/settings/dotfiles-folder.sh
+echo "$dot_folder" >$ml4w_directory/$version/.config/ml4w/settings/dotfiles-folder.sh

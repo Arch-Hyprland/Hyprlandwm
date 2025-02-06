@@ -32,6 +32,7 @@ packages=(
     "fzf"
     "pavucontrol"
     "papirus-icon-theme"
+    "papirus-icon-theme-dark"
     "breeze"
     "swaync"
     "gvfs"
@@ -48,4 +49,4 @@ packages=(
     "oh-my-posh"
     "NetworkManager-tui"
     "nwg-dock-hyprland"
-);
+)

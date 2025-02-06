@@ -49,7 +49,8 @@ packages=(
     "ttf-fira-sans"
     "ttf-fira-code"
     "ttf-firacode-nerd"
+    "ttf-dejavu"
     "nwg-dock-hyprland"
     "oh-my-posh-bin"
     "checkupdates-with-aur"
-);
+)
