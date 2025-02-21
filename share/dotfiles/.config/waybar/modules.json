@@ -116,7 +116,7 @@
   // Settings
   "custom/settings": {
     "format": "􀣋 ",
-    "on-click": "com.ml4w.dotfilessettings",
+    "on-click": "com.ml4w.settings",
     "tooltip-format": "ML4W Dotfiles Settings"
   },
   // Keybindings
