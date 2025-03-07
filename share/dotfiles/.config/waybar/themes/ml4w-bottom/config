@@ -50,6 +50,7 @@
         //"backlight",
         "bluetooth",
         "battery", 
+        "power-profiles-daemon",
         "group/hardware",
         "custom/cliphist",
         "network",

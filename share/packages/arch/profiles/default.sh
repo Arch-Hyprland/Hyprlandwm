@@ -39,7 +39,6 @@ packages=(
     "swaync"
     "gvfs"
     "wlogout"
-    "pinta"
     "hyprshade"
     "waypaper"
     "grimblast-git"
@@ -53,4 +52,6 @@ packages=(
     "nwg-dock-hyprland"
     "oh-my-posh-bin"
     "checkupdates-with-aur"
+    "loupe"
+    "power-profiles-daemon"
 )

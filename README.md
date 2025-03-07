@@ -1,5 +1,5 @@
 # ML4W Dotfiles for Hyprland
-> Rolling Release Version 2.9.8.1
+> Version 2.9.8.3 DEV
 
 An advanced configuration of Hyprland for Arch Linux based distributions. This package includes an installation script to install and set up the required components.
 
