@@ -188,14 +188,14 @@
     "tooltip-format": "Left: Notifications\nRight: Do not disturb",
     "format": "{icon}",
     "format-icons": {
-      "notification": "􀝗 <span foreground='red'><sup></sup></span>",
-      "none": "􀝗 ",
-      "dnd-notification": " <span foreground='red'><sup></sup></span>",
-      "dnd-none": " ",
-      "inhibited-notification": "􀝗 <span foreground='red'><sup></sup></span>",
-      "inhibited-none": "􀝗 ",
-      "dnd-inhibited-notification": " <span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": " "
+      "notification": "􀝗 ",
+      "none": "􀋚 ",
+      "dnd-notification": "􀋞 ",
+      "dnd-none": "􀋞 ",
+      "inhibited-notification": "􀝖 ",
+      "inhibited-none": "􀋙 ",
+      "dnd-inhibited-notification": "􀋝 ",
+      "dnd-inhibited-none": "􀋝 "
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
@@ -353,8 +353,8 @@
     },
     "format": "{icon}{capacity}%",
     "format-charging": "􀢋 {capacity}%",
-    "format-plugged": "􀡷  {capacity}%",
-    "format-alt": "{icon} {time}",
+    "format-plugged": "􀡷 {capacity}%",
+    "format-alt": "{icon}{time}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
     "format-icons": [
@@ -369,13 +369,13 @@
   // Power Profiles Daemon
   "power-profiles-daemon": {
     "format": "{icon}",
-    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip-format": "{icon} : {profile}\nDriver: {driver}",
     "tooltip": true,
     "format-icons": {
-      "default": "",
-      "performance": "",
-      "balanced": "",
-      "power-saver": ""
+      "default": "􀐱 ",
+      "performance": "􀋧 ",
+      "balanced": "􁁋 ",
+      "power-saver": "􁂬 " 
     }
   },
 
@@ -386,7 +386,7 @@
     "format-bluetooth": "{volume}%{icon}󰂱{format_source}",
     "format-bluetooth-muted": " {icon}󰂱{format_source}",
     "format-muted": " {format_source}",
-    "format-source": "{volume}% 􀊱",
+    "format-source": "{volume}% 􀊱 ",
     "format-source-muted": "􀊳 ",
     "format-icons": {
       "headphone": "􀑈 ",
