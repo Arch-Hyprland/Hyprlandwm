@@ -20,15 +20,15 @@ $slide_color: #fcfcfc;
   background-color: rgba($win_background, 0.5); 
   margin: 3px;
   border: 2px solid rgba($win_background, 0.5);
-  padding: 10px;
+  padding: 8px;
   min-width: 400px;
-  border-radius: 26px 26px 26px 26px;
+  border-radius: 20px 20px 20px 20px;
   box-shadow: 0 0 20px rgba($win_background, 0.3);
 }
 
 .win-box {
   border-bottom: 1px solid rgba($win_background, 0.5);
-  padding: 2px 0 10px 0;
+  padding: 0 0 8px 0;
 }
 
 .win-res {
@@ -117,7 +117,6 @@ $slide_color: #fcfcfc;
 }
 
 .switch-icon {
-  background-color: $box_background;
   border-radius: 8px;
   min-width: 40px;
   min-height: 36px;
@@ -126,16 +125,14 @@ $slide_color: #fcfcfc;
 }
 
 .func-switch {
-  margin: 5px 5px;
-  padding: 5px;
-  border-radius: 16px;
+  margin: 5px;
+  border-radius: 12px;
   background-color: rgba($block_background, 0.2);
   box-shadow: 0 0 3px rgba($background, 0.5);
 }
 
 .switch-box:hover {
-  border-radius: 10px;
-  margin: 0px;
+  border-radius: 12px;
   opacity: 0.8;
   background-color: rgba($hover_menu, 0.6);
 }

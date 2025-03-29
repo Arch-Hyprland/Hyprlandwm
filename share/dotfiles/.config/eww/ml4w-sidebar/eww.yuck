@@ -28,36 +28,51 @@
         )
       )
     )
+    (box :orientation "h" :space-evenly false
+      (eventbox  :onclick "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+        (box :class "panel-box-header" :space-evenly false
+          (image :icon "ephy-permission-microphone-symbolic" :icon-size "large-toolbar" :class "panel-icon")
+          (image :icon "camera-symbolic" :icon-size "large-toolbar" :class "panel-icon")
+        )
+      )
+    )
   )
 )
 
 (defwidget switch[]
-  (box :orientation "v" :space-evenly true :class "func-switch"
-    (box :orientation "h"
+  (box :orientation "v" :space-evenly false 
+    (box :orientation "h" :class "func-switch"
       (eventbox :class "switch-box" :onclick "~/.config/hypr/scripts/hyprshade.sh &"
-        (image :icon "night-light-symbolic" :icon-size "large-toolbar" :class "switch-icon")
-      )
-      (eventbox :class "switch-box" :onclick "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
-        (image :icon "ephy-permission-microphone-symbolic" :icon-size "large-toolbar" :class "switch-icon")
-      )
-      (eventbox :class "switch-box"
-        (image :icon "notification-alert-symbolic" :icon-size "large-toolbar" :class "switch-icon")
+        (box :class "switch-icon" :space-evenly false :style "padding: 5px"
+          (image :icon "night-light-symbolic" :icon-size "large-toolbar" :style "padding: 5px")
+          (label :text "Set Shade" :justify "start")
+        )
       )
     )
-    (box :orientation "h"
-      (eventbox :class "switch-box" :onclick "~/.config/hypr/scripts/toggleallfloat.sh &"
-        (image :icon "object-blend-mode-symbolic" :icon-size "large-toolbar" :class "switch-icon")
+    (box :orientation "h" 
+      (box :class "func-switch"
+        (eventbox :class "switch-box" :onclick "~/.config/hypr/scripts/toggleallfloat.sh &"
+          (box :orientation "v" :class "switch-icon" :space-evenly false :style "padding: 3px 10px"
+            (image :icon "object-blend-mode-symbolic" :icon-size "large-toolbar" :style "padding: 10px 10px 5px 10px" )
+            (label :text "Window" :spacing 3)
+            (label :text "Layout")
+          )
+        )
       )
-      (eventbox :class "switch-box" :onclick "~/.config/hypr/scripts/hyprshade.sh rofi &"
-        (image :icon "layers-button-symbolic" :icon-size "large-toolbar" :class "switch-icon")
-      )
-      (eventbox :class "switch-box"
-        (image :icon "camera-symbolic" :icon-size "large-toolbar" :class "switch-icon")
+      (box :class "func-switch" 
+        (eventbox :class "switch-box" :onclick "~/.config/hypr/scripts/hyprshade.sh rofi &"
+          (box :orientation "v" :class "switch-icon" :space-evenly false :style "padding: 3px 10px"
+            (image :icon "layers-button-symbolic" :icon-size "large-toolbar" :style "padding: 10px 10px 5px 10px")
+            (label :text "Shade" :spacing 3)
+            (label :text "Style" )
+          )
+        )
       )
     )
   )
 )
 
+;; Widgets
 (defwidget sound[] 
   (box :orientation "v" :space-evenly false :class "slide-box" :spacing 5
     (label :text "Sound" :halign "start")
@@ -92,12 +107,11 @@
   )
 )
 
-;; Widgets
-(defwidget profile []
+(defwidget control []
   (box :class "win-box" :orientation "v" :space-evenly false :spacing 2
-    (box :orientation "h" :space-evenly true :spacing 5
-      (switch)
+    (box :orientation "h" :space-evenly true :spacing 3
       (volume)
+      (switch)
     )
     (box :orientation "v" :space-evenly false
       (display)
@@ -105,7 +119,6 @@
     )
   )
 )
-
 
 (defwidget resources [] 
   (box :class "win-res"
@@ -137,7 +150,6 @@
     )
   )
 )
-
 
 (defwidget powermenu []
   (box :class "win-menu" :valign "start" :space-evenly "true" 
@@ -179,12 +191,13 @@
 (include "./task.yuck")
 (include "./launcher.yuck")
 (include "./bar.yuck")
+
 ;; ** layout **************************************************************************
 
 (defwidget sidebar[]
   (eventbox :onhoverlost "../scripts/startup.sh"
     (box :orientation "v" :valign "start" :class "side" :spacing 0 :space-evenly false
-      (profile)
+      (control)
       (resources)
       (powermenu)
     )
