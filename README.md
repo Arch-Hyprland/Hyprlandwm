@@ -1,5 +1,4 @@
 # ML4W Dotfiles for Hyprland
-> Version 2.9.8.3 DEV
 
 An advanced configuration of Hyprland for Arch Linux based distributions. This package includes an installation script to install and set up the required components.
 
@@ -22,6 +21,8 @@ You can find the Hyprland Installation instructions here: https://wiki.hyprland.
 > PLEASE NOTE: Every Linux distribution, setup, and personal configuration can be different. Therefore, I cannot guarantee that the ML4W Dotfiles will work everywhere. You install at your own risk.
 
 ### Arch Linux (based)
+
+Recommended is to install the Hyprland Desktop Profile from archinstall first.
 
 ```shell
 bash <(curl -s https://raw.githubusercontent.com/mylinuxforwork/dotfiles/main/setup-arch.sh)

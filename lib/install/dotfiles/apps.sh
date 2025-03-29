@@ -2,7 +2,7 @@
 # Apps Installation
 # ------------------------------------------------------
 _writeHeader "Apps"
-
+echo "Installing the ML4W Apps now..."
 _removeLegacyApp() {
     app_name=$1
     if [ -f /usr/share/applications/$app_name.desktop ]; then
@@ -28,8 +28,32 @@ _removeLegacyApp "com.ml4w.welcome"
 _removeLegacyApp "com.ml4w.dotfilessettings"
 _removeLegacyApp "com.ml4w.hyprland.settings"
 
-# Installation of FlatPaks
-$install_directory/dotfiles/flatpak.sh $apps_directory $(_getLogFile)
+# Installation of ML4W Flatpaks from GitHub
+
+ml4w_app="com.ml4w.welcome"
+ml4w_app_repo="dotfiles-welcome"
+echo ":: Installing $ml4w_app"
+curl -s https://raw.githubusercontent.com/mylinuxforwork/packages-installer/main/setup.sh | bash -s -- -y -p flatpak -s https://raw.githubusercontent.com/mylinuxforwork/$ml4w_app_repo/master/$ml4w_app.pkginst $ml4w_app &>>$(_getLogFile)
+
+ml4w_app="com.ml4w.settings"
+ml4w_app_repo="dotfiles-settings"
+echo ":: Installing $ml4w_app"
+curl -s https://raw.githubusercontent.com/mylinuxforwork/packages-installer/main/setup.sh | bash -s -- -y -p flatpak -s https://raw.githubusercontent.com/mylinuxforwork/$ml4w_app_repo/master/$ml4w_app.pkginst $ml4w_app &>>$(_getLogFile)
+
+ml4w_app="com.ml4w.sidebar"
+ml4w_app_repo="dotfiles-sidebar"
+echo ":: Installing $ml4w_app"
+curl -s https://raw.githubusercontent.com/mylinuxforwork/packages-installer/main/setup.sh | bash -s -- -y -p flatpak -s https://raw.githubusercontent.com/mylinuxforwork/$ml4w_app_repo/master/$ml4w_app.pkginst $ml4w_app &>>$(_getLogFile)
+
+ml4w_app="com.ml4w.calendar"
+ml4w_app_repo="dotfiles-calendar"
+echo ":: Installing $ml4w_app"
+curl -s https://raw.githubusercontent.com/mylinuxforwork/packages-installer/main/setup.sh | bash -s -- -y -p flatpak -s https://raw.githubusercontent.com/mylinuxforwork/$ml4w_app_repo/master/$ml4w_app.pkginst $ml4w_app &>>$(_getLogFile)
+
+ml4w_app="com.ml4w.hyprlandsettings"
+ml4w_app_repo="hyprland-settings"
+echo ":: Installing $ml4w_app"
+curl -s https://raw.githubusercontent.com/mylinuxforwork/packages-installer/main/setup.sh | bash -s -- -y -p flatpak -s https://raw.githubusercontent.com/mylinuxforwork/$ml4w_app_repo/master/$ml4w_app.pkginst $ml4w_app &>>$(_getLogFile)
 
 # Copy Icons
 mkdir -p $HOME/.local/share/icons
@@ -37,7 +61,7 @@ cp $apps_directory/icons/com.ml4w.welcome.png $HOME/.local/share/icons/
 cp $apps_directory/icons/com.ml4w.settings.png $HOME/.local/share/icons/
 cp $apps_directory/icons/com.ml4w.calendar.png $HOME/.local/share/icons/
 cp $apps_directory/icons/com.ml4w.sidebar.png $HOME/.local/share/icons/
-cp $apps_directory/icons/com.ml4w.hyprlandsettings.png $HOME/.local/share/icons/
+# cp $apps_directory/icons/com.ml4w.hyprlandsettings.png $HOME/.local/share/icons/
 
 _writeLogHeader "Run Hyprland Settings App"
 
