@@ -104,15 +104,14 @@ else
 fi
 
 # -----------------------------------------------------
-# Execute pywal
+# Execute matugen
 # -----------------------------------------------------
 
-echo ":: Execute pywal with $used_wallpaper"
-wal -q -i "$used_wallpaper"
-source "$HOME/.cache/wal/colors.sh"
+echo ":: Execute matugen with $used_wallpaper"
+$HOME/.cargo/bin/matugen image $used_wallpaper -m "dark"
 
 # -----------------------------------------------------
-# Walcord
+# Walcord (NOT SUPPORTED)
 # -----------------------------------------------------
 
 if type walcord >/dev/null 2>&1; then
@@ -132,6 +131,12 @@ killall eww
 sh ~/.config/hypr/scripts/eww.sh
 
 # ----------------------------------------------------- 
+# Reload nwg-dock-hyprland
+# -----------------------------------------------------
+
+$HOME/.config/nwg-dock-hyprland/launch.sh &
+
+# -----------------------------------------------------
 # Update Pywalfox
 # -----------------------------------------------------
 

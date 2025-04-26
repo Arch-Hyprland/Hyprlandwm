@@ -18,7 +18,8 @@ packages=(
     "kitty"
     "neovim"
     "htop"
-    "python-pywal"
+    "rust"
+    "cargo"
     "pinta"
     "blueman"
     "grim"
@@ -54,4 +55,5 @@ packages=(
     "checkupdates-with-aur"
     "loupe"
     "power-profiles-daemon"
+    "matugen"
 )

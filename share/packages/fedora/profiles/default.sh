@@ -18,7 +18,8 @@ packages=(
     "kitty"
     "neovim"
     "htop"
-    "python-pywal"
+    "rust"
+    "cargo"
     "pinta"
     "blueman"
     "grim"
@@ -50,4 +51,5 @@ packages=(
     "NetworkManager-tui"
     "nwg-dock-hyprland"
     "power-profiles-daemon"
+    "matugen"
 )

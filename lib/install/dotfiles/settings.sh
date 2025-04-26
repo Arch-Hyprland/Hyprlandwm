@@ -65,7 +65,6 @@ if [ -f ~/.config/ml4w/settings/waybar_taskbar.sh ]; then
     fi
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w/config"
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-blur/config"
-    _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-blur-bottom/config"
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-modern/config"
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-bottom/config"
     _writeLog 1 "waybar_taskbar restored"
@@ -82,8 +81,6 @@ if [ -f ~/.config/ml4w/settings/waybar_network.sh ]; then
     fi
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w/config"
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-blur/config"
-    _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-blur-bottom/config"
-    _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-bottom/config"
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-modern/config"
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-minimal/config"
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/starter/config"
@@ -101,8 +98,6 @@ if [ -f ~/.config/ml4w/settings/waybar_backlight.sh ]; then
     fi
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w/config"
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-blur/config"
-    _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-blur-bottom/config"
-    _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-bottom/config"
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-modern/config"
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-minimal/config"
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/starter/config"
@@ -133,8 +128,6 @@ if [ -f ~/.config/ml4w/settings/waybar_systray.sh ]; then
     fi
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w/config"
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-blur/config"
-    _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-blur-bottom/config"
-    _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-bottom/config"
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-modern/config"
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-minimal/config"
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/starter/config"
@@ -165,8 +158,6 @@ if [ -f ~/.config/ml4w/settings/waybar_window.sh ]; then
     fi
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w/config"
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-blur/config"
-    _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-blur-bottom/config"
-    _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-bottom/config"
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-modern/config"
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-minimal/config"
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/starter/config"
@@ -184,8 +175,6 @@ if [ -f ~/.config/ml4w/settings/waybar_appmenu.sh ]; then
     fi
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w/config"
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-blur/config"
-    _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-blur-bottom/config"
-    _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-bottom/config"
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/ml4w-modern/config"
     _replaceLineInFile $search_str $replace_str "$HOME/.config/waybar/themes/starter/config"
     _writeLog 1 "waybar_appmenu restored"
@@ -204,30 +193,4 @@ if [ -f ~/.config/ml4w/settings/waybar_appmenu.sh ]; then
     _writeLog 1 "waybar_appmenuicon restored"
 fi
 
-# Replace hypridle_hyprlock_timeout
-if [ -f ~/.config/ml4w/settings/hypridle_hyprlock_timeout.sh ]; then
-    replace_value=$(cat ~/.config/ml4w/settings/hypridle_hyprlock_timeout.sh)
-    search_str="timeout"
-    replace_str="\ \ \ \ timeout = $replace_value"
-    _replaceLineInFileCheckpoint "$search_str" "$replace_str" "HYPRLOCK TIMEOUT" "$HOME/.config/hypr/hypridle.conf"
-    _writeLog 1 "hypridle_hyprlock_timeout restored"
-fi
-
-# Replace hypridle_dpms_timeout
-if [ -f ~/.config/ml4w/settings/hypridle_dpms_timeout.sh ]; then
-    replace_value=$(cat ~/.config/ml4w/settings/hypridle_dpms_timeout.sh)
-    search_str="timeout"
-    replace_str="\ \ \ \ timeout = $replace_value"
-    _replaceLineInFileCheckpoint "$search_str" "$replace_str" "DPMS TIMEOUT" "$HOME/.config/hypr/hypridle.conf"
-    _writeLog 1 "hypridle_dpms_timeout restored"
-fi
-
-# Replace hypridle_suspend_timeout
-if [ -f ~/.config/ml4w/settings/hypridle_suspend_timeout.sh ]; then
-    replace_value=$(cat ~/.config/ml4w/settings/hypridle_suspend_timeout.sh)
-    search_str="timeout"
-    replace_str="\ \ \ \ timeout = $replace_value"
-    _replaceLineInFileCheckpoint "$search_str" "$replace_str" "SUSPEND TIMEOUT" "$HOME/.config/hypr/hypridle.conf"
-    _writeLog 1 "hypridle_suspend_timeout restored"
-fi
 echo

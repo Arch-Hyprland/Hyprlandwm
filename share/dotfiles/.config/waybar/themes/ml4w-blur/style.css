@@ -28,11 +28,15 @@
 }
 
 window#waybar {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-bottom: 0px solid #ffffff;
-  /* color: #FFFFFF; */
-  transition-property: background-color;
-  transition-duration: .5s;
+    background-color: @blur_background;
+    border-bottom: 0px solid #ffffff;
+    /* color: #FFFFFF; */
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+.modules-left {
+    padding-left:14px;
 }
 
 /* -----------------------------------------------------

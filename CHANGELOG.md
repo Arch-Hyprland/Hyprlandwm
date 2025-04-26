@@ -1,3 +1,17 @@
+Version 2.9.8.5
+--------------------------------------------------------
+- Pywal has been replaced with matugen
+- All color themes improved for matugen
+- New kitty color theme based on matugen
+- Colored, mixed and bottom waybar themes removed
+- New default wallpaper
+
+Version 2.9.8.4
+--------------------------------------------------------
+- New app icons for ML4W apps
+- Optimizations for app positions
+- Hypridle must be configured in ~/.config/hypr/hypridle.conf due to compatibility reasons (removed from ML4W Settings App)
+
 Version 2.9.8.3
 --------------------------------------------------------
 - Compatible with Hyprland 0.48
