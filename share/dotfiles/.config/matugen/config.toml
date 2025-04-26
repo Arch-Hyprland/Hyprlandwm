@@ -34,6 +34,10 @@ output_path = '~/.config/swaync/colors.css'
 input_path = '~/.config/matugen/templates/colors.css'
 output_path = '~/.config/nwg-dock-hyprland/colors.css'
 
+[templates.sirula]
+input_path = '~/.config/matugen/templates/colors.css'
+output_path = '~/.config/sirula/colors.css'
+
 [templates.sequences]
 input_path = '~/.config/matugen/templates/sequences'
 output_path = '~/.cache/wal/sequences'

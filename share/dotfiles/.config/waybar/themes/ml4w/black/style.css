@@ -11,7 +11,7 @@
  @define-color textcolor1 @on_surface;
  @define-color textcolor2 @on_surface;
  @define-color textcolor3 #000000;
- @define-color iconcolor #000000;
+ @define-color iconcolor @on_surface;
 
 @import '../style.css';
 
@@ -20,5 +20,5 @@
 }
 
 #custom-chatgpt {
-    background-image: url("../../assets/openai-black.svg");
+    background-image: url("../../assets/openai.svg");
 }

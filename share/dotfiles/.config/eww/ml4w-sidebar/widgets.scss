@@ -36,8 +36,8 @@
 }
 
 .editor-icon {
-  background-color: $color8;
-  box-shadow: 0 0 4px $color8;
+  background-color: $primary;
+  box-shadow: 0 0 4px $primary;
   padding: 5px;
   border-radius: 50%;
   margin: 0 8px 0 0px;
@@ -72,11 +72,11 @@ calendar {
 }
 
 calendar.header {
-  background-color: $color9;
+  background-color: $secondary;
 }
 
 calendar:selected {
-  background-color: $color9;
+  background-color: $secondary;
   border-radius: 10px;
 }
 
@@ -192,7 +192,7 @@ calendar:selected {
   padding: 3px;
   margin: 2px 5px;
   border-radius: 10px;
-  background-color: rgba($color1, 0.8);
+  background-color: rgba($outline, 0.8);
 }
 
 .plugin-switch {
@@ -249,7 +249,7 @@ calendar:selected {
 
 .music-bar  highlight {
   all: unset;
-  color: $color9;
+  color: $secondary;
   min-height: 3px;
   border-radius: 3px;
 }

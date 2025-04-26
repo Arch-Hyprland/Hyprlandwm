@@ -1,17 +1,17 @@
 // @use "../../../.cache/wal/colors.scss";
 
 .app-dock {
-  background-color: rgba($color3, 0.5);
+  background-color: rgba($primary_container, 0.5);
   opacity: 1.0;
-  border: 1px solid rgba($color3, 0.6);
-  box-shadow: 0 0 10px rgba($background, 0.6);
+  border: 1px solid rgba($on_primary, 0.6);
+  box-shadow: 0 0 10px rgba($on_primary_fixed, 0.6);
   border-radius: 16px;
   padding: 8px 0;
   transition: all 800ms;
 }
 
 .app-active {
-  border: 1px solid $color6;
+  border: 1px solid $on_primary;
   border-radius: 1px;
   margin: 10px 0;
   opacity: 1;
@@ -24,20 +24,20 @@
 
 .icon-box {
   opacity: 0.9;
-  background-color: $color4;
+  background-color: $primary_container;
   border-radius: 12px;
   transition: all 0.5s;
 }
 
 .icon-box:hover {
-  background-color: $color1;
+  background-color: $source_color;
   opacity: 1;
   border-radius: 12px;
   transition: all 0.3s;
 }
 
 .icon-box:active {
-  background-color: $color1;
+  background-color: $source_color;
   opacity: 1;
   border-radius: 12px;
   transition: all 0.3s;

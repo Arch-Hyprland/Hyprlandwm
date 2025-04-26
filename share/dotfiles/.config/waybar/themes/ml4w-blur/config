@@ -25,11 +25,11 @@
 
     // Modules Left
     "modules-left": [
-        "custom/appmenu",
+"custom/appmenu",
         "custom/waybarthemes",
-        //"wlr/taskbar",
+//"wlr/taskbar",
         "group/links",
-        "hyprland/window"
+"hyprland/window",
     ],
 
     // Modules Center
@@ -42,19 +42,19 @@
     // Modules Right    
     "modules-right": [
         "custom/updates",
-        "custom/recorder",
+        "custom/recoder",
         "pulseaudio",
-        //"backlight",
+//"backlight",
         "bluetooth",
         "battery", 
         "power-profiles-daemon",
         "group/hardware",
         "custom/cliphist",
-        "network",
+"network",
         "custom/widgets",
         "clock",
         "custom/panel",
         "custom/notification",
-        "tray"
+"tray",
     ]
 }

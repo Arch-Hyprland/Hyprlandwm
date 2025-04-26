@@ -1,5 +1,5 @@
 .top-bar {
-  background: rgba($color4, 0.4);
+  background: rgba($primary_container, 0.4);
 }
 .window {
   background: grey;
@@ -7,12 +7,12 @@
   padding: 3px;
   margin: 5px;
   border-radius: 16px;
-  color: $color4;
+  color: $on_primary;
 }
 
 .workactive {
-    background-color: $color3;
-    color: $color2;
+    background-color: $secondary_container;
+    color: $on_secondary_container;
     opacity: 1;
     padding: 2px 20px;
     border-radius: 15px;
@@ -20,7 +20,7 @@
 }
 
 .work {
-  background: $color3;
+  background: $primary;
   padding: 2px 8px;
   border-radius: 50%;
   transition: 0.5s all ease-in;
@@ -46,12 +46,12 @@
 .top-item:hover {
   padding: 0 8px;
   border-radius: 6px;
-  background-color: rgba($color6, 0.2);
+  background-color: rgba($inverse_primary, 0.2);
 }
 
 .record-white {
   font-size: 20px;
-  color: white;
+  color: $inverse_surface;
 }
 
 .record-red {

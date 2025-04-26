@@ -250,7 +250,7 @@
     "format": "􀟛 ",
     "tooltip": false
   },
-  "custom/recorder": {
+  "custom/recoder": {
     "format": "{}",
     "tooltip-format": "{}",
     "escape": true,

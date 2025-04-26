@@ -1,10 +1,10 @@
-@import "/home/unicorn/.cache/wal/colors.scss";
+@import "colors.scss";
 
 // $win_background: #3f3f3f;
 // $win_background: #aeaeae;
-$win_background: $color5;
-$hover_menu: $color3;
-$box_background: $color1;
+$win_background: $primary_container;
+$hover_menu: $on_primary_container;
+$box_background: $primary_container;
 $block_background: #cccccc;
 $slide_color: #fcfcfc;
 * {

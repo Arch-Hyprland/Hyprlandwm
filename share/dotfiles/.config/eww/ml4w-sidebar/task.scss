@@ -26,7 +26,7 @@ $task_group_background: #fcfcfc;
 }
 
 .item-view:focus {
-  border: 1px solid $color6;
+  border: 1px solid $primary;
 }
 
 .item-view {
@@ -34,7 +34,7 @@ $task_group_background: #fcfcfc;
   border-radius: 16px;
 
   &:hover {
-    background-color: $color6;
+    background-color: $primary;
     opacity: 1;
     padding: 5px;
     transition: all 0.5s;

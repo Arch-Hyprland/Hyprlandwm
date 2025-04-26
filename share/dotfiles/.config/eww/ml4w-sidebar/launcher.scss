@@ -22,7 +22,7 @@ $app-hover: #cfcfcf;
 
 .app-item:hover{
   background-color: rgba($app-hover, 0.2);
-  color: $color3;
+  color: $on_primary;
   transition: all 0.5s;
 }
 
@@ -39,5 +39,5 @@ $app-hover: #cfcfcf;
   padding: 8px 0 0 0;
   font-family: "Inter Semi Bold";
   font-size: 20;
-  color: $cursor;
+  color: $on_primary;
 }

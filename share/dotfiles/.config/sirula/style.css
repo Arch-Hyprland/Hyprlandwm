@@ -9,12 +9,12 @@ To remove the global theme completely, use
 * { all: unset; }
 */
 
-@import "/home/unicorn/.cache/wal/colors-waybar.css";
+@import "colors.css";
 
-@define-color color_text @foreground;
-@define-color item_focus @color6;
-@define-color panel_back @color2;
-@define-color panel_border @color5;
+@define-color color_text @on_suface;
+@define-color item_focus @primary_fixed;
+@define-color panel_back @surface_container;
+@define-color panel_border @primary_fixed_dim;
 
 * {
     font-family: "Inter sembold";

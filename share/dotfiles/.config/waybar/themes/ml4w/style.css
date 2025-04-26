@@ -28,10 +28,8 @@
 }
 
 window#waybar {
-  background-color: rgba(0, 0, 0, 0.8);
-  border-bottom: 0px solid #ffffff;
-  /* color: #FFFFFF; */
   background: transparent;
+  border-bottom: 0px solid @bordercolor;
   transition-property: background-color;
   transition-duration: .5s;
 }
@@ -45,14 +43,60 @@ window#waybar {
   margin: 4px 5px 3px 5px;
 }
 
+
+/**
+* have background container
+*/
+
+#workspaces,
+#battery,
+#pulseaudio,
+#network ,
+#backlight,
+#bluetooth,
+#clock,
+#custom-appmenu,
+#custom-updates,
+#custom-recoder,
+#custom-wallpaper,
+#custom-settings {
+  font-size: 16px;
+  border-radius: 16px;
+  background: alpha(@backgroundlight, 0.6);
+  color: @textcolor2;
+  font-weight: bold;
+}
+
+/**
+* no backgound container
+*/
+
+#custom-widgets,
+#custom-cliphist,
+#idle_inhibitor,
+#custom-filemanager,
+#power-profiles-daemon,
+#cpu,
+#memory,
+#disk,
+#custom-notification,
+#custom-panel,
+#custom-browser,
+#custom-chatgpt,
+#custom-waybarthemes {
+  color: alpha(@iconcolor, 0.9);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+
 #workspaces {
   border-left: 2px solid @textcolor2;
   border-right: 2px solid @textcolor2;
   border-radius: 16px;
-  background: alpha(@bordercolor, 0.6);
   padding: 2px 12px;
   margin: 0px 8px;
-  color: @textcolor1;
 }
 
 #workspaces button {
@@ -60,13 +104,12 @@ window#waybar {
   margin: 1px 1px;
   border-radius: 16px;
   border: 0px;
-  color: @textcolor1;
+  color: @textcolor2;
   background-color: alpha(@backgroundlight, 0.4);
   transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-  color: @textcolor1;
   background: alpha(@backgroundlight, 1.0);
   border-radius: 12px;
   min-width: 40px;
@@ -74,7 +117,6 @@ window#waybar {
 }
 
 #workspaces button:hover {
-  color: @textcolor1;
   background: alpha(@backgroundlight, 0.7);
   border-radius: 8px;
 }
@@ -85,10 +127,8 @@ window#waybar {
 
 tooltip {
   border-radius: 8px;
-  /* background-color: @backgrounddark; */
-  background: rgba(43, 48, 59, 0.8);
-  border: 1px solid rgba(100, 114, 125, 0.5);
-  opacity: 1.0;
+  background: alpha(@backgroundlight, 0.6);
+  border: 1px solid alpha(@backgrounddark, 0.2);
   padding: 8px;
   margin: 0px;
 }
@@ -102,7 +142,7 @@ tooltip label {
  * ----------------------------------------------------- */
 
 #window {
-  background: rgba(43, 48, 59, 0.8);
+  background: alpha(@backgroundlight, 0.5);
   margin: 4px 15px 4px 0px;
   padding: 2px 10px 2px 10px;
   border-radius: 12px;
@@ -199,36 +239,22 @@ window#waybar.empty #window {
 #custom-waybarthemes {
   margin-right: 10px;
   font-size: 20px;
-  font-weight: bold;
-  opacity: 0.8;
-  color: @iconcolor;
 }
 
 #custom-cliphist {
   margin-right: 5px;
   font-size: 20px;
   font-weight: bold;
-  opacity: 0.8;
-  color: @iconcolor;
 }
+
 #custom-wallpaper {
-  background: @bordercolor;
-  border-radius: 16px;
-  font-size: 16px;
-  opacity: 0.8;
   padding: 0 0px 1px 4px;
   margin: 1px 0px;
-  color: @textcolor2;
 }
 
 #custom-settings {
-  background: @bordercolor;
-  border-radius: 16px;
   padding: 0 0px 1px 4px;
-  font-size: 16px;
-  font-weight: bold;
   margin: 1px 0px;
-  color: @textcolor2;
 }
 
 #custom-hyprshade {
@@ -238,6 +264,7 @@ window#waybar.empty #window {
 #custom-system {
   margin-right: 10px;
 }
+
 #custom-chatgpt {
     margin-right: 12px;
     background-image: url("../assets/openai.svg");
@@ -250,8 +277,6 @@ window#waybar.empty #window {
 #custom-widgets {
   font-size: 20px;
   margin-right: 3px;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 #custom-ml4w-hyprland-settings {
@@ -270,14 +295,11 @@ window#waybar.empty #window {
   margin-right: 3px;
   font-size: 18px;
   font-weight: bold;
-  opacity: 0.8;
-  color: @iconcolor;
 }
 
 #idle_inhibitor.activated {
   font-size: 18px;
   color: lightcyan;
-  border-radius: 15px;
   padding: 2px 8px 2px 8px;
   opacity: 0.8;
 }
@@ -287,13 +309,8 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #custom-appmenu {
-  background-color: @backgrounddark;
-  font-size: 16px;
-  color: @textcolor1;
-  border-radius: 15px;
   padding: 2px 1px 1px 3px;
   margin: 4px 15px 4px 10px;
-  opacity: 0.8;
   border: 0px solid @bordercolor;
 }
 
@@ -305,8 +322,6 @@ window#waybar.empty #window {
     margin: 0px 3px 0px 0px;
     padding:0px;
     font-size:20px;
-    color: @iconcolor;
-    opacity: 0.8;
 }
 
 /* -----------------------------------------------------
@@ -317,7 +332,6 @@ window#waybar.empty #window {
   margin: 0px 3px 0px 0px;
   padding: 0px;
   font-size: 18px;
-  color: @iconcolor;
 }
 
 /* -----------------------------------------------------
@@ -325,17 +339,13 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #custom-updates {
-  background-color: @backgroundlight;
-  font-size: 16px;
-  color: @textcolor2;
-  border-radius: 15px;
-    margin: 5px 8px 5px 0px;
+  margin: 5px 8px 5px 0px;
   padding: 0 10px;
-  opacity: 0.8;
 }
 
 #custom-updates.green {
-  background-color: @backgroundlight;
+  background:  alpha(#00ff00, 0.5);
+  color: #FFFFFF;
 }
 
 #custom-updates.yellow {
@@ -352,18 +362,13 @@ window#waybar.empty #window {
  * Custom Recorder
  * ----------------------------------------------------- */
 
-#custom-recorder {
-  background-color: @backgroundlight;
-  font-size: 16px;
-  color: @textcolor2;
+#custom-recoder {
   border-radius: 8px;
   padding: 1px 1px 2px 7px;
   margin: 5px 8px 5px 0px;
-  opacity: 0.9;
 }
 
-#custom-recorder.red {
-  background-color: @color7;
+#custom-recoder.red {
   border-radius: 12px;
   padding: 1px 10px 2px 8px;
   color: #dc00af;
@@ -374,13 +379,8 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #custom-youtube {
-  background-color: @backgroundlight;
-  font-size: 16px;
-  color: @textcolor2;
-  border-radius: 15px;
   padding: 2px 10px 0px 10px;
   margin: 5px 5px 5px 0px;
-  opacity: 0.8;
 }
 
 /* -----------------------------------------------------
@@ -392,8 +392,6 @@ window#waybar.empty #window {
 #cpu {
   margin: 0px;
   padding: 0px;
-  font-size: 16px;
-  color: @iconcolor;
 }
 
 #cpu {
@@ -407,8 +405,6 @@ window#waybar.empty #window {
  #power-profiles-daemon {
     margin: 0px 8px 0px 0px;
     padding:0px;
-    font-size:16px;
-    color:@iconcolor;
 }
 
 /* -----------------------------------------------------
@@ -416,13 +412,8 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #clock {
-  background-color: @backgrounddark;
-  font-size: 16px;
-  color: @textcolor1;
-  border-radius: 15px;
   padding: 1px 10px 1px 10px;
   margin: 5px 5px 5px 0px;
-  opacity: 0.8;
   border: 0px solid @bordercolor;
 }
 
@@ -431,13 +422,8 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #backlight {
-    background-color: @backgroundlight;
-    font-size: 16px;
-    color: @textcolor2;
-    border-radius: 15px;
     padding: 1px 10px 2px 10px;
     margin: 5px 5px 5px 0px;
-    opacity:0.8;
 }
 
 /* -----------------------------------------------------
@@ -445,18 +431,12 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #pulseaudio {
-  background-color: @backgroundlight;
-  font-size: 16px;
-  color: @textcolor2;
-  border-radius: 15px;
   padding: 1px 10px 1px 10px;
   margin: 5px 5px 5px 0px;
-  opacity: 0.8;
 }
 
 #pulseaudio.muted {
-  background-color: @backgrounddark;
-  color: @textcolor1;
+  color: @textcolor2;
 }
 
 /* -----------------------------------------------------
@@ -464,22 +444,15 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #network {
-  background-color: @backgroundlight;
-  font-size: 16px;
-  color: @textcolor2;
-  border-radius: 15px;
   padding: 1px 10px 1px 10px;
   margin: 5px 8px 5px 0px;
-  opacity: 0.8;
 }
 
 #network.ethernet {
-  background-color: @backgroundlight;
   color: @textcolor2;
 }
 
 #network.wifi {
-  background-color: @backgroundlight;
   color: @textcolor2;
 }
 
@@ -490,17 +463,13 @@ window#waybar.empty #window {
 #bluetooth,
 #bluetooth.on,
 #bluetooth.connected {
-  background-color: @backgroundlight;
   font-size: 22px;
   color: #1523e9;
-  border-radius: 15px;
   padding: 0px 8px 0px 8px;
   margin: 5px 5px 5px 0px;
-  opacity: 0.8;
 }
 
 #bluetooth.off {
-  background-color: transparent;
   color: @textcolor2;
   font-size: 20px;
   padding: 0px 8px 0px 8px;
@@ -511,19 +480,13 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #battery {
-  background-color: @backgroundlight;
-  font-size: 16px;
-  color: @textcolor2;
-  border-radius: 15px;
   padding: 1px 10px 1px 10px;
   margin: 5px 5px 5px 0px;
-  opacity: 0.8;
 }
 
 #battery.charging,
 #battery.plugged {
   color: @textcolor2;
-  background-color: @backgroundlight;
 }
 
 @keyframes blink {
@@ -560,8 +523,9 @@ window#waybar.empty #window {
 
 #tray menu {
   border-radius: 12px;
-  background: rgba(43, 48, 59, 0.8);
-  border: 1px solid rgba(100, 114, 125, 0.5);
+  background: alpha(#1e1e2e, 0.8);
+  color: @textcolor2;
+  border: 1px solid @background;
 }
 
 #tray>.passive {
