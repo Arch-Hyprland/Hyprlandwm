@@ -22,7 +22,7 @@
       "active": "",
       "default": ""
     },
-    "persistent_workspaces": {
+    "persistent-workspaces": {
       // START WORKSPACES
       "*": 5
       // END WORKSPACES

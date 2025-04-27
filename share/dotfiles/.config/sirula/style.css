@@ -12,8 +12,8 @@ To remove the global theme completely, use
 @import "colors.css";
 
 @define-color color_text @on_suface;
-@define-color item_focus @primary_fixed;
-@define-color panel_back @surface_container;
+@define-color item_focus @outline;
+@define-color panel_back @primary_container;
 @define-color panel_border @primary_fixed_dim;
 
 * {
@@ -30,7 +30,7 @@ To remove the global theme completely, use
 }
 
 #root-box{
-    background-color: alpha(@panel_back, 0.40);
+    background-color: alpha(@panel_back, 0.3);
     opacity: 1.0;
     border: 1px solid alpha(@panel_border, 0.5);
     border-radius: 16px;
