@@ -1,7 +1,6 @@
 packages=(
     "fastfetch"
     "xdg-desktop-portal-gtk"
-    "eza"
     "python-pip"
     "python3-gobject"
     "python-screeninfo"
@@ -50,6 +49,6 @@ packages=(
     "oh-my-posh"
     "NetworkManager-tui"
     "nwg-dock-hyprland"
-    "power-profiles-daemon"
     "matugen"
+    "eza"
 )
