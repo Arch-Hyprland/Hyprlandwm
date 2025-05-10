@@ -43,9 +43,9 @@ sc=$("$HOME"/.config/eww/scripts/curscreen.sh)
 if [[ ! -f "$FILE" ]]; then
   touch "$FILE"
   echo ":: Opening on Monitor $sc"
-  "${EWW}" --config "$CFG" open sidebar --screen "$sc"
+  "${EWW}" --config "$CFG" open controls --screen "$sc"
 else
-  ${EWW} --config "$CFG" close sidebar
+  ${EWW} --config "$CFG" close controls
   echo ":: Closing widgets"
   rm "$FILE"
 fi

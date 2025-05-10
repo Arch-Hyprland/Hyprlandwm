@@ -45,7 +45,7 @@
       (eventbox :class "switch-box" :onclick "~/.config/hypr/scripts/hyprshade.sh &"
         (box :class "switch-icon" :space-evenly false :style "padding: 5px"
           (image :icon "night-light-symbolic" :icon-size "large-toolbar" :style "padding: 5px")
-          (label :text "Set Shade" :justify "start")
+          (label :text "Set Shade" :justify "left")
         )
       )
     )
@@ -54,7 +54,7 @@
         (eventbox :class "switch-box" :onclick "~/.config/hypr/scripts/toggleallfloat.sh &"
           (box :orientation "v" :class "switch-icon" :space-evenly false :style "padding: 3px 10px"
             (image :icon "object-blend-mode-symbolic" :icon-size "large-toolbar" :style "padding: 10px 10px 5px 10px" )
-            (label :text "Window" :spacing 3)
+            (label :text "Window")
             (label :text "Layout")
           )
         )
@@ -63,7 +63,7 @@
         (eventbox :class "switch-box" :onclick "~/.config/hypr/scripts/hyprshade.sh rofi &"
           (box :orientation "v" :class "switch-icon" :space-evenly false :style "padding: 3px 10px"
             (image :icon "layers-button-symbolic" :icon-size "large-toolbar" :style "padding: 10px 10px 5px 10px")
-            (label :text "Shade" :spacing 3)
+            (label :text "Shade")
             (label :text "Style" )
           )
         )
@@ -114,8 +114,47 @@
       (switch)
     )
     (box :orientation "v" :space-evenly false
+      (switchbox)
       (display)
       (sound)
+    )
+  )
+)
+
+(defwidget switchbox[] 
+  (box :orientation "h" :class "box-container" :spacing 3
+    (box :class "func-switch"
+      (eventbox :class "switch-box" :onclick "../scripts/mode.sh hide"
+        (box :orientation "v" :class "switch-icon" :space-evenly false :style "padding: 5px 10px" 
+          (image :icon "desktop-symbolic" :icon-size "large-toolbar" :style "padding: 5px 8px 5px 8px")
+          (label :text "Dock")
+        )
+      )
+    )
+    (box :class "func-switch"
+      (eventbox :class "switch-box" :onclick "~/.config/hypr/scripts/gamemode.sh"
+        (box :orientation "v" :class "switch-icon" :space-evenly false :style "padding: 5px 10px"
+          (image :icon "applications-games-symbolic" :icon-size "large-toolbar" :style "padding: 8px 8px 8px 8px")
+          (label :text "Game") 
+        )
+      )
+    )
+    (box :class "func-switch"
+      (eventbox :class "switch-box" :onclick "~/.config/hypr/scripts/screenshot.sh &"
+        (box :orientation "v" :class "switch-icon" :space-evenly false :style "padding: 5px 10px"
+          (image :icon "screenshooter-symbolic" :icon-size "large-toolbar" :style "padding: 8px 8px 8px 8px")
+          (label :text "Screencut")
+        )
+      )
+    )
+    (box :class "func-switch"
+      (eventbox :class "switch-box" :onclick "~/.config/waybar/toggle.sh"
+        (box :orientation "v" :class "switch-icon" :space-evenly false :style "padding: 5px 10px"
+          (image :icon "panel-top-symbolic" :icon-size "large-toolbar" :style "padding: 8px 8px 8px 8px")
+          (label :text "Waybar")
+
+        )
+      )
     )
   )
 )
@@ -194,20 +233,25 @@
 
 ;; ** layout **************************************************************************
 
-(defwidget sidebar[]
-  (eventbox :onhoverlost "../scripts/startup.sh"
-    (box :orientation "v" :valign "start" :class "side" :spacing 0 :space-evenly false
-      (control)
-      (resources)
-      (powermenu)
+(defwidget sidebar[] 
+  (box :orientation "v" 
+    (eventbox :onhoverlost "../scripts/startup.sh" 
+      (box :orientation "v" :class "side" :space-evenly false
+        (control)
+        (resources)
+        (powermenu)
+      )
     )
   )
 )
 
 ;; ** Windows *************************************************************************
 
-(defwindow sidebar 
+(defwindow controls 
         :geometry (geometry :x "5" :y "5"  :anchor "top right")
+        :exclusive false
         :stacking "fg" 
+        :focusable false
+        :namespace "eww-widget"
 (sidebar))
 

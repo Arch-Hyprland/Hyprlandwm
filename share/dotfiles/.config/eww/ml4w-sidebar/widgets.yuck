@@ -217,11 +217,9 @@
 )
 
 (defwindow widgets[]
-    :geometry (geometry :x "5"
-                        :y "100"
-                        :anchor "top right"
-              )
+    :geometry (geometry :x "5" :y "100" :anchor "top right")
     :exclusive false
     :stacking "bg"
     :focusable false
+    :namespace "eww-widget"
 (widgets))

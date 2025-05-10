@@ -1,8 +1,9 @@
 
 $app-hover: #cfcfcf;
+$text_color: $on_primary_container;
 
 .launcher-bg {
-  background-color: rgba($background, 0.6);
+  background-color: rgba($primary_container, 0.6);
   opacity: 0.95;
   border-radius: 10px 10px 0 0;
   padding: 100px;
@@ -22,7 +23,7 @@ $app-hover: #cfcfcf;
 
 .app-item:hover{
   background-color: rgba($app-hover, 0.2);
-  color: $on_primary;
+  color: $text_color;
   transition: all 0.5s;
 }
 
@@ -39,5 +40,5 @@ $app-hover: #cfcfcf;
   padding: 8px 0 0 0;
   font-family: "Inter Semi Bold";
   font-size: 20;
-  color: $on_primary;
+  color: $text_color;
 }

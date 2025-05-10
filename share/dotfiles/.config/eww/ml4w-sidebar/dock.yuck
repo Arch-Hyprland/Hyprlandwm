@@ -159,4 +159,5 @@
                             :anchor "left center")
         :exclusive "${ mode == 'dock' ? true : false }"
         :stacking "fg"
+        :namespace "eww-widget"
 (dock :mode mode))

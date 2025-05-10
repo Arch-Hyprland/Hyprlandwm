@@ -62,7 +62,7 @@ window#waybar {
 #custom-settings {
   font-size: 16px;
   border-radius: 16px;
-  background: alpha(@backgroundlight, 0.6);
+  background: alpha(@backgroundlight, 0.9);
   color: @textcolor2;
   font-weight: bold;
 }
@@ -92,6 +92,7 @@ window#waybar {
 
 
 #workspaces {
+  background-color: alpha(@workspacesbackground1, 0.6);
   border-left: 2px solid @textcolor2;
   border-right: 2px solid @textcolor2;
   border-radius: 16px;
@@ -110,7 +111,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-  background: alpha(@backgroundlight, 1.0);
+  background: alpha(@backgroundlight, 0.8);
   border-radius: 12px;
   min-width: 40px;
   transition: all 0.3s ease-in-out;
@@ -173,7 +174,7 @@ window#waybar.empty #window {
   font-weight: normal;
   font-style: normal;
   opacity: 0.8;
-  border: 2px solid @backgroundlight;
+  border: 2px solid alpha(@backgroundlight, 0.2);
 }
 
 #taskbar button {
@@ -403,7 +404,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
  #power-profiles-daemon {
-    margin: 0px 8px 0px 0px;
+    margin: 0px 4px 0px 0px;
     padding:0px;
 }
 
@@ -511,7 +512,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #tray {
-  border: 3px solid @backgroundlight;
+  border: 2px solid alpha(@backgroundlight, 0.3);
   border-right: none;
   font-size: 16px;
   color: @textcolor2;

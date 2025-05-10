@@ -6,9 +6,9 @@
  @define-color backgroundlight #000000;
  @define-color backgrounddark #000000;
  @define-color workspacesbackground1 #000000;
- @define-color workspacesbackground2 @on_secondary;
+ @define-color workspacesbackground2 @primary_container;
  @define-color bordercolor #000000;
- @define-color textcolor1 @on_surface;
+ @define-color textcolor1 @on_primary;
  @define-color textcolor2 @on_surface;
  @define-color textcolor3 #000000;
  @define-color iconcolor @on_surface;

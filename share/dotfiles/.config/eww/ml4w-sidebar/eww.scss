@@ -7,11 +7,11 @@ $hover_menu: $on_primary;
 $box_background: $primary_container;
 $block_background: #cccccc;
 $slide_color: #fcfcfc;
+
 * {
   all: unset;
   // font-family: "Cascadia Code";
-  //font-family: 'JetBrains Mono Nerd Font', 'JetBrains Mono NL', 'SpaceMono Nerd Font', monospace;
-  font-family: 'Inter Semi Bold';
+  font-family: 'Inter Semi Bold', 'JetBrains Mono Nerd Font', 'SpaceMono Nerd Font', monospace;
   // font-style: italic;
   color: $slide_color;
 }
@@ -23,7 +23,6 @@ $slide_color: #fcfcfc;
   padding: 8px;
   min-width: 400px;
   border-radius: 20px 20px 20px 20px;
-  box-shadow: 0 0 20px rgba($win_background, 0.3);
 }
 
 .win-box {
@@ -52,7 +51,7 @@ $slide_color: #fcfcfc;
 
 .res-circle {
   background-color: rgba($slide_color, 0.7);
-  color: $block_background;
+  color: $slide_color;
   border-radius: 100%;
   padding: 0px;
 }
@@ -121,6 +120,9 @@ $slide_color: #fcfcfc;
   min-width: 40px;
   min-height: 36px;
   margin: 5px 5px;
+
+}
+.box-container {
 
 }
 

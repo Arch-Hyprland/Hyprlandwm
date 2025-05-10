@@ -9,7 +9,7 @@
             (eventbox :onclick "${EWW_CMD} close taskview;hyprctl dispatch focuswindow address:${view.address}"
                       :cursor "pointer" :class "item-view" 
               (box :style "padding: 2px"  
-                (image :icon "${view.class}" :icon-size "dialog" :image-width "60" :image-heigh "60")
+                (image :icon "${view.class}" :icon-size "dialog" :image-width "60" :image-height "60")
               )
             )
           )
@@ -26,4 +26,5 @@
     :exclusive false
     :stacking "fg"
     :focusable true
+    :namespace "eww-widget"
 (taskview))

@@ -22,7 +22,7 @@
 @define-color textcolor1 #000000;
 @define-color textcolor2 #000000;
 @define-color textcolor3 #FFFFFF;
-@define-color iconcolor #FFFFFF;
+@define-color iconcolor alpha(#FFFFFF, 0.8);
 
 /* -----------------------------------------------------
  * General
@@ -30,12 +30,15 @@
 
 * {
     font-family: "SF Pro Display", "Inter Semi Bold", "Fira Sans semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 16px;
     border: none;
     border-radius: 0px;
 }
 
 window#waybar {
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(30,30,46,0.3);
     border-bottom: 0px solid #ffffff;
     /* color: #FFFFFF; */
     transition-property: background-color;
@@ -51,8 +54,7 @@ window#waybar {
  * ----------------------------------------------------- */
 
 #workspaces {
-  background: @workspacesbackground1;
-  opacity: 0.6;
+  background: alpha(@workspacesbackground2, 0.7);
   margin: 8px 15px 8px 1px;
   padding: 0px 1px;
   border-radius: 15px;
@@ -77,7 +79,8 @@ window#waybar {
 
 #workspaces button.active {
     color: @textcolor1;
-    background: @workspacesbackground2;
+    background: @workspacesbackground1;
+    min-width: 40px;
 }
 
 #workspaces button:hover {
@@ -91,8 +94,8 @@ window#waybar {
  * ----------------------------------------------------- */
 
 tooltip {
-    border-radius: 16px;
-    background-color: @backgroundlight;
+    border-radius: 10px;
+    background-color: alpha(@backgroundlight, 0.7);
     opacity:0.9;
     padding:20px;
     margin:0px;
@@ -171,7 +174,7 @@ window#waybar.empty #window {
 #custom-quicklink10,
 #custom-waybarthemes {
     margin-right: 10px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color: @iconcolor;
 }
@@ -216,10 +219,11 @@ window#waybar.empty #window {
 
 #custom-chatgpt {
     margin-right: 10px;
-    background-image: url("../assets/ai-icon-20.png");
+    background-image: url("../assets/openai.svg");
     background-repeat: no-repeat;
     background-position: center;
-    padding-right: 23px;
+    background-size: contain;
+    padding-right: 14px;
 }
 
 #custom-waybarthemes,#custom-system {
@@ -268,8 +272,8 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #custom-appmenu {
-    font-size: 20px;
-    color: @textcolor;
+    font-size: 18px;
+    color: @iconcolor;;
     margin: 0px 10px 0px 10px;
 }
 
@@ -278,11 +282,10 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
  #custom-notification {
-    margin: 0px 13px 0px 0px;
+    margin: 0px 8px 0px 0px;
     padding:0px;
-    font-size:20px;
+    font-size: 16px;
     color: @iconcolor;
-    opacity: 0.8;
 }
 
 /* -----------------------------------------------------
@@ -302,13 +305,10 @@ window#waybar.empty #window {
 
 #custom-updates {
     font-size: 16px;
-    opacity: .6;
-    color: @textcolor2;
+    color: @iconcolor;
     border-radius: 15px;
     margin: 8px 5px 8px 0px;
     padding: 2px 8px 2px 8px;
-    background-color: @workspacesbackground2;
-
 }
 
 #custom-updates.green {
@@ -359,7 +359,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
  #power-profiles-daemon {
-    margin: 0px 13px 0px 0px;
+    margin: 0px 5px 0px 2px;
     padding:0px;
     font-size:14px;
     color:@iconcolor;
@@ -371,7 +371,7 @@ window#waybar.empty #window {
 
 #clock {
     font-size: 15px;
-    color: @textcolor;
+    color: @iconcolor;
     margin: 0px 15px 0px 0px;
 }
 
@@ -381,7 +381,7 @@ window#waybar.empty #window {
 
  #backlight {
     font-size: 16px;
-    color: @textcolor;
+    color: @iconcolor;;
     margin: 0px 10px 0px 0px;
     background-color: transparent;
 }
@@ -392,7 +392,7 @@ window#waybar.empty #window {
 
  #pulseaudio {
     font-size: 16px;
-    color: @textcolor;
+    color: @iconcolor;
     border-radius: 15px;
     margin: 0px 15px 0px 0px;
 }
@@ -407,17 +407,17 @@ window#waybar.empty #window {
 
 #network {
     font-size: 16px;
-    color: @textcolor;
+    color: @iconcolor;
     border-radius: 15px;
-    margin: 0px 5px 0px 0px;
+    margin: 0px 8px 0px 0px;
 }
 
 #network.ethernet {
-    color: @textcolor;
+    color: @iconcolor;
 }
 
 #network.wifi {
-    color: @textcolor;
+    color: @iconcolor;
 }
 
 /* -----------------------------------------------------
@@ -443,13 +443,13 @@ window#waybar.empty #window {
 
 #battery {
     font-size: 16px;
-    color: @textcolor;
+    color: @iconcolor;
     border-radius: 15px;
     margin: 10px 5px 10px 0px;
 }
 
 #battery.charging, #battery.plugged {
-    color: @textcolor;
+    color: @iconcolor;
 }
 
 @keyframes blink {
@@ -471,7 +471,7 @@ window#waybar.empty #window {
 
 #custom-widgets {
   font-size: 16px;
-  margin-right: 3px;
+  margin-right: 10px;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -479,7 +479,7 @@ window#waybar.empty #window {
 #custom-panel {
   margin: 0px 5px 0px 0px;
   padding: 0px;
-  font-size: 18px;
+  font-size: 16px;
   color: @iconcolor;
 }
 
@@ -488,7 +488,15 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #tray {
-    margin:0px 10px 0px 0px;
+  font-size: 18px;
+  margin: 0px 15px 0px 2px;
+  color: @iconcolor;
+}
+
+#tray menu {
+  border-radius: 12px;
+  background: alpha(#1e1e2e, 0.8);
+  color: @textcolor2;
 }
 
 #tray > .passive {

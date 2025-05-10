@@ -103,21 +103,21 @@ window#waybar {
   margin: 1px 1px;
   border-radius: 16px;
   border: 0px;
-  color: @textcolor1;
+  color: @textcolor2;
   background-color: alpha(@workspacesbackground2, 0.4);
   transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-  background: alpha(@workspacesbackground2, 1.0);
-  border-radius: 12px;
+  background: alpha(@workspacesbackground2, 0.6);
+  border-radius: 16px;
   min-width: 40px;
   transition: all 0.3s ease-in-out;
 }
 
 #workspaces button:hover {
   background: alpha(@workspacesbackground2, 0.7);
-  border-radius: 12px;
+  border-radius: 16px;
 }
 
 /* -----------------------------------------------------
@@ -127,8 +127,8 @@ window#waybar {
 tooltip {
   border-radius: 8px;
   /* background-color: @backgrounddark; */
-  background: alpha(#1e1e2e, 0.8);
-  border: 1px solid @textcolor2;
+  background: alpha(@backgroundlight, 0.8);
+  border: 1px solid @blur_background;
   padding: 8px;
   margin: 0px;
 }
@@ -172,7 +172,7 @@ window#waybar.empty #window {
   font-weight: normal;
   font-style: normal;
   opacity: 0.8;
-  border: 2px solid @backgroundlight;
+  border: 2px solid alpha(@backgroundlight, 0.2);
 }
 
 #taskbar button {
@@ -504,7 +504,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #tray {
-  border: 3px solid @backgroundlight;
+  border: 3px solid alpha(@backgroundlight, 0.2);
   border-right: none;
   font-size: 16px;
   color: @textcolor3;

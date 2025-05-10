@@ -32,9 +32,9 @@ To remove the global theme completely, use
 #root-box{
     background-color: alpha(@panel_back, 0.3);
     opacity: 1.0;
-    border: 1px solid alpha(@panel_border, 0.5);
+    border: 2px solid alpha(@panel_border, 0.1);
     border-radius: 16px;
-    box-shadow: 0 0 10px alpha(@panel_border, 0.5);
+    /* box-shadow: 0 0 10px alpha(@panel_border, 0.5); */
     padding: 10px;
     margin: 0px;
 }

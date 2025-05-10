@@ -2,6 +2,9 @@
 * desktop components global style
 */
 
+$container_head: #1e1e2e;
+$back_container: #3e3f42;
+
 .desktop-widget {
   all: unset;
   font-family: 'JetBrains Mono Nerd Font', 'JetBrains Mono NL', 'SpaceMono Nerd Font', monospace;
@@ -24,7 +27,7 @@
 
 .notes-body {
   padding: 0 5px 8px 5px;
-  background-color: rgba(#3e3f42, 0.8);
+  background-color: rgba($back_container, 0.8);
   min-height: 190px;
   min-width: 200px;
   border-radius: 0 0 16px 16px;
@@ -32,7 +35,7 @@
 
 .notes-item {
   padding: 10px;
-  border-bottom: 1px solid rgba(#2f5ce6, 0.7);
+  border-bottom: 1px solid rgba($primary, 0.7);
 }
 
 .editor-icon {
@@ -62,7 +65,7 @@
 }
 
 .cal-body {
-  background-color: rgba(#3d424e, 0.8);
+  background-color: rgba($primary_container, 0.6);
   border-radius: 0 0 16px 16px;
   font-size: 15px;
 }
@@ -72,20 +75,20 @@ calendar {
 }
 
 calendar.header {
-  background-color: $secondary;
+  background-color: $secondary_container;
 }
 
 calendar:selected {
-  background-color: $secondary;
-  border-radius: 10px;
+  background-color: $primary;
+  border-radius: 6px;
+  color: $on_primary;
 }
 
 .wheel-box {
   font-size: 30px;
   font-weight: bold;
   font-style: italic;
-  background-color: #1e1e2e;
-  opacity: 0.8;
+  background-color: rgba($container_head, 0.8);
   margin: 2px;
   border-radius: 16px;
 }
@@ -169,8 +172,7 @@ calendar:selected {
 
 .plugin-box {
   font-size: 18px;
-  background-color: rgba(#1e1e2e, 0.8);
-  opacity: 0.8;
+  background-color: rgba($container_head, 0.8);
   margin: 0 5px;
   border-radius: 16px 16px 0 0;
 }

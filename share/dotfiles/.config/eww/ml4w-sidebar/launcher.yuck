@@ -56,4 +56,5 @@
         :exclusive false
         :stacking "fg"
         :focusable false
+        :namespace "eww-widget"
 (container))

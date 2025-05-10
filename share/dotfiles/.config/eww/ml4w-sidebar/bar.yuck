@@ -127,5 +127,6 @@
   )
   :exclusive true
   :stacking "fg"
+  :namespace "eww-widget"
  (bar)
 )

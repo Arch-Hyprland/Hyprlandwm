@@ -33,26 +33,6 @@
         "on-click-right": "~/.config/ml4w/settings/software.sh"
     },
 
-    // Pulseaudio
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{icon}   {volume}%",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-        "headphone": " ",
-        "hands-free": " ",
-        "headset": " ",
-        "phone": " ",
-        "portable": " ",
-        "car": " ",
-        "default": [" ", " ", " "]
-        },
-        "on-click": "pavucontrol"
-    },
 
     // Modules Left
     "modules-left": [
@@ -60,32 +40,32 @@
         "custom/waybarthemes",
         "wlr/taskbar",
         "group/links",
-"hyprland/window",
+        "hyprland/window"
     ],
 
     // Modules Center
     "modules-center": [
         "custom/wallpaper",
         "hyprland/workspaces",
-        "custom/updates"
+        "custom/settings"
     ],
 
     // Modules Right    
     "modules-right": [
-"tray",
+        "custom/updates",
         "pulseaudio",
-//"backlight",
+        //"backlight",
         "bluetooth",
-"network",
+        "network",
         "battery", 
         "power-profiles-daemon",
         "group/hardware",
         "custom/cliphist",
-        "custom/widgets",
-        "custom/panel",
-        "clock",
         "group/tools",
         "tray",
+        "custom/widgets",
+        "clock",
+        "custom/panel",
         "custom/notification"
     ]
 }
