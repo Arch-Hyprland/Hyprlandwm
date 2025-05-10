@@ -4,7 +4,7 @@ if [[ "$1" == "--welcome" ]]; then
 elif [[ "$1" == "--dotfiles" ]]; then
    com.ml4w.settings &
 elif [[ "$1" == "--hyprland" ]]; then
-   com.ml4w.hyprland.settings &
+   com.ml4w.hyprlandsettings &
 else
     echo "ERROR: $1 not found"
 fi
