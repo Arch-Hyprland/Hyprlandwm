@@ -2,19 +2,19 @@
   background-color: rgba($primary_container, 0.3);
   border: 2px solid rgba($on_primary, 0.1);
   border-radius: 18px;
-  padding: 8px 0;
+  padding: 8px 0px;
   transition: all 800ms;
 }
 
 .app-active {
   border: 1px solid $on_primary;
   border-radius: 1px;
-  margin: 10px 0;
+  margin: 10px 0px;
   opacity: 1;
 }
 
 .icon {
-  margin: 2px 0;
+  margin: 2px 0px;
   padding: 3px 5px;
 }
 

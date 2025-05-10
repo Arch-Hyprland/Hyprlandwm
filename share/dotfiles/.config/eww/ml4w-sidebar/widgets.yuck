@@ -151,7 +151,7 @@
 
 (defwidget media[] 
   (box :orientation "v" :class "album-center" :space-evenly false 
-    (box :orientation "h" :space-evenly false :style "padding: 0 0 5px 0" :spacing 2
+    (box :orientation "h" :space-evenly false :style "padding: 0px 0px 5px 0px" :spacing 2
       (box :orientation "v" :space-evenly false :class "album-left" 
         (box :class "art-cover" :style "background: url('${art?:'../assets/music-default.png'}') no-repeat")
       )

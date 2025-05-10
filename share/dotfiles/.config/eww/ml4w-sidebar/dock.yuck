@@ -131,7 +131,7 @@
           (for entry in {apps} 
             (applaunch :path "${entry['path']}" :name "${entry['name']}" :cmd "${entry['cmd']}" :icon "${entry['icon']}" :size "${entry['size']}" :mode mode)
           )
-          (box :style "background: #1E2E1E; border-radius: 2px" :width "40" :height 3 :valign "center" :halign "center")
+          (box :style "background: #1E2E1E; border-radius: 2px" :width "40" :height "3" :valign "center" :halign "center")
           (for task in {tasks?:[]}
             (box :orientation "v"
               (for view in {task.views} 

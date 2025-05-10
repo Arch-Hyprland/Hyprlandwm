@@ -19,18 +19,18 @@ $back_container: #3e3f42;
 
 .notes-header {
   background: rgba(#e5b12a, 0.7);
-  border-radius: 16px 16px 0 0;
+  border-radius: 16px 16px 0px 0px;
   padding: 10px;
   color: black;
   font-size: 20px;
 }
 
 .notes-body {
-  padding: 0 5px 8px 5px;
+  padding: 0px 5px 8px 5px;
   background-color: rgba($back_container, 0.8);
   min-height: 190px;
   min-width: 200px;
-  border-radius: 0 0 16px 16px;
+  border-radius: 0px 0px 16px 16px;
 }
 
 .notes-item {
@@ -40,10 +40,10 @@ $back_container: #3e3f42;
 
 .editor-icon {
   background-color: $primary;
-  box-shadow: 0 0 4px $primary;
+  box-shadow: 0px 0px 4px $primary;
   padding: 5px;
   border-radius: 50%;
-  margin: 0 8px 0 0px;
+  margin: 0px 8px 0px 0px;
 }
 
 .note-title {
@@ -59,14 +59,14 @@ $back_container: #3e3f42;
 
 .cal-header {
   background: rgba(#c44251, 0.9);
-  border-radius: 16px 16px 0 0;
+  border-radius: 16px 16px 0px 0px;
   padding: 10px;
   font-size: 20px;
 }
 
 .cal-body {
   background-color: rgba($primary_container, 0.6);
-  border-radius: 0 0 16px 16px;
+  border-radius: 0px 0px 16px 16px;
   font-size: 15px;
 }
 
@@ -101,7 +101,7 @@ calendar:selected {
 
 .clock-label {
   font-style: italic;
-  border-radius: 0 0 16px 16px;
+  border-radius: 0px 0px 16px 16px;
   background-color: #3ea2a4;
   padding: 3px 5px;
 }
@@ -122,7 +122,7 @@ calendar:selected {
 
 .wel-label {
   font-style: italic;
-  border-radius: 0 0 16px 16px;
+  border-radius: 0px 0px 16px 16px;
   background-color: #3ea2a4;
   padding: 3px 5px;
 }
@@ -145,7 +145,7 @@ calendar:selected {
 
 .hypr-label {
   font-style: italic;
-  border-radius: 16px 16px 0 0;
+  border-radius: 16px 16px 0px 0px;
   padding: 3px 0px;
 }
 
@@ -165,7 +165,7 @@ calendar:selected {
 
 .dot-label {
   font-style: italic;
-  border-radius: 16px 16px 0 0;
+  border-radius: 16px 16px 0px 0px;
   background-color: #a0c9b1;
   padding: 3px 5px;
 }
@@ -173,8 +173,8 @@ calendar:selected {
 .plugin-box {
   font-size: 18px;
   background-color: rgba($container_head, 0.8);
-  margin: 0 5px;
-  border-radius: 16px 16px 0 0;
+  margin: 0px 5px;
+  border-radius: 16px 16px 0px 0px;
 }
 
 .plugin-icon {
@@ -186,7 +186,7 @@ calendar:selected {
 
 .check-item {
   padding: 3px;
-  margin: 0 5px;
+  margin: 0px 5px;
   border-radius: 5px;
 }
 
@@ -198,10 +198,10 @@ calendar:selected {
 }
 
 .plugin-switch {
-  margin: 0 5px 0 5px;
+  margin: 0px 5px 0px 5px;
   padding: 5px;
   min-height: 213px;
-  border-radius: 0 0 16px 16px;
+  border-radius: 0px 0px 16px 16px;
   background-color: rgba(#2c2b31, 0.8);
 }
 
@@ -216,7 +216,7 @@ calendar:selected {
   min-width: 160px;
   min-height: 80px;
   background-size: cover;
-  border-radius: 16px 0 0 0;
+  border-radius: 16px 0px 0px 0px;
 }
 
 .art-title {
@@ -285,7 +285,7 @@ calendar:selected {
 }
 
 .news-item {
-  padding: 5px 0 5px 3px;
+  padding: 5px 0px 5px 3px;
 }
 
 .sys-info {

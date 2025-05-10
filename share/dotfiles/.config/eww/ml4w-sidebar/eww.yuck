@@ -8,31 +8,104 @@
 (defpoll MEM_USAGE :interval "2s" `../scripts/sys_info.sh --mem`)
 (defpoll DISK_USAGE :interval "1s" `../scripts/sys_info.sh --disk`)
 (defpoll WHO :interval "20h" `whoami`)
-
+(defvar BLUE_EXPANDED false)
+(defvar WIFI_EXPANDED false)
 
 (defwidget volume[] 
-  (box :orientation "v" :space-evenly false :class "control-box" 
-    (box :orientation "v"
-      (eventbox 
-        (box :class "panel-box-header" :space-evenly false
-          (image :icon "bluetooth-symbolic" :icon-size "large-toolbar" :class "panel-icon")
-          (label :text  "BLUETOOTH" :style "margin: 0 5px; padding: 0 10px" )
+  (scroll :hscroll false :vscroll true :class "control-box"  
+    (box :orientation "v" :space-evenly false 
+      (box :orientation "v"
+        (box :orientation "v" :class "panel-box-header" :space-evenly false 
+          (box :class "" :space-evenly false
+            (box :space-evenly false
+              (eventbox :onclick ""
+                (image :icon "bluetooth-symbolic" :icon-size "large-toolbar" :class "panel-icon")
+              )
+              (box :orientation "v" :valign "center" :space-evenly false :style "margin: 1px 5px; min-width: 94px"
+                (label :text  "BLUETOOTH" :halign "start" :style "font-size: 14px;")
+                (label :text  "on" :halign "start" :style "font-size: 10px;")
+              )
+            )
+            (eventbox :class "operate-more"
+                      :onclick "${EWW_CMD} update BLUE_EXPANDED=${!BLUE_EXPANDED}"
+              (image :icon "arrow-${BLUE_EXPANDED ? "down" : "right"}-symbolic" :icon-size "small-toolbar" :class "panel-icon")
+            )
+          )
+          (revealer :reveal "${BLUE_EXPANDED}" :transition "slidedown" :duration "800ms"
+            (expander :expanded "${BLUE_EXPANDED}"
+              (box :orientation "v" :class "device-list" 
+                (box :orientation "h" :class "device-item" :halign "fill" :space-evenly false
+                  (image :icon "network-wireless-bluetooth" :icon-size "small-toolbar")
+                  (label :text "blue-name1" :style "min-width: 100px; padding: 0px 5px")
+                  (image :icon "tool-circle-symbolic")
+                )
+                (box :orientation "h" :class "device-item" :halign "fill" :space-evenly false
+                  (image :icon "network-wireless-bluetooth" :icon-size "small-toolbar")
+                  (label :text "blue-name2" :style "min-width: 100px; padding: 0px 5px")
+                  (image :icon "tool-circle-symbolic")
+                )
+                (box :orientation "h" :class "device-item" :halign "fill" :space-evenly false
+                  (image :icon "network-wireless-bluetooth" :icon-size "small-toolbar")
+                  (label :text "blue-name3" :style "min-width: 100px; padding: 0px 5px")
+                  (image :icon "tool-circle-symbolic")
+                )
+              )
+            )
+          )
         )
       )
-    )
-    (box :orientation "v"
-      (eventbox 
-        (box :class "panel-box-header" :space-evenly false
-          (image :icon "am-wireless-symbolic" :icon-size "large-toolbar" :class "panel-icon") 
-          (label :text  "WIFI" :style "margin: 0 5px; padding: 0 10px")
+      (box :orientation "v"
+        (box :orientation "v" :class "panel-box-header" :space-evenly false 
+          (box :class "" :space-evenly false
+            (box :space-evenly false 
+              (eventbox :halign "fill"
+                (image :icon "am-wireless-symbolic" :icon-size "large-toolbar" :class "panel-icon") 
+              )
+              (box :orientation "v" :valign "center" :space-evenly false :style "margin: 1px 5px; min-width: 94px"
+                (label :text  "WIFI" :halign "start" :style "font-size: 14px;")
+                (label :text  "on" :halign "start" :style "font-size: 10px;")
+              )
+            )
+            (eventbox :class "operate-more"
+                      :onclick "${EWW_CMD} update WIFI_EXPANDED=${!WIFI_EXPANDED}"
+              (image :icon "arrow-${WIFI_EXPANDED ? "down" : "right"}-symbolic" :icon-size "small-toolbar" :class "panel-icon")
+            )
+          )
+          (revealer :reveal "${WIFI_EXPANDED}" :transition "slidedown" :duration "800ms"
+            (expander :expanded "${WIFI_EXPANDED}"
+              (box :orientation "v" :class "device-list" 
+                (box :orientation "h" :class "device-item" :halign "fill" :space-evenly false
+                  (image :icon "network-wireless-symbolic" :icon-size "small-toolbar")
+                  (label :text "wifi-name1" :style "min-width: 100px; padding: 0px 5px")
+                  (image :icon "tool-circle-symbolic")
+                )
+                (box :orientation "h" :class "device-item" :halign "fill" :space-evenly false
+                  (image :icon "network-wireless-symbolic" :icon-size "small-toolbar")
+                  (label :text "wifi-name2" :style "min-width: 100px; padding: 0px 5px")
+                  (image :icon "tool-circle-symbolic")
+                )
+                (box :orientation "h" :class "device-item" :halign "fill" :space-evenly false
+                  (image :icon "network-wireless-symbolic" :icon-size "small-toolbar")
+                  (label :text "wifi-name3" :style "min-width: 100px; padding: 0px 5px")
+                  (image :icon "tool-circle-symbolic")
+                )
+              )
+            )
+          )
         )
       )
-    )
-    (box :orientation "h" :space-evenly false
-      (eventbox  :onclick "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
-        (box :class "panel-box-header" :space-evenly false
-          (image :icon "ephy-permission-microphone-symbolic" :icon-size "large-toolbar" :class "panel-icon")
-          (image :icon "camera-symbolic" :icon-size "large-toolbar" :class "panel-icon")
+      (box :orientation "h" 
+        (box :class "panel-box-header" :orientation "h" :space-evenly true
+          (eventbox :onclick "pactl set-source-mute @DEFAULT_SOURCE@ toggle" :halign "fill"
+            (box :space-evenly true :halign "start"
+              (image :icon "ephy-permission-microphone-symbolic" :icon-size "large-toolbar" :class "panel-icon")
+            )
+          )
+          (eventbox :onclick ""
+            (box :space-evenly true :halign "end"
+              (image :icon "camera-symbolic" :icon-size "large-toolbar" :class "panel-icon")
+            )
+          )
         )
       )
     )

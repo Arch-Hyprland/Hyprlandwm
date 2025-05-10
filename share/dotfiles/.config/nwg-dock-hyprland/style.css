@@ -1,0 +1,43 @@
+window {
+  background: alpha(#36364f, 0.6);
+	border-radius: 16px;
+	border-style: none;
+	border-width: 1px;
+	margin-bottom: 1px;
+}
+
+#box {
+  /* Define attributes of the box surrounding icons here */
+  padding: 8px 8px 6px 8px;
+}
+
+#active {
+	/* This is to underline the button representing the currently active window */
+	/*  border-bottom: solid 1px; */
+	border-color: rgba(255, 255, 255, 0.3);
+	transition: 0.5s;
+}
+
+button, image {
+	background: none;
+	border-style: none;
+	box-shadow: none;
+	color: #999
+}
+
+button {
+	padding: 4px;
+	margin: 1px 2px;
+	color: #eee;
+  font-size: 12px;
+	background-color: rgba(255, 255, 255, 0.15);
+	border-radius: 12px;
+}
+
+button:hover {
+	background-color: rgba(200, 55, 200, 0.25);
+}
+
+button:focus {
+	box-shadow: none
+}
