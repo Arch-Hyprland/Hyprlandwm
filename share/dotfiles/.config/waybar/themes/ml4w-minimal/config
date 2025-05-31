@@ -24,7 +24,7 @@
 
     // Updates Count
     "custom/updates": {
-        "format": "􀝗 {}",
+        "format": "􀐘 {}",
         "escape": true,
         "return-type": "json",
         "exec": "~/.config/ml4w/scripts/updates.sh",
@@ -38,7 +38,6 @@
     "modules-left": [
         "custom/appmenu",
         "custom/waybarthemes",
-        "wlr/taskbar",
         "group/links",
         "hyprland/window"
     ],
@@ -47,6 +46,7 @@
     "modules-center": [
         "custom/wallpaper",
         "hyprland/workspaces",
+        "wlr/taskbar",
         "custom/settings"
     ],
 

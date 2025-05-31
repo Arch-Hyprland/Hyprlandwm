@@ -428,11 +428,11 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #bluetooth, #bluetooth.on, #bluetooth.connected {
-    background-color: @backgroundlight;
-    font-size: 16px;
+    background-color: alpha(@backgroundlight, 0.8);
+    font-size: 20px;
     color: @textcolor2;
-    border-radius: 5px 5px 5px 5px;
-    padding: 2px 10px 0px 10px;
+    border-radius: 50%;
+    padding: 2px 8px 0px 8px;
     margin: 3px 15px 3px 0px;
     opacity:0.8;
 }

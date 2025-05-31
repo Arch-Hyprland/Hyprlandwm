@@ -144,11 +144,11 @@ tooltip label {
 
 #window {
   background: alpha(@backgroundlight, 0.5);
-  margin: 4px 15px 4px 0px;
+  margin: 5px 10px 5px 0px;
   padding: 2px 10px 2px 10px;
-  border-radius: 12px;
-  border-left: 6px solid @backgroundlight;
-  border-right: 6px solid @backgroundlight;
+  border-radius: 16px;
+  border-left: 3px solid @backgroundlight;
+  border-right: 3px solid @backgroundlight;
   color: @textcolor2;
   font-size: 16px;
   opacity: 0.8;
@@ -167,7 +167,7 @@ window#waybar.empty #window {
 #taskbar {
   /* background: @color11; */
   /* background: @backgroundlight; */
-  margin: 3px 15px 2px 0px;
+  margin: 4px 15px 4px 0px;
   padding: 0px;
   /*padding: 2px 3px 1px 3px;*/
   border-radius: 8px;
@@ -175,6 +175,7 @@ window#waybar.empty #window {
   font-style: normal;
   opacity: 0.8;
   border: 2px solid alpha(@backgroundlight, 0.2);
+  transition: width 0.8s ease-in-out;
 }
 
 #taskbar button {
@@ -340,8 +341,8 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #custom-updates {
-  margin: 5px 8px 5px 0px;
-  padding: 0 10px;
+  margin: 6px 8px 6px 0px;
+  padding: 0 8px;
 }
 
 #custom-updates.green {
@@ -366,7 +367,7 @@ window#waybar.empty #window {
 #custom-recoder {
   border-radius: 8px;
   padding: 1px 1px 2px 7px;
-  margin: 5px 8px 5px 0px;
+  margin: 6px 8px 6px 0px;
 }
 
 #custom-recoder.red {
@@ -413,8 +414,8 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #clock {
-  padding: 1px 10px 1px 10px;
-  margin: 5px 5px 5px 0px;
+  padding: 1px 8px 1px 8px;
+  margin: 6px 5px 6px 0px;
   border: 0px solid @bordercolor;
 }
 
@@ -432,8 +433,8 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #pulseaudio {
-  padding: 1px 10px 1px 10px;
-  margin: 5px 5px 5px 0px;
+  padding: 1px 8px 1px 8px;
+  margin: 6px 5px 6px 0px;
 }
 
 #pulseaudio.muted {
@@ -445,8 +446,8 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #network {
-  padding: 1px 10px 1px 10px;
-  margin: 5px 8px 5px 0px;
+  padding: 1px 8px 1px 8px;
+  margin: 6px 8px 6px 0px;
 }
 
 #network.ethernet {
@@ -481,8 +482,8 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #battery {
-  padding: 1px 10px 1px 10px;
-  margin: 5px 5px 5px 0px;
+  padding: 1px 8px 1px 8px;
+  margin: 6px 8px 6px 2px;
 }
 
 #battery.charging,

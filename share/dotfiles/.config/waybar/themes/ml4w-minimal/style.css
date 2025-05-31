@@ -50,12 +50,43 @@ window#waybar {
 }
 
 /* -----------------------------------------------------
+ * Taskbar
+ * ----------------------------------------------------- */
+
+#taskbar {
+  /* background: @color11; */
+  /* background: @backgroundlight; */
+  margin: 7px 15px 7px 0px;
+  padding: 0px;
+  /*padding: 2px 3px 1px 3px;*/
+  border-radius: 18px;
+  font-weight: normal;
+  font-style: normal;
+  opacity: 0.8;
+  border: 2px solid alpha(@backgroundlight, 0.2);
+}
+
+#taskbar button {
+  margin: 0;
+  border-radius: 15px;
+  padding: 0px 5px 0px 5px;
+}
+
+#taskbar.empty {
+    background:transparent;
+    border:0;
+    padding:0;
+    margin:0;
+}
+
+
+/* -----------------------------------------------------
  * Workspaces
  * ----------------------------------------------------- */
 
 #workspaces {
   background: alpha(@workspacesbackground2, 0.7);
-  margin: 8px 15px 8px 1px;
+  margin: 8px 5px 8px 1px;
   padding: 0px 1px;
   border-radius: 15px;
   border: 0px;
@@ -361,7 +392,7 @@ window#waybar.empty #window {
  #power-profiles-daemon {
     margin: 0px 5px 0px 2px;
     padding:0px;
-    font-size:14px;
+    font-size:16px;
     color:@iconcolor;
 }
 
@@ -427,7 +458,9 @@ window#waybar.empty #window {
  #bluetooth, #bluetooth.on, #bluetooth.connected {
     font-size: 18px;
     color: @textcolor;
-    border-radius: 15px;
+    border-radius: 50%;
+    padding: 0px 5px;
+    border: 2px solid @iconcolor;
     margin: 10px 15px 10px 0px;
 }
 

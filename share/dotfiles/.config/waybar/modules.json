@@ -64,7 +64,7 @@
   },
   // widgets
   "custom/widgets": {
-    "format": "􀪲 ",
+    "format": "􀱧 ",
     "on-click": "~/.config/eww/scripts/widgets.sh",
     "tooltip-format": "open widgets"
   },
@@ -76,7 +76,7 @@
   },
   // Youtube Subscriber Count
   "custom/youtube": {
-    "format": "􀵩 {}",
+    "format": "􀊙 {}",
     "exec": "python ~/private/youtube.py",
     "restart-interval": 600,
     "on-click": "xdg-open https://studio.youtube.com",
@@ -92,7 +92,7 @@
   },
   // Updates Count
   "custom/updates": {
-    "format": "􀝗 {}",
+    "format": "􀐘 {}",
     "tooltip-format": "{}",
     "escape": true,
     "return-type": "json",
@@ -242,12 +242,12 @@
   "clock": {
     "format": "{:%H:%M %a}",
     "on-click": "flatpak run com.ml4w.calendar",
-    "timezone": "",
+    "timezone": "Asia/shanghai",
     "tooltip": false
   },
   // system
   "custom/system": {
-    "format": "􀟛 ",
+    "format": "􀏞 ",
     "tooltip": false
   },
   "custom/recoder": {
@@ -353,7 +353,7 @@
       "critical": 15
     },
     "format": "{icon}{capacity}%",
-    "format-charging": "􀢋 {capacity}%",
+    "format-charging": "􀨣 {capacity}%",
     "format-plugged": "􀡷 {capacity}%",
     "format-alt": "{icon}{time}",
     // "format-good": "", // An empty format will hide the module
@@ -373,9 +373,9 @@
     "tooltip-format": "{icon} : {profile}\nDriver: {driver}",
     "tooltip": true,
     "format-icons": {
-      "default": "􀐱 ",
+      "default": "􀍽 ",
       "performance": "􀋧 ",
-      "balanced": "􁁋 ",
+      "balanced": "􀫏 ",
       "power-saver": "􁂬 " 
     }
   },

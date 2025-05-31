@@ -13,7 +13,7 @@
     "layer": "top",
     "margin-top": 0,
     "margin-bottom": 0,
-    "height": 36,
+    "height": 38,
     "margin-left": 0,
     "margin-right": 0,    
     "spacing": 0,
@@ -26,11 +26,11 @@
 
     // Modules Left
     "modules-left": [
-"custom/appmenu",
+        "custom/appmenu",
         "custom/waybarthemes",
         "wlr/taskbar",
         "group/links",
-"hyprland/window",
+        "hyprland/window",
     ],
 
     // Modules Center
@@ -45,17 +45,17 @@
         "custom/updates",
         "custom/recoder",
         "pulseaudio",
-//"backlight",
+        //"backlight",
         "bluetooth",
         "battery", 
         "power-profiles-daemon",
         "group/hardware",
         "custom/cliphist",
-"network",
+        "network",
         "custom/widgets",
         "clock",
         "custom/notification",
         "custom/panel",
-"tray",
+        "tray",
     ]
 }
