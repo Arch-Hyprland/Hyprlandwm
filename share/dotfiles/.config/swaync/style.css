@@ -1,8 +1,9 @@
 /* Colors */
 
 @import 'colors.css';
-@define-color groupbackground #363636;
-@define-color buttoncolor @primary_container;
+@define-color background @background;
+@define-color groupbackground @background;
+@define-color buttoncolor @secondary;
 @define-color bordercolor @primary;
 @define-color fontcolor @on_surface;
 
@@ -21,7 +22,8 @@
 button {
     border: 0px;
     min-width: 35px;
-    background: alpha(@buttoncolor, 0.8);
+    background: @buttoncolor;
+    color: @on_secondary;
 }
 
 .notification-group-header {
