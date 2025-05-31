@@ -75,8 +75,8 @@ calendar {
 }
 
 calendar.header {
-  background-color: $secondary_container;
-}
+  background-color: transparent;
+}a
 
 calendar:selected {
   background-color: $primary;
@@ -211,12 +211,16 @@ calendar:selected {
   opacity: 0.9;
   margin: 5px;
 }
+.album-left {
+  padding-right: 10px;
+}
 
 .art-cover {
-  min-width: 160px;
-  min-height: 80px;
-  background-size: cover;
-  border-radius: 16px 0px 0px 0px;
+  min-width: 200px;
+  min-height: 160px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 16px 0 0 16px;
 }
 
 .art-title {
@@ -230,17 +234,18 @@ calendar:selected {
 }
 
 .music-visual {
-  min-height: 96px;
+  min-height: 80px;
 }
 
 .media-box {
   opacity: 0.6;
   transition: all 0.5s;
-  border-radius: 10px;
+  border-radius: 25px;
 }
 
 .media-box:hover {
   background-color: #2a1eaf;
+  border-radius: 25px;
   opacity: 1;
   transition: all 0.5s;
 }

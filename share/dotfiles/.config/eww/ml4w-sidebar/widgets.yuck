@@ -150,57 +150,59 @@
 )
 
 (defwidget media[] 
-  (box :orientation "v" :class "album-center" :space-evenly false 
-    (box :orientation "h" :space-evenly false :style "padding: 0px 0px 5px 0px" :spacing 2
-      (box :orientation "v" :space-evenly false :class "album-left" 
-        (box :class "art-cover" :style "background: url('${art?:'../assets/music-default.png'}') no-repeat")
-      )
+  (box :orientation "h" :class "album-center" :space-evenly false 
+    (box :orientation "v" :space-evenly false :class "album-left" 
+      (box :class "art-cover" :style "background: url('${art?:'../assets/music-default.jpeg'}') no-repeat")
+    )
+    (box :orientation "v" :space-evenly false :style "padding: 0px 0px 5px 0px" :halign "fill"
       (box :class "music-visual" :orientation "v"
         (label :text "${title?:'没有正在播放的内容'}" :class "art-title" :wrap true)
         (label :text "${WAVE}" )
       )
-    )
-    (box :orientation 'h' :space-evenly false :spacing 1 :valign "center"
-      (box :style "padding: 0px 0px 0px 8px;"
-        (label :class "time-ratio" :show-truncated false :halign "end"
-          :text "${curSongTime?:'00:00'}" 
+      (box :orientation 'v' :space-evenly true :spacing 1 :valign "center" 
+        (box :valign "center"
+          (progress :value 80 :width 280 :flipped false
+            :orientation "h" 
+            :class "music-bar"
+          )
+        )
+        (box :orientation "h" :space-evenly true :halign "fill"
+          (box :style "padding: 0px 0px 0px 8px;"
+            (label :class "time-ratio" :show-truncated false :halign "start"
+              :text "${curSongTime?:'00:00'}" 
+            )
+          )
+          (box :style "padding: 0px 0px 0px 8px;"
+            (label :class "time-ratio" :show-truncated false :halign "end"
+              :text "${totSongTime?:'00:00'}"
+            )
+          )
         )
       )
-      (box :valign "center"
-        (progress :value 80 :width 400 :flipped false
-          :orientation "h" 
-          :class "music-bar"
+      (box :orientation "h" :space-evenly true :spacing 5
+        (eventbox :class "media-box"  :onclick "playerctl previous"
+          (image  :icon "media-seek-backward-symbolic" :class "media-btn"
+                  :icon-size "large-toolbar"
+          )
         )
-      )
-      (box :style "padding: 0px 0px 0px 8px;"
-        (label :class "time-ratio" :show-truncated false :halign "end"
-          :text "${totSongTime?:'00:00'}"
+        (eventbox :class "media-box"  :onclick "playerctl previous"
+          (image  :icon "media-skip-forward-symbolic-rtl"  :class "media-btn"
+                  :icon-size "large-toolbar")
         )
-      )
-    )
-    (box :orientation "h" :space-evenly true 
-      (eventbox :class "media-box"  :onclick "playerctl previous"
-        (image  :icon "media-seek-backward-symbolic" :class "media-btn"
+        (eventbox :class "media-box" :onclick "playerctl play-pause"
+          (image  :icon "screencast-stop-symbolic" :class "media-btn"
+                  :icon-size "large-toolbar"
+          )
+        )
+        (eventbox :class "media-box" :onclick "playerctl next"
+          (image :icon "media-skip-backward-symbolic-rtl" :class "media-btn"
                 :icon-size "large-toolbar"
+          )
         )
-      )
-      (eventbox :class "media-box"  :onclick "playerctl previous"
-        (image  :icon "media-skip-forward-symbolic-rtl"  :class "media-btn"
-                :icon-size "large-toolbar")
-      )
-      (eventbox :class "media-box" :onclick "playerctl play-pause"
-        (image  :icon "screencast-stop-symbolic" :class "media-btn"
+        (eventbox :class "media-box" :onclick "playerctl next"
+          (image :icon "media-seek-forward-symbolic" :class "media-btn"
                 :icon-size "large-toolbar"
-        )
-      )
-      (eventbox :class "media-box" :onclick "playerctl next"
-        (image :icon "media-skip-backward-symbolic-rtl" :class "media-btn"
-               :icon-size "large-toolbar"
-        )
-      )
-      (eventbox :class "media-box" :onclick "playerctl next"
-        (image :icon "media-seek-forward-symbolic" :class "media-btn"
-               :icon-size "large-toolbar"
+          )
         )
       )
     )

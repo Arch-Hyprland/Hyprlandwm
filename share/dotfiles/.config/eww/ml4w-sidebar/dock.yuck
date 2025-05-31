@@ -17,7 +17,7 @@
   },
   {
     "name": "msedge",
-    "cmd": "microsoft-edge-dev --enable-wayland-ime",
+    "cmd": "microsoft-edge-stable --enable-wayland-ime",
     "icon": "microsoft-edge"
   },
   {
@@ -32,7 +32,7 @@
   },
   {
     "name": "pycharm",
-    "cmd": "/home/unicorn/software/pycharm/bin/pycharm.sh",
+    "cmd": "/home/unicorn/software/pycharm/bin/pycharm",
     "icon": "pycharm"
   },
   {

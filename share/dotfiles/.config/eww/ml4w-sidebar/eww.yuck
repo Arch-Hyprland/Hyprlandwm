@@ -207,7 +207,7 @@
     (box :class "func-switch"
       (eventbox :class "switch-box" :onclick "~/.config/hypr/scripts/gamemode.sh"
         (box :orientation "v" :class "switch-icon" :space-evenly false :style "padding: 5px 10px"
-          (image :icon "applications-games-symbolic" :icon-size "large-toolbar" :style "padding: 8px 8px 8px 8px")
+          (image :icon "gamepad-symbolic" :icon-size "large-toolbar" :style "padding: 8px 8px 8px 8px")
           (label :text "Game") 
         )
       )
