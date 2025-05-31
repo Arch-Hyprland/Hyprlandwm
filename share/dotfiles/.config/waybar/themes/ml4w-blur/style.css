@@ -146,8 +146,8 @@ tooltip label {
   margin: 8px 15px 8px 0px;
   padding: 2px 10px 2px 10px;
   border-radius: 12px;
-  border-left: 6px solid @backgroundlight;
-  border-right: 6px solid @backgroundlight;
+  border-left: 3px solid @backgroundlight;
+  border-right: 3px solid @backgroundlight;
   color: @textcolor2;
   font-size: 16px;
 }
