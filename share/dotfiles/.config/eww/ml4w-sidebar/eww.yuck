@@ -16,12 +16,12 @@
     (box :orientation "v" :space-evenly false 
       (box :orientation "v"
         (box :orientation "v" :class "panel-box-header" :space-evenly false 
-          (box :class "" :space-evenly false
-            (box :space-evenly false
+          (box :class "" :space-evenly false :halign "fill"
+            (box :space-evenly false :hexpand true
               (eventbox :onclick ""
                 (image :icon "bluetooth-symbolic" :icon-size "large-toolbar" :class "panel-icon")
               )
-              (box :orientation "v" :valign "center" :space-evenly false :style "margin: 1px 5px; min-width: 94px"
+              (box :orientation "v" :valign "center" :hexpand true :space-evenly false :style "margin: 1px 5px;"
                 (label :text  "BLUETOOTH" :halign "start" :style "font-size: 14px;")
                 (label :text  "on" :halign "start" :style "font-size: 10px;")
               )
@@ -34,20 +34,26 @@
           (revealer :reveal "${BLUE_EXPANDED}" :transition "slidedown" :duration "800ms"
             (expander :expanded "${BLUE_EXPANDED}"
               (box :orientation "v" :class "device-list" 
-                (box :orientation "h" :class "device-item" :halign "fill" :space-evenly false
-                  (image :icon "network-wireless-bluetooth" :icon-size "small-toolbar")
-                  (label :text "blue-name1" :style "min-width: 100px; padding: 0px 5px")
-                  (image :icon "tool-circle-symbolic")
+                (eventbox 
+                  (box :orientation "h" :class "device-item" :halign "fill" :space-evenly false
+                    (image :icon "network-wireless-bluetooth" :icon-size "small-toolbar")
+                    (label :text "blue-name1" :hexpand true :style "padding: 0px 5px")
+                    (image :icon "tool-circle-symbolic")
+                  )
                 )
-                (box :orientation "h" :class "device-item" :halign "fill" :space-evenly false
-                  (image :icon "network-wireless-bluetooth" :icon-size "small-toolbar")
-                  (label :text "blue-name2" :style "min-width: 100px; padding: 0px 5px")
-                  (image :icon "tool-circle-symbolic")
+                (eventbox 
+                  (box :orientation "h" :class "device-item" :halign "fill" :space-evenly false
+                    (image :icon "network-wireless-bluetooth" :icon-size "small-toolbar")
+                    (label :text "blue-name2" :hexpand true :style "padding: 0px 5px")
+                    (image :icon "tool-circle-symbolic")
+                  )
                 )
-                (box :orientation "h" :class "device-item" :halign "fill" :space-evenly false
-                  (image :icon "network-wireless-bluetooth" :icon-size "small-toolbar")
-                  (label :text "blue-name3" :style "min-width: 100px; padding: 0px 5px")
-                  (image :icon "tool-circle-symbolic")
+                (eventbox 
+                  (box :orientation "h" :class "device-item" :halign "fill" :space-evenly false
+                    (image :icon "network-wireless-bluetooth" :icon-size "small-toolbar")
+                    (label :text "blue-name3" :hexpand true :style "padding: 0px 5px")
+                    (image :icon "tool-circle-symbolic" )
+                  )
                 )
               )
             )
@@ -56,12 +62,12 @@
       )
       (box :orientation "v"
         (box :orientation "v" :class "panel-box-header" :space-evenly false 
-          (box :class "" :space-evenly false
-            (box :space-evenly false 
-              (eventbox :halign "fill"
+          (box :class "" :space-evenly false  :halign "fill"
+            (box :space-evenly false :hexpand true
+              (eventbox 
                 (image :icon "am-wireless-symbolic" :icon-size "large-toolbar" :class "panel-icon") 
               )
-              (box :orientation "v" :valign "center" :space-evenly false :style "margin: 1px 5px; min-width: 94px"
+              (box :orientation "v" :valign "center" :hexpand true :space-evenly false :style "margin: 1px 5px;"
                 (label :text  "WIFI" :halign "start" :style "font-size: 14px;")
                 (label :text  "on" :halign "start" :style "font-size: 10px;")
               )
@@ -74,20 +80,26 @@
           (revealer :reveal "${WIFI_EXPANDED}" :transition "slidedown" :duration "800ms"
             (expander :expanded "${WIFI_EXPANDED}"
               (box :orientation "v" :class "device-list" 
-                (box :orientation "h" :class "device-item" :halign "fill" :space-evenly false
-                  (image :icon "network-wireless-symbolic" :icon-size "small-toolbar")
-                  (label :text "wifi-name1" :style "min-width: 100px; padding: 0px 5px")
-                  (image :icon "tool-circle-symbolic")
+                (eventbox
+                  (box :orientation "h" :class "device-item" :halign "fill" :space-evenly false
+                    (image :icon "network-wireless-symbolic" :icon-size "small-toolbar")
+                    (label :text "wifi-name1" :hexpand true :style "padding: 0px 5px")
+                    (image :icon "tool-circle-symbolic")
+                  )
                 )
-                (box :orientation "h" :class "device-item" :halign "fill" :space-evenly false
-                  (image :icon "network-wireless-symbolic" :icon-size "small-toolbar")
-                  (label :text "wifi-name2" :style "min-width: 100px; padding: 0px 5px")
-                  (image :icon "tool-circle-symbolic")
+                (eventbox 
+                  (box :orientation "h" :class "device-item" :halign "fill" :space-evenly false
+                    (image :icon "network-wireless-symbolic" :icon-size "small-toolbar")
+                    (label :text "wifi-name2" :hexpand true :style "padding: 0px 5px")
+                    (image :icon "tool-circle-symbolic" :halign "end")
+                  )
                 )
-                (box :orientation "h" :class "device-item" :halign "fill" :space-evenly false
-                  (image :icon "network-wireless-symbolic" :icon-size "small-toolbar")
-                  (label :text "wifi-name3" :style "min-width: 100px; padding: 0px 5px")
-                  (image :icon "tool-circle-symbolic")
+                (eventbox
+                  (box :orientation "h" :class "device-item" :halign "fill" :space-evenly false
+                    (image :icon "network-wireless-symbolic" :icon-size "small-toolbar")
+                    (label :text "wifi-name3" :hexpand true :style "padding: 0px 5px")
+                    (image :icon "tool-circle-symbolic")
+                  )
                 )
               )
             )
@@ -199,7 +211,7 @@
     (box :class "func-switch"
       (eventbox :class "switch-box" :onclick "../scripts/mode.sh hide"
         (box :orientation "v" :class "switch-icon" :space-evenly false :style "padding: 5px 10px" 
-          (image :icon "desktop-symbolic" :icon-size "large-toolbar" :style "padding: 5px 8px 5px 8px")
+          (image :icon "desktop-symbolic" :icon-size "large-toolbar" :style "padding: 6px")
           (label :text "Dock")
         )
       )
@@ -207,7 +219,7 @@
     (box :class "func-switch"
       (eventbox :class "switch-box" :onclick "~/.config/hypr/scripts/gamemode.sh"
         (box :orientation "v" :class "switch-icon" :space-evenly false :style "padding: 5px 10px"
-          (image :icon "gamepad-symbolic" :icon-size "large-toolbar" :style "padding: 8px 8px 8px 8px")
+          (image :icon "gamepad-symbolic" :icon-size "large-toolbar" :style "padding: 6px")
           (label :text "Game") 
         )
       )
@@ -215,17 +227,16 @@
     (box :class "func-switch"
       (eventbox :class "switch-box" :onclick "~/.config/hypr/scripts/screenshot.sh &"
         (box :orientation "v" :class "switch-icon" :space-evenly false :style "padding: 5px 10px"
-          (image :icon "screenshooter-symbolic" :icon-size "large-toolbar" :style "padding: 8px 8px 8px 8px")
-          (label :text "Screencut")
+          (image :icon "screenshooter-symbolic" :icon-size "large-toolbar" :style "padding: 6px")
+          (label :text "Screencut" :truncate true)
         )
       )
     )
     (box :class "func-switch"
       (eventbox :class "switch-box" :onclick "~/.config/waybar/toggle.sh"
         (box :orientation "v" :class "switch-icon" :space-evenly false :style "padding: 5px 10px"
-          (image :icon "window-symbolic" :icon-size "large-toolbar" :style "padding: 8px 8px 8px 8px")
-          (label :text "Waybar")
-
+          (image :icon "panel-top-symbolic" :icon-size "large-toolbar" :style "padding: 6px")
+          (label :text "Waybar" :truncate true)
         )
       )
     )
