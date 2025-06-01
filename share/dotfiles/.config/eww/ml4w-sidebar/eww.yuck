@@ -126,7 +126,7 @@
       (box :class "func-switch"
         (eventbox :class "switch-box" :onclick "~/.config/hypr/scripts/toggleallfloat.sh &"
           (box :orientation "v" :class "switch-icon" :space-evenly false :style "padding: 3px 10px"
-            (image :icon "object-blend-mode-symbolic" :icon-size "large-toolbar" :style "padding: 10px 10px 5px 10px" )
+            (image :icon "windows-quick-list-symbolic" :icon-size "large-toolbar" :style "padding: 10px 10px 5px 10px" )
             (label :text "Window")
             (label :text "Layout")
           )
@@ -135,7 +135,7 @@
       (box :class "func-switch" 
         (eventbox :class "switch-box" :onclick "~/.config/hypr/scripts/hyprshade.sh rofi &"
           (box :orientation "v" :class "switch-icon" :space-evenly false :style "padding: 3px 10px"
-            (image :icon "layers-button-symbolic" :icon-size "large-toolbar" :style "padding: 10px 10px 5px 10px")
+            (image :icon "object-blend-mode-symbolic" :icon-size "large-toolbar" :style "padding: 10px 10px 5px 10px")
             (label :text "Shade")
             (label :text "Style" )
           )
@@ -223,7 +223,7 @@
     (box :class "func-switch"
       (eventbox :class "switch-box" :onclick "~/.config/waybar/toggle.sh"
         (box :orientation "v" :class "switch-icon" :space-evenly false :style "padding: 5px 10px"
-          (image :icon "panel-top-symbolic" :icon-size "large-toolbar" :style "padding: 8px 8px 8px 8px")
+          (image :icon "window-symbolic" :icon-size "large-toolbar" :style "padding: 8px 8px 8px 8px")
           (label :text "Waybar")
 
         )

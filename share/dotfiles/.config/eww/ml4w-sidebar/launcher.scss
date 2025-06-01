@@ -2,15 +2,25 @@
 $app-hover: #cfcfcf;
 $text_color: $on_primary_container;
 
-.launcher-bg {
+
+.searchbar {
   background-color: rgba($primary_container, 0.6);
+  border-radius: 10px 0 0 10px;
+}
+
+.container {
+  background-color: rgba($background, 0.8);
   opacity: 0.95;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 0px 10px 10px 0px;
   padding: 100px;
 }
 
-.app-scroll {
+.launcher {
+  min-width: 800px;
+}
 
+.app-scroll {
+  min-width: 1200px;
 }
 .app-box {
 }
