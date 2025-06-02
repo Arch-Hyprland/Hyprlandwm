@@ -1,0 +1,55 @@
+layerrules = true
+
+[launcher]
+width = 650
+max_items = 5
+show_when_empty = true
+animate_launch_ms = 250
+default_terminal = "kitty"
+
+[launcher.plugins.applications]
+run_cache_weeks = 4
+show_execs = true
+
+[launcher.plugins.terminal]
+
+[launcher.plugins.shell]
+
+[[launcher.plugins.websearch.engines]]
+url = "https://www.bing.com/search?q={}"
+name = "Bing"
+key = "b"
+
+[launcher.plugins.calc]
+
+[windows]
+scale = 8.5
+workspaces_per_row = 5
+strip_html_from_workspace_title = true
+
+[windows.overview.open]
+key = "Tab"
+modifier = "alt"
+
+[windows.overview.navigate]
+forward = "tab"
+
+[windows.overview.navigate.reverse]
+mod = "shift"
+
+[windows.overview.other]
+filter_by = []
+hide_filtered = false
+
+[windows.switch.open]
+modifier = "super"
+
+[windows.switch.navigate]
+forward = "tab"
+
+[windows.switch.navigate.reverse]
+mod = "shift"
+
+[windows.switch.other]
+filter_by = []
+hide_filtered = true
