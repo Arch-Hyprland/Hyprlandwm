@@ -1,7 +1,6 @@
 /* Colors */
 
 @import 'colors.css';
-@define-color background @background;
 @define-color groupbackground @background;
 @define-color buttoncolor @secondary;
 @define-color bordercolor @primary;
