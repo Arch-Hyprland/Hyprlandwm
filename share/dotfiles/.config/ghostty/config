@@ -1,0 +1,10 @@
+theme = catppuccin-mocha
+font-family = "CascadiaCode"
+font-style = italic
+font-size = 16
+background-opacity = 0.8
+window-padding-x = 2,4
+window-padding-y = 2
+window-decoration = false
+window-padding-x = 6
+window-padding-y = 6
