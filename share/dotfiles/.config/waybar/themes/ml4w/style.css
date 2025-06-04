@@ -28,7 +28,7 @@
 }
 
 window#waybar {
-  background: transparent;
+  background: alpha(@tertiary_fixed, 0.3);
   border-bottom: 0px solid @bordercolor;
   transition-property: background-color;
   transition-duration: .5s;
@@ -524,10 +524,11 @@ window#waybar.empty #window {
 }
 
 #tray menu {
+  padding: 8px;
   border-radius: 12px;
-  background: alpha(#1e1e2e, 0.8);
+  background: alpha(#1e1e2e, 0.6);
   color: @textcolor2;
-  border: 1px solid @background;
+  border: 1px solid alpha(@background, 0.5);
 }
 
 #tray>.passive {

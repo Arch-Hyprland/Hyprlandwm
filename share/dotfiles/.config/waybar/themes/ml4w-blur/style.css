@@ -514,9 +514,11 @@ window#waybar.empty #window {
 }
 
 #tray menu {
+  padding: 8px;
   border-radius: 12px;
-  background: alpha(#1e1e2e, 0.8);
-  border: 1px solid @textcolor2;
+  background: alpha(#1e1e2e, 0.6);
+  color: @textcolor2;
+  border: 1px solid alpha(@textcolor2, 0.5);
 }
 
 #tray>.passive {
