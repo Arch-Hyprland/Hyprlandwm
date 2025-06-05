@@ -28,7 +28,7 @@
 }
 
 window#waybar {
-  background: alpha(@tertiary_fixed, 0.3);
+  background: alpha(@tertiary_fixed, 0.1);
   border-bottom: 0px solid @bordercolor;
   transition-property: background-color;
   transition-duration: .5s;
