@@ -2,7 +2,7 @@
 
 // $win_background: #3f3f3f;
 // $win_background: #aeaeae;
-$win_background: $primary;
+$win_background: $secondary;
 $hover_menu: $on_primary;
 $box_background: $primary_container;
 $block_background: #cccccc;
@@ -17,7 +17,7 @@ $slide_color: #fcfcfc;
 }
 
 .side {
-  background-color: rgba($win_background, 0.5); 
+  background-color: rgba($win_background, 0.4); 
   margin: 3px;
   border: 2px solid rgba($win_background, 0.1);
   padding: 8px;
@@ -31,7 +31,7 @@ $slide_color: #fcfcfc;
 }
 
 .win-res {
-  border-bottom: 1px solid rgba($win_background, 0.5);
+  border-bottom: 0px solid rgba($win_background, 0.5);
   border-radius: 2px;
   padding: 8px 0px 0px 0px;
 }

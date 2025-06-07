@@ -246,7 +246,7 @@
 (defwidget resources [] 
   (box :class "win-res"
     (centerbox :orientation "h"
-      (box :class "res-box" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
+      (box :class "res-box" :orientation "v" :valign "center" :halign "center" :spacing 10 :space-evenly "false"
         (box :class "res-circle" :orientation "v" :valign "center" :halign "center"
           (circular-progress :class "res-cpu" :value "${CPU_USAGE?:0}":thickness 15
             (label :class "res-circle-small" :text "${CPU_USAGE}%" :show-truncated false)
@@ -254,7 +254,7 @@
         )
         (label :class "res-text" :valign "end" :halign "center" :text "CPU")
       )
-      (box :class "res-box" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
+      (box :class "res-box" :orientation "v" :valign "center" :halign "center" :spacing 10 :space-evenly "false"
         (box :class "res-circle" :orientation "v" :valign "center" :halign "center"
           (circular-progress :class "res-mem" :value "${MEM_USAGE?:0}" :thickness 15
             (label :class "res-circle-small" :text "${MEM_USAGE}%" :show-truncated false )
@@ -262,7 +262,7 @@
         )
         (label :class "res-text" :valign "end" :halign "center" :text "MEMORY")
       )
-      (box :class "res-box" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
+      (box :class "res-box" :orientation "v" :valign "center" :halign "center" :spacing 10 :space-evenly "false"
         (box :class "res-circle" :orientation "v" :valign "center" :halign "center"
           (circular-progress :class "res-disk" :value "${DISK_USAGE?:0}" :thickness 15
             (label :class "res-circle-small" :text "${DISK_USAGE}%" :show-truncated false)
@@ -323,7 +323,7 @@
       (box :orientation "v" :class "side" :space-evenly false
         (control)
         (resources)
-        (powermenu)
+        ; (powermenu)
       )
     )
   )
