@@ -1,14 +1,15 @@
+@import url("colors.css");
+
 window {
-  background: alpha(#36364f, 0.6);
-	border-radius: 16px;
-	border-style: none;
-	border-width: 1px;
+  background: alpha(#bbb, 0.3);
+	border-radius: 20px;
+	border: 2px solid alpha(#bbb, 0.1);
 	margin-bottom: 1px;
 }
 
 #box {
   /* Define attributes of the box surrounding icons here */
-  padding: 8px 10px 5px 10px;
+  padding: 8px 14px 4px 14px;
 }
 
 #active {
@@ -26,16 +27,16 @@ button, image {
 }
 
 button {
-	padding: 4px;
+	padding: 3px;
 	margin: 1px 2px;
 	color: #eee;
   font-size: 12px;
-	background-color: rgba(255, 255, 255, 0.15);
+	background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
 	border-radius: 12px;
 }
 
 button:hover {
-	background-color: rgba(200, 55, 200, 0.25);
+	background-color: alpha(@primary, 0.5);
 }
 
 button:focus {
