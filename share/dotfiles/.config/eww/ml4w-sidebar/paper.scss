@@ -1,0 +1,21 @@
+
+
+
+
+.wall-container {
+  background: rgba($primary, 0.25);
+}
+
+.vec-item {
+  .wall-item {
+    background-size: cover;
+    border: 3px solid rgba($on_primary, 0.2);
+    border-radius: 20px;
+    margin: 20px 10px;
+  }
+  .wall-item:focus {
+    border: 5px solid red;
+  }
+}
+
+

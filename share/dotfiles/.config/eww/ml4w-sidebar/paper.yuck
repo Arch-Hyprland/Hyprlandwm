@@ -1,0 +1,26 @@
+;; 壁纸
+(defpoll papers :interval "10s" `ls -1 /home/unicorn/wallpaper | jq -R -s -c 'split("\\n")[:-1]'`)
+
+(defwidget WallPaper []
+  (scroll :hscroll true :vexpand true :vscroll false 
+          :class "wall-container" :width "800"
+    (box :space-evenly true :class "vec-item" :width "800"
+      (for path in "${papers?:[]}"
+        (button :width 400 :height 200 :style "background-image:url('/home/unicorn/wallpaper/${path}')"
+                :class "wall-item"
+                :onclick "${EWW_CMD} close WallPaper & waypaper --wallpaper /home/unicorn/wallpaper/${path} &"
+        )
+      )
+    )
+  )
+)
+
+;; 任务列表
+
+(defwindow WallPaper[]
+    :geometry (geometry :x 0 :y 0 :width "100%" :height 260 :anchor "center center")
+    :exclusive false
+    :focusable true
+    :stacking "fg"
+    :namespace "eww-widget"
+(WallPaper))
