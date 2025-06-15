@@ -1,6 +1,5 @@
 #!/bin/bash
 
-FILE="$HOME/.cache/ml4w_sidebar"
 CFG="$HOME/.config/eww/ml4w-sidebar"
 EWW=$(which eww)
 
@@ -38,14 +37,14 @@ if [[ ! $(pidof eww) ]]; then
   fi
 fi
 
-# current screen 
-sc=$("$HOME"/.config/eww/scripts/curscreen.sh)
-if [[ ! -f "$FILE" ]]; then
-  touch "$FILE"
-  echo ":: Opening on Monitor $sc"
-  "${EWW}" --config "$CFG" open controls --screen "$sc"
-else
+opened=$("${EWW}" --config "$CFG" active-windows | grep controls)
+
+if [ $? -eq 0 ] && [ -n "$opened" ]; then
   ${EWW} --config "$CFG" close controls
   echo ":: Closing widgets"
-  rm "$FILE"
+else
+  # current screen 
+  sc=$("$HOME"/.config/eww/scripts/curscreen.sh)
+  echo ":: Opening on Monitor $sc"
+  "${EWW}" --config "$CFG" open controls --screen "$sc"
 fi
