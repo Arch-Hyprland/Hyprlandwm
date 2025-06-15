@@ -314,6 +314,7 @@
 (include "./task.yuck")
 (include "./launcher.yuck")
 (include "./bar.yuck")
+(include "./paper.yuck")
 
 ;; ** layout **************************************************************************
 
