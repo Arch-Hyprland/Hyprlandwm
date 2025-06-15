@@ -2,7 +2,7 @@
 
 // $win_background: #3f3f3f;
 // $win_background: #aeaeae;
-$win_background: $secondary;
+$win_background: $primary;
 $hover_menu: $on_primary;
 $box_background: $primary_container;
 $block_background: #cccccc;
@@ -11,13 +11,13 @@ $slide_color: #fcfcfc;
 * {
   all: unset;
   // font-family: "Cascadia Code";
-  font-family: 'Inter Semi Bold', 'JetBrains Mono Nerd Font', 'SpaceMono Nerd Font', monospace;
+  font-family: 'Inter SemiBold', 'JetBrains Mono Nerd Font', 'SpaceMono Nerd Font', monospace;
   // font-style: italic;
   color: $slide_color;
 }
 
 .side {
-  background-color: rgba($win_background, 0.4); 
+  background-color: rgba($win_background, 0.3); 
   margin: 3px;
   border: 2px solid rgba($win_background, 0.1);
   padding: 8px;
@@ -101,7 +101,7 @@ $slide_color: #fcfcfc;
 }
 
 .panel-box-header {
-  border-radius: 20px;
+  border-radius: 10px;
   background: rgba($primary, 0.6);
   margin: 3px;
   padding: 3px;
@@ -117,7 +117,7 @@ $slide_color: #fcfcfc;
 }
 
 .device-list {
-  border-radius: 16px;
+  border-radius: 10px;
   background: rgba($primary, 0.8);
   margin: 0px 3px 3px 3px;
   .device-item {

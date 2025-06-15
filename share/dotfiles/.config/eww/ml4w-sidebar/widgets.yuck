@@ -47,18 +47,18 @@
       (label :class "tab" :text "头条") 
     )
     (box :orientation "v" 
-      (box :orientation 'h' :space-evenly true :spacing 5
-        (label :class "news-item" :halign "start" :truncate true
+      (box :orientation 'h' :space-evenly false  :spacing 5
+        (label :class "news-item" :halign "start" :hexpand true :truncate true
             :text "1.Everday, you can lauch much of rabbish message eveywhere")
         (label :text "500万" :halign "end")
       )
-      (box :orientation 'h' :space-evenly true :spacing 5
-        (label  :class "news-item" :halign "start" :truncate true
+      (box :orientation 'h' :space-evenly false :spacing 5
+        (label  :class "news-item" :halign "start" :hexpand true :truncate true
             :text "2.This is a normal operation of dust his people in china")
         (label :text "500万" :halign "end")
       )
-      (box :orientation 'h' :space-evenly true :spacing 5
-        (label  :class "news-item" :halign "start" :truncate true
+      (box :orientation 'h' :space-evenly false :spacing 5
+        (label  :class "news-item" :halign "start" :hexpand true :truncate true
             :text "3.Rust is amazy to work fine, You should really use it to complete your daily work")
         (label :text "500万" :halign "end")
       )

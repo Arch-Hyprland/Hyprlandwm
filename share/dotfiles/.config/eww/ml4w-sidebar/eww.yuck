@@ -11,7 +11,7 @@
 (defvar BLUE_EXPANDED false)
 (defvar WIFI_EXPANDED false)
 
-(defwidget volume[] 
+(defwidget applets[] 
   (scroll :hscroll false :vscroll true :class "control-box"  
     (box :orientation "v" :space-evenly false 
       (box :orientation "v"
@@ -195,7 +195,7 @@
 (defwidget control []
   (box :class "win-box" :orientation "v" :space-evenly false :spacing 2
     (box :orientation "h" :space-evenly true :spacing 3
-      (volume)
+      (applets)
       (switch)
     )
     (box :orientation "v" :space-evenly false
