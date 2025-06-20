@@ -1,0 +1,19 @@
+
+(defwidget edge[]
+  (box :hexpand "true" :vexpand "true" :class "edge-container" :spacing 0 
+    (box :hexpand "true" :vexpand "true" :class "edge-hole" :spacing 0
+      (image :style "background: url('/home/unicorn/wallpaper/chad.png')")
+    )
+  )
+)
+
+;; ** Windows *************************************************************************
+(defwindow edge []
+        :geometry (geometry :x "-1" 
+                            :y "-1"  
+                            :width "100%"
+                            :height "97%"
+                            :anchor "center center")
+        :stacking "bg"
+        :namespace "eww-widget"
+(edge))

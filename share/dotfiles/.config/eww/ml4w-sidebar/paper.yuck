@@ -1,5 +1,5 @@
 ;; 壁纸
-(defpoll papers :interval "10s" `ls -1 /home/unicorn/wallpaper | jq -R -s -c 'split("\\n")[:-1]'`)
+(defpoll papers :interval "10s" `ls -1 /home/unicorn/wallpaper | shuf -n 10 | jq -R -s -c 'split("\\n")[:-1]'`)
 
 (defwidget WallPaper []
   (scroll :hscroll true :vexpand true :vscroll false 

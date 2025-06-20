@@ -15,7 +15,7 @@ if [ ! -f $HOME/.config/ml4w/settings/dock-disabled ]; then
     else
         style="style-dark.css"
     fi
-    nwg-dock-hyprland -i 80 -p bottom -mb 5 -d -ico awn-applet -s $style -c  "/home/unicorn/.config/eww/bin/sirula"
+    nwg-dock-hyprland -i 80 -p bottom -mb 5 -d -ico awn-applet -s $style -c  "/home/unicorn/.config/eww/bin/app-service"
 else
     echo ":: Dock disabled"
 fi

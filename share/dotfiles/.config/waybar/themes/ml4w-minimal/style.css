@@ -56,14 +56,14 @@ window#waybar {
 #taskbar {
   /* background: @color11; */
   /* background: @backgroundlight; */
-  margin: 7px 15px 7px 0px;
+  margin: 7px 2px 7px 0px;
   padding: 0px;
   /*padding: 2px 3px 1px 3px;*/
   border-radius: 18px;
   font-weight: normal;
   font-style: normal;
   opacity: 0.8;
-  border: 2px solid alpha(@backgroundlight, 0.2);
+  border: 3px solid alpha(@backgroundlight, 0.2);
 }
 
 #taskbar button {
@@ -85,9 +85,9 @@ window#waybar {
  * ----------------------------------------------------- */
 
 #workspaces {
-  background: alpha(@workspacesbackground2, 0.7);
-  margin: 8px 5px 8px 1px;
-  padding: 0px 1px;
+  background: alpha(@workspacesbackground1, 0.3);
+  margin: 8px 2px 8px 1px;
+  padding: 0px 8px;
   border-radius: 15px;
   border: 0px;
   font-weight: bold;
@@ -103,7 +103,7 @@ window#waybar {
   border-radius: 15px;
   border: 0px;
   color: @textcolor1;
-  background-color: @workspacesbackground2;
+  background-color: @workspacesbackground1;
   transition: all 0.3s ease-in-out;
   opacity: 0.4;
 }
@@ -112,6 +112,7 @@ window#waybar {
     color: @textcolor1;
     background: @workspacesbackground1;
     min-width: 40px;
+    transition: all 0.8s ease-in-out;
 }
 
 #workspaces button:hover {
@@ -141,15 +142,22 @@ tooltip label {
  * ----------------------------------------------------- */
 
 #window {
-    margin: 0px 15px 0px 0px;
-    border-radius: 12px;
+    margin: 7px 5px;
+    padding: 0px 8px;
+    border-radius: 16px;
+    border: 3px solid alpha(@backgroundlight, 0.2);
     color:@textcolor;
     font-size:14px;
     font-weight:normal;
+    transition: all 0.5s ease-in-out;
 }
 
 window#waybar.empty #window {
+    margin: 10px 5px;
+    min-width: 4px;
+    border-radius: 16px;
     background-color:transparent;
+    transition: all 0.5s ease-in-out;
 }
 
 /* -----------------------------------------------------
@@ -177,10 +185,6 @@ window#waybar.empty #window {
 #custom-chatgpt,
 #custom-calculator,
 #custom-windowsvm,
-#custom-cliphist,
-#custom-wallpaper,
-#custom-settings,
-#custom-wallpaper,
 #custom-system,
 #custom-hyprshade,
 #custom-hypridle,
@@ -210,11 +214,18 @@ window#waybar.empty #window {
     color: @iconcolor;
 }
 
-
-#custom-settings,
 #custom-cliphist {
   margin-right: 5px;
 }
+#custom-wallpaper,
+#custom-settings{
+  font-size: 16px;
+  margin: 7px 2px;
+  border-radius: 16px;
+  padding: 0 0 0 3px;
+  border: 3px solid alpha(@backgroundlight, 0.2);
+}
+
 
 #custom-tools {
     margin-right:12px;
@@ -236,17 +247,11 @@ window#waybar.empty #window {
     color: #dc2f2f;
 }
 
-#custom-settings {
-    margin-right: 15px;
-}
 
 #custom-browser {
     margin-right: 12px;
 }
 
-#custom-wallpaper {
-    margin-right: 14px;
-}
 
 #custom-chatgpt {
     margin-right: 10px;
@@ -303,9 +308,12 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #custom-appmenu {
+    border: 3px solid alpha(@backgroundlight, 0.2);
+    border-radius: 18px;
     font-size: 18px;
-    color: @iconcolor;;
-    margin: 0px 10px 0px 10px;
+    padding: 0px 0px 0px 1px;
+    color: @iconcolor;
+    margin: 6px 15px 6px 5px;
 }
 
 /* -----------------------------------------------------
@@ -412,7 +420,7 @@ window#waybar.empty #window {
 
  #backlight {
     font-size: 16px;
-    color: @iconcolor;;
+    color: @iconcolor;
     margin: 0px 10px 0px 0px;
     background-color: transparent;
 }
@@ -459,8 +467,8 @@ window#waybar.empty #window {
     font-size: 18px;
     color: @textcolor;
     border-radius: 50%;
-    padding: 0px 5px;
-    border: 2px solid @iconcolor;
+    padding: 0px 5px 0px 6px;
+    border: 2px solid alpha(@iconcolor, 0.5);
     margin: 10px 15px 10px 0px;
 }
 

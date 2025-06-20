@@ -315,6 +315,7 @@
 (include "./launcher.yuck")
 (include "./bar.yuck")
 (include "./paper.yuck")
+(include "./corneredge.yuck")
 
 ;; ** layout **************************************************************************
 
