@@ -28,7 +28,7 @@
     "modules-left": [
         "custom/appmenu",
         "custom/waybarthemes",
-        "wlr/taskbar",
+      //"wlr/taskbar",
         "group/links",
         "hyprland/window",
     ],
@@ -42,6 +42,7 @@
 
     // Modules Right    
     "modules-right": [
+        "custom/screenshot",
         "custom/updates",
         "custom/recoder",
         "pulseaudio",

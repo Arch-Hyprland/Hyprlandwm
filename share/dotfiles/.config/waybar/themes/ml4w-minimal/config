@@ -46,12 +46,14 @@
     "modules-center": [
         "custom/wallpaper",
         "hyprland/workspaces",
-        "wlr/taskbar",
+        // "wlr/taskbar",
         "custom/settings"
     ],
 
     // Modules Right    
     "modules-right": [
+        "custom/recoder",
+        "custom/screenshot",
         "custom/updates",
         "pulseaudio",
         //"backlight",
