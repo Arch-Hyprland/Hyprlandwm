@@ -1,0 +1,84 @@
+(defvar CUR_SEARCH 'TOOLBAR')
+
+(defwidget Search []
+  (box :orientation "v" :space-evenly false 
+    (box :orientation "h" :space-evenly false :hexpand true
+      (button :class "searchbar" :onclick "${EWW_CMD} update CUR_SEARCH='SEARCH'"
+              :hexpand "${CUR_SEARCH == 'SEARCH' ? true : false}"
+        (box :orientation "h" :space-evenly false 
+          (image :icon "searching-symbolic" :icon-size "dialog")
+          (revealer :reveal "${CUR_SEARCH == 'SEARCH' ? true : false}" :transition "slideleft" :duration "800ms"
+            (expander :expanded "${CUR_SEARCH == 'SEARCH' ? true : false}"
+              (input :value "${CUR_SEARCH}" :style "padding: 0px 10px")
+            )
+          )
+        )
+      )
+      (button :class "searchbar" :onclick "${EWW_CMD} update CUR_SEARCH='TOOLBAR'"
+              :hexpand "${CUR_SEARCH == 'TOOLBAR' ? true : false}"
+        (box :orientation "h" :space-evenly false 
+          (image :icon "budgie-app-launcher-applet-symbolic" :icon-size "dialog")
+          (revealer :reveal "${CUR_SEARCH == 'TOOLBAR' ? true : false}" :transition "slideleft" :duration "800ms"
+            (expander :expanded "${CUR_SEARCH == 'TOOLBAR' ? true : false}"
+              (input :value "${CUR_SEARCH}" :style "padding: 0px 10px")
+            )
+          )
+        )
+      )
+      (button :class "searchbar" :onclick "${EWW_CMD} update CUR_SEARCH='APPS'"
+              :hexpand "${CUR_SEARCH == 'APPS' ? true : false}" 
+        (box :orientation "h" :space-evenly false 
+          (image :icon "gnome-software-symbolic" :icon-size "dialog")
+          (revealer :reveal "${CUR_SEARCH == 'APPS' ? true : false}" :transition "slideleft" :duration "800ms"
+            (expander :expanded "${CUR_SEARCH == 'APPS' ? true : false}"
+              (input :value "${CUR_SEARCH}" :style "padding: 0px 10px")
+            )
+          )
+        )
+      )
+      (button :class "searchbar" :onclick "${EWW_CMD} update CUR_SEARCH='CLIPBOARD'"
+              :hexpand "${CUR_SEARCH == 'CLIPBOARD' ? true : false}"
+        (box :orientation "h" :space-evenly false 
+          (image :icon "category-search-symbolic" :icon-size "dialog")
+          (revealer :reveal "${CUR_SEARCH == 'CLIPBOARD' ? true : false}" :transition "slideleft" :duration "800ms"
+            (expander :expanded "${CUR_SEARCH == 'CLIPBOARD' ? true : false}"
+              (input :value "${CUR_SEARCH}" :style "padding: 0px 10px")
+            )
+          )
+        )
+      )
+      (button :class "searchbar" :onclick "${EWW_CMD} update CUR_SEARCH='MUSIC'"
+              :hexpand "${CUR_SEARCH == 'MUSIC' ? true : false}"
+        (box :orientation "h" :space-evenly false 
+          (image :icon "builder-plugin-symbolic" :icon-size "dialog")
+          (revealer :reveal "${CUR_SEARCH == 'MUSIC' ? true : false}" :transition "slideleft" :duration "800ms"
+            (expander :expanded "${CUR_SEARCH == 'MUSIC' ? true : false}"
+              (input :value "${CUR_SEARCH}" :style "padding: 0px 10px")
+            )
+          )
+        )
+      )
+    )
+    (scroll :hscroll false :vexpand true :vscroll false 
+            :class "search-container" :width "800"
+      (box :orientation "v" :space-evenly true :class "vec-item" :width "800"
+        (for path in "${papers?:[]}"
+          (button :class "search-item"
+                  :onclick "${EWW_CMD}" 
+            (label :text "${path}")
+          )
+        )
+      )
+    )
+  )
+)
+
+;; 任务列表
+
+(defwindow Search[]
+    :geometry (geometry :x 0 :y 300 :width "40%" :height 260 :anchor "top center")
+    :exclusive false
+    :focusable true
+    :stacking "fg"
+    :namespace "eww-widget"
+(Search))

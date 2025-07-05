@@ -316,6 +316,7 @@
 (include "./bar.yuck")
 (include "./paper.yuck")
 (include "./corneredge.yuck")
+(include "./search.yuck")
 
 ;; ** layout **************************************************************************
 

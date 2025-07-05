@@ -84,7 +84,7 @@
   },
   // Cliphist
   "custom/cliphist": {
-    "format": "􀟾 ",
+    "format": "􀕹 ",
     "on-click": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh",
     "on-click-right": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh d",
     "on-click-middle": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh w",
@@ -267,12 +267,13 @@
   },
 
   "custom/screenshot": {
-    "format": "􀢙 ",
+    "format": "􀎼 ",
     "tooltip-format": "{}",
     "escape": true,
     "on-click": "grimblast --notify copy area &",
     "tooltip": true
   },
+
   // CPU
   "cpu": {
     "format": "􀟪 {usage}% ",

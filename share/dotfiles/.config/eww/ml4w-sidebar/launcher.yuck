@@ -3,7 +3,7 @@
 (defwidget appItem[name cmd icon size] 
   (box :orientation "h" :space-evenly true :class "app-detail" 
     (eventbox :class "app-item" 
-      (box :orientation 'v' :space-evenly false :style "padding: 25px 20px"
+      (box :orientation 'v' :space-evenly false :style "padding: 25px 20px" 
         (eventbox :onhover "" 
                   :onhoverlost ""
                   :onclick "${cmd} & ../scripts/applaucher.sh &" 
@@ -29,7 +29,7 @@
 
 (defwidget searchbar[]
   (eventbox :class "searchbar" :width "300"
-    (box :orientation "v" :space-evenly true
+    (box :orientation "v" :space-evenly true 
       (box 
         (input)
       )
@@ -60,13 +60,14 @@
 (defwidget container[]
   (box :class "container" :hexpand true
     (scroll :vscroll true :hscroll false :class "app-scroll"
-      (box :orientation "v" :space-evenly false :class "app-box" 
+      (box :orientation "v" :space-evenly true :class "app-box" 
            :valign "start" 
            :halign "center"
+           :hexpand "true"
         (for entry in {entrys?:[]} 
           (box :orientation "h" :space-evenly true :class "app-box" 
                :valign "start" 
-               :halign "start"
+               :hexpand "true"
             (for app in entry
               (appItem :name "${app['name']}" :cmd "${app['cmd']}" :icon "${app['icon']}" :size "${app['size']}")
             )

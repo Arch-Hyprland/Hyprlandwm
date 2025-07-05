@@ -52,6 +52,8 @@
 
     // Modules Right    
     "modules-right": [
+        "custom/recoder",
+        "custom/screenshot",
         "custom/updates",
         "pulseaudio",
 //"backlight",

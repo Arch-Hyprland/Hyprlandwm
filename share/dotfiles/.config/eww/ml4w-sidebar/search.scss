@@ -1,0 +1,45 @@
+
+.search-container {
+  background: rgba($background, 0.3);
+  border: 2px solid rgba($primary, 0.5);
+  box-shadow: inset 0px 0px 3px rgba($primary, 0.7);
+  border-radius: 26px;
+  margin: 0px 5px;
+}
+
+.vec-item {
+  .search-item {
+    border-radius: 20px;
+    padding: 10px;
+    margin: 20px 10px;
+  }
+  .search-item:focus {
+    border: 5px solid red;
+  }
+}
+
+.searchbar {
+  background: rgba($background, 0.3);
+  border: 2px solid rgba($primary, 0.5);
+  box-shadow: inset 0 0 4px 0 rgba(white, 0.2),
+    inset 0 0 3px 0 rgba(white, 0.3), inset 0 0 5px 0 rgba(white, 0.07),
+    inset 0 0 1px 0 rgba(white, 0.07), 0 0 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
+
+  border-radius: 60px;
+  transition: all 1s;
+  margin: 10px 5px;
+  padding: 10px 10px;
+  input {
+    border: 2px solid red;
+  }
+}
+
+.tool-item {
+  background: rgba($primary, 0.3);
+  border-radius: 50%;
+  border: 3px solid rgba($on_primary, 0.1);
+  padding: 10px 8px;
+  margin: 10px 5px;
+  transition: all 0.5s;
+}

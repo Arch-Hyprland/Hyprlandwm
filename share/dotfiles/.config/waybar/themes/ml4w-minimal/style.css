@@ -153,7 +153,7 @@ tooltip label {
 }
 
 window#waybar.empty #window {
-    margin: 10px 5px;
+    margin: 8px 5px;
     min-width: 4px;
     border-radius: 16px;
     background-color:transparent;
@@ -219,8 +219,8 @@ window#waybar.empty #window {
 }
 #custom-wallpaper,
 #custom-settings{
-  font-size: 16px;
-  margin: 7px 2px;
+  font-size: 14px;
+  margin: 8px 2px;
   border-radius: 12px;
   padding: 0 0 0 3px;
   border: 3px solid alpha(@backgroundlight, 0.2);
@@ -259,7 +259,7 @@ window#waybar.empty #window {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    padding-right: 14px;
+    padding-right: 18px;
 }
 
 #custom-waybarthemes,#custom-system {
@@ -311,7 +311,7 @@ window#waybar.empty #window {
     border: 3px solid alpha(@backgroundlight, 0.2);
     border-radius: 18px;
     font-size: 18px;
-    padding: 0px 0px 0px 1px;
+    padding: 0px 0px 0px 0px;
     color: @iconcolor;
     margin: 6px 15px 6px 5px;
 }
@@ -359,6 +359,31 @@ window#waybar.empty #window {
 
 #custom-updates.red {
     color: #dc2f2f;
+}
+
+/* -----------------------------------------------------
+ * Custom Recorder
+ * ----------------------------------------------------- */
+
+#custom-recoder {
+  border-radius: 8px;
+  padding: 1px 1px 2px 7px;
+  margin: 6px 6px 6px 0px;
+}
+
+#custom-recoder.red {
+  border-radius: 12px;
+  padding: 1px 10px 2px 8px;
+  color: #dc00af;
+}
+
+/* -----------------------------------------------------
+ * Custom screenshot
+ * ----------------------------------------------------- */
+
+#custom-screenshot {
+  font-size: 18px;
+  margin: 0px 5px;
 }
 
 /* -----------------------------------------------------
@@ -433,7 +458,7 @@ window#waybar.empty #window {
     font-size: 16px;
     color: @iconcolor;
     border-radius: 15px;
-    margin: 0px 15px 0px 0px;
+    margin: 0px 10px 0px 0px;
 }
 
 #pulseaudio.muted {
@@ -465,11 +490,12 @@ window#waybar.empty #window {
 
  #bluetooth, #bluetooth.on, #bluetooth.connected {
     font-size: 18px;
+    font-weight: bold;
     color: @textcolor;
     border-radius: 50%;
     padding: 0px 5px 0px 6px;
-    border: 2px solid alpha(@iconcolor, 0.5);
-    margin: 10px 15px 10px 0px;
+    border: 3px solid alpha(@iconcolor, 0.5);
+    margin: 8px 10px 8px 0px;
 }
 
 #bluetooth.off {
@@ -512,7 +538,7 @@ window#waybar.empty #window {
 
 #custom-widgets {
   font-size: 16px;
-  margin-right: 10px;
+  margin-right: 5px;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -535,6 +561,7 @@ window#waybar.empty #window {
 }
 
 #tray menu {
+  padding: 5px;
   border-radius: 12px;
   background: alpha(#1e1e2e, 0.6);
   color: @textcolor3;
