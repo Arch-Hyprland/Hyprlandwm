@@ -235,8 +235,12 @@
   },
   // System tray
   "tray": {
-    "icon-size": 20,
-    "spacing": 8
+    "icon-size": 24,
+    "spacing": 8,
+    "icons": {
+      "blueman": "network-bluetooth-symbolic",
+      "tao application": "telegram-attention-panel-symbolic"
+    }
   },
   // Clock
   "clock": {

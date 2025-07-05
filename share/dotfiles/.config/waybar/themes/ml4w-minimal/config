@@ -39,14 +39,14 @@
         "custom/appmenu",
         "custom/waybarthemes",
         "group/links",
-        "hyprland/window"
+        "hyprland/window",
     ],
 
     // Modules Center
     "modules-center": [
         "custom/wallpaper",
         "hyprland/workspaces",
-        "wlr/taskbar",
+        // "wlr/taskbar",
         "custom/settings"
     ],
 
@@ -54,15 +54,15 @@
     "modules-right": [
         "custom/updates",
         "pulseaudio",
-        //"backlight",
+//"backlight",
         "bluetooth",
-        "network",
+"network",
         "battery", 
         "power-profiles-daemon",
         "group/hardware",
         "custom/cliphist",
         "group/tools",
-        "tray",
+"tray",
         "custom/widgets",
         "clock",
         "custom/panel",
