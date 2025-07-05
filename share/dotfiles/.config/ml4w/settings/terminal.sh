@@ -1,1 +1,1 @@
-ghostty 
+kitty

@@ -42,5 +42,5 @@ button:hover {
 }
 
 button:focus {
-	box-shadow: none
+	box-shadow: none;
 }
