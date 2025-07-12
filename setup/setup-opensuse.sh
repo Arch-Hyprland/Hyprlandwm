@@ -24,7 +24,7 @@ packages=(
     "fastfetch"
     "xdg-desktop-portal-gtk"
     "eza"
-    "python313-pip"
+    "python313-pipx"
     "tumbler"
     "brightnessctl"
     "ImageMagick"
@@ -92,19 +92,13 @@ _isInstalled() {
 }
 
 _installPackages() {
-    toInstall=()
     for pkg; do
         if [[ $(_isInstalled "${pkg}") == 0 ]]; then
             echo "${pkg} is already installed."
             continue
         fi
-        toInstall+=("${pkg}")
+        sudo zypper -n install "${pkg}"
     done
-    if [[ "${toInstall[@]}" == "" ]]; then
-        return
-    fi
-    printf "Package not installed:\n%s\n" "${toInstall[@]}"
-    sudo zypper -n install "${toInstall[@]}"
 }
 
 # Header
@@ -160,17 +154,19 @@ gpgkey=https://repo.charm.sh/yum/gpg.key' | sudo tee /etc/yum.repos.d/charm.repo
 sudo yum install --assumeyes gum
 
 # Oh My Posh
-sudo curl -s https://ohmyposh.dev/install.sh | bash -s
+curl -s https://ohmyposh.dev/install.sh | bash -s
 
 # Cargo
-cargo install -q matugen
-cargo install -q wallust
-cargo install -q eza
+echo ":: Installing packages with cargo (this can take a while...)"
+cargo install matugen
+cargo install wallust
+cargo install eza
 
 # Install waypaper dependencies before using pip
 sudo zypper install gcc pkg-config cairo-devel gobject-introspection-devel libgirepository-1_0-1-devel python3-devel libgtk-4-devel typelib-1_0-Gtk-4_0
 
 # Pip
+echo ":: Installing packages with pip"
 sudo pipx install hyprshade
 sudo pipx install pywalfox
 sudo pywalfox install
@@ -178,6 +174,8 @@ sudo pipx install screeninfo
 sudo pipx install waypaper
 
 # ML4W Apps
+echo ":: Installing the ML4W Apps"
+
 ml4w_app="com.ml4w.welcome"
 ml4w_app_repo="dotfiles-welcome"
 echo ":: Installing $ml4w_app"
@@ -204,7 +202,7 @@ echo ":: Installing $ml4w_app"
 bash -c "$(curl -s https://raw.githubusercontent.com/mylinuxforwork/$ml4w_app_repo/master/setup.sh)"
 
 # Flatpaks
-flatpak install flathub com.github.PintaProject.Pinta
+flatpak install -y flathub com.github.PintaProject.Pinta
 
 # Grimblast
 sudo cp $SCRIPT_DIR/scripts/grimblast /usr/bin

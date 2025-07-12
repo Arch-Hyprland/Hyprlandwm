@@ -1,6 +1,7 @@
 Version 2.9.8.7
 --------------------------------------------------------
 - New Wiki launched under https://mylinuxforwork.github.io/dotfiles/
+- Configuration prepared for Dotfiles Installer https://mylinuxforwork.github.io/dotfiles-installer/ with setup scripts for Arch Linux, Fedora and openSuse Tumbleweed
 - All ML4W apps are following now the GTK4 Theme. Please make sure that the ml4w-repo is added to your system and all ml4w flatpaks are installed system wide, not user.
 - Improved waybar modern theme
 - Installation of Sequoia Theme removed from the installation script. 
@@ -125,7 +126,7 @@ Version 2.9.6.4
 - Added pywalfox support to color Firefox based on wallpaper colors
 - Fixed eza icons on zsh terminal
 - Subfolders in .config can be protected with an empty file PROTECTED
-- OhMyPosh promt replaces Starship prompt
+- OhMyPosh prompt replaces Starship prompt
 - Networkmanager applet can be toggled with right click on waybar network module
 - Three more blue light screen shaders with different intensities
 
@@ -183,7 +184,7 @@ https://github.com/mylinuxforwork/dotfiles/milestone/1?closed=1
 - Add Flatpak installation option to the installation script https://github.com/mylinuxforwork/dotfiles/issues/43
 - Position of dunst can be changed in the ML4W Dotfiles App
 - Screenshot script based on grimblast.
-- New screenshot editor pinta added to package list. Editor can be changed in teh ML4W Dotfiles app and in dotfiles/.settings/screenshot-editor.sh
+- New screenshot editor pinta added to package list. Editor can be changed in the ML4W Dotfiles app and in dotfiles/.settings/screenshot-editor.sh
 
 Version 2.9.3
 https://github.com/mylinuxforwork/dotfiles/blob/main/CHANGELOG.md
@@ -259,7 +260,7 @@ https://gitlab.com/stephan-raabe/dotfiles/-/releases/2.9
 - Added sidebar menu. Start with click on ML4W Logo in Waybar. Right click starts the welcome app
 - Updated hyprlock screen showing the wallpaper in a circle. hyprlock 3 required
 - Waybar Taskbar Module hidden by default. Can be enabled again in the ML4W Settings App
-- Hyprpaper is now the default wallpaper engine. swww can be activiated
+- Hyprpaper is now the default wallpaper engine. swww can be activated
 - Animations can be disabled in the Dotfiles Settings app
 - Animations can be toggled (enabled/disabled) temporarily with SUPER + SHIFT + A
 - Keyboard layout is part of the system information module of waybar
