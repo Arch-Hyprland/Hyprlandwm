@@ -220,14 +220,6 @@ window#waybar.empty #window {
     color: #dc2f2f;
 }
 
-#custom-ml4w-welcome {
-    margin-right: 12px;
-    background-image: url("../assets/ml4w-icon.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding-right: 20px;
-}
 
 #custom-chatgpt {
     margin-right: 16px;

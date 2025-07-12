@@ -29,7 +29,7 @@
         "custom/waybarthemes",
 //"wlr/taskbar",
         "group/links",
-        "hyprland/window",
+"hyprland/window",
     ],
 
     // Modules Center

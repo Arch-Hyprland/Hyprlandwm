@@ -39,7 +39,7 @@
   (box :space-evenly "false" :spacing 6 :halign "end" :class "right-section"
     (box  :class "top-widget"
       (systray :orientation "h" :spacing 5 :space-evenly true
-               :icon-size 24 :prepend-new true
+               :icon-size 26 :prepend-new true
       )
     )
     (eventbox :class "top-item" 

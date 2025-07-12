@@ -239,6 +239,7 @@
   "tray": {
     "icon-size": 24,
     "spacing": 8,
+    "smooth-scrolling-threshold": "10.0",
     "icons": {
       "blueman": "network-bluetooth-symbolic",
       "tao application": "telegram-attention-panel-symbolic"

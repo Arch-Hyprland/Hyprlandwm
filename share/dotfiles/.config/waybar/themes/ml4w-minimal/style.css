@@ -267,15 +267,6 @@ window#waybar.empty #window {
 }
 
 
-#custom-ml4w-welcome {
-    margin-right: 12px;
-    background-image: url("../assets/ml4w-icon.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding-right: 20px;
-}
-
 #custom-ml4w-hyprland-settings {
     margin-right: 12px;
     background-image: url("../assets/hyprland-icon-20.png");
@@ -561,12 +552,13 @@ window#waybar.empty #window {
 }
 
 #tray menu {
+  all: unset;
   padding: 5px;
   border-radius: 12px;
   background: alpha(#1e1e2e, 0.6);
   color: @textcolor3;
   border: 1px solid alpha(#666666, 0.5);
-  box-shadow: inset 0 0 20px alpha(#444444, 0.5);
+  box-shadow: inset 0 0 20px alpha(#444444, 0.3);
 }
 
 #tray > .passive {

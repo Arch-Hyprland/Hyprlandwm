@@ -137,19 +137,17 @@
     (box :orientation "h" 
       (box :class "func-switch"
         (eventbox :class "switch-box" :onclick "~/.config/hypr/scripts/toggleallfloat.sh &"
-          (box :orientation "v" :class "switch-icon" :space-evenly false :style "padding: 3px 10px"
+          (box :orientation "v" :class "switch-icon" :space-evenly false :style "padding: 3px 10px" :spacing 5
             (image :icon "windows-quick-list-symbolic" :icon-size "large-toolbar" :style "padding: 10px 10px 5px 10px" )
-            (label :text "Window")
             (label :text "Layout")
           )
         )
       )
       (box :class "func-switch" 
         (eventbox :class "switch-box" :onclick "~/.config/hypr/scripts/hyprshade.sh rofi &"
-          (box :orientation "v" :class "switch-icon" :space-evenly false :style "padding: 3px 10px"
+          (box :orientation "v" :class "switch-icon" :space-evenly false :style "padding: 3px 10px" :spacing 5
             (image :icon "object-blend-mode-symbolic" :icon-size "large-toolbar" :style "padding: 10px 10px 5px 10px")
             (label :text "Shade")
-            (label :text "Style" )
           )
         )
       )
