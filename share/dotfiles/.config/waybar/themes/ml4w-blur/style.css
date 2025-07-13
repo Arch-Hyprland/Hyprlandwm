@@ -281,7 +281,7 @@ window#waybar.empty #window {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    padding-right: 16px;
+    padding-right: 20px;
 }
 
 /* -----------------------------------------------------

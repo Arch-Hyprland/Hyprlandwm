@@ -42,7 +42,7 @@
     // Modules Right    
     "modules-right": [
         "custom/updates",
-        "custom/recoder",
+        "custom/recorder",
         "pulseaudio",
 //"backlight",
         "bluetooth",

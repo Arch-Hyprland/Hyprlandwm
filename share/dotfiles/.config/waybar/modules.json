@@ -64,7 +64,7 @@
   },
   // widgets
   "custom/widgets": {
-    "format": "􀇷 ",
+    "format": "􀻤 ",
     "on-click": "~/.config/eww/scripts/widgets.sh",
     "tooltip-format": "open widgets"
   },
@@ -257,7 +257,7 @@
     "format": "􀏞 ",
     "tooltip": false
   },
-  "custom/recoder": {
+  "custom/recorder": {
     "format": "{}",
     "tooltip-format": "{}",
     "escape": true,

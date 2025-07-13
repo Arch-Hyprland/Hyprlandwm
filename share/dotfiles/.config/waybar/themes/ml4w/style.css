@@ -56,7 +56,7 @@ window#waybar {
 #clock,
 #custom-appmenu,
 #custom-updates,
-#custom-recoder,
+#custom-recorder,
 #custom-wallpaper,
 #custom-settings {
   font-size: 16px;
@@ -274,12 +274,12 @@ window#waybar.empty #window {
 }
 
 #custom-chatgpt {
-    margin-right: 12px;
+    margin-right: 10px;
     background-image: url("../assets/openai.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain; 
-    padding-right: 16px;
+    padding-right: 18px;
 }
 
 #custom-widgets {
@@ -370,16 +370,16 @@ window#waybar.empty #window {
  * Custom Recorder
  * ----------------------------------------------------- */
 
-#custom-recoder {
+#custom-recorder {
   border-radius: 8px;
   padding: 1px 1px 2px 7px;
   margin: 6px 8px 6px 0px;
 }
 
-#custom-recoder.red {
-  border-radius: 12px;
+#custom-recorder.red {
+  border-radius: 16px;
   padding: 1px 10px 2px 8px;
-  color: #dc00af;
+  color: alpha(#F00000, 0.6);
 }
 
 /* -----------------------------------------------------

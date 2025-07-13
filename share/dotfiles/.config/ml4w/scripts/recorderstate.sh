@@ -44,7 +44,7 @@ else
 fi
 
 if [ ${RECORDER} -eq 0 ] && [ -n "${STARTTIME}" ]; then
-    printf '{"text": "􀧒 %s", "alt": "%s", "tooltip": "Recoding: %s", "class": "%s"}' "${STARTTIME}" "${STARTTIME}" "${STARTTIME}" "$css_class"
+    printf '{"text": "􀕪 %s", "alt": "%s", "tooltip": "Recoding: %s", "class": "%s"}' "${STARTTIME}" "${STARTTIME}" "${STARTTIME}" "$css_class"
 else
-    printf '{"text": "􀜯 ", "alt": "􀜯  No Recoder Running", "tooltip": "click start recorder", "class": "white"}'
+    printf '{"text": "􀼅 ", "alt": "􀼅  No Recoder Running", "tooltip": "click start recorder", "class": "white"}'
 fi
