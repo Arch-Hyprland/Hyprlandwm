@@ -45,8 +45,6 @@ packages=(
     "kitty"
     "neovim"
     "htop"
-    "rust"
-    "cargo"
     "blueman"
     "grim"
     "slurp"
@@ -80,6 +78,7 @@ packages=(
     "loupe"
     "power-profiles-daemon"
     "python-pywalfox"
+    "vlc"
 )
 
 GREEN='\033[0;32m'
@@ -107,11 +106,19 @@ _isInstalled() {
 }
 
 _installYay() {
-    _installPackages "base-devel"
+    if [[ ! $(_isInstalled "base-devel") == 0 ]]; then
+        sudo pacman --noconfirm -S "base-devel"
+    fi
+    if [[ ! $(_isInstalled "git") == 0 ]]; then
+        sudo pacman --noconfirm -S "git"
+    fi
+    if [ -d $HOME/Downloads/yay-bin ]; then
+        rm -rf $HOME/Downloads/yay-bin
+    fi
     SCRIPT=$(realpath "$0")
     temp_path=$(dirname "$SCRIPT")
-    git clone https://aur.archlinux.org/yay.git $download_folder/yay
-    cd $download_folder/yay
+    git clone https://aur.archlinux.org/yay-bin.git $HOME/Downloads/yay-bin
+    cd $HOME/Downloads/yay-bin
     makepkg -si
     cd $temp_path
     echo ":: yay has been installed successfully."
@@ -171,10 +178,17 @@ _installPackages "${packages[@]}"
 # Oh My Posh
 curl -s https://ohmyposh.dev/install.sh | bash -s
 
-# Cargo
-echo ":: Installing packages with cargo (this can take a while...)"
-cargo install matugen
-cargo install wallust
+# Prebuild Packages
+if [ ! -d $HOME/.local/bin ]; then
+    mkdir -p $HOME/.local/bin
+fi
+echo "Installing Matugen v2.4.1 into ~/.local/bin"
+# https://github.com/InioX/matugen/releases
+cp $SCRIPT_DIR/packages/matugen $HOME/.local/bin
+
+echo "Installing Wallust v3.4.0 into ~/.local/bin"
+# https://codeberg.org/explosion-mental/wallust/releases
+cp $SCRIPT_DIR/packages/wallust $HOME/.local/bin
 
 # ML4W Apps
 echo ":: Installing the ML4W Apps"

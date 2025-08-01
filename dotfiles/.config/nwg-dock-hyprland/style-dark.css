@@ -1,0 +1,46 @@
+@import url("colors.css");
+
+@define-color dock_back#bbb;
+
+window {
+  background: alpha(@dock_back, 0.3);
+	border-radius: 20px;
+	border: 3px solid alpha(@dock_back, 0.2);
+	border-width: 1px;
+}
+
+#box {
+  /* Define attributes of the box surrounding icons here */
+  padding: 10px 12px 4px 12px;
+}
+
+#active {
+	/* This is to underline the button representing the currently active window */
+	/*  border-bottom: solid 1px; */
+	border-color: rgba(255, 255, 255, 0.3);
+	transition: 0.5s;
+}
+
+button, image {
+	background: none;
+	border-style: none;
+	box-shadow: none;
+	color: #999
+}
+
+button {
+	padding: 4px;
+	margin: 1px 2px;
+	color: #eee;
+  font-size: 12px;
+	background-color: rgba(255, 255, 255, 0.15);
+	border-radius: 12px;
+}
+
+button:hover {
+	background-color: alpha(@primary, 0.6);
+}
+
+button:focus {
+	box-shadow: none;
+}

@@ -1,3 +1,13 @@
+Version 2.9.9
+--------------------------------------------------------
+- Remove legacy installer and folders restructured
+- Add Font Awesome 7 support
+
+Version 2.9.8.8
+--------------------------------------------------------
+- Optimized setup scripts for Arch, Fedora and openSuse
+- eza, matugen and wallust now shipped with the dotfiles to speedup installation (cargo not needed anymore)
+
 Version 2.9.8.7
 --------------------------------------------------------
 - New Wiki launched under https://mylinuxforwork.github.io/dotfiles/
