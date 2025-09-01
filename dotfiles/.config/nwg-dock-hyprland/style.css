@@ -1,16 +1,14 @@
 @import url("colors.css");
 
 window {
-  	background: @surface;
-	border-radius: 10px;
-	border-style: solid;
-	border-width: 3px;
+  background: alpha(#bbb, 0.25);
+	border-radius: 20px;
 	border-color: @primary;
 }
 
 #box {
   	/* Define attributes of the box surrounding icons here */
-  	padding: 10px;
+  	padding: 8px 12px 4px 12px;
 }
 
 #active {
@@ -20,16 +18,14 @@ window {
 }
 
 button, image {
-	background: none;
-	border-style: none;
-	box-shadow: none;
 	color: @primary;
 }
 
 button {
-	padding: 4px;
-	margin-left: 4px;
-	margin-right: 4px;
+	padding: 2px;
+	margin: 3px;
+  border-radius: 10px;
+	background: alpha(#eee, 0.3);
 	color: @primary;
 	font-size: 12px
 }

@@ -35,26 +35,20 @@ window#waybar {
 }
 
 .modules-left {
-    margin:8px 0px 8px 10px;
+    margin:0px 0px 2px 5px;
 }
 
 .modules-right {
-    margin:8px 10px 8px 0px;
+    margin:0px 0px 2px 0px;
 }
 
 .modules-center {
-    margin:8px 0px 8px 0px;
+    margin:0px 0px 2px 0px;
 }
 
 /* -----------------------------------------------------
  * Workspaces
  * ----------------------------------------------------- */
-
-.modules-center {
-  padding: 0px 6px 0px 10px;
-  margin: 4px 5px 3px 5px;
-}
-
 
 /**
 * have background container
@@ -73,7 +67,7 @@ window#waybar {
 #custom-settings {
   font-size: 16px;
   border-radius: 16px;
-  background: alpha(@backgroundlight, 0.25);
+  background: alpha(@backgroundlight, 0.35);
   border: 1px solid alpha(@backgroundlight, 0.2);
   box-shadow: inset 0 0 10px alpha(@backgroundlight, 0.8);
   color: @textcolor2;
@@ -111,7 +105,7 @@ window#waybar {
   border-right: 2px solid alpha(@backgroundlight, 0.6);
   border-radius: 20px;
   padding: 2px 12px;
-  margin: 0px 8px;
+  margin: 8px 8px;
 }
 
 #workspaces button {
@@ -160,7 +154,7 @@ tooltip label {
 
 #window {
   background: alpha(@backgroundlight, 0.25);
-  margin: 6px 10px 6px 0px;
+  margin: 8px 10px 8px 0px;
   padding: 0px 10px;
   border-radius: 16px;
   /*
@@ -272,12 +266,12 @@ window#waybar.empty #window {
 
 #custom-wallpaper {
   padding: 0 0px 1px 4px;
-  margin: 1px 0px;
+  margin: 8px 0px;
 }
 
 #custom-settings {
   padding: 0 0px 1px 4px;
-  margin: 1px 0px;
+  margin: 8px 0px;
 }
 
 #custom-hyprshade {
@@ -333,7 +327,7 @@ window#waybar.empty #window {
 
 #custom-appmenu {
   padding: 2px 1px 1px 3px;
-  margin: 5px 15px 5px 10px;
+  margin: 8px 15px 8px 10px;
   border: 0px solid @bordercolor;
 }
 
@@ -388,7 +382,7 @@ window#waybar.empty #window {
 #custom-recorder {
   border-radius: 8px;
   padding: 1px 1px 2px 7px;
-  margin: 6px 8px 6px 0px;
+  margin: 8px 8px 8px 0px;
 }
 
 #custom-recorder.red {
@@ -436,7 +430,7 @@ window#waybar.empty #window {
 
 #clock {
   padding: 1px 8px 1px 8px;
-  margin: 6px 5px 6px 0px;
+  margin: 8px 5px 8px 0px;
   border: 0px solid @bordercolor;
 }
 
@@ -451,7 +445,6 @@ window#waybar.empty #window {
     border-radius: 15px;
     padding: 1px 10px 2px 10px;
     margin: 5px 5px 5px 0px;
-    opacity:0.8;
 }
 
 /* -----------------------------------------------------
@@ -459,13 +452,12 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #pulseaudio {
-    background-color: @backgroundlight;
+    background: alpha(@backgroundlight, 0.35);
     font-size: 16px;
     color: @textcolor1;
     border-radius: 15px;
     padding: 1px 8px 1px 8px;
-    margin: 6px 5px 6px 0px;
-    opacity:0.8;
+    margin: 8px 5px 8px 0px;
 }
 
 #pulseaudio.muted {
@@ -477,22 +469,19 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #network {
-    background-color: @backgroundlight;
+    background: alpha(@backgroundlight, 0.35);
     font-size: 16px;
     color: @textcolor1;
     border-radius: 15px;
     padding: 1px 8px 1px 8px;
-    margin: 6px 8px 6px 0px;
-    opacity:0.8;
+    margin: 8px 8px 8px 0px;
 }
 
 #network.ethernet {
-    background-color: @backgroundlight;
     color: @textcolor1;
 }
 
 #network.wifi {
-    background-color: @backgroundlight;
     color: @textcolor1;
 }
 
@@ -501,13 +490,13 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #bluetooth, #bluetooth.on, #bluetooth.connected {
-    background-color: @backgroundlight;
+    background-color: alpha(@backgroundlight, 0.25);
     font-size: 16px;
     font-size: 22px;
     color: @textcolor1;
     border-radius: 15px;
     padding: 1px 8px 0px 8px;
-    margin: 5px 5px 5px 0px;
+    margin: 8px 5px 8px 0px;
     opacity:0.8;
 }
 
@@ -535,18 +524,18 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #battery {
-    background-color: @backgroundlight;
+    background-color: alpha(@backgroundlight, 0.35);
+    box-shadow: inset 0 0 10px alpha(@backgroundlight, 0.8);
     font-size: 16px;
     color: @textcolor1;
     border-radius: 15px;
-    margin: 6px 8px 6px 2px;
+    margin: 8px 8px 8px 2px;
     padding: 1px 8px 1px 8px;
     opacity:0.8;
 }
 
 #battery.charging, #battery.plugged {
     color: @textcolor1;
-    background-color: @backgroundlight;
 }
 
 @keyframes blink {
@@ -577,7 +566,7 @@ window#waybar.empty #window {
   color: @textcolor2;
   border-radius: 8px 0 0 8px;
   padding: 1px 6px 1px 5px;
-  margin: 4px 0px 4px 0px;
+  margin: 6px 0px 6px 3px;
   opacity: 0.8;
 }
 

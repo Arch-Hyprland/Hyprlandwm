@@ -8,7 +8,7 @@
 if [ ! -f $HOME/.config/ml4w/settings/dock-disabled ]; then
     killall nwg-dock-hyprland
     sleep 0.5
-    nwg-dock-hyprland -i 80 -p bottom -w 5 -mb 5 -d -s style.css -c "/home/unicorn/.config/eww/scripts/applaucher.sh"
+    nwg-dock-hyprland -i 90 -p bottom -ico awn-applet -mb 5 -d -s style.css -c "/home/unicorn/.config/eww/scripts/applaucher.sh"
 else
     echo ":: Dock disabled"
 fi

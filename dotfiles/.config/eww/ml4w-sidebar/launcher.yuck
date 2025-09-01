@@ -28,7 +28,7 @@
 
 
 (defwidget searchbar[]
-  (eventbox :class "searchbar" :width "300"
+  (eventbox :class "category" :width "300"
     (box :orientation "v" :space-evenly true 
       (box 
         (input)

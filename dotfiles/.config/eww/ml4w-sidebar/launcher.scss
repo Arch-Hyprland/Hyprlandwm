@@ -3,16 +3,17 @@ $app-hover: #cfcfcf;
 $text_color: $on_primary_container;
 
 
-.searchbar {
+.category {
   background-color: rgba($primary_container, 0.6);
-  border-radius: 10px 0 0 10px;
+  box-shadow: inset 0px 0px 10px rgba($surface, 0.4);
+  border-radius: 50px 0 0 50px;
 }
 
 .container {
   background-color: rgba($background, 0.8);
   opacity: 0.95;
-  border-radius: 0px 10px 10px 0px;
-  padding: 100px;
+  border-radius: 0px 50px 50px 0px;
+  padding: 80px;
 }
 
 .launcher {

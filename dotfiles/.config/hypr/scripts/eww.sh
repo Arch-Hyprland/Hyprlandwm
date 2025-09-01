@@ -18,7 +18,7 @@ if [[ ! $(pidof eww) ]]; then
 
       # 启动成功标志
       STATE="0"
-      "${EWW}" --config "${CFG}" open dock --arg mode=dock --screen 1
+      # "${EWW}" --config "${CFG}" open dock --arg mode=dock --screen 1
       break
     else
       dunstify \
