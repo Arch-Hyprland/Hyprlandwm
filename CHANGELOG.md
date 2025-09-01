@@ -1,7 +1,24 @@
+Version 2.9.9.1
+--------------------------------------------------------
+- Full dark and light theme support. Change preferred theme in nw-look. A listener script will reload waybar and nwg-dock-hyprland when the file ~/.config/gtk-4.0/settings.ini will be changed.
+- Waybar Theme ML4W Modern Dark and Light consolidated into ML4W Modern Theme
+- Wallust removed as color generator. Not needed anymore for kitty colors.
+- Fish configuration added and shell selection script extended.
+- New default wallpaper
+- New sidepad feature to move windows to the right side of the screen. https://mylinuxforwork.github.io/dotfiles/usage/sidepad
+- New focus script: Select window and switch to workspace with CTRL + Tab
+- New Sidebar App layout with Light/Dark theme toggle button
+
 Version 2.9.9
 --------------------------------------------------------
-- Remove legacy installer and folders restructured
-- Add Font Awesome 7 support
+- Legacy installer removed and folders restructured 
+- Font Awesome 7 support added
+- Optimized setup script to reduce the installation time of dependencies
+- Waybar with blurred background as default (powered by Hyprland). Can be switched off in the Dotfiles Settings app/Appearance/Decoration Variations -> no blur
+- ML4W blur theme removed. See above to toggle blur
+- Add Display Zoom: Zoom in with SUPER+SHIFT+Mousewheel up, Zoom out with SUPER+SHIFT+Mousewheel down, Reset Zoom with SUPER+SHIFT+Z
+- Link to ML4W Wallpaper Bank added to Welcome App main menu
+- Specific variations for game mode added to start Hyprland in game mode: Settings app, Appearance: Decoration: gamemode.conf, Window: gamemode.conf, Animation: disabled.conf
 
 Version 2.9.8.8
 --------------------------------------------------------

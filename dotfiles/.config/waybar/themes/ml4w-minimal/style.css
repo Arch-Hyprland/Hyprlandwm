@@ -6,14 +6,8 @@
  *    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    |____/ \__|\__, |_|\___|
  *                 |___/                              |___/
  *
- * by Stephan Raabe (2023)
  * -----------------------------------------------------
 */
-
-/* -----------------------------------------------------
- * Import Pywal colors
- * ----------------------------------------------------- */
-/* @import 'style-light.css'; */
 @define-color backgroundlight #FFFFFF;
 @define-color backgrounddark #FFFFFF;
 @define-color workspacesbackground1 #FFFFFF;
@@ -197,6 +191,7 @@ window#waybar.empty #window {
 #custom-quicklink_email,
 #custom-quicklink_thunderbird,
 #custom-quicklink_calculator,
+#custom-sidepad,
 #custom-quicklink1,
 #custom-quicklink2,
 #custom-quicklink3,
@@ -277,7 +272,7 @@ window#waybar.empty #window {
 
 
 /* -----------------------------------------------------
- * Idle Inhibator
+ * Idle Inhibitor
  * ----------------------------------------------------- */
 
  #idle_inhibitor {

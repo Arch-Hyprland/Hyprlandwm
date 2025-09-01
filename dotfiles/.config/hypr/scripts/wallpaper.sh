@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #  _      __     ____                      
 # | | /| / /__ _/ / /__  ___ ____  ___ ____
 # | |/ |/ / _ `/ / / _ \/ _ `/ _ \/ -_) __/
@@ -119,18 +119,22 @@ else
 fi
 
 # -----------------------------------------------------
+# Detect Theme
+# -----------------------------------------------------
+
+SETTINGS_FILE="$HOME/.config/gtk-3.0/settings.ini"
+THEME_PREF=$(grep -E '^gtk-application-prefer-dark-theme=' "$SETTINGS_FILE" | awk -F'=' '{print $2}')
+
+# -----------------------------------------------------
 # Execute matugen
 # -----------------------------------------------------
 
 _writeLog "Execute matugen with $used_wallpaper"
-$HOME/.local/bin/matugen image $used_wallpaper -m "dark"
-
-# -----------------------------------------------------
-# Execute wallust
-# -----------------------------------------------------
-
-_writeLog "Execute wallust with $used_wallpaper"
-$HOME/.local/bin/wallust run $used_wallpaper
+if [ "$THEME_PREF" -eq 1 ]; then
+    $HOME/.local/bin/matugen image $used_wallpaper -m "dark"
+else
+    $HOME/.local/bin/matugen image $used_wallpaper -m "light"
+fi
 
 # -----------------------------------------------------
 # Reload Waybar

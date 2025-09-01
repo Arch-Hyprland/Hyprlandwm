@@ -100,8 +100,7 @@
     "interval": 1800,
     "signal": 1,
     "hide-empty-text": true,
-    "on-click": "~/.config/ml4w/settings/installupdates.sh",
-    "on-click-right": "~/.config/ml4w/settings/software.sh"
+    "on-click": "~/.config/ml4w/settings/installupdates.sh"
   },
   // Wallpaper
   "custom/wallpaper": {
@@ -314,16 +313,6 @@
       "memory"
     ]
   },
-
-  // Group Links
-  "group/links": {
-    "orientation": "horizontal",
-    "modules": [
-      "custom/chatgpt",
-      "custom/empty"
-    ]
-  },
-
   // Group Settings
   "group/settings": {
     "orientation": "inherit",
@@ -431,7 +420,7 @@
     "tooltip-format": "{device_enumerate}",
     "tooltip-format-enumerate-connected": "􀮔  {device_alias}",
     "interval": 30,
-    "on-click": "blueman-manager"
+    "on-click": "sleep 0.1 && ~/.config/ml4w/settings/bluetooth.sh"
   },
   // Other
   "user": {

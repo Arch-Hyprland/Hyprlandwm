@@ -6,7 +6,7 @@ hero:
   name: The ML4W Dotfiles for Hyprland  
   image:
     src: /ml4w.png
-    alt: Linux logo
+    alt: ML4W logo
     style: "width: 200px; height: auto;"
   tagline: An advanced and full-featured configuration for the dynamic tiling window manager Hyprland.
   actions:
@@ -22,23 +22,23 @@ hero:
 
 features:
   - icon: <img width="35" height="35" src="https://cdn-icons-png.flaticon.com/128/807/807262.png" alt="scripts"/>
-    title: One Script to Rule Them All
-    details: Includes a powerful installation script to automate everything on Arch or Fedora based systems. Or use the Dotfiles Installer for other distros.
+    title: Easy Installation
+    details: Dotfiles Installer support and setup scripts to install all dependencies for Arch, Fedora and openSuse.  
 
   - icon: <img width="35" height="35" src="https://cdn-icons-png.flaticon.com/128/16076/16076100.png" alt="theme"/>
     title: Dynamic Themes & Desktop
-    details: Experience a complete desktop with Hyprland, dynamic material themes, and deep customization via dotfiles.
+    details: Experience a complete desktop with Hyprland, adaptive material themes, and deep customization via dotfiles.
 
   - icon: <img width="35" height="35" src="https://cdn-icons-png.flaticon.com/128/3815/3815573.png" alt="configuration"/>
-    title: Easy to Customize
+    title: Many Customization Options
     details: Comes with helpful graphical apps to configure your setup, change themes, and tweak your environment.
 
 metaTitle: "The ML4W Dotfiles for Hyprland"
-description: An advanced and full-featured configuration for the dynamic tiling window manager Hyprland including an easy to use installation script for Arch and Fedora based Linux distributions.
+description: An advanced and full-featured configuration for the dynamic tiling window manager Hyprland including an easy to use installation procedure with the Dotfiles Installer script and full support for for Arch Linux, Fedora and openSuse.
 ---
 
 <img
-  src="/ml4w-preview.png"
+  src="/ml4w-preview-2991.jpg"
   alt="preview"
   style="max-width: 900px; width: 100%; border-radius: 12px; margin: 2rem auto; display: block;"
 />
@@ -47,7 +47,7 @@ description: An advanced and full-featured configuration for the dynamic tiling 
 
 ### Installation
 
-You can install the ML4W Dotfiles for Hyprland with the Dotfiles Installer from Flathub.<br>Click on the badge below to install the app.
+You can install the ML4W Dotfiles for Hyprland with the Dotfiles Installer available on Flathub.<br>Click on the badge below to install the app.
 
 <a href="https://mylinuxforwork.github.io/dotfiles-installer/" target="_blank"><img src="https://mylinuxforwork.github.io/dotfiles-installer/dotfiles-installer-badge.png" style="border:0;margin-bottom:10px"></a>
 
@@ -58,7 +58,7 @@ Copy the following url into the Dotfiles Installer and start the installation.
 ```sh
 https://raw.githubusercontent.com/mylinuxforwork/dotfiles/main/hyprland-dotfiles-stable.dotinst
 ```
-#### Rolling Release
+#### Rolling Release (RC 2.9.9.1)
 
 ```sh
 https://raw.githubusercontent.com/mylinuxforwork/dotfiles/main/hyprland-dotfiles.dotinst

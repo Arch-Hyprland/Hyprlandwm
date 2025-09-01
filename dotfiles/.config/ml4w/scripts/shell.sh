@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #  ____  _          _ _
 # / ___|| |__   ___| | |
 # \___ \| '_ \ / _ \ | |
@@ -13,7 +13,7 @@ figlet -f smslant "Shell"
 
 echo ":: Please select your preferred shell"
 echo
-shell=$(gum choose "bash" "zsh" "Cancel")
+shell=$(gum choose "bash" "zsh" "fish" "Cancel")
 # -----------------------------------------------------
 # Activate bash
 # -----------------------------------------------------
@@ -26,7 +26,31 @@ if [[ $shell == "bash" ]]; then
     done
     echo ":: Shell is now bash."
 
+    # Installing oh-my-posh
+    curl -s https://ohmyposh.dev/install.sh | bash -s
+
     gum spin --spinner dot --title "Please reboot your system." -- sleep 3
+
+# -----------------------------------------------------
+# Activate fish
+# -----------------------------------------------------
+elif [[ $shell == "fish" ]]; then
+
+    echo ":: Please install fish manually for your distro (if not yet done) before proceeding."
+    if gum confirm "Is fish installed on your system?"; then
+
+        # Change shell to fish
+        while ! chsh -s $(which fish); do
+            echo "ERROR: Authentication failed. Please enter the correct password."
+            sleep 1
+        done
+        echo ":: Shell is now fish."
+
+        # Installing oh-my-posh
+        curl -s https://ohmyposh.dev/install.sh | bash -s
+
+        gum spin --spinner dot --title "Please reboot your system." -- sleep 3
+    fi
 
 # -----------------------------------------------------
 # Activate zsh

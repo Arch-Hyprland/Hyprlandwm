@@ -14,11 +14,10 @@ configuration {
     modi:                       "drun,filebrowser,window,run";
     font:                       "Fira Sans 11";
     show-icons:                 true;
-    icon-theme:                 "kora";
     display-drun:                " ";
     display-run:                 " ";
-    display-filebrowser:         "  ";
-    display-window:              "  ";
+    display-filebrowser:         "";
+    display-window:              "";
 	drun-display-format:        "{name}";
     hover-select:               false;
     scroll-method:              1;
@@ -43,13 +42,6 @@ configuration {
 /* ---- Load border radius ---- */
 @import "~/.config/ml4w/settings/rofi-border-radius.rasi"
 
-/* ---- Map colors ---- */
-* {
-    color11: @primary;
-    color5: @on-primary-fixed;
-    foreground: @on-surface;
-}
-
 // Main //
 window {
     height:                      35em;
@@ -61,7 +53,7 @@ window {
     spacing:                     0em;
     padding:                     0em;
     border:                      @border-width;
-    border-color:                 rgba(100, 114, 125, 0.5);
+    border-color:                @primary;
     border-radius:               @border-radius;
     background-color:            @background;
 }
@@ -70,43 +62,75 @@ mainbox {
     enabled:                     true;
     spacing:                     0em;
     padding:                     0em;
-    orientation:                 vertical;
-    children:                    [ "inputbar" , "listbox" ];
+    orientation:                 horizontal;
+    children:                    [ "imagebox" , "listbox" ];
     background-color:            transparent;
     background-image:            @current-image;
 }
 
+imagebox {
+    padding:                     20px;
+    background-color:            transparent;
+    orientation:                 vertical;
+    children:                    [ "inputbar", "dummy", "mode-switcher" ];
+}
+
+dummy {
+    background-color:            transparent;
+}
+
+// Modes //
+mode-switcher {
+    orientation:                 horizontal;
+    width:                       6.6em;
+    enabled:                     true;
+    padding:                     1.5em;
+    spacing:                     1.5em;
+    background-color:            transparent;
+}
+
+button {
+    padding:                     15px;
+    border-radius:               2em;
+    border:                      0;    
+    cursor:                      pointer;
+    background-color:            @surface;
+    text-color:                  @on-surface;
+}
+
+button selected {
+    padding:                     15px;
+    border-radius:               2em;    
+    background-color:            @surface;
+    text-color:                  @on-surface;
+}
 
 // Inputs //
 inputbar {
     enabled:                     true;
-    spacing:                     0em;
-    padding:                     5em;
+    margin: 1em;
     children:                    [ "textbox-prompt-colon", "entry" ];
-    background-color:            transparent;
-    background-image:            url("~/.cache/ml4w/hyprland-dotfiles/current_wallpaper", width);
+    border-radius:               2em;
+    background-color:            @surface;
 }
 
 textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
     str:                         "  ";
-    padding:                     1em 0.2em 0em 0em;
-    text-color:                  @foreground;
-    border-radius:               2em 0em 0em 2em;
-    background-color:            @color5;
-    background-image:            url("~/.cache/ml4w/hyprland-dotfiles/current_wallpaper", width);
+    padding:                     1em 0.3em 0 0;
+    text-color:                  @on-surface;
+    background-color:            transparent;
 }
 
 entry {
     enabled:                     true;
-    border-radius:               0em 2em 2em 0em;
     spacing:                     1em;
     padding:                     1em;
-    background-color:            @color5;
-    text-color:                  @foreground;
+    text-color:                  @on-surface;
     cursor:                      text;
     placeholder:                 "Search";
+    background-color:            transparent;
     placeholder-color:           inherit;
 }
 
@@ -115,7 +139,7 @@ listbox {
     padding:                     0em;
     spacing:                     0em;
     orientation:                 horizontal;
-    children:                    [ "listview" , "mode-switcher" ];
+    children:                    [ "listview" ];
     background-color:            @background;
 }
 
@@ -123,8 +147,8 @@ listview {
     padding:                     1.5em;
     spacing:                     0.5em;
     enabled:                     true;
-    columns:                     2;
-    lines:                       3;
+    columns:                     1;
+    lines:                       1;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -134,87 +158,64 @@ listview {
     fixed-columns:               true;
     cursor:                      "default";
     background-color:            transparent;
-    text-color:                  @foreground;
-}
-
-
-// Modes //
-mode-switcher {
-    orientation:                 vertical;
-    width:                       6.6em;
-    enabled:                     true;
-    padding:                     1.5em;
-    spacing:                     1.5em;
-    background-color:            transparent;
-}
-
-button {
-    cursor:                      pointer;
-    border-radius:               2em;
-    background-color:            @background;
-    text-color:                  @foreground;
-}
-
-button selected {
-    background-color:            @color5;
-    text-color:                  @foreground;
+    text-color:                  @on-surface;
 }
 
 
 // Elements //
 element {
     enabled:                     true;
-    spacing:                     0em;
+    spacing:                     10px;
     padding:                     0.5em;
     cursor:                      pointer;
     background-color:            transparent;
-    text-color:                  @foreground;
+    text-color:                  @on-surface;
 }
 
 element selected.normal {
-    background-color:            @color5;
-    text-color:                  @foreground;
+    background-color:            @surface;
+    text-color:                  @on-surface;
     border-radius:               1.5em;
 }
 
 element normal.normal {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  @on-surface;
 }
 
 element normal.urgent {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  @on-surface;
 }
 
 element normal.active {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  @on-surface;
 }
 
 element selected.urgent {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  @on-surface;
 }
 
 element selected.active {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  @on-surface;
 }
 
 element alternate.normal {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  @on-surface;
 }
 
 element alternate.urgent {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  @on-surface;
 }
 
 element alternate.active {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  @on-surface;
 }
 
 element-icon {
@@ -227,7 +228,7 @@ element-icon {
 
 element-text {
     vertical-align:              0.5;
-    horizontal-align:            0.1;
+    horizontal-align:            0.0;
     cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;
@@ -235,7 +236,7 @@ element-text {
 
 // Error message //
 error-message {
-    text-color:                  @foreground;
+    text-color:                  @on-surface;
     background-color:            @background;
     text-transform:              capitalize;
     children:                    [ "textbox" ];
