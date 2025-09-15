@@ -1,29 +1,16 @@
-// __        __          _                 
-// \ \      / /_ _ _   _| |__   __ _ _ __  
-//  \ \ /\ / / _` | | | | '_ \ / _` | '__| 
-//   \ V  V / (_| | |_| | |_) | (_| | |    
-//    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    
-//                 |___/                   
-//  
-// by Stephan Raabe (2023) 
-// ----------------------------------------------------- 
-//
 {
     // General Settings
     "layer": "top",
     "margin-top": 0,
     "margin-bottom": 0,
     "margin-left": 0,
-    "margin-right": 0,    
-    "height": 30,
+    "margin-right": 0,
     "spacing": 0,
-
     // Load Modules
     "include": [
         "~/.config/ml4w/settings/waybar-quicklinks.json",
         "~/.config/waybar/modules.json"
     ],
-
     // Modules Left
     "modules-left": [
         "custom/appmenu",
@@ -32,14 +19,12 @@
         //"wlr/taskbar",
         "group/links"
     ],
-
     // Modules Center
     "modules-center": [
         "custom/wallpaper",
         "hyprland/window",
         "custom/settings"
     ],
-
     // Modules Right    
     "modules-right": [
         "custom/screenshot",
@@ -52,11 +37,11 @@
         "power-profiles-daemon",
         "group/hardware",
         "custom/cliphist",
-"network",
+        "network",
         "custom/widgets",
         "clock",
         "custom/notification",
         "custom/panel",
-"tray",
+        "tray",
     ]
 }

@@ -179,7 +179,6 @@
     "on-click-right": "hyprsysteminfo &",
     "tooltip-format": "Left: Open the application launcher\nRight: Show all keybingings"
   },
-
   // Power Menu
   "custom/panel": {
     "format": "􀜊 ",
@@ -207,7 +206,6 @@
     "on-click-right": "swaync-client -d -sw",
     "escape": true
   },
-
   // Hyprshade
   "custom/hyprshade": {
     "format": "􀇁 ",
@@ -353,6 +351,7 @@
   },
   // Battery
   "battery": {
+    "interval": 1,
     "states": {
       // "good": 95,
       "warning": 30,
@@ -372,7 +371,6 @@
       "􀛨 "
     ]
   },
-
   // Power Profiles Daemon
   "power-profiles-daemon": {
     "format": "{icon}",
@@ -385,7 +383,6 @@
       "power-saver": "􁂬 " 
     }
   },
-
   // Pulseaudio
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float

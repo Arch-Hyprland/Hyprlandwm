@@ -338,7 +338,10 @@ window#waybar.empty #window {
  #custom-notification {
     margin: 0px 3px 0px 0px;
     padding:0px;
-    font-size:20px;
+    font-size:24px;
+    font-family: "Material Icons";
+    color: @iconcolor;
+    opacity: 0.8;
 }
 
 /* -----------------------------------------------------
@@ -356,8 +359,13 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #custom-updates {
-  margin: 8px 8px 8px 0px;
-  padding: 0 8px;
+    background-color: @backgroundlight;
+    font-size: 16px;
+    color: @textcolor1;
+    border-radius: 15px;
+    margin: 8px 8px 8px 0px;
+    padding: 0 8px;
+    opacity:0.8;
 }
 
 #custom-updates.green {
