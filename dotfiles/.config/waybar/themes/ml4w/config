@@ -27,16 +27,16 @@
     // Modules Left
     "modules-left": [
         "custom/appmenu",
+        "hyprland/workspaces",
         "custom/waybarthemes",
         //"wlr/taskbar",
-        "group/links",
-        "hyprland/window"
+        "group/links"
     ],
 
     // Modules Center
     "modules-center": [
         "custom/wallpaper",
-        "hyprland/workspaces",
+        "hyprland/window",
         "custom/settings"
     ],
 

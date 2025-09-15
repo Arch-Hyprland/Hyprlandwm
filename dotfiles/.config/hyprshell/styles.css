@@ -1,5 +1,5 @@
 :root {
-    --border-color: rgba(90, 90, 120, 0.4);
+    --border-color: rgba(90, 90, 120, 0.2);
     --border-color-active: rgba(9, 239, 9, 0.5);
     --active-color: rgba(9, 239, 9, 0.3);
 
@@ -17,18 +17,17 @@
 }
 
 .window {
-  box-shadow: inset 0 0 20px alpha(#666666, 0.8);
 }
 
 .monitor {
   border: none;
-  padding: 10px;
+  padding: 16px;
   border-radius: 30px;
   background: var(--bg-color);
+  box-shadow: inset 0 0 10px alpha(#444444, 0.8);
 }
 
 .workspace {
-  all: unset;
   border: none;
   padding: 6px;
   border-radius: 30px;
@@ -37,18 +36,10 @@
 }
 
 .client {
-  border: none;
-  padding: 6px;
+  padding: 10px;
   border-radius: 20px;
   background: none;
 }
-
-.client-active {
-  padding: 6px;
-  border-radius: 20px;
-  background: var(--active-color);
-}
-
 
 .client-image {
   background: none;

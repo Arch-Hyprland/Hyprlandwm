@@ -25,6 +25,6 @@
     :geometry (geometry :x 0 :y 0 :anchor "center center")
     :exclusive false
     :stacking "fg"
-    :focusable true
-    :namespace "eww-widget"
+    :focusable false
+    :namespace "eww-task"
 (taskview))

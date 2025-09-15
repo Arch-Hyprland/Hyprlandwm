@@ -154,9 +154,9 @@ tooltip label {
 
 #window {
   background: alpha(@backgroundlight, 0.25);
-  margin: 8px 10px 8px 0px;
+  margin: 0px 10px 6px 10px;
   padding: 0px 10px;
-  border-radius: 16px;
+  border-radius: 0 0 16px 16px;
   /*
   border-left: 3px solid @backgroundlight;
   border-right: 3px solid @backgroundlight;
@@ -327,7 +327,7 @@ window#waybar.empty #window {
 
 #custom-appmenu {
   padding: 2px 1px 1px 3px;
-  margin: 8px 15px 8px 10px;
+  margin: 8px 2px 8px 2px;
   border: 0px solid @bordercolor;
 }
 
@@ -356,7 +356,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #custom-updates {
-  margin: 6px 8px 6px 0px;
+  margin: 8px 8px 8px 0px;
   padding: 0 8px;
 }
 
@@ -566,7 +566,7 @@ window#waybar.empty #window {
   color: @textcolor2;
   border-radius: 8px 0 0 8px;
   padding: 1px 6px 1px 5px;
-  margin: 6px 0px 6px 3px;
+  margin: 6px 0px 6px 0px;
   opacity: 0.8;
 }
 

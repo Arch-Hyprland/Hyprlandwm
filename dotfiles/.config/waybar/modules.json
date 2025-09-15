@@ -52,6 +52,7 @@
   // Hyprland Window
   "hyprland/window": {
     "max-length": 60,
+    "icon": true,
     "rewrite": {
       "(.*) - Brave": "$1",
       "(.*) - Chromium": "$1",
