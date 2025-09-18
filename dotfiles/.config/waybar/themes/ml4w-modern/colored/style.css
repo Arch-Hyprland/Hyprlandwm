@@ -5,7 +5,7 @@
 
 @define-color primary @on_secondary;
 @define-color icon_color @secondary;
-@define-color border_color @secondary;
+@define-color border_color alpha(@secondary, 0.3);
 @define-color background @primary;
 
 @import '../style.css';

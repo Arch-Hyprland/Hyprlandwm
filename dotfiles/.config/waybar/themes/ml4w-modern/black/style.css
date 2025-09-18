@@ -3,11 +3,11 @@
  * ----------------------------------------------------- */
 @import '../../../../../.config/waybar/colors.css';
 
-@define-color primary #000000;
+@define-color primary alpha(#000000, 0.5);
 @define-color on_primary #FFFFFF;
 @define-color icon_color #000000;
-@define-color border_color #000000;
-@define-color background #000000;
+@define-color border_color alpha(#000000, 0.5);
+@define-color background alpha(#000000, 0.5);
 
 @import '../style.css';
  

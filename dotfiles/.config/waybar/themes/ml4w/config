@@ -5,6 +5,7 @@
     "margin-bottom": 0,
     "margin-left": 0,
     "margin-right": 0,
+    "height": 30,
     "spacing": 0,
     // Load Modules
     "include": [
@@ -17,7 +18,8 @@
         "hyprland/workspaces",
         "custom/waybarthemes",
         //"wlr/taskbar",
-        "group/links"
+        "group/links",
+        "tray"
     ],
     // Modules Center
     "modules-center": [
@@ -27,21 +29,20 @@
     ],
     // Modules Right    
     "modules-right": [
-        "custom/screenshot",
         "custom/updates",
+        "group/hardware",
+        "custom/screenshot",
         "custom/recorder",
+        "custom/cliphist",
         "pulseaudio",
-//"backlight",
+        //"backlight",
         "bluetooth",
         "battery", 
         "power-profiles-daemon",
-        "group/hardware",
-        "custom/cliphist",
         "network",
         "custom/widgets",
         "clock",
         "custom/notification",
-        "custom/panel",
-        "tray",
+        "custom/panel"
     ]
 }
