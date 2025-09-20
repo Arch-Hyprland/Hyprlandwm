@@ -11,7 +11,7 @@
 @define-color textcolor1 @FFFFFF;
 @define-color textcolor2 @FFFFFF;
 @define-color textcolor3 #000000;
-@define-color iconcolor #000000;
+@define-color iconcolor #FFFFFF;
 
 @import '../style.css';
 
@@ -22,3 +22,25 @@
 #custom-chatgpt {
     background-image: url("../../assets/openai.svg");
 }
+
+#custom-wallpaper {
+  background-image: url("../../assets/left-corner-dark.svg");
+  min-width: 43px;
+  color: @textcolor1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  padding-right: 0px;
+}
+
+#custom-settings {
+  border-top: 0px solid alpha(@backgroundlight, 0.2);
+  background-image: url("../../assets/right-corner-dark.svg");
+  min-width: 36px;
+  color: @textcolor1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  padding-left: 7px;
+}
+

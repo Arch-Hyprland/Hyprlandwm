@@ -62,8 +62,6 @@ window#waybar {
 #clock,
 #custom-appmenu,
 #custom-updates
-/*#custom-wallpaper
- #custom-settings  */
 {
   font-size: 16px;
   border-radius: 16px;
@@ -153,7 +151,7 @@ tooltip label {
  * ----------------------------------------------------- */
 
 #window {
-  background: alpha(@backgroundlight, 0.16);
+  background: alpha(@backgroundlight, 0.3);
   margin: 0px 0px 6px 0px;
   padding: 0px 10px;
   border-radius: 0 0 16px 16px;
@@ -256,27 +254,6 @@ window#waybar.empty #window {
   margin-right: 5px;
   font-size: 18px;
   font-weight: bold;
-}
-
-#custom-wallpaper {
-  background-image: url("../assets/left-corner.svg");
-  min-width: 43px;
-  color: @textcolor1;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  padding-right: 0px;
-}
-
-#custom-settings {
-  border-top: 0px solid alpha(@backgroundlight, 0.2);
-  background-image: url("../assets/right-corner.svg");
-  min-width: 36px;
-  color: @textcolor1;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  padding-left: 7px;
 }
 
 #custom-hyprshade {

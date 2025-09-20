@@ -13,3 +13,24 @@
 @define-color iconcolor @surface;
 
 @import '../style.css';
+
+#custom-wallpaper {
+  background-image: url("../../assets/left-corner-dark.svg");
+  min-width: 43px;
+  color: @textcolor1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  padding-right: 0px;
+}
+
+#custom-settings {
+  border-top: 0px solid alpha(@backgroundlight, 0.2);
+  background-image: url("../../assets/right-corner-dark.svg");
+  min-width: 36px;
+  color: @textcolor1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  padding-left: 7px;
+}
