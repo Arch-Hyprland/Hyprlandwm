@@ -59,7 +59,7 @@
       "(.*) - Brave Search": "$1",
       "(.*) - Outlook": "$1",
       "(.*) Microsoft Teams": "$1",
-      "^win(.*)": ""
+      "": "Show Desktop Application"
     },
     "separate-outputs": true
   },

@@ -61,9 +61,10 @@ window#waybar {
 #bluetooth,
 #clock,
 #custom-appmenu,
-#custom-updates,
-#custom-wallpaper,
-#custom-settings {
+#custom-updates
+/*#custom-wallpaper
+ #custom-settings  */
+{
   font-size: 16px;
   border-radius: 16px;
   background: alpha(@backgroundlight, 0.35);
@@ -152,24 +153,18 @@ tooltip label {
  * ----------------------------------------------------- */
 
 #window {
-  background: alpha(@backgroundlight, 0.25);
-  margin: 0px 10px 6px 10px;
+  background: alpha(@backgroundlight, 0.16);
+  margin: 0px 0px 6px 0px;
   padding: 0px 10px;
   border-radius: 0 0 16px 16px;
-  /*
-  border-left: 3px solid @backgroundlight;
-  border-right: 3px solid @backgroundlight;
-  */
-  border: 1px solid alpha(@backgroundlight, 0.4);
-  box-shadow: inset 0 0 10px alpha(@backgroundlight, 0.8);
+  box-shadow: inset 0px 0px 22px alpha(@backgroundlight, 0.6);
   color: @textcolor1;
   font-size: 14px;
 }
 
 window#waybar.empty #window {
-  min-width: 60px;
-  border-left: none;
-  border-right: none;
+  box-shadow: inset 0 0 20px alpha(@backgroundlight, 0.8);
+  min-width: 200px;
   background-color: transparent;
 }
 
@@ -264,13 +259,24 @@ window#waybar.empty #window {
 }
 
 #custom-wallpaper {
-  padding: 0 0px 1px 4px;
-  margin: 8px 0px;
+  background-image: url("../assets/left-corner.svg");
+  min-width: 43px;
+  color: @textcolor1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  padding-right: 0px;
 }
 
 #custom-settings {
-  padding: 1px 0px 1px 4px;
-  margin: 8px 8px 8px 0;
+  border-top: 0px solid alpha(@backgroundlight, 0.2);
+  background-image: url("../assets/right-corner.svg");
+  min-width: 36px;
+  color: @textcolor1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  padding-left: 7px;
 }
 
 #custom-hyprshade {
@@ -568,8 +574,8 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #tray {
-  background-color: alpha(@backgroundlight, 0.0);
-  box-shadow: inset 0 0 16px alpha(@backgroundlight, 0.8);
+  background-color: alpha(@backgroundlight, 0.2);
+  box-shadow: inset 0 0 6px alpha(@backgroundlight, 0.6);
   font-size: 16px;
   color: @textcolor2;
   border-radius: 16px;
