@@ -15,6 +15,7 @@
 @define-color text @on_surface;
 
 
+
 * {
   color: @text;
   font-size: 1rem;
@@ -38,10 +39,11 @@
 
 .floating-notifications.background .notification-row .notification-background {
   background: alpha(#000000, 0.6);       /* translucent blur */
-  border-radius: 20px;
-  border: 2px solid @primary;
-  margin: 10px 0;
-  padding: 8px;
+  border-radius: 12px;
+  border: 0px solid alpha(@primary, 0.4);
+  box-shadow: inset 0 0 6px alpha(@primary, 0.5);
+  margin: 4px;
+  padding: 0px;
 }
 
 .floating-notifications.background
@@ -67,7 +69,7 @@
   .notification-background
   .notification
   .notification-content {
-  margin: 1rem;
+  margin: 0.5rem;
 }
 
 .floating-notifications.background
@@ -76,7 +78,13 @@
   .notification
   > *:last-child
   > * {
-  min-height: 2.4em;
+  min-height: 2.0em;
+}
+.floating-notifications .notification image {
+  min-width: 48px;
+  min-height: 48px;
+  margin-right: 14px;
+  border-radius: 10px;
 }
 
 .floating-notifications.background

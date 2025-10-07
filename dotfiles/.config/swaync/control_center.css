@@ -11,7 +11,7 @@
 @define-color hoverbutton alpha(@inverse_primary,0.5);
 @define-color activebutton @inverse_primary;
 
-@define-color bordercolor @primary;
+@define-color bordercolor alpha(@primary, 0.3);
 @define-color fontcolor @on_surface;
 @define-color text @on_surface;
 
@@ -29,8 +29,8 @@
 /* === Control Center Container === */
 .control-center {
   background: @base;
-  border-radius: 10px;
-  border: 2px solid @bordercolor;
+  border-radius: 16px;
+  border: 1px solid @bordercolor;
   padding: 8px 8px 0 8px;
 }
 
@@ -225,7 +225,7 @@ trough highlight {
 }
 .notification-group-headers {
   font-weight: 900;
-  font-size: 0
+  font-size: 0;
 }
 
 .notification-group-icon {
