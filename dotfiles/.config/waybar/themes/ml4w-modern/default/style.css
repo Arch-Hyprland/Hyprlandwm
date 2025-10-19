@@ -3,7 +3,6 @@
  * ----------------------------------------------------- */
 @import '../../../../../.config/waybar/colors.css';
 
-@define-color primary @on_secondary;
 @define-color icon_color #FFFFFF;
 @define-color border_color alpha(@secondary, 0.5);
 @define-color background alpha(@surface, 0.6);
