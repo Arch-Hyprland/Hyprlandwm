@@ -63,6 +63,28 @@
     },
     "separate-outputs": true
   },
+  "niri/workspaces": {
+	  "format": "{icon}",
+	  "format-icons": {
+		  // Named workspaces
+		  // (you need to configure them in niri)
+		  "browser": "",
+		  "discord": "",
+		  "chat": "<b></b>",
+
+		  // Icons by state
+		  "active": "",
+		  "default": ""
+	  }
+  }, 
+  "niri/window": {
+	  "format": "{}",
+	  "rewrite": {
+		  "(.*) - Mozilla Firefox": "🌎 $1",
+		  "(.*) - zsh": "> [$1]"
+	  },
+	  "icons": true
+  },
   // widgets
   "custom/widgets": {
     "format": "􀻤 ",
@@ -83,21 +105,6 @@
     "on-click": "xdg-open https://studio.youtube.com",
     "tooltip": false
   },
-
-  // Now Playing
-  "custom/nowplaying": {
-    "exec": "~/.config/ml4w/scripts/now-playing.sh",
-    "format": "  {text}",
-    "return-type": "json",
-    "interval": 1,
-    "escape": true,
-    "hide-empty-text": false,
-    "on-click": "playerctl play-pause",
-    "on-click-right": "playerctl next",
-    "on-click-middle": "playerctl previous",
-    "tooltip-format": "Left: Play/Pause\nRight: Next\nMiddle: Previous"
-  },
-  
   // Cliphist
   "custom/cliphist": {
     "format": "􀕹 ",
@@ -286,7 +293,7 @@
     "format": "􀎼 ",
     "tooltip-format": "{}",
     "escape": true,
-    "on-click": "grimblast --notify copy area &",
+    "on-click": "grim -g \"$(slurp -o -c '#1e1e2e20')\" - | satty --filename - &",
     "tooltip": true
   },
 

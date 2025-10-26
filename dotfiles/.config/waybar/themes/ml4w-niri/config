@@ -1,0 +1,48 @@
+{
+    // General Settings
+    "layer": "top",
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "height": 40,
+    "spacing": 0,
+    // Load Modules
+    "include": [
+        "~/.config/ml4w/settings/waybar-quicklinks.json",
+        "~/.config/waybar/modules.json"
+    ],
+    // Modules Left
+    "modules-left": [
+        "custom/appmenu",
+        "niri/workspaces",
+        "custom/waybarthemes",
+        //"wlr/taskbar",
+        "group/links",
+        "tray"
+    ],
+    // Modules Center
+    "modules-center": [
+        "custom/wallpaper",
+        "niri/window",
+        "custom/settings"
+    ],
+    // Modules Right    
+    "modules-right": [
+        "custom/updates",
+        "group/hardware",
+        "custom/screenshot",
+        "custom/recorder",
+        "custom/cliphist",
+        "pulseaudio",
+        //"backlight",
+        "bluetooth",
+        "battery", 
+        "power-profiles-daemon",
+        "network",
+        "custom/widgets",
+        "clock",
+        "custom/notification",
+        "custom/panel"
+    ]
+}

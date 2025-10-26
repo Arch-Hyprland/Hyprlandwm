@@ -1,0 +1,38 @@
+/* -----------------------------------------------------
+ * Import Pywal colors
+ * ----------------------------------------------------- */
+ @import '../../../../../.config/waybar/colors.css';
+
+ @define-color backgroundlight #FFFFFF;
+ @define-color backgrounddark #FFFFFF;
+ @define-color workspacesbackground1 #FFFFFF;
+ @define-color workspacesbackground2 @on_surface;
+ @define-color bordercolor #FFFFFF;
+ @define-color textcolor1 #000000;
+ @define-color textcolor2 #000000;
+ @define-color textcolor3 #000000;
+ @define-color iconcolor #FFFFFF;
+
+@import '../style.css';
+
+#custom-wallpaper {
+  background-image: url("../../assets/left-corner-light.svg");
+  min-width: 43px;
+  color: @textcolor1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  padding-right: 0px;
+}
+
+#custom-settings {
+  border-top: 0px solid alpha(@backgroundlight, 0.2);
+  background-image: url("../../assets/right-corner-light.svg");
+  min-width: 36px;
+  color: @textcolor1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  padding-left: 7px;
+}
+
