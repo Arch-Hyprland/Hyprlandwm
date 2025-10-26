@@ -1,11 +1,12 @@
 Version 2.9.9.3
 --------------------------------------------------------
 - New Default icons Colloid
-- Improved Waybar modern theme and minimal version
+- Improved Waybar modern theme and new minimal version
 - Reduced border size to 2px
-- Boder size of NWG Dock Hyprland can be modified in ~/.config/ml4w/settings/dock-border.css
-- Walker can be optionally activated as system-wide launcher. http://localhost:5173/dotfiles/configuration/walker
+- Border size of NWG Dock Hyprland can be modified in ~/.config/ml4w/settings/dock-border.css
+- Walker can be optionally activated as system-wide launcher (except screenshot). https://mylinuxforwork.github.io/dotfiles/configuration/walker
 - New default wallpaper
+- Arch setup script checks for installed AUR helper (yay or paru)
 
 Version 2.9.9.2
 --------------------------------------------------------
