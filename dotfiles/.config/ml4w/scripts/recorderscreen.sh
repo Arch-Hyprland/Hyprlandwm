@@ -40,15 +40,13 @@ _start() {
     if [ "${CHOICE}" == "Slurp" ]; then
       wf-recorder -g "$(slurp)" \
           -r 60 \
-          -c h264_vaapi \
-          -d /dev/dri/renderD129 \
+          -c h264_nvenc \
           -f "${HOME}/Videos/wfrecorder/recording-${RECORDTIMTE}.mkv" > "/tmp/wf-record-${RECORDTIMTE}.log" &
 
     else
       wf-recorder -o "${CHOICE}" \
           -r 60 \
-          -c h264_vaapi \
-          -d /dev/dri/renderD129 \
+          -c h264_nvenc \
           -f "${HOME}/Videos/wfrecorder/recording-${RECORDTIMTE}.mkv" > "/tmp/wf-record-${RECORDTIMTE}.log" &
     fi
     dunstify \
@@ -64,7 +62,7 @@ _start() {
 }
 
 _stop() {
-  pid=$(ps -ef | grep wf-record | grep ".mkv")
+  pid=pgrep wf-record
   if [ -z "$pid" ]; then
     dunstify \
       -i "org.gnome.SoundRecorder" \
@@ -72,7 +70,7 @@ _stop() {
       "canot find record screen process, please check!!"
     exit
   fi
-  ps -ef | grep wf-record | grep ".mkv" | xargs kill -15 
+  kill -15 $pid
   dunstify \
     -i "org.gnome.SoundRecorder" \
     -a "wfrecorder" \
