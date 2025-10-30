@@ -113,7 +113,7 @@ input {
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 6
+    gaps 4
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -279,7 +279,7 @@ environment {
   SDL_IM_MODULE null
   GFW_IM_MODULE null
 
-  QT_QPA_PLATFORM "wayland"
+  QT_QPA_PLATFORM "wayland;xcb"
   QT_QPA_PLATFORMTHEME "gtk3"
 }
 
@@ -336,37 +336,37 @@ animations {
     slowdown 1.0
 
     workspace-switch {
-        spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
+        spring damping-ratio=2.0 stiffness=1000 epsilon=0.0001
     }
 
     window-open {
-        duration-ms 50
-        curve "ease-out-expo"
+        duration-ms 500
+        curve "ease-out-cubic"
     }
 
     window-close {
-        duration-ms 50
-        curve "ease-out-quad"
+        duration-ms 500
+        curve "ease-out-cubic"
     }
 
     horizontal-view-movement {
-        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+        spring damping-ratio=2.0 stiffness=1000 epsilon=0.0001
     }
 
     window-movement {
-        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+        spring damping-ratio=2.0 stiffness=1000 epsilon=0.0001
     }
 
     window-resize {
-        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+        spring damping-ratio=2.0 stiffness=1000 epsilon=0.0001
     }
 
     config-notification-open-close {
-        spring damping-ratio=0.6 stiffness=1000 epsilon=0.001
+        spring damping-ratio=1.6 stiffness=1000 epsilon=0.0001
     }
 
     exit-confirmation-open-close {
-        spring damping-ratio=0.6 stiffness=500 epsilon=0.01
+        spring damping-ratio=1.6 stiffness=1000 epsilon=0.001
     }
 
     screenshot-ui-open {
@@ -375,7 +375,7 @@ animations {
     }
 
     overview-open-close {
-        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+        spring damping-ratio=2.0 stiffness=1000 epsilon=0.0001
     }
 }
 
@@ -419,12 +419,11 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"wechat"#
+    match app-id=r#"wechat|QQ"#
     default-floating-position x=0 y=0 relative-to="top"
     open-focused true
     open-floating true
 }
-
 
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
@@ -432,6 +431,13 @@ window-rule {
     // - host Firefox (app-id is "firefox")
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
     match app-id=r#"zen-browser$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"Calculator"#
+    default-floating-position x=8 y=8 relative-to="top-right"
+    open-focused true
     open-floating true
 }
 
@@ -460,9 +466,15 @@ layer-rule {
     match namespace="^swww-daemon$"
     place-within-backdrop true
     opacity 0.75
+    baba-is-float true
 }
 layer-rule {
     match namespace="^quickshell-overview$"
+    place-within-backdrop true
+    baba-is-float true
+}
+layer-rule {
+    match namespace="^vicinae$"
     place-within-backdrop true
 }
 
@@ -480,6 +492,15 @@ binds {
     // Mod-Shift-/, which is usually the same as Mod-?,
     // shows a list of important hotkeys.
     Mod+Shift+Slash { show-hotkey-overlay; }
+
+
+    // app shortcuts
+
+    Mod+E hotkey-overlay-title="open file explorer" { spawn "nautilus"; }
+    Mod+B hotkey-overlay-title="open web browser" { spawn "zen-browser"; }
+    Mod+P hotkey-overlay-title="open screen cut" { spawn-sh "grim -g \"$(slurp -o -c '#Afff0000')\" - | satty --filename -"; }
+    // Mod+N hotkey-overlay-title="open " {}
+
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
@@ -671,17 +692,21 @@ binds {
     // Mod+R { switch-preset-column-width-back; }
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
+
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
+
+    // Move the focused window between the floating and the tiling layout.
+    Mod+T       { toggle-window-floating; }
+    Mod+Shift+T { switch-focus-between-floating-and-tiling; }
+
+    Mod+M { center-column; }
+    // Center all fully visible columns on screen.
+    Mod+Ctrl+M { center-visible-columns; }
 
     // Expand the focused column to space not taken up by other fully visible columns.
     // Makes the column "fill the rest of the space".
     Mod+Ctrl+F { expand-column-to-available-width; }
-
-    Mod+C { center-column; }
-
-    // Center all fully visible columns on screen.
-    Mod+Ctrl+C { center-visible-columns; }
 
     // Finer width adjustments.
     // This command can also:
@@ -698,9 +723,6 @@ binds {
     Mod+Shift+Minus { set-window-height "-10%"; }
     Mod+Shift+Equal { set-window-height "+10%"; }
 
-    // Move the focused window between the floating and the tiling layout.
-    Mod+V       { toggle-window-floating; }
-    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
@@ -717,7 +739,6 @@ binds {
 
     Print { screenshot; }
     // Alt+J { spawn "flameshot" "gui"; }
-    Mod+P { spawn-sh "grim -g \"$(slurp -o -c '#Afff0000')\" - | satty --filename -"; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 
@@ -732,7 +753,7 @@ binds {
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
-    Mod+Shift+E { quit; }
+    // Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }
 
     // Powers off the monitors. To turn them back on, do any input like
