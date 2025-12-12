@@ -83,7 +83,7 @@
 		  "(.*) - Mozilla Firefox": "🌎 $1",
 		  "(.*) - zsh": "> [$1]"
 	  },
-	  "icons": true
+	  "icon": true
   },
   // widgets
   "custom/widgets": {
@@ -168,7 +168,7 @@
     "on-click": "xdg-open --app=https://teams.microsoft.com/go",
     "tooltip": false
   },
-  // Brave Launcher
+  // Browser Launcher
   "custom/browser": {
     "format": "􀥠 ",
     "on-click": "~/.config/ml4w/settings/browser.sh",
@@ -409,11 +409,11 @@
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
     "format": "{icon}{volume}%",
-    "format-bluetooth": "{volume}%{icon}󰂱{format_source}",
-    "format-bluetooth-muted": " {icon}󰂱{format_source}",
-    "format-muted": " {format_source}",
-    "format-source": "{volume}% 􀊱 ",
-    "format-source-muted": "􀊳 ",
+    "format-bluetooth": "{icon}{volume}% 􀪷 {format_source}",
+    "format-bluetooth-muted": "􀊢 {icon} 􀪷 {format_source}",
+    "format-muted": "􀊢 {format_source}",
+    "format-source": "{volume}% 􀊱",
+    "format-source-muted": "􀊳",
     "format-icons": {
       "headphone": "􀑈 ",
       "hands-free": "􀺹 ",

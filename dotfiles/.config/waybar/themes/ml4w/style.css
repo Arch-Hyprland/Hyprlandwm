@@ -213,7 +213,6 @@ window#waybar.empty #window {
  * Custom Quicklinks
  * ----------------------------------------------------- */
 
-#custom-brave,
 #custom-browser,
 #custom-keybindings,
 #custom-outlook,
@@ -482,7 +481,6 @@ window#waybar.empty #window {
 
 #bluetooth, #bluetooth.on, #bluetooth.connected {
     background-color: alpha(@backgroundlight, 0.25);
-    font-size: 16px;
     font-size: 22px;
     color: @textcolor1;
     border-radius: 15px;
