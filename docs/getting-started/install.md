@@ -29,7 +29,10 @@ https://raw.githubusercontent.com/mylinuxforwork/dotfiles/main/hyprland-dotfiles
 https://raw.githubusercontent.com/mylinuxforwork/dotfiles/main/hyprland-dotfiles.dotinst
 ```
 
-Setup scripts to install the required dependencies are included for Arch, Fedora and openSuse Tumbleweed. 
+Setup scripts to install the required dependencies are included for Arch and openSuse Tumbleweed (Fedora with limitations).
+
+> [!IMPORTANT]
+> Hyprland Wiki: We officially run and test Hyprland on Arch and NixOS, and we guarantee Hyprland will work there. For any other distro (not based on Arch/Nix) you might have varying amounts of success. However, since Hyprland is extremely bleeding-edge, point release distros like Pop!_OS, Fedora, Ubuntu, etc. will have major issues running Hyprland. Rolling release distros like openSUSE, Solus ,etc. will likely be fine.
 
 The installation of dependencies can take between 5 to 15 minutes depending on your internet connection and system performance.
 
@@ -89,6 +92,7 @@ Please follow the following steps:
 
 ```sh 
 mkdir -p ~/Projects # Create a projects folder 
+cd ~/Projects #cd into the Projects directory
 git clone --depth 1 https://github.com/mylinuxforwork/dotfiles # Rolling Release
 cd ~/Projects/dotfiles/setup # cd into the setup folder
 ./setup.sh # Run the setup script to install the dependencies

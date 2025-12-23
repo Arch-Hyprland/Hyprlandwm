@@ -1,4 +1,4 @@
-@import 'colors.css';
+@import '../../colors.css';
 
 /* === Derived dynamic colors === */
 @define-color base alpha(@surface, 0.5);                      /* translucent blurred base */

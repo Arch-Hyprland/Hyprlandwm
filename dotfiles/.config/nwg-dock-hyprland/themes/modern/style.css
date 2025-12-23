@@ -1,5 +1,5 @@
-@import url("colors.css");
-@import url("../ml4w/settings/dock-border.css");
+@import url("../../colors.css");
+@import url("../../../ml4w/settings/dock-border.css");
 
 window {
   background: alpha(#bbb, 0.25);

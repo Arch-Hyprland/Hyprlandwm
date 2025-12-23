@@ -89,7 +89,8 @@ _writeHeader "Fedora"
 # Copr
 # --------------------------------------------------------------
 
-sudo dnf copr enable --assumeyes solopasha/hyprland
+sudo dnf copr remove --assumeyes solopasha/hyprland
+sudo dnf copr enable --assumeyes sdegler/hyprland
 sudo dnf copr enable --assumeyes peterwu/rendezvous
 sudo dnf copr enable --assumeyes wef/cliphist
 sudo dnf copr enable --assumeyes tofik/nwg-shell
@@ -159,6 +160,17 @@ sudo pip install pywalfox
 sudo pywalfox install
 sudo pip install screeninfo
 sudo pip install waypaper
+
+# --------------------------------------------------------------
+# TTY Clock
+# --------------------------------------------------------------
+
+# git clone https://github.com/xorg62/tty-clock
+# cd tty-clock
+# sudo dnf install ncurses ncurses-devel -y
+# make
+# chmod +x tty-clock
+# sudo mv tty-clock /usr/local/bin/tty-clock
 
 # --------------------------------------------------------------
 # ML4W Apps
