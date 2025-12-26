@@ -53,6 +53,7 @@
   "hyprland/window": {
     "max-length": 60,
     "icon": true,
+    "icon-size": "22",
     "rewrite": {
       "(.*) - Brave": "$1",
       "(.*) - Chromium": "$1",
@@ -440,9 +441,9 @@
     "tooltip-format": "{device_enumerate}",
     "interval": 30,
     "on-click": "sleep 0.1 && ~/.config/ml4w/settings/bluetooth.sh",
-    "tooltip-format-connected": "Connected devices: {num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-connected": "Connected devices: {num_connections} connected\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "􀮔  {device_alias}",
-    "tooltip-format-enumerate-connected-battery": "{device_alias}\t| Battery life: {device_battery_percentage}%",
+    "tooltip-format-enumerate-connected-battery": "􀮔  {device_alias}_( 􀖉{device_battery_percentage}% )"
   },
   // Other
   "user": {

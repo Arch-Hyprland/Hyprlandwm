@@ -11,7 +11,10 @@
  * ----------------------------------------------------- */
 
  * {
-    font-family: "Fira Sans Semibold", "Font Awesome 7 Free", "Font Awesome 7 Brands", "Font Awesome 6 Free", "Font Awesome 6 Brands", FontAwesome, "Material Icons", Roboto, Helvetica, Arial, sans-serif;
+    font-family: "SF Pro Display", "Inter SemiBold", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 16px;
     border: none;
     border-radius: 0px;
 }
@@ -22,43 +25,42 @@ window#waybar {
 
 .modules-left {
     background-color: @surface;
-    border-radius: 12px;
-    background: radial-gradient(circle at 50% 250%, alpha(darker(@surface),0.9), alpha(@surface_dim,0.9)) padding-box,
-        linear-gradient(@primary,@on_primary) border-box;
+    border-radius: 14px;
+    background: radial-gradient(circle at 50% 250%, alpha(darker(@surface),0.6), alpha(@surface_dim,0.6)) padding-box,
+        linear-gradient(alpha(@primary, 0.3), alpha(@on_primary, 0.3)) border-box;
     border: 1px solid transparent;	
     opacity:0.8;
     padding:0px;
-    margin:10px;
-    box-shadow: 0 0 6 @shadow;
+    margin:4px;
+    box-shadow: 0 0 3 @shadow;
 }
 
 .modules-right {
     background-color: @surface;
-    border-radius: 12px;
-    background: radial-gradient(circle at 50% 250%, alpha(darker(@surface),0.9), alpha(@surface_dim,0.9)) padding-box,
-        linear-gradient(@primary,@on_primary) border-box;
+    border-radius: 14px;
+    background: radial-gradient(circle at 50% 250%, alpha(darker(@surface),0.6), alpha(@surface_dim,0.6)) padding-box,
+        linear-gradient(alpha(@primary, 0.3), alpha(@on_primary, 0.3)) border-box;
     border: 1px solid transparent;	
     opacity:0.8;
     padding:0px;
-    margin:10px;
-    box-shadow: 0 0 6 @shadow;
+    margin:5px;
+    box-shadow: 0 0 3 @shadow;
 }
 
 .modules-center {
     background-color: @surface;
-    border-radius: 12px;
-    background: radial-gradient(circle at 50% 250%, alpha(darker(@surface),0.9), alpha(@surface_dim,0.9)) padding-box,
-        linear-gradient(@primary,@on_primary) border-box;
+    border-radius: 14px;
+    background: radial-gradient(circle at 50% 250%, alpha(darker(@surface),0.6), alpha(@surface_dim,0.6)) padding-box,
+        linear-gradient(alpha(@primary, 0.3), alpha(@on_primary, 0.3)) border-box;
     border: 1px solid transparent;	
     opacity:0.8;
-    margin:10px;
-    box-shadow: 0 0 6 @shadow;
+    margin:5px;
+    box-shadow: 0 0 3 @shadow;
 }
 
 label.module {
-    font-size: 14px;
-    margin-left: 8px;
-    margin-right: 8px;
+    margin-left: 5px;
+    margin-right: 5px;
     border-radius: 5px;
 }
 
@@ -109,8 +111,8 @@ label.module:hover {
 tooltip {
     background-color: @surface;
     border-radius: 12px;
-    background: radial-gradient(circle at 50% 250%, @surface, @surface_dim) padding-box,
-        linear-gradient(#FFFFFF,@on_primary) border-box;
+    background: radial-gradient(circle at 50% 250%, alpha(@surface, 0.4), alpha(@surface_dim, 0.4)) padding-box,
+        linear-gradient(alpha(@primary, 0.4), alpha(@on_primary, 0.3)) border-box;
     border: 1px solid transparent;	
     opacity:0.7;
     margin:10px;
@@ -125,6 +127,7 @@ tooltip label {
  * ----------------------------------------------------- */
 
 #window {
+  margin: 3px 6px;
 }
 
 window#waybar.empty #window {
@@ -155,6 +158,15 @@ window#waybar.empty #window {
 /* -----------------------------------------------------
  * ML4W Icon
  * ----------------------------------------------------- */
+
+#custom-chatgpt {
+    margin-right: 10px;
+    background-image: url("../assets/openai.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; 
+    padding-right: 18px;
+}
 
 #custom-ml4w-welcome {
     margin-top:5px;
@@ -206,8 +218,6 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #custom-notification {
-    font-size: 20px;
-    font-family: "Material Icons";
     color: @icon_color;
 }
 
@@ -260,8 +270,8 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #clock {
-    margin-left: 12px;
-    margin-right: 12px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 #clock:hover {
@@ -314,12 +324,15 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #bluetooth, #bluetooth.on, #bluetooth.connected {
+  font-size: 24px;
 }
 
 #bluetooth:hover {
+  font-size: 24px;
 }
 
 #bluetooth.off {
+  font-size: 24px;
 }
 
 /* -----------------------------------------------------
@@ -348,6 +361,16 @@ window#waybar.empty #window {
 
 #tray {
     padding: 0px 5px 0px 10px;
+}
+
+#tray menu {
+    background-color: @surface;
+    border-radius: 12px;
+    background: radial-gradient(circle at 50% 250%, alpha(@surface, 0.4), alpha(@surface_dim, 0.4)) padding-box,
+        linear-gradient(alpha(@primary, 0.4), alpha(@on_primary, 0.3)) border-box;
+    border: 1px solid transparent;	
+    opacity:0.7;
+    margin: 5px;
 }
 
 #tray > .passive {
