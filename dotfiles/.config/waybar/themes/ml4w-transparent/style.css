@@ -11,7 +11,10 @@
  * ----------------------------------------------------- */
 
 * {
-    font-family: "Fira Sans Semibold", "Font Awesome 7 Free", "Font Awesome 7 Brands", "Font Awesome 6 Free", "Font Awesome 6 Brands", FontAwesome, "Material Icons", Roboto, Helvetica, Arial, sans-serif;
+    font-family: "SF Pro Display", "Inter SemiBold", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 16px;
     border: none;
     border-radius: 0px;
 }
@@ -22,35 +25,36 @@ window#waybar {
 }
 
 .modules-left {
-    border-radius: 12px;
+    border-radius: 16px;
     border: 1px solid transparent;
     opacity:0.8;
-    padding:0px;
-    margin:10px;
+    padding: 0 5px 0 0px;
+    margin: 1px 1px 1px 1px;
     box-shadow: inset 2px 2px 14px rgba(255, 255, 255, 0.6), inset 0 1px 2px 0px rgba(255, 255, 255, 0.6), inset 1px 1px 1px rgba(255, 255, 255, 0.6);
 }
 
 .modules-right {
-    border-radius: 12px;
+    border-radius: 16px;
     border: 1px solid transparent;
-    opacity:0.8;
-    padding:0px;
-    margin:10px;
+    opacity: 0.8;
+    padding: 0 0 0 5px;
+    margin: 1px 1px 1px 1px;
     box-shadow: inset 0px 2px 14px 2px rgba(255, 255, 255, 0.6), inset 0 1px 2px 0px rgba(255, 255, 255, 0.6), inset 1px 1px 1px rgba(255, 255, 255, 0.6);
 }
 
 .modules-center {
-    border-radius: 12px;
+    border-radius: 16px;
     border: 1px solid transparent;
     opacity:0.8;
-    margin:10px;
+    margin: 1px 1px 1px 1px;
+    padding: 0 2px 0 6px;
     box-shadow: inset 2px 2px 14px rgba(255, 255, 255, 0.6), inset 0 1px 2px 0px rgba(255, 255, 255, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.6);
 }
 
 label.module {
     font-size: 14px;
-    margin-left: 8px;
-    margin-right: 8px;
+    margin-left: 5px;
+    margin-right: 5px;
     border-radius: 5px;
 }
 
@@ -70,12 +74,36 @@ label.module {
  * }
  */
 
+
+#custom-chatgpt {
+    margin-right: 5px;
+    background-image: url("../assets/openai.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; 
+    padding-right: 18px;
+}
+
+#custom-widgets {
+  font-size: 18px;
+  margin-right: 1px;
+}
+
+#custom-widgets,
+#custom-notification,
+#custom-panel,
+#custom-waybarthemes {
+  color: alpha(@iconcolor, 0.9);
+  font-size: 17px;
+  font-weight: bold;
+}
+
 /* -----------------------------------------------------
  * Workspaces
  * ----------------------------------------------------- */
 
 #workspaces {
-padding: 5px 3px 5px 3px;
+padding: 5px 3px 5px 1px;
 min-width: 176px;
 }
 
@@ -111,7 +139,7 @@ tooltip {
     border-radius: 12px;
     border: 1px solid transparent;
     opacity:0.7;
-    margin:10px;
+    margin: 6px;
     box-shadow: inset 2px 2px 30px rgba(255, 255, 255, 0.8), inset 0 1px 2px 0px rgba(255, 255, 255, 1), inset 0 1px 1px rgba(255, 255, 255, 1);
 }
 
@@ -180,8 +208,9 @@ padding-right: 20px;
  * ----------------------------------------------------- */
 
 #custom-appmenu {
-padding-right:3px;
-padding-left:5px;
+  padding-right: 0px;
+  padding-left: 5px;
+  font-size: 18px;
 }
 
 #custom-appmenu:hover {
@@ -205,9 +234,7 @@ padding-left:5px;
  * ----------------------------------------------------- */
 
 #custom-notification {
-font-size: 20px;
-font-family: "Material Icons";
-color: @icon_color;
+  margin-right: 1px;
 }
 
 /* -----------------------------------------------------
@@ -261,8 +288,8 @@ color:@on_error;
  * ----------------------------------------------------- */
 
 #clock {
-margin-left: 12px;
-margin-right: 12px;
+margin-left: 5px;
+margin-right: 5px;
 }
 
 #clock:hover {
@@ -315,12 +342,15 @@ margin-right: 12px;
  * ----------------------------------------------------- */
 
 #bluetooth, #bluetooth.on, #bluetooth.connected {
+  font-size: 24px;
 }
 
 #bluetooth:hover {
+  font-size: 24px;
 }
 
 #bluetooth.off {
+  font-size: 24px;
 }
 
 /* -----------------------------------------------------
@@ -348,7 +378,17 @@ margin-right: 12px;
  * ----------------------------------------------------- */
 
 #tray {
-padding: 0px 5px 0px 10px;
+    padding: 0px 5px 0px 10px;
+}
+
+#tray menu {
+    background-color: @surface;
+    border-radius: 12px;
+    background: radial-gradient(circle at 50% 250%, alpha(@surface, 0.4), alpha(@surface_dim, 0.4)) padding-box,
+        linear-gradient(alpha(@primary, 0.4), alpha(@on_primary, 0.3)) border-box;
+    border: 1px solid transparent;	
+    opacity:0.7;
+    margin: 5px;
 }
 
 #tray > .passive {
@@ -358,3 +398,5 @@ padding: 0px 5px 0px 10px;
 #tray > .needs-attention {
 -gtk-icon-effect: highlight;
 }
+
+

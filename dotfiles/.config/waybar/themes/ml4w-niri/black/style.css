@@ -20,6 +20,14 @@
 }
 
 #custom-chatgpt {
+    margin-right: 10px;
+    background-image: url("../assets/openai.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; 
+    padding-right: 18px;
+}
+#custom-chatgpt {
     background-image: url("../../assets/openai.svg");
 }
 

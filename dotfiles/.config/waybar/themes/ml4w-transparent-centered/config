@@ -14,7 +14,9 @@
     // Modules Left
     "modules-left": [
         "custom/appmenu",
-        "clock",
+        "custom/waybarthemes",
+        "group/links",
+        "tray",
         //"wlr/taskbar",
         //"group/quicklinks",
         //"custom/nowplaying",        
@@ -22,8 +24,9 @@
     ],
     // Modules Center
     "modules-center": [
+        "custom/wallpaper",
         "hyprland/workspaces",
-        "custom/empty"
+        "custom/settings"
     ],
     // Modules Right    
     "modules-right": [
@@ -35,9 +38,8 @@
         "battery",
         "group/hardware",
         "group/tools",
-        "tray",
+        "clock",
         "custom/notification",
-        "custom/exit",
-        "custom/ml4w-welcome"
+        "custom/panel"
     ]
 }

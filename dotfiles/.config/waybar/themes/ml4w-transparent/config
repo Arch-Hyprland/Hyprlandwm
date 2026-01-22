@@ -15,14 +15,21 @@
     "modules-left": [
         "custom/appmenu",
         "hyprland/workspaces",
+        "custom/waybarthemes",
         //"wlr/taskbar",
         //"group/quicklinks",
         //"custom/nowplaying",        
-        "custom/empty"
+        "group/links",
+        "tray",
+        "custom/screenshot",
+        "custom/recorder",
+        "custom/cliphist",
+        "custom/wallpaper"
     ],
     // Modules Center
     "modules-center": [
-        "clock",
+        "hyprland/window",
+        "custom/settings",
         "custom/empty"
     ],
     // Modules Right    
@@ -34,10 +41,9 @@
         "network",
         "battery",
         "group/hardware",
-        "group/tools",
-        "tray",
+        "custom/widgets",
+        "clock",
         "custom/notification",
-        "custom/exit",
-        "custom/ml4w-welcome"
+        "custom/panel"
     ]
 }
