@@ -1,0 +1,10 @@
+/* -----------------------------------------------------
+ * Import Matugen Colors
+ * ----------------------------------------------------- */
+@import '../../../../../.config/waybar/colors.css';
+
+@import '../style.css';
+
+#custom-chatgpt {
+    background-image: url("../../assets/openai.svg");
+}

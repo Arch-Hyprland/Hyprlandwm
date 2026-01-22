@@ -337,6 +337,7 @@ environment {
 spawn-at-startup "/usr/bin/vicinae" "server"
 spawn-at-startup "/usr/bin/fcitx5"
 spawn-at-startup "niri-switch-daemon"
+spawn-sh-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &"
 
 // 壁纸swww用于overview背景，swaybg用于workspace背景
 spawn-at-startup "/usr/bin/swww-daemon"
@@ -462,14 +463,14 @@ window-rule {
 }
 
 window-rule {
-    match title="AppRun|Registration"
-    default-floating-position x=0 y=0 relative-to="top"
-    open-focused true
-    open-floating true
+  match title=r#"^(Welcome|Open File|Save File|Registration|Login|AppRun|Library).*"#
+  default-floating-position x=0 y=200 relative-to="top"
+  open-focused true
+  open-floating true
 }
 
 window-rule {
-    match app-id=r#"wechat|QQ"#
+    match app-id=r#"wechat|QQ|wemeet"#
     default-floating-position x=0 y=0 relative-to="top"
     open-focused false
     open-floating true
@@ -549,6 +550,7 @@ binds {
     Mod+E hotkey-overlay-title="open file explorer" { spawn "nautilus"; }
     Mod+B hotkey-overlay-title="open web browser" { spawn "zen-browser"; }
     Mod+P hotkey-overlay-title="open screen cut" { spawn-sh "grim -g \"$(slurp -o -c '#Afff0000')\" - | satty --filename -"; }
+    Mod+D hotkey-overlay-title="pick new wallpaper" { spawn-sh "~/.config/hypr/scripts/waypaper.sh --random"; }
     // Mod+N hotkey-overlay-title="open " {}
 
 
@@ -728,7 +730,7 @@ binds {
     Mod+BracketLeft  { consume-or-expel-window-left; }
     Mod+BracketRight { consume-or-expel-window-right; }
 
-    // Consume one window from the right to the bottom of the focused column.
+    // Consume one window from the right to the bottom ohe focused column.
     Mod+Comma  { consume-window-into-column; }
     // Expel the bottom window from the focused column to the right.
     Mod+Period { expel-window-from-column; }

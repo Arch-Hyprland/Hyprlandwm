@@ -1,5 +1,5 @@
 recent-windows {
     highlight {
-        corner-radius 12
+        corner-radius 9
     }
 }

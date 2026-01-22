@@ -60,7 +60,7 @@
       "(.*) - Brave Search": "$1",
       "(.*) - Outlook": "$1",
       "(.*) Microsoft Teams": "$1",
-      "": "Show Desktop Application"
+      "": "􀏞  Desktop Application"
     },
     "separate-outputs": true
   },
@@ -84,6 +84,7 @@
 		  "(.*) - Mozilla Firefox": "🌎 $1",
 		  "(.*) - zsh": "> [$1]"
 	  },
+    "icon-size": "22",
 	  "icon": true
   },
   // widgets
