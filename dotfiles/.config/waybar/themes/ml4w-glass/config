@@ -3,8 +3,8 @@
     "layer": "top",
     "margin-top": 0,
     "margin-bottom": 0,
-    "margin-left": 1,
-    "margin-right": 1,
+    "margin-left": 0,
+    "margin-right": 0,
     "spacing": 0,
     // Load Modules
     "include": [

@@ -10,6 +10,7 @@ general=(
     "flatpak"
     "vim"
     "inotify-tools"
+    "gnome-themes-extra"
 )
 
 hyprland=(
@@ -26,7 +27,7 @@ apps=(
     "vlc"
     "nwg-dock-hyprland"
     "waybar"
-    "rofi-wayland"
+    "rofi"
     "nwg-look"
     "pavucontrol"
     "neovim"
@@ -36,8 +37,8 @@ apps=(
 )
 
 tools=(
-    "xdg-user-dirs"    
-    "xdg-desktop-portal-gtk"    
+    "xdg-user-dirs"
+    "xdg-desktop-portal-gtk"
     "figlet"
     "fastfetch"
     "htop"
@@ -51,5 +52,7 @@ tools=(
     "gvfs"
     "grim"
     "breeze"
+    "tesseract"
+    "wl-clipboard"
     "btop"
 )

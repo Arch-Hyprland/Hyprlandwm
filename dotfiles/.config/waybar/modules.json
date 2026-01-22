@@ -107,13 +107,36 @@
     "on-click": "xdg-open https://studio.youtube.com",
     "tooltip": false
   },
+  // Tools
+  "custom/tools": {
+    "format": "",
+    "tooltip-format": "Tools",
+    "on-scroll-up": "true",
+    "on-scroll-down": "true"
+  },
+
+  // Now Playing
+  "custom/nowplaying": {
+    "exec": "~/.config/ml4w/scripts/now-playing.sh",
+    "format": "  {text}",
+    "return-type": "json",
+    "interval": 1,
+    "escape": true,
+    "hide-empty-text": false,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "on-click-middle": "playerctl previous",
+    "tooltip-format": "Left: Play/Pause\nRight: Next\nMiddle: Previous"
+  },
   // Cliphist
   "custom/cliphist": {
     "format": "􀕹 ",
     "on-click": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh",
     "on-click-right": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh d",
     "on-click-middle": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh w",
-    "tooltip-format": "Left: Open clipboard Manager\nRight: Delete an entry\nMiddle: Clear list"
+    "tooltip-format": "Left: Open clipboard Manager\nRight: Delete an entry\nMiddle: Clear list",
+    "on-scroll-up": "true",
+    "on-scroll-down": "true"
   },
   // Updates Count
   "custom/updates": {
@@ -235,7 +258,9 @@
     "format": "􀇁 ",
     "tooltip-format": "Toggle Screen Shader",
     "on-click": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh",
-    "on-click-right": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh rofi"
+    "on-click-right": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh rofi",
+    "on-scroll-up": "true",
+    "on-scroll-down": "true"
   },
   // Hypridle inhibitor
   "custom/hypridle": {
@@ -245,7 +270,9 @@
     "exec-on-event": true,
     "interval": 60,
     "exec": "~/.config/hypr/scripts/hypridle.sh status",
-    "on-click": "~/.config/hypr/scripts/hypridle.sh toggle"
+    "on-click": "~/.config/hypr/scripts/hypridle.sh toggle",
+    "on-scroll-up": "true",
+    "on-scroll-down": "true"
   },
   // Keyboard State
   "keyboard-state": {
@@ -255,7 +282,9 @@
     "format-icons": {
       "locked": "􀎡 ",
       "unlocked": "􀎥 "
-    }
+    },
+    "on-scroll-up": "true",
+    "on-scroll-down": "true"
   },
   // System tray
   "tray": {
@@ -277,7 +306,9 @@
   // system
   "custom/system": {
     "format": "􀏞 ",
-    "tooltip": false
+    "tooltip": false,
+    "on-scroll-up": "true",
+    "on-scroll-down": "true"
   },
   "custom/recorder": {
     "format": "{}",
@@ -303,24 +334,32 @@
   "cpu": {
     "format": "􀟪 {usage}% ",
     "on-click-right": "~/.config/ml4w/settings/systeminfo.sh",
-    "on-click": "~/.config/ml4w/settings/system-monitor.sh"
+    "on-click": "~/.config/ml4w/settings/system-monitor.sh",
+    "on-scroll-up": "true",
+    "on-scroll-down": "true"
   },
   // Memory
   "memory": {
     "format": "􀢙 {}% ",
     "on-click-right": "~/.config/ml4w/settings/systeminfo.sh",
-    "on-click": "~/.config/ml4w/settings/system-monitor.sh"
+    "on-click": "~/.config/ml4w/settings/system-monitor.sh",
+    "on-scroll-up": "true",
+    "on-scroll-down": "true"
   },
   // Harddisc space used
   "disk": {
     "interval": 30,
     "format": "􀨪 {percentage_used}% ",
     "path": "/",
-    "on-click": "~/.config/ml4w/settings/system-monitor.sh"
+    "on-click": "~/.config/ml4w/settings/system-monitor.sh",
+    "on-scroll-up": "true",
+    "on-scroll-down": "true"
   },
   //Language
   "hyprland/language": {
-    "format": "{short}"
+    "format": "{short}",
+    "on-scroll-up": "true",
+    "on-scroll-down": "true"
   },
   // Group Hardware
   "group/hardware": {
@@ -405,7 +444,9 @@
       "performance": "􀋧 ",
       "balanced": "􀫏 ",
       "power-saver": "􁂬 " 
-    }
+    },
+    "on-scroll-up": "true",
+    "on-scroll-down": "true"
   },
   // Pulseaudio
   "pulseaudio": {
