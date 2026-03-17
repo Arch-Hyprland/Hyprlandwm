@@ -8,7 +8,7 @@
 // https://yalter.github.io/niri/Configuration:-Input
 input {
 
-    // 串口跟随鼠标
+    // 窗口跟随鼠标
     focus-follows-mouse
 
     keyboard {
@@ -157,11 +157,11 @@ layout {
     // - "always", the focused column will always be centered.
     // - "on-overflow", focusing a column will center it if it doesn't fit
     //   together with the previously focused column.
-    center-focused-column "never"
+    center-focused-column "on-overflow"
     empty-workspace-above-first
 
     default-column-display "tabbed"
-    always-center-single-column
+    always-center-single-column 
 
     background-color "#00000050"
 
@@ -337,7 +337,7 @@ environment {
 spawn-at-startup "/usr/bin/vicinae" "server"
 spawn-at-startup "/usr/bin/fcitx5"
 spawn-at-startup "niri-switch-daemon"
-spawn-sh-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &"
+spawn-at-startup "/usr/bin/niri-sidebar" "listen"
 
 // 壁纸swww用于overview背景，swaybg用于workspace背景
 spawn-at-startup "/usr/bin/swww-daemon"
@@ -346,6 +346,7 @@ spawn-at-startup "swww" "img" "~/wallpaper/wallhaven-e8x7mk.png"
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 spawn-sh-at-startup "~/.config/waybar/launch.sh"
+spawn-sh-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &"
 
 
 hotkey-overlay {
@@ -438,6 +439,22 @@ xwayland-satellite {
     path "xwayland-satellite"
 }
 
+window-rule {
+  opacity 0.94
+}
+
+window-rule {
+  match is-floating=true
+  opacity 0.9
+  border {
+    width 3
+    active-color "#1E1E2E30"
+  }
+
+  geometry-corner-radius 3
+  min-width 100
+  min-height 100
+}
 
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
@@ -470,7 +487,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"wechat|QQ|wemeet"#
+    match app-id=r#"wechat|QQ|wemeet|Vesktop"#
     default-floating-position x=0 y=0 relative-to="top"
     open-focused false
     open-floating true
@@ -486,8 +503,8 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"Calculator"#
-    default-floating-position x=8 y=8 relative-to="top-right"
+    match title=r#"Calculator"#
+    default-floating-position x=8 y=8 relative-to="bottom-right"
     open-focused true
     open-floating true
 }
@@ -527,6 +544,17 @@ layer-rule {
 layer-rule {
     match namespace="^vicinae$"
     place-within-backdrop true
+
+    shadow {
+        on
+        // off
+        softness 30
+        spread 5
+        offset x=0 y=8
+        draw-behind-window true
+        color "#00000064"
+        // inactive-color "#00000064"
+    }
 }
 
 binds {
@@ -564,6 +592,15 @@ binds {
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
     // For example, this is a standard bind to toggle the screen reader (orca).
     Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
+
+    // Toggle the focused window into out of the sidebar
+    Mod+S hotkey-overlay-title="toggle window sidebar" { spawn-sh "/usr/bin/niri-sidebar toggle-window"; }
+    // Toggle sidebar visibility (hide or show)
+    Mod+Shift+S { spawn-sh "/usr/bin/niri-sidebar toggle-visibility"; }
+    // Flip the order of the sidebar
+    Mod+Ctrl+S { spawn-sh "/usr/bin/niri-sidebar flip"; }
+    // Force reorder (useful if something gets misaligned manually)
+    Mod+Alt+R { spawn-sh "/usr/bin/niri-sidebar reorder"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
@@ -808,3 +845,7 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 }
+
+include "dms/outputs.kdl"
+
+include "dms/cursor.kdl"
