@@ -117,7 +117,7 @@
 
   // Now Playing
   "custom/nowplaying": {
-    "exec": "~/.config/ml4w/scripts/now-playing.sh",
+    "exec": "~/.config/ml4w/scripts/ml4w-now-playing",
     "format": "  {text}",
     "return-type": "json",
     "interval": 1,
@@ -131,9 +131,9 @@
   // Cliphist
   "custom/cliphist": {
     "format": "􀕹 ",
-    "on-click": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh",
-    "on-click-right": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh d",
-    "on-click-middle": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh w",
+    "on-click": "sleep 0.1 && ~/.config/ml4w/scripts/ml4w-cliphist",
+    "on-click-right": "sleep 0.1 && ~/.config/ml4w/scripts/ml4w-cliphist.sh d",
+    "on-click-middle": "sleep 0.1 && ~/.config/ml4w/scripts/ml4w-cliphist.sh w",
     "tooltip-format": "Left: Open clipboard Manager\nRight: Delete an entry\nMiddle: Clear list",
     "on-scroll-up": "true",
     "on-scroll-down": "true"
@@ -144,7 +144,7 @@
     "tooltip-format": "{}",
     "escape": true,
     "return-type": "json",
-    "exec": "~/.config/ml4w/scripts/updates.sh",
+    "exec": "~/.config/ml4w/scripts/ml4w-check-system-updates",
     "interval": 1800,
     "signal": 1,
     "hide-empty-text": true,
@@ -166,7 +166,7 @@
   // Settings
   "custom/settings": {
     "format": "􀣋 ",
-    "on-click": "com.ml4w.settings",
+    "on-click": "com.ml4w.dotfilessettings",
     "tooltip-format": "ML4W Dotfiles Settings"
   },
   // Keybindings
@@ -253,12 +253,11 @@
     "on-click-right": "swaync-client -d -sw",
     "escape": true
   },
-  // Hyprshade
+  // Hyprsunset
   "custom/hyprshade": {
     "format": "􀇁 ",
     "tooltip-format": "Toggle Screen Shader",
-    "on-click": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh",
-    "on-click-right": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh rofi",
+    "on-click": "sleep 0.5; ~/.config/ml4w/scripts/ml4w-toggle-hyprsunset",
     "on-scroll-up": "true",
     "on-scroll-down": "true"
   },

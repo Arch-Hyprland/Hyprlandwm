@@ -11,6 +11,9 @@ general=(
     "vim"
     "inotify-tools"
     "gnome-themes-extra"
+    "udisks2"
+    "gvfs"
+    "udiskie"
 )
 
 hyprland=(
@@ -26,6 +29,7 @@ apps=(
     "wlogout"
     "vlc"
     "nwg-dock-hyprland"
+    "nwg-displays"
     "waybar"
     "rofi"
     "nwg-look"
@@ -34,6 +38,8 @@ apps=(
     "blueman"
     "qt6ct"
     "nautilus"
+    "gnome-text-editor"
+    "firefox"
 )
 
 tools=(

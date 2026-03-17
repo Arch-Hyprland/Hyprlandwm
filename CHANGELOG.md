@@ -1,3 +1,40 @@
+Version 2.11.2
+--------------------------------------------------------
+- New snapshot script for timeshift and grub-btrfs ~/.config/ml4w/scripts/ml4w-snapshot supporting Arch, Fedora based distros and openSuse Tumbleweed
+- New pacman update script for Arch to enable colors, parallel downloads and ILoveCandy ~/.config/ml4w/scripts/ml4w-pacman
+
+
+Version 2.11.1
+--------------------------------------------------------
+- Compatible with Hyprland 0.54.x
+- Neovim configuration moved to own repository https://github.com/mylinuxforwork/ml4w-nvim 
+- Install the ML4W nvim configuration from the Welcome App in Settings/Options or with ~/.config/ml4w/scripts/ml4w-install-nvim
+- New default icon theme kora-pgrey
+- Switched back to Bibata Cursor Theme
+- New keybinding: SUPER+SHIFT+M to toggle between dark and light mode
+- Hyprshade replaced with Hyprsunset. Configuration in ~./config/hypr/hyprsunset.conf (can be restored for updates)
+
+Version 2.11.0
+--------------------------------------------------------
+- The SDDM script can copy the current wallpaper to SDDM and use it as a background image. Start the script with ~/.config/ml4w/scripts/ml4w-install-sddm or from the Welcome App/Settings/Display Manager
+- New installation script based on the script based ML4W Dotfiles Installer
+- New Default Wallpaper
+
+Version 2.10.1
+--------------------------------------------------------
+- ML4W Logo added to fastfetch
+- Hide fastfetch by adding a file to ~/.config/ml4w/settings/hide-fastfetch
+- Add script to install sddm and the ml4w theme based on SilentSDDM ~/.config/ml4w/scripts/ml4w-install-sddm or from the Welcome App/Settings/Display Manager
+- IMPORTANT: Started to cleanup and renaming scripts in ~/.config/ml4w/scripts/ Please make sure that all your customization target to the new file names.
+
+Version 2.10.0
+--------------------------------------------------------
+- Project renamed to ML4W OS
+- Live ISO and installation script available (BETA)
+- btop is now using the matugen generated color theme
+- New Calendar App with the possibility to add events. CREDITS TO https://github.com/defaltastra
+- Cleaned up Welcome and Settings App
+
 Version 2.9.9.6
 --------------------------------------------------------
 - Glass and Transparent theme updated for Blur decoration. Can be set in the settings app.

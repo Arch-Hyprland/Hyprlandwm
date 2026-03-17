@@ -5,6 +5,11 @@ input_path = '~/.config/matugen/templates/kitty-colors.conf'
 output_path = '~/.config/kitty/colors-matugen.conf'
 post_hook = 'pkill -SIGUSR1 kitty'
 
+[templates.btop]
+input_path = '~/.config/matugen/templates/btop.theme'
+output_path = '~/.config/btop/themes/matugen.theme'
+post_hook = 'pkill -USR2 btop'
+
 [templates.hyprland]
 input_path = '~/.config/matugen/templates/hyprland-colors.conf'
 output_path = '~/.config/hypr/colors.conf'
@@ -65,6 +70,10 @@ output_path = '~/.config/ml4w/colors/secondary'
 [templates.on_surface]
 input_path = '~/.config/matugen/templates/onsurface'
 output_path = '~/.config/ml4w/colors/onsurface'
+
+[templates.on_primary]
+input_path = '~/.config/matugen/templates/onprimary'
+output_path = '~/.config/ml4w/colors/onprimary'
 
 [templates.ohmyposh]
 input_path = '~/.config/matugen/templates/ohmyposh-colors.json'

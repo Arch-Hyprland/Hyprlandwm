@@ -32,10 +32,20 @@ packages=(
     "NetworkManager-connection-editor"
     "NetworkManager-tui"
     "tesseract-ocr-traineddata-eng"
+    "hyprsunset"
     # Apps
     "SwayNotificationCenter"
     # Fonts
     "fontawesome-fonts"
+    # Display Manager
+    "sddm-qt6"
+    "libQt6Svg6"
+    "qt6-virtualkeyboard"
+    "qt6-virtualkeyboard-imports"
+    "qt6-multimedia"
+    "qt6-multimedia-imports"
+    # System
+    "gvfs-backend"
 )
 
 _isInstalled() {
@@ -163,7 +173,6 @@ sudo zypper install gcc pkg-config cairo-devel gobject-introspection-devel libgi
 
 echo ":: Installing packages with pip"
 sudo zypper -n install python313-screeninfo
-pipx install hyprshade
 pipx install pywalfox
 pipx install waypaper
 

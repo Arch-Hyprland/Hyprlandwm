@@ -34,6 +34,7 @@ packages=(
     "ImageMagick"
     "NetworkManager-tui"
     "tesseract-langpack-eng"
+    "hyprsunset"
     # Apps
     "waypaper"
     "swww"
@@ -41,6 +42,13 @@ packages=(
     # Fonts
     "fontawesome-fonts"
     "nerd-fonts-JetBrainsMono"
+    # Display Manager
+    "swww"
+    "qt6-qtsvg"
+    "qt6-qtvirtualkeyboard"
+    "qt6-qtmultimedia"
+    # System
+    "gvfs-mtp"
 )
 
 _isInstalled() {
@@ -159,7 +167,6 @@ sudo cp $SCRIPT_DIR/packages/eza /usr/bin
 # --------------------------------------------------------------
 
 echo ":: Installing packages with pip"
-sudo pip install hyprshade
 sudo pip install pywalfox
 sudo pip install screeninfo
 sudo pip install waypaper
