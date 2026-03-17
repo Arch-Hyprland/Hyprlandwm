@@ -3,7 +3,7 @@
 // ! CHANGES WILL BE OVERWRITTEN !
 // ! PLACE YOUR CUSTOM CONFIGURATION ELSEWHERE !
 
-layer-rule {
-    match namespace="dms:blurwallpaper"
-    place-within-backdrop true
+cursor {
+    xcursor-theme "Bibata-Modern-Ice"
+    xcursor-size 28
 }
