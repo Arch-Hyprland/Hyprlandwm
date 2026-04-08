@@ -385,6 +385,14 @@ window#waybar.empty #window {
     padding: 0px 5px 0px 10px;
 }
 
+#tray widget > image {
+  min-width: 28px;
+  border-radius: 14px;
+  margin: 4px 0px;
+  background-color: alpha(@primary, 0.2);
+  background-clip: padding-box;
+}
+
 #tray menu {
     background-color: @surface;
     border-radius: 12px;
