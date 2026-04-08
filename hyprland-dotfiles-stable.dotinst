@@ -6,7 +6,7 @@
 	"author": "Stephan Raabe",
 	"homepage": "https://ml4w.com/os/",
 	"dependencies": "https://ml4w.com/os/getting-started/dependencies",
-	"source": "https://github.com/mylinuxforwork/dotfiles.git",
+	"source": "https://github.com/Arch-Hyprland/Hyprlandwm.git",
 	"tag":"2.12.2",
 	"subfolder": "dotfiles",
 	"restore":[
