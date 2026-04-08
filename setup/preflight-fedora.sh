@@ -8,3 +8,14 @@ sudo dnf copr enable --assumeyes wef/cliphist
 sudo dnf copr enable --assumeyes tofik/nwg-shell
 sudo dnf copr enable --assumeyes che/nerd-fonts
 sudo dnf copr enable --assumeyes erikreider/SwayNotificationCenter
+sudo dnf copr enable --assumeyes mineiro/hyprland
+# Quickshell
+sudo dnf copr enable --assumeyes errornointernet/quickshell
+
+# --------------------------------------------------------------
+# Uninstall swww if exists. To be replaced with awww in the next steps
+# --------------------------------------------------------------
+
+if command -v swww &> /dev/null || dnf list installed swww &> /dev/null; then
+    sudo dnf remove -y swww
+fi

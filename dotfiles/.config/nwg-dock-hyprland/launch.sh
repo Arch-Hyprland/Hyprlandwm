@@ -21,5 +21,6 @@ if [ ! -f $HOME/.config/ml4w/settings/dock-disabled ]; then
         nwg-dock-hyprland -i 90 -w 5 -mb 2 -x -c "$HOME/.config/eww/scripts/applaucher.sh"
     fi
 else
+    killall nwg-dock-hyprland
     echo ":: Dock disabled"
 fi

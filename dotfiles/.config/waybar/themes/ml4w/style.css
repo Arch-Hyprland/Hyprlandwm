@@ -259,13 +259,26 @@ window#waybar.empty #window {
   margin-right: 5px;
 }
 
-#custom-system {
-  margin-right: 5px;
+#custom-hypridle.active {
+    color: @iconcolor;
+}
+
+#custom-hypridle.notactive {
+    color: #dc2f2f;
+}
+
+#custom-ml4w-welcome {
+    margin-right: 12px;
+    background-image: url("../../assets/ml4w-icon.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-right: 20px;
 }
 
 #custom-chatgpt {
-    margin-right: 10px;
-    background-image: url("../assets/openai.svg");
+    margin-right: 16px;
+    background-image: url("../../assets/openai.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain; 

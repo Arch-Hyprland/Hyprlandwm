@@ -223,6 +223,14 @@ window#waybar.empty #window {
     color: @error;
 }
 
+#custom-ml4w-welcome {
+    margin-right: 12px;
+    background-image: url("../../assets/ml4w-icon.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-right: 20px;
+}
 
 /* -----------------------------------------------------
  * Idle Inhibitor

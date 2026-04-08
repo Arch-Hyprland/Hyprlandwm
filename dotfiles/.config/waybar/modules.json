@@ -95,9 +95,10 @@
   },
   // ML4W Welcome App
   "custom/ml4w-welcome": {
-    "on-click": "flatpak run com.ml4w.sidebar",
+    "on-click": "qs ipc call sidebar toggle",
+    "on-click-right": "qs ipc call welcome toggle",
     "format": " ",
-    "tooltip-format": "Open ML4W Sidebar App"
+    "tooltip-format": "Left: Open ML4W Sidebar\nRight: Open ML4W Welcome App"
   },
   // Youtube Subscriber Count
   "custom/youtube": {
@@ -148,7 +149,8 @@
     "interval": 1800,
     "signal": 1,
     "hide-empty-text": true,
-    "on-click": "~/.config/ml4w/settings/installupdates.sh"
+    "on-click": "~/.config/ml4w/settings/installupdates.sh",
+    "on-click-right": "~/.config/ml4w/settings/software.sh"
   },
   // Wallpaper
   "custom/wallpaper": {
@@ -232,6 +234,11 @@
     "on-click": "~/.config/eww/scripts/startup.sh",
     "tooltip-format": "Open Control Panel"
   },
+  "custom/exit": {
+    "format": "􀆨 ",
+    "on-click": "qs ipc call power toggle",
+    "tooltip-format": "Open Power Menu"
+  },
   // SwayNC
   "custom/notification": {
     "tooltip-format": "Left: Notifications\nRight: Do not disturb",
@@ -298,7 +305,7 @@
   // Clock
   "clock": {
     "format": "{:%H:%M %a}",
-    "on-click": "flatpak run com.ml4w.calendar",
+    "on-click": "qs ipc call calendar toggle",
     "timezone": "Asia/shanghai",
     "tooltip": false
   },

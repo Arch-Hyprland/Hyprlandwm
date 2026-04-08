@@ -1,8 +1,28 @@
-Version 2.11.2
+Version 2.12.2
 --------------------------------------------------------
+- Update matugen to the latest version
+- Using awww as default wallpaper engine
+- Transition effects can be set in the Settings App and Appearance
+- New Quickshell based wallpaper selector. Toggle with SUPER+CTRL+W
+- Waypaper can be selected optionally in the Settings App and Default Apps but must be installed separately.
+
+Version 2.12.1
+--------------------------------------------------------
+- Replaced swww with awww
+- Installation of waypaper-git to support awww and latest hyprpaper
+- Compatible with Hyprland 0.54.3
+- Welcome App url fixes
+
+Version 2.12.0
+--------------------------------------------------------
+- Flatpaks ML4W Welcome App, Settings App, Sidebar App and Calendar App replaced with Quickshell
+- wlogout replaced with a Quickshell widget
+- ML4W Hyprland Settings app can be installed optionally from the Welcome app or as described here: https://github.com/mylinuxforwork/hyprland-settings
 - New snapshot script for timeshift and grub-btrfs ~/.config/ml4w/scripts/ml4w-snapshot supporting Arch, Fedora based distros and openSuse Tumbleweed
 - New pacman update script for Arch to enable colors, parallel downloads and ILoveCandy ~/.config/ml4w/scripts/ml4w-pacman
-
+- New keybinding to toggle the active window to floating and pin: SUPER+ALT+T
+- New keybinding to toggle the calendar widget: SUPER+CTRL+C
+- Quickshell Overview added. Can be toggled with CTRL+TAB
 
 Version 2.11.1
 --------------------------------------------------------
