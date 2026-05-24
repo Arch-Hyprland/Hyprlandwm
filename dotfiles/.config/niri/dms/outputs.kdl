@@ -2,16 +2,13 @@
 
 output "HDMI-A-1" {
     mode "3840x2160@60.000"
-    scale 1.25
-    position x=0 y=0
+    scale 1.5
+    position x=0 y=33
 }
 
 output "eDP-1" {
     mode "3200x2000@120.000"
-    scale 1.25
-    position x=3072 y=0
-    layout {
-        always-center-single-column
-    }
+    scale 1.5
+    position x=2561 y=0
 }
 

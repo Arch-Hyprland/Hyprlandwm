@@ -24,7 +24,8 @@
         "custom/screenshot",
         "custom/recorder",
         "custom/cliphist",
-        "custom/wallpaper"
+        "custom/wallpaper",
+        "custom/cpucat"
     ],
     // Modules Center
     "modules-center": [

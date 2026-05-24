@@ -24,7 +24,7 @@
     },
     "persistent-workspaces": {
       // START WORKSPACES
-      "*": 5
+            "*": 5
       // END WORKSPACES
     }
   },
@@ -95,10 +95,9 @@
   },
   // ML4W Welcome App
   "custom/ml4w-welcome": {
-    "on-click": "qs ipc call sidebar toggle",
-    "on-click-right": "qs ipc call welcome toggle",
+    "on-click": "flatpak run com.ml4w.sidebar",
     "format": " ",
-    "tooltip-format": "Left: Open ML4W Sidebar\nRight: Open ML4W Welcome App"
+    "tooltip-format": "Open ML4W Sidebar App"
   },
   // Youtube Subscriber Count
   "custom/youtube": {
@@ -149,8 +148,7 @@
     "interval": 1800,
     "signal": 1,
     "hide-empty-text": true,
-    "on-click": "~/.config/ml4w/settings/installupdates.sh",
-    "on-click-right": "~/.config/ml4w/settings/software.sh"
+    "on-click": "~/.config/ml4w/settings/installupdates.sh"
   },
   // Wallpaper
   "custom/wallpaper": {
@@ -234,11 +232,6 @@
     "on-click": "~/.config/eww/scripts/startup.sh",
     "tooltip-format": "Open Control Panel"
   },
-  "custom/exit": {
-    "format": "􀆨 ",
-    "on-click": "qs ipc call power toggle",
-    "tooltip-format": "Open Power Menu"
-  },
   // SwayNC
   "custom/notification": {
     "tooltip-format": "Left: Notifications\nRight: Do not disturb",
@@ -299,13 +292,15 @@
     "smooth-scrolling-threshold": "10.0",
     "icons": {
       "blueman": "network-bluetooth-symbolic",
-      "tao application": "telegram-attention-panel-symbolic"
+      "tao application": "telegram-attention-panel-symbolic",
+      "party.mihomo.app": "clash",
+      "clash-party": "clash"
     }
   },
   // Clock
   "clock": {
     "format": "{:%H:%M %a}",
-    "on-click": "qs ipc call calendar toggle",
+    "on-click": "flatpak run com.ml4w.calendar",
     "timezone": "Asia/shanghai",
     "tooltip": false
   },
@@ -333,6 +328,12 @@
     "tooltip-format": "{}",
     "escape": true,
     "on-click": "grim -g \"$(slurp -o -c '#1e1e2e20')\" - | satty --filename - &",
+    "tooltip": true
+  },
+  "custom/cpucat": {
+    "exec": "~/.config/waybar/catrun.sh",
+    "spacing": 1,
+    "format": "{}",
     "tooltip": true
   },
 

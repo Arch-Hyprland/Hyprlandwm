@@ -256,6 +256,17 @@ window#waybar.empty #window {
 #disk,#memory,#cpu,#language {
 }
 
+#custom-cpucat {
+  font-family: "Waycat", monospace;
+  font-size: 24px;
+  font-weight: bold;
+  color: #b2bab8;
+  padding: 4px;
+  padding-left: 0px;
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
 #language {
 }
 

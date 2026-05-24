@@ -191,7 +191,7 @@ window#waybar.empty #window {
 #custom-ml4w-welcome {
     margin-top:5px;
     margin-bottom:5px;
-    background-image: url("../../assets/ml4w-icon.svg");
+    background-image: url("../assets/ml4w-icon.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -275,6 +275,17 @@ window#waybar.empty #window {
 #disk,#memory,#cpu,#language {
     margin:0px;
     padding:0px;
+}
+
+#custom-cpucat {
+  font-family: "Waycat", monospace;
+  font-size: 24px;
+  font-weight: bold;
+  color: #b2bab8;
+  padding: 4px;
+  padding-left: 0px;
+  padding-right: 10px;
+  margin-right: 10px;
 }
 
 #language {

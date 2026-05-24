@@ -1,0 +1,15 @@
+
+layer-rule {
+  background-effect {
+    xray false
+  }
+}
+
+layer-rule  {
+  match namespace="waybar"
+  background-effect {
+    blur true
+    xray false
+  }
+}
+
