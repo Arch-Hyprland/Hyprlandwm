@@ -1,10 +1,10 @@
 {
     // General Settings
     "layer": "top",
-    "margin-top": 8,
+    "margin-top": 0,
     "margin-bottom": 0,
-    "margin-left": 8,
-    "margin-right": 8,
+    "margin-left": 0,
+    "margin-right": 0,
     "spacing": 0,
     // Load Modules
     "include": [
@@ -14,19 +14,26 @@
     // Modules Left
     "modules-left": [
         "custom/appmenu",
-        "clock",
+        "custom/wallpaper"
         //"wlr/taskbar",
         //"group/quicklinks",
         //"custom/nowplaying",        
-        "custom/empty"
     ],
     // Modules Center
     "modules-center": [
         "hyprland/workspaces",
-        "custom/empty"
-    ],
-    // Modules Right    
-    "modules-right": [
+        "custom/waybarthemes",
+        //"group/quicklinks",
+        "group/links",
+        "tray",
+        "custom/screenshot",
+        "custom/recorder",
+        "custom/cliphist",
+        //"wlr/taskbar",
+        //"custom/nowplaying",        
+        "hyprland/window",
+        "custom/settings",
+        "custom/cpucat",
         "custom/updates",
         "pulseaudio",
         //"backlight",
@@ -34,10 +41,12 @@
         "network",
         "battery",
         "group/hardware",
-        "group/tools",
-        "tray",
+        "clock",
+        "custom/widgets"
+    ],
+    // Modules Right    
+    "modules-right": [
         "custom/notification",
-        "custom/exit",
-        "custom/ml4w-welcome"
+        "custom/panel"
     ]
 }

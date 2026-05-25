@@ -14,22 +14,24 @@
     // Modules Left
     "modules-left": [
         "custom/appmenu",
-        "custom/waybarthemes",
-        "group/links",
-        "tray",
-        //"wlr/taskbar",
-        //"group/quicklinks",
-        //"custom/nowplaying",        
-        "custom/empty"
+        "custom/wallpaper"
     ],
     // Modules Center
     "modules-center": [
-        "custom/wallpaper",
         "hyprland/workspaces",
-        "custom/settings"
-    ],
-    // Modules Right    
-    "modules-right": [
+        "custom/waybarthemes",
+        //"wlr/taskbar",
+        //"group/quicklinks",
+        "group/links",
+        "tray",
+        "custom/screenshot",
+        "custom/recorder",
+        "custom/cliphist",
+        //"wlr/taskbar",
+        //"custom/nowplaying",        
+        "hyprland/window",
+        "custom/settings",
+        "custom/cpucat",
         "custom/updates",
         "pulseaudio",
         //"backlight",
@@ -37,8 +39,11 @@
         "network",
         "battery",
         "group/hardware",
-        "group/tools",
         "clock",
+        "custom/widgets"
+    ],
+    // Modules Right    
+    "modules-right": [
         "custom/notification",
         "custom/panel"
     ]

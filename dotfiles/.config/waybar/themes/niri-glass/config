@@ -14,6 +14,10 @@
     // Modules Left
     "modules-left": [
         "custom/appmenu",
+        "custom/wallpaper"
+    ],
+    // Modules Center
+    "modules-center": [
         "niri/workspaces",
         "custom/waybarthemes",
         //"wlr/taskbar",
@@ -24,17 +28,10 @@
         "custom/screenshot",
         "custom/recorder",
         "custom/cliphist",
-        "custom/wallpaper",
-        "custom/cpucat"
-    ],
-    // Modules Center
-    "modules-center": [
         "niri/window",
         "custom/settings",
-        "custom/empty"
-    ],
-    // Modules Right    
-    "modules-right": [
+        "custom/empty",
+        "custom/cpucat",
         "custom/updates",
         "pulseaudio",
         //"backlight",
@@ -42,8 +39,11 @@
         "network",
         "battery",
         "group/hardware",
-        "custom/widgets",
         "clock",
+        "custom/widgets"
+    ],
+    // Modules Right    
+    "modules-right": [
         "custom/notification",
         "custom/panel"
     ]

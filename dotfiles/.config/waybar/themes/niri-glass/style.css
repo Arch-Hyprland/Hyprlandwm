@@ -32,7 +32,7 @@ window#waybar {
     opacity:0.8;
     padding:0px;
     margin:4px;
-    box-shadow: 0 0 3 @shadow;
+    box-shadow: 0 0 3px @shadow;
 }
 
 .modules-right {
@@ -44,7 +44,7 @@ window#waybar {
     opacity:0.8;
     padding:0px;
     margin:5px;
-    box-shadow: 0 0 3 @shadow;
+    box-shadow: 0 0 3px @shadow;
 }
 
 .modules-center {
@@ -55,7 +55,7 @@ window#waybar {
     border: 1px solid transparent;	
     opacity:0.8;
     margin:5px;
-    box-shadow: 0 0 3 @shadow;
+    box-shadow: 0 0 3px @shadow;
 }
 
 label.module {
@@ -85,7 +85,7 @@ label.module:hover {
  * ----------------------------------------------------- */
 
 #workspaces {
-    padding: 5px 3px 5px 0px;
+    padding: 5px 3px 5px 5px;
 }
 
 #workspaces button {
@@ -260,11 +260,9 @@ window#waybar.empty #window {
   font-family: "Waycat", monospace;
   font-size: 24px;
   font-weight: bold;
-  color: #b2bab8;
-  padding: 4px;
-  padding-left: 0px;
-  padding-right: 10px;
-  margin-right: 10px;
+  color: @primary;
+  padding: 4px 4px 2px 0px;
+  margin-right: 8px;
 }
 
 #language {
@@ -372,7 +370,17 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #tray {
-    padding: 0px 5px 0px 10px;
+    padding: 0px 5px 0px 5px;
+    font-style: normal;
+}
+
+#tray widget > image {
+  min-width: 24px;
+  padding: 1px 1px;
+  border-radius: 14px;
+  margin: 4px 0px;
+  background-color: alpha(@primary, 0.2);
+  background-clip: padding-box;
 }
 
 #tray menu {

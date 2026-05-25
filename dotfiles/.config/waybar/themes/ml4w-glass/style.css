@@ -97,7 +97,7 @@ label.module:hover {
  * ----------------------------------------------------- */
 
 #workspaces {
-    padding: 5px 3px 5px 3px;
+    padding: 5px 3px 5px 5px;
     min-width: 176px;
 }
 
@@ -281,11 +281,9 @@ window#waybar.empty #window {
   font-family: "Waycat", monospace;
   font-size: 24px;
   font-weight: bold;
-  color: #b2bab8;
-  padding: 4px;
-  padding-left: 0px;
-  padding-right: 10px;
-  margin-right: 10px;
+  color: @primary;
+  padding: 4px 4px 2px 0px;
+  margin-right: 8px;
 }
 
 #language {
@@ -393,11 +391,12 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #tray {
-    padding: 0px 5px 0px 10px;
+    padding: 0px 5px 0px 5px;
 }
 
 #tray widget > image {
-  min-width: 28px;
+  min-width: 24px;
+  padding: 1px 1px;
   border-radius: 14px;
   margin: 4px 0px;
   background-color: alpha(@primary, 0.2);

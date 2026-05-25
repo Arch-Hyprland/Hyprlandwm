@@ -186,7 +186,7 @@ color:@on_primary;
 #custom-ml4w-welcome {
 margin-top:5px;
 margin-bottom:5px;
-background-image: url("../../assets/ml4w-icon.svg");
+background-image: url("../assets/ml4w-icon.svg");
 background-position: center;
 background-repeat: no-repeat;
 background-size: contain;
@@ -271,6 +271,15 @@ color:@on_error;
 #disk,#memory,#cpu,#language {
     margin:0px;
     padding:0px;
+}
+
+#custom-cpucat {
+  font-family: "Waycat", monospace;
+  font-size: 24px;
+  font-weight: bold;
+  color: @primary;
+  padding: 4px 4px 2px 0px;
+  margin-right: 8px;
 }
 
 #language {
@@ -378,7 +387,15 @@ margin-right: 5px;
  * ----------------------------------------------------- */
 
 #tray {
-    padding: 0px 5px 0px 10px;
+    padding: 0px 5px 0px 5px;
+}
+
+#tray widget > image {
+  min-width: 24px;
+  padding: 1px 1px;
+  border-radius: 14px;
+  margin: 4px 0px;
+  background-clip: padding-box;
 }
 
 #tray menu {
