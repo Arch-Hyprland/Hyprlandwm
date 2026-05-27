@@ -1,3 +1,16 @@
+Version 2.13.0
+--------------------------------------------------------
+- Hyprland Configuration converted into new lua format.
+- hyprsysteminfo added to Welcome App
+- hyprshutdown added to Power App
+- Add .conf cleanup script ~/.config/ml4w/scripts/ml4w-remove-conf to remove all .conf files from ~/.config/hypr that has been replaced with .lua
+- Wallpaper folder can be set directly in the wallpaper widget
+
+Version 2.12.3
+--------------------------------------------------------
+- Compatible with Hyprland 0.55.x (legacy conf). Change to Lua will follow soon with 2.13.
+- Fastfetch can be deactivated and activated from the sidebar
+
 Version 2.12.2
 --------------------------------------------------------
 - Update matugen to the latest version

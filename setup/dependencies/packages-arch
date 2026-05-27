@@ -1,4 +1,6 @@
 hyprland
+hyprsysteminfo
+hyprshutdown
 libnotify
 qt5-wayland
 qt6-wayland
@@ -29,3 +31,4 @@ gvfs-mtp
 quickshell
 awww
 matugen
+nwg-displays
