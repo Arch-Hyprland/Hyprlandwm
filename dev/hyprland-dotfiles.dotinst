@@ -2,7 +2,7 @@
 	"name": "ML4W OS - Dotfiles for Hyprland (DEV)",
 	"id": "com.ml4w.dotfiles.dev",
 	"description": "Advanced configuration for the dynamic tiling window manager Hyprland",
-	"version":"2.12.2",
+	"version":"2.13.0",
 	"author": "Stephan Raabe",
 	"homepage": "https://ml4w.com/os/",
 	"dependencies": "https://ml4w.com/os/getting-started/dependencies",
@@ -16,18 +16,28 @@
 			"value":true
 		},
 		{
-			"title":"Keyboard",
-			"source":".config/hypr/conf/keyboard.conf",
+			"title":"Input",
+			"source":".config/hypr/input.lua",
 			"value":true
 		},
 		{
-			"title":"Monitor",
-			"source":".config/hypr/conf/monitor.conf",
+			"title":"Gesture",
+			"source":".config/hypr/gesture.lua",
 			"value":true
 		},
 		{
-			"title":"NWG-Displays",
-			"source":".config/hypr/monitors.conf",
+			"title":"Monitor Setup",
+			"source":".config/hypr/monitors.lua",
+			"value":true
+		},
+		{
+			"title":"Monitor Variant",
+			"source":".config/hypr/conf/monitor.lua",
+			"value":true
+		},
+		{
+			"title":"Monitors",
+			"source":".config/hypr/workspaces.lua",
 			"value":true
 		},
 		{
@@ -47,42 +57,42 @@
 		},
 		{
 			"title":"Keybindings",
-			"source":".config/hypr/conf/keybinding.conf",
+			"source":".config/hypr/conf/keybinding.lua",
 			"value":true
 		},
 		{
 			"title":"Environment",
-			"source":".config/hypr/conf/environment.conf",
+			"source":".config/hypr/conf/environment.lua",
 			"value":true
 		},
 		{
 			"title":"Layout",
-			"source":".config/hypr/conf/layout.conf",
+			"source":".config/hypr/conf/layout.lua",
 			"value":true
 		},
 		{
 			"title":"Windowrules",
-			"source":".config/hypr/conf/windowrule.conf",
+			"source":".config/hypr/conf/windowrule.lua",
 			"value":true
 		},
 		{
 			"title":"Animation",
-			"source":".config/hypr/conf/animation.conf",
+			"source":".config/hypr/conf/animation.lua",
 			"value":true
 		},
 		{
 			"title":"Decoration",
-			"source":".config/hypr/conf/decoration.conf",
+			"source":".config/hypr/conf/decoration.lua",
 			"value":true
 		},
 		{
 			"title":"Window",
-			"source":".config/hypr/conf/window.conf",
+			"source":".config/hypr/conf/window.lua",
 			"value":true
 		},
 		{
 			"title":"Your custom configuration",
-			"source":".config/hypr/conf/custom.conf",
+			"source":".config/hypr/conf/custom.lua",
 			"value":true
 		},
 		{
