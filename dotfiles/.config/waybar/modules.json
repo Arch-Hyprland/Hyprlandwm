@@ -299,9 +299,9 @@
   },
   // Clock
   "clock": {
-    "format": "{:%H:%M %a}",
+    //"format": "{:%H:%M %a}",
+    "format": "{:%Y-%m-%d  %H:%M}",
     "on-click": "flatpak run com.ml4w.calendar",
-    "timezone": "Asia/shanghai",
     "tooltip": false
   },
   // system
@@ -327,7 +327,8 @@
     "format": "􀎼 ",
     "tooltip-format": "{}",
     "escape": true,
-    "on-click": "grim -g \"$(slurp -o -c '#1e1e2e20')\" - | satty --filename - &",
+    // "on-click": "grim -g \"$(slurp -o -c '#1e1e2e20')\" - | satty --filename - &",
+    "on-click": "mark-shot &",
     "tooltip": true
   },
   "custom/cpucat": {
