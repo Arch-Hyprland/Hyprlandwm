@@ -7,6 +7,7 @@ layer-rule {
 
 layer-rule  {
   match namespace="waybar"
+  match namespace="eww-widget"
   background-effect {
     blur true
     xray false

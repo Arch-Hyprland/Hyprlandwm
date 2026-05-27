@@ -547,8 +547,11 @@ window-rule {
 }
 
 window-rule {
-  match app-id=r#"^jetbrains-*"#
-  opacity 0.8
+  match app-id=r#"^jetbrains-.*"#
+  opacity 0.9
+  background-effect{
+    blur true
+  }
 }
 
 
@@ -865,10 +868,14 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
-    Print { screenshot; }
+    // Print { screenshot; }
     // Alt+J { spawn "flameshot" "gui"; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+    // Ctrl+Print { screenshot-screen; }
+    // Alt+Print { screenshot-window; }
+    Print { spawn "mark-shot"; }
+    Alt+Print { spawn "mark-shot --fullscreen"; }
+    Ctrl+Print { spawn "mark-shot"; }
+    
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
