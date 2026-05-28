@@ -32,7 +32,7 @@ hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-wallpape
 hl.bind(mainMod .. " + grave", hl.dsp.window.move({ workspace = "special:magic" }), { description = "Move window to special workspace magic" })
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd("vicinae toggle"))
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd("~/.config/ml4w/settings/terminal.sh"), { description = "Open the terminal" })
-hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh"), { description = "Take a screenshot" })
+hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("mark-shot"), { description = "Take a screenshot" })
 
 -- fr keyboard layout setup
 local is_fr = false
