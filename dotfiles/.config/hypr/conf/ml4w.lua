@@ -71,6 +71,13 @@ hl.window_rule({
 })
 
 hl.window_rule({
+    name = "io.github.bluemancz.hyprmod",
+    match = {class = "io.github.bluemancz.hyprmod"},
+    float = true,
+    center = true,
+    size = { 1000, 700 }
+})
+hl.window_rule({
     name = "custom-terminal",
     match = {class = "dotfiles-.*"},
     float = true,
@@ -113,6 +120,7 @@ hl.env("CLUTTER_BACKEND", "wayland")
 hl.env("MOZ_ENABLE_WAYLAND", "1")
 
 -- Set the cursor size for xcursor
+-- hl.env("XCURSOR_THEME", "Bibata-Modern-Ice")
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 
