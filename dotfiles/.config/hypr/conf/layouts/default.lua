@@ -6,12 +6,15 @@ hl.config({
     dwindle = {
         preserve_split = true,
     },
-    
+    scrolling = {
+      fullscreen_on_one_column = true,
+      column_width= 0.8,
+      focus_fit_method = 0,
+    },
     -- Master layout is handled here if needed
     master = {
         -- new_status = "master" -- Commented out due to compatibility reasons
     },
-
     binds = {
         workspace_back_and_forth = false,
         allow_workspace_cycles = true,

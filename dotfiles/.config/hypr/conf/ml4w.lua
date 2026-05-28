@@ -7,43 +7,22 @@
 -- HOME directory
 local HOME = os.getenv("HOME")
 
--- Pavucontrol
 hl.window_rule({
-    name  = "pavucontrol",
-    match = { class = "*org.pulseaudio.pavucontrol*" },
-    float = true,
-    center = true,
-    size = "700 600"
-})
-
--- ML4W Welcome App
-hl.window_rule({
-    name  = "ml4w-welcome-app",
-    match = { title = "ML4W Welcome" },
+    name = "ml4w-app",
+    match = {title = "ML4W.*"},
     float = true,
     center = true,
     pin = true,
-    size = "700 600"
+    size = {900, 600}
 })
 
--- ML4W Settings App
-hl.window_rule({
-    name = "ml4w-settings-app",
-    match = {title = "ML4W Dotfiles Settings"},
-    float = true,
-    center = true,
-    pin = true,
-    size = "900 600"
-})
-
--- Waypaper
 hl.window_rule({
     name = "waypaper",
     match = {class = "*waypaper*"},
     float = true,
     center = true,
     pin = true,
-    size = "900 700"
+    size = {900, 700}
 })
 
 -- Newelle
@@ -53,111 +32,78 @@ hl.window_rule({
     float = true,
     center = true,
     pin = true,
-    size = "1000 700"
+    size = { 1000, 700 }
 })
 
--- Blueman Manager
+
 hl.window_rule({
-    name = "blueman-manager",
-    match = {class = "blueman-manager"},
+    name = "nwg-group",
+    match = {class = "nwg-.*" },
     float = true,
     center = true,
-    size = "800 600"
+    size = { 900, 600 }
 })
 
--- nwg-look
-hl.window_rule({
-    name = "nwg-look",
-    match = {class = "nwg-look"},
-    float = true,
-    center = true,
-    size = "700 600"
-})
-
--- nwg-displays
-hl.window_rule({
-    name = "nwg-displays",
-    match = {class = "nwg-displays"},
-    float = true,
-    center = true,
-    size = "900 600"
-})
-
--- System Mission Center
 hl.window_rule({
     name = "missioncenter",
     match = {class = "io.missioncenter.MissionCenter"},
     float = true,
     center = true,
     pin = true,
-    size = "900 600"
+    size = { 900, 600 }
 })
 
--- Gnome Calculator
 hl.window_rule({
     name = "gnome-calculator",
-    match = {class = "org.gnome.Calculator"},
+    match = { class = "org.gnome.Calculator"},
     float = true,
     center = true,
-    size = "700 600"
+    size = { 700, 600 }
 })
 
--- Hyprland Share Picker
 hl.window_rule({
     name = "hyprland-share-picker",
     match = {class = "hyprland-share-picker"},
     float = true,
     pin = true,
     center = true,
-    size = "600 400"
+    size = { 600, 400 }
 })
 
--- nm-connection-editor
 hl.window_rule({
-    name = "nm-connection-editor",
-    match = {class = "nm-connection-editor"},
-    float = true,
-    center = true,
-    size = "800 700"
-})
-
--- ML4W Floating
-hl.window_rule({
-    name = "dotfiles-floating",
-    match = {class = "dotfiles-floating"},
-    float = true,
-    center = true,
-    size = "1000 700"
-})
-
--- ML4W Sidepad
-hl.window_rule({
-    name = "dotfiles-sidepad",
-    match = {class = "dotfiles-sidepad"},
+    name = "custom-terminal",
+    match = {class = "dotfiles-.*"},
     float = true,
     pin = true,
     center = true,
-    size = "1000 700"
+    size = { 1000,  700 }
 })
-
--- Wayland variables
-hl.env("OZONE_PLATFORM", "wayland")
-hl.env("ELECTRON_OZONE_PLATFORM_HINT", "wayland")
-hl.env("DESKTOP_SESSION", "Hyprland")
-hl.env("XDG_SESSION_TYPE", "wayland")
-
--- Qt related environment variables
-hl.env("QT_QPA_PLATFORM", "wayland")
-hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
-hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
 
 -- XDG Desktop Portal
 hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
-hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
+hl.env("XDG_SESSION_TYPE", "wayland")
+
+hl.env("DESKTOP_SESSION", "Hyprland")
+
+hl.env("AQ_DRM_DEVICES","/dev/dri/card2:/dev/dri/card1")
+hl.env("AQ_FORCE_LINEAR_BLIT","0")
+
+-- Wayland variables
+hl.env("OZONE_PLATFORM", "wayland")
+hl.env("ELECTRON_OZONE_PLATFORM_HINT", "wayland") -- auto
+hl.env("WEBKIT_DISABLE_DMABUF_RENDERER","1")
+
+-- Qt related environment variables
+hl.env("QT_QPA_PLATFORM", "wayland;xcb")
+hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
+hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
+hl.env("QT_AUTO_SCREEN_SCALE_FACTOR","2")
+hl.env("QT_IM_MODULE","fcitx")
+hl.env("QT_IM_MODULES","wayland;fcitx")
 
 -- GDK
-hl.env("GDK_SCALE", "1")
+hl.env("GDK_SCALE", "2")
 
 -- Toolkit Backend
 hl.env("GDK_BACKEND", "wayland,x11,*")

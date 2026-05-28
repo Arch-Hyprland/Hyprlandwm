@@ -1,7 +1,7 @@
 hl.config({
     general = {
-        gaps_in  = 10,
-        gaps_out = 20,
+        gaps_in  = 4,
+        gaps_out = 8,
         border_size = 2,
         col = {
             active_border   = { colors = {primary, on_primary}, angle = 90 },
@@ -9,6 +9,7 @@ hl.config({
         },
         resize_on_border = true,
         allow_tearing = false,
-        layout = "dwindle",
+        -- layout = "dwindle",
+        layout = "scrolling",
     }
 })

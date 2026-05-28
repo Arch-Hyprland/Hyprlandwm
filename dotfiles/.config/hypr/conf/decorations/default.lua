@@ -4,28 +4,59 @@
 -- -----------------------------------------------------
 
 hl.config({
-    decoration = {
-        rounding = 10,
-        active_opacity = 1.0,
-        inactive_opacity = 0.9,
-        fullscreen_opacity = 1.0,
-        rounding_power = 2,
+	decoration = {
+		rounding = 12,
+		active_opacity = 0.98,
+		inactive_opacity = 0.85,
+		fullscreen_opacity = 0.98,
+		rounding_power = 2,
 
-        shadow = {
-            enabled = true,
-            range = 32,
-            render_power = 2,
-            color = "rgba(00000050)",
-        },
+		shadow = {
+			enabled = true,
+			range = 32,
+			render_power = 2,
+			color = "rgba(00000050)",
+		},
 
-        blur = {
-            enabled   = true,
-            size      = 4,
-            passes    = 4,
-            new_optimizations = on,
-            ignore_opacity = true,
-            xray = true,
-            vibrancy  = 0.1696,
-        },
-    },
+		blur = {
+			enabled = true,
+			size = 6,
+			passes = 3,
+			new_optimizations = true,
+			ignore_opacity = true,
+			xray = false,
+			vibrancy = 0.1696,
+
+			contrast = 1.0,
+			vibrancy_darkness = 0.5,
+			popups = true,
+			input_methods = true,
+		},
+	},
+  xwayland = {
+    force_zero_scaling = true
+  },
+	group = {
+		groupbar = {
+			enabled = true,
+			height = 36,
+			stacked = false,
+			scrolling = true,
+			indicator_height = 0,
+			rounding = 0,
+			round_only_edges = true,
+			gradients = true,
+			gradient_rounding = 6,
+			gradient_round_only_edges = true,
+			col = {
+				active = "rgba(2f0afaff)",
+				inactive = "rgba(0f0afaff)",
+			},
+			keep_upper_gap = false,
+			render_titles = true,
+			gaps_in = 5,
+			gaps_out = 5,
+			font_size = 16,
+		},
+	},
 })

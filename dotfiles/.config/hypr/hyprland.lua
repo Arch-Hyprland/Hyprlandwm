@@ -12,6 +12,7 @@ require("functions")
 require("conf.monitor")
 require("monitors")
 
+require("conf.plugins")
 -- INPUT
 require("input")
 
