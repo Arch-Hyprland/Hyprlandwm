@@ -23,6 +23,9 @@ hl.on("hyprland.start", function ()
     -- vivinae
     hl.exec_cmd("vicinae server")
 
+    -- Environment for xdg-desktop-portal-hyprland
+    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+
     -- Autostart scripts
     hl.exec_cmd("~/.config/ml4w/scripts/ml4w-autostart")
 
@@ -38,8 +41,6 @@ hl.on("hyprland.start", function ()
     -- Load cliphist history
     hl.exec_cmd("wl-paste --watch cliphist store")
 
-    -- Environment for xdg-desktop-portal-hyprland
-    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 
     -- hl.exec_cmd("~/.config/ml4w/scripts/ags.sh")
     -- hl.exec_cmd("~/.config/hypr/scripts/eww.sh")

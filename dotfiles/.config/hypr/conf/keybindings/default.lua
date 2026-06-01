@@ -26,7 +26,8 @@ hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("qs -p ~/.config/quickshell/overview 
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd("~/.config/hypr/scripts/killactive.sh"), { description = "Kill active window" })
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-cliphist"), { description = "Open clipboard manager" })
 
-hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("~/.config/waybar/themeswitcher.sh"), { description = "Open waybar theme switcher" })
+hl.bind(mainMod .. " + T", hl.dsp.window.float({ action = "toggle" }), { description = "Toggle Floating" })
+hl.bind(mainMod .. " + Y", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }), { description = "Toggle Maximize Window" })
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-wallpaper-app"), { description = "Open wallpaper selector" })
 
 hl.bind(mainMod .. " + grave", hl.dsp.window.move({ workspace = "special:magic" }), { description = "Move window to special workspace magic" })
@@ -77,20 +78,22 @@ hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.swap({ direction = "d" }), { de
 
 hl.bind(mainMod .. " + SHIFT + I", hl.dsp.workspace.toggle_special("magic"), { description = "Toggle special workspace magic" })
 hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-toggle-theme"), { description = "Toggle between light and dark mode" })
-hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("qs ipc call sidebar toggle"), { description = "Open ML4W Sidebar widget" })
+hl.bind(mainMod .. " + SHIFT + N", hl.dsp.group.active("f"), { description = "Switch to next group window" })
+hl.bind(mainMod .. " + SHIFT + O", hl.dsp.exec_cmd("qs ipc call sidebar toggle"), { description = "Open ML4W Sidebar widget" })
 hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-toggle-float-pin"), { description = "Toggle active window into floating + pinned mode" })
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd("hyprctl activewindow | grep pid | tr -d 'pid:' | xargs kill"), { description = "Quit active window and all open instances" })
 
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("~/.config/hypr/scripts/loadconfig.sh"), { description = "Reload hyprland config" })
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-toggle-hyprsunset"), { description = "Toggle Hyprsunset" })
-hl.bind(mainMod .. " + SHIFT + T", hl.dsp.window.float({ action = "toggle" }), { description = "Toggle Floating" })
+hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-toggle-allfloat"), { description = "Toggle floating for all windows of workspace" })
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-wallpaper-automation"), { description = "Start random wallpaper script" })
 
 
-hl.bind(mainMod .. " + ALT + L", hl.dsp.window.resize({ x = 100, y = 0 }), { description = "Increase window width with keyboard" })
-hl.bind(mainMod .. " + ALT + H", hl.dsp.window.resize({ x = -100, y = 0 }), { description = "Reduce window width with keyboard" })
-hl.bind(mainMod .. " + ALT + J", hl.dsp.window.resize({ x = 0, y = 100 }), { description = "Increase window height with keyboard" })
-hl.bind(mainMod .. " + ALT + K", hl.dsp.window.resize({ x = 0, y = -100 }), { description = "Reduce window height with keyboard" })
+hl.bind(mainMod .. " + ALT + L", hl.dsp.window.resize({ x = 100,  y = 0, relative = true}), { repeating = true },{ description = "Increase window width with keyboard" })
+hl.bind(mainMod .. " + ALT + H", hl.dsp.window.resize({ x = -100, y = 0, relative = true}), { repeating = true },{ description = "Reduce window width with keyboard" })
+hl.bind(mainMod .. " + ALT + J", hl.dsp.window.resize({ x = 0,  y = 100, relative = true}), { repeating = true },{ description = "Increase window height with keyboard" })
+hl.bind(mainMod .. " + ALT + K", hl.dsp.window.resize({ x = 0, y = -100, relative = true}), { repeating = true },{ description = "Reduce window height with keyboard" })
+hl.bind(mainMod .. " + ALT + T", function() hl.dispatch(hl.dsp.window.float({ action = "toggle" })); hl.dispatch(hl.dsp.window.pin()) end, { description = "Toggle floating + pinned" })
 
 -- Actions
 
@@ -100,6 +103,7 @@ hl.bind(mainMod .. " + CTRL + K", hl.dsp.exec_cmd("~/.config/hypr/scripts/keybin
 hl.bind(mainMod .. " + CTRL + L", hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-power -l"), { description = "Lock Screen" })
 hl.bind(mainMod .. " + CTRL + R", hl.dsp.exec_cmd("hyprctl reload"), { description = "Reload Hyprland configuration" })
 hl.bind(mainMod .. " + CTRL + W", hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-wallpaper-app --random"), { description = "Change the wallpaper" })
+hl.bind(mainMod .. " + CTRL + T", hl.dsp.exec_cmd("~/.config/waybar/themeswitcher.sh"), { description = "Open waybar theme switcher" })
 
 
 -- Example special workspace (scratchpad)

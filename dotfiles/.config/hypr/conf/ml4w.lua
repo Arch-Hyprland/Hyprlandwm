@@ -7,6 +7,24 @@
 -- HOME directory
 local HOME = os.getenv("HOME")
 
+-- Add .local/bin to PATH
+local current_path = os.getenv("PATH")
+hl.env("PATH", HOME .. "/.local/bin:" .. current_path)
+
+-- Add .cargo/bin to PATH
+local current_path = os.getenv("PATH")
+hl.env("PATH", HOME .. "/.cargo/bin:" .. current_path)
+
+-- Pavucontrol
+hl.window_rule({
+    name = "pavucontrol",
+    match = {class = "*org.pulseaudio.pavucontrol*"},
+    float = true,
+    center = true,
+    size = "700 600"
+})
+
+-- ML4W Welcome App
 hl.window_rule({
     name = "ml4w-app",
     match = {title = "ML4W.*"},
@@ -86,6 +104,17 @@ hl.window_rule({
     size = { 1000,  700 }
 })
 
+-- Wayland variables
+hl.env("OZONE_PLATFORM", "wayland")
+hl.env("ELECTRON_OZONE_PLATFORM_HINT", "wayland")
+hl.env("DESKTOP_SESSION", "Hyprland")
+hl.env("XDG_SESSION_TYPE", "wayland")
+
+-- Qt related environment variables
+hl.env("QT_QPA_PLATFORM", "wayland;xcb")
+hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
+hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
+
 -- XDG Desktop Portal
 hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
@@ -120,7 +149,7 @@ hl.env("CLUTTER_BACKEND", "wayland")
 hl.env("MOZ_ENABLE_WAYLAND", "1")
 
 -- Set the cursor size for xcursor
--- hl.env("XCURSOR_THEME", "Bibata-Modern-Ice")
+hl.env("XCURSOR_THEME", "Bibata-Modern-Ice")
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 
