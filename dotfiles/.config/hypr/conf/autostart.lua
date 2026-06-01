@@ -20,7 +20,7 @@ hl.on("hyprland.start", function ()
     -- hyprshell
     hl.exec_cmd("hyprshell run")
 
-    -- vivinae
+    -- vicinae
     hl.exec_cmd("vicinae server")
 
     -- Environment for xdg-desktop-portal-hyprland
