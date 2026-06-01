@@ -3,16 +3,6 @@
     "group":"Status Bar",
     "description":"Configuration of the Waybar status bar.",
     "settings":[{
-        "name": "Select Waybar Theme",
-        "id": "theme_folder",
-        "instructions": "Choose your theme:",
-        "file": "~/.config/ml4w/settings/waybar-theme.sh",
-        "type": "folders",
-        "folder": "~/.config/waybar/themes",
-        "mode": "overwrite",
-        "default": "ml4w-glass-center",
-        "post_command": "~/.config/waybar/waybar-quickshell.sh"
-    },{
       "name": "Show App Menu",
       "id": "toggle_appmenu",
       "instructions": "Do you want to show the app menu?",
@@ -83,15 +73,6 @@
     "group":"Appearance",
     "description":"Change some settings to customize the look and feel.",
     "settings":[{
-      "name": "Wallpaper Transition Effect",
-      "id": "wallpaper_transition",
-      "instructions": "Select your preferred wallpaper transition effect",
-      "file": "~/.config/ml4w/settings/wallpaper-transition-effect",
-      "type": "choose",
-      "mode": "overwrite",
-      "default": "simple",
-      "options": ["simple", "left", "right", "top", "bottom", "center", "any", "random", "none"]
-    },{
       "name": "Rofi Border Size",
       "id": "rofi_bordersize",
       "instructions": "Enter the border size for rofi",
@@ -127,7 +108,8 @@
         "folder": "~/.config/hypr/conf/animations",
         "mode": "replace",
         "match": "local name = \".*\"",
-        "default": "default.lua"
+        "default": "default.lua",
+        "filetypes": ".lua"
     },{
         "name": "Decoration Variants",
         "id": "variant_decoration",
@@ -137,7 +119,8 @@
         "folder": "~/.config/hypr/conf/decorations",
         "mode": "replace",
         "match": "local name = \".*\"",
-        "default": "default.lua"
+        "default": "default.lua",
+        "filetypes": ".lua"
     },{
         "name": "Window Variants",
         "id": "variant_window",
@@ -147,7 +130,8 @@
         "folder": "~/.config/hypr/conf/windows",
         "mode": "replace",
         "match": "local name = \".*\"",
-        "default": "default.lua"
+        "default": "default.lua",
+        "filetypes": ".lua"
     },{
         "name": "Workspace Variants",
         "id": "variant_workspace",
@@ -157,7 +141,8 @@
         "folder": "~/.config/hypr/conf/workspaces",
         "mode": "replace",
         "match": "local name = \".*\"",
-        "default": "default.lua"
+        "default": "default.lua",
+        "filetypes": ".lua"
     },{
       "name": "Kitty Cursor Trail",
       "id": "toggle_kittycursortrail",
@@ -277,12 +262,13 @@
         "name": "Keybinding Variants",
         "id": "variant_keybinding",
         "instructions": "Choose your preferred keybinding variant:",
-        "file": "~/.config/hypr/conf/keybinding.conf",
+        "file": "~/.config/hypr/conf/keybinding.lua",
         "type": "files",
         "folder": "~/.config/hypr/conf/keybindings",
         "mode": "replace",
-        "match": "source = ~/.config/hypr/conf/keybindings/.*",
-        "default": "default.conf"
+        "match": "local name = \".*\"",
+        "default": "default.lua",
+        "filetypes": ".lua"
     },{
         "name": "Monitor Variants",
         "id": "variant_monitor",
@@ -292,7 +278,8 @@
         "folder": "~/.config/hypr/conf/monitors",
         "mode": "replace",
         "match": "local name = \".*\"",
-        "default": "default.lua"
+        "default": "default.lua",
+        "filetypes": ".lua"
     },{
         "name": "Environment Variants",
         "id": "variant_environment",
@@ -302,7 +289,8 @@
         "folder": "~/.config/hypr/conf/environments",
         "mode": "replace",
         "match": "local name = \".*\"",
-        "default": "default.lua"
+        "default": "default.lua",
+        "filetypes": ".lua"
     },{
         "name": "Windowrule Variants",
         "id": "variant_windowrule",
@@ -312,7 +300,8 @@
         "folder": "~/.config/hypr/conf/windowrules",
         "mode": "replace",
         "match": "local name = \".*\"",
-        "default": "default.lua"
+        "default": "default.lua",
+        "filetypes": ".lua"
     },{
       "name": "Launcher",
       "id": "system_launcher",

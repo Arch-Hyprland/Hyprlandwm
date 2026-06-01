@@ -7,6 +7,14 @@
 -- HOME directory
 local HOME = os.getenv("HOME")
 
+-- Add .local/bin to PATH
+local current_path = os.getenv("PATH")
+hl.env("PATH", HOME .. "/.local/bin:" .. current_path)
+
+-- Add .cargo/bin to PATH
+local current_path = os.getenv("PATH")
+hl.env("PATH", HOME .. "/.cargo/bin:" .. current_path)
+
 -- Pavucontrol
 hl.window_rule({
     name  = "pavucontrol",
@@ -112,6 +120,15 @@ hl.window_rule({
     size = "600 400"
 })
 
+-- GTK File and Folder Picker
+hl.window_rule({
+    name = "xdg-desktop-portal-gtk",
+    match = {class = "xdg-desktop-portal-gtk"},
+    float = true,
+    center = false,
+    size = "800 600"
+})
+
 -- nm-connection-editor
 hl.window_rule({
     name = "nm-connection-editor",
@@ -119,6 +136,15 @@ hl.window_rule({
     float = true,
     center = true,
     size = "800 700"
+})
+
+-- Hyprmod
+hl.window_rule({
+    name = "io.github.bluemancz.hyprmod",
+    match = {class = "io.github.bluemancz.hyprmod"},
+    float = true,
+    center = true,
+    size = "1000 700"
 })
 
 -- ML4W Floating
@@ -167,6 +193,7 @@ hl.env("CLUTTER_BACKEND", "wayland")
 hl.env("MOZ_ENABLE_WAYLAND", "1")
 
 -- Set the cursor size for xcursor
+hl.env("XCURSOR_THEME", "Bibata-Modern-Ice")
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 
