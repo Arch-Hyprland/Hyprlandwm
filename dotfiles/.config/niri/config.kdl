@@ -181,7 +181,7 @@ layout {
     // preset-window-heights { }
 
     // You can change the default width of the new windows.
-    default-column-width { proportion 0.9; }
+    default-column-width { proportion 0.86; }
     // If you leave the brackets empty, the windows themselves will decide their initial width.
     // default-column-width {}
 
@@ -335,7 +335,8 @@ environment {
 spawn-at-startup "/usr/bin/vicinae" "server"
 spawn-at-startup "/usr/bin/fcitx5"
 spawn-at-startup "niri-switch-daemon"
-spawn-at-startup "/usr/bin/niri-sidebar" "listen"
+// spawn-at-startup "/usr/bin/niri-sidebar" "listen"
+spawn-at-startup "~/.local/bin/wbar"
 
 // 壁纸awww用于overview背景，swaybg用于workspace背景
 spawn-at-startup "/usr/bin/awww-daemon"
@@ -615,7 +616,13 @@ binds {
 
     // Mod-Shift-/, which is usually the same as Mod-?,
     // shows a list of important hotkeys.
+
     Mod+Shift+Slash { show-hotkey-overlay; }
+
+
+    Super+W hotkey-overlay-title="active wbar" { spawn "~/.local/bin/wbar" "toggle"; }
+    Super+S hotkey-overlay-title="stash window" { spawn "~/.local/bin/wbar" "stash"; }
+
 
 
     // app shortcuts
@@ -640,13 +647,16 @@ binds {
     Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
 
     // Toggle the focused window into out of the sidebar
-    Mod+S hotkey-overlay-title="toggle window sidebar" { spawn-sh "/usr/bin/niri-sidebar toggle-window"; }
+    // Mod+S hotkey-overlay-title="toggle window sidebar" { spawn-sh "/usr/bin/niri-sidebar toggle-window"; }
+
     // Toggle sidebar visibility (hide or show)
-    Mod+Shift+S { spawn-sh "/usr/bin/niri-sidebar toggle-visibility"; }
+    // Mod+Shift+S { spawn-sh "/usr/bin/niri-sidebar toggle-visibility"; }
+
     // Flip the order of the sidebar
-    Mod+Ctrl+S { spawn-sh "/usr/bin/niri-sidebar flip"; }
+    // Mod+Ctrl+S { spawn-sh "/usr/bin/niri-sidebar flip"; }
+
     // Force reorder (useful if something gets misaligned manually)
-    Mod+Alt+R { spawn-sh "/usr/bin/niri-sidebar reorder"; }
+    // Mod+Alt+R { spawn-sh "/usr/bin/niri-sidebar reorder"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
