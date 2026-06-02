@@ -624,13 +624,12 @@ binds {
     Super+S hotkey-overlay-title="stash window" { spawn "~/.local/bin/wbar" "stash"; }
 
 
-
     // app shortcuts
 
     Mod+E hotkey-overlay-title="open file explorer" { spawn "nautilus"; }
     Mod+B hotkey-overlay-title="open web browser" { spawn "zen-browser"; }
     Mod+P hotkey-overlay-title="open screen cut" { spawn-sh "grim -g \"$(slurp -o -c '#Afff0000')\" - | satty --filename -"; }
-    Mod+D hotkey-overlay-title="pick new wallpaper" { spawn-sh "~/.config/hypr/scripts/waypaper.sh --random"; }
+    Mod+D hotkey-overlay-title="pick new wallpaper" { spawn-sh "~/.config/ml4w/scripts/ml4w-wallpaper-automation"; }
     // Mod+N hotkey-overlay-title="open " {}
 
 
