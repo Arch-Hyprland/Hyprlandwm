@@ -78,7 +78,7 @@ hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.swap({ direction = "d" }), { de
 
 hl.bind(mainMod .. " + SHIFT + I", hl.dsp.workspace.toggle_special("magic"), { description = "Toggle special workspace magic" })
 hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-toggle-theme"), { description = "Toggle between light and dark mode" })
-hl.bind(mainMod .. " + SHIFT + N", hl.dsp.group.active("f"), { description = "Switch to next group window" })
+-- hl.bind(mainMod .. " + SHIFT + N", hl.dsp.group.active("f"), { description = "Switch to next group window" })
 hl.bind(mainMod .. " + SHIFT + O", hl.dsp.exec_cmd("qs ipc call sidebar toggle"), { description = "Open ML4W Sidebar widget" })
 hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-toggle-float-pin"), { description = "Toggle active window into floating + pinned mode" })
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd("hyprctl activewindow | grep pid | tr -d 'pid:' | xargs kill"), { description = "Quit active window and all open instances" })
