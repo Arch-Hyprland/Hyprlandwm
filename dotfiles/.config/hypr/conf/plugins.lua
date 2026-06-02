@@ -1,4 +1,4 @@
-hl.config({ 
+hl.config({
   plugin =  {
     hyprbars = {
         enabled = false,
