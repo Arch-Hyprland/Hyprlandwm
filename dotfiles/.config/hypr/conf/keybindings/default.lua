@@ -3,7 +3,7 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Applications
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("~/.config/hypr/scripts/text-extractor.sh"), { description = "Extract text from an area" })
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("~/.config/ml4w/settings/browser.sh"), { description = "Open the browser" })
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("~/.local/bin/wbar stash"), { description = "Open the browser" })
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("~/.config/ml4w/settings/calculator.sh"), { description = "Open the calculator" })
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("~/.config/eww/scripts/paper.sh"), { description = "Open the wallpaper" })
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("~/.config/ml4w/settings/filemanager"), { description = "Open the filemanager" })
@@ -28,7 +28,7 @@ hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-cliphist
 
 hl.bind(mainMod .. " + T", hl.dsp.window.float({ action = "toggle" }), { description = "Toggle Floating" })
 hl.bind(mainMod .. " + Y", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }), { description = "Toggle Maximize Window" })
-hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-wallpaper-app"), { description = "Open wallpaper selector" })
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.local/bin/wbar toggle"), { description = "Open wallpaper selector" })
 
 hl.bind(mainMod .. " + grave", hl.dsp.window.move({ workspace = "special:magic" }), { description = "Move window to special workspace magic" })
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd("vicinae toggle"))

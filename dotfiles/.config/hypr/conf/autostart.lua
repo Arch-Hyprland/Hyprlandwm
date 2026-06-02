@@ -23,6 +23,9 @@ hl.on("hyprland.start", function ()
     -- vicinae
     hl.exec_cmd("vicinae server")
 
+    -- Start wbar
+    hl.exec_cmd("~/.local/bin/wbar")
+
     -- Environment for xdg-desktop-portal-hyprland
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 
