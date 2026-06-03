@@ -62,7 +62,7 @@ _start() {
 }
 
 _stop() {
-  pid=pgrep wf-record
+  pid=$(pgrep wf-record)
   if [ -z "$pid" ]; then
     dunstify \
       -i "org.gnome.SoundRecorder" \
