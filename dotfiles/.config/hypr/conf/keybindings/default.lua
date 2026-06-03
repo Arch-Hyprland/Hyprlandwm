@@ -3,7 +3,7 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Applications
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("~/.config/hypr/scripts/text-extractor.sh"), { description = "Extract text from an area" })
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("~/.local/bin/wbar stash"), { description = "Open the browser" })
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("~/.config/ml4w/settings/browser"), { description = "Open the browser" })
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("~/.config/ml4w/settings/calculator.sh"), { description = "Open the calculator" })
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("~/.config/eww/scripts/paper.sh"), { description = "Open the wallpaper" })
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("~/.config/ml4w/settings/filemanager"), { description = "Open the filemanager" })
@@ -23,12 +23,14 @@ hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("~/.config/ml4w/themes/themes.sh"), {
 
 
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("qs -p ~/.config/quickshell/overview ipc call overview toggle"), { description = "Open Select Window Menu" })
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-wallpaper-app"), { description = "Open Select Window Menu" })
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd("~/.config/hypr/scripts/killactive.sh"), { description = "Kill active window" })
-hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-cliphist"), { description = "Open clipboard manager" })
 
+hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("~/.local/bin/wbar stash"), { description = "stash to wbar" })
 hl.bind(mainMod .. " + T", hl.dsp.window.float({ action = "toggle" }), { description = "Toggle Floating" })
 hl.bind(mainMod .. " + Y", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }), { description = "Toggle Maximize Window" })
-hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.local/bin/wbar toggle"), { description = "Open wallpaper selector" })
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-cliphist"), { description = "Open clipboard manager" })
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.local/bin/wbar toggle"), { description = "toggle wbar" })
 
 hl.bind(mainMod .. " + grave", hl.dsp.window.move({ workspace = "special:magic" }), { description = "Move window to special workspace magic" })
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd("vicinae toggle"))
@@ -36,19 +38,10 @@ hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd("~/.config/ml4w/settings/termina
 hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("mark-shot"), { description = "Take a screenshot" })
 
 -- fr keyboard layout setup
-local is_fr = false
-local f = io.open(os.getenv("HOME") .. "/.config/hypr/input.lua", "r")
-if f then
-    local content = f:read("*all")
-    if content:match('kb_layout%s*=%s*"fr"') then
-        is_fr = true
-    end
-    f:close()
-end
+local is_fr = hl.get_config("input.kb_layout") == "fr" or false
 
 local fr_keys = {
-    "ampersand", "eacute", "quotedbl", "apostrophe", "parenleft",
-    "minus", "egrave", "underscore", "ccedilla", "agrave"
+    "ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "minus", "egrave", "underscore", "ccedilla", "agrave"
 }
 
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
@@ -89,10 +82,10 @@ hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-wallpaper-automation"), { description = "Start random wallpaper script" })
 
 
-hl.bind(mainMod .. " + ALT + L", hl.dsp.window.resize({ x = 100,  y = 0, relative = true}), { repeating = true },{ description = "Increase window width with keyboard" })
-hl.bind(mainMod .. " + ALT + H", hl.dsp.window.resize({ x = -100, y = 0, relative = true}), { repeating = true },{ description = "Reduce window width with keyboard" })
-hl.bind(mainMod .. " + ALT + J", hl.dsp.window.resize({ x = 0,  y = 100, relative = true}), { repeating = true },{ description = "Increase window height with keyboard" })
-hl.bind(mainMod .. " + ALT + K", hl.dsp.window.resize({ x = 0, y = -100, relative = true}), { repeating = true },{ description = "Reduce window height with keyboard" })
+hl.bind(mainMod .. " + ALT + L", hl.dsp.window.resize({ x = 100,  y = 0, relative = true}), { repeating = true, description = "Increase window width with keyboard" })
+hl.bind(mainMod .. " + ALT + H", hl.dsp.window.resize({ x = -100, y = 0, relative = true}), { repeating = true, description = "Reduce window width with keyboard" })
+hl.bind(mainMod .. " + ALT + J", hl.dsp.window.resize({ x = 0,  y = 100, relative = true}), { repeating = true, description = "Increase window height with keyboard" })
+hl.bind(mainMod .. " + ALT + K", hl.dsp.window.resize({ x = 0, y = -100, relative = true}), { repeating = true, description = "Reduce window height with keyboard" })
 hl.bind(mainMod .. " + ALT + T", function() hl.dispatch(hl.dsp.window.float({ action = "toggle" })); hl.dispatch(hl.dsp.window.pin()) end, { description = "Toggle floating + pinned" })
 
 -- Actions
