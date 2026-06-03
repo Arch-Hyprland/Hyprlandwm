@@ -23,6 +23,7 @@ hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("~/.config/ml4w/themes/themes.sh"), {
 
 
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("qs -p ~/.config/quickshell/overview ipc call overview toggle"), { description = "Open Select Window Menu" })
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-wallpaper-app"), { description = "Open Select Window Menu" })
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd("~/.config/hypr/scripts/killactive.sh"), { description = "Kill active window" })
 
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("~/.local/bin/wbar stash"), { description = "stash to wbar" })
