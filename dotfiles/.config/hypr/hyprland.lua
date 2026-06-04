@@ -22,9 +22,6 @@ require("gestures")
 -- AUTOSTART
 require("conf.autostart")
 
--- COLORS
-require("colors")
-
 -- CONFIGURATION
 require("conf.environment")
 require("conf.window")

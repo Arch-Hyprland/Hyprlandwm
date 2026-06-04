@@ -2,7 +2,7 @@
 -- General window decoration
 -- name: "Rounding All Blur No Shadows"
 -- -----------------------------------------------------
-
+local c = require("colors")
 hl.config({
     decoration = {
         rounding = 10,
@@ -23,7 +23,7 @@ hl.config({
             enabled = false,
             range = 30,
             render_power = 3,
-            color = "0x66000000",
+            color = c.shadow,
         },
     }
 })

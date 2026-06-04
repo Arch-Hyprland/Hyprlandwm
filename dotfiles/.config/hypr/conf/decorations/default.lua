@@ -3,9 +3,11 @@
 -- name: "Default"
 -- -----------------------------------------------------
 
+local c = require("colors")
+
 hl.config({
 	decoration = {
-		rounding = 12,
+		rounding = 16,
 		active_opacity = 0.98,
 		inactive_opacity = 0.85,
 		fullscreen_opacity = 0.98,
@@ -15,7 +17,7 @@ hl.config({
 			enabled = true,
 			range = 32,
 			render_power = 2,
-			color = "rgba(00000050)",
+			color = c.shadow,
 		},
 
 		blur = {
@@ -49,8 +51,8 @@ hl.config({
 			gradient_rounding = 6,
 			gradient_round_only_edges = true,
 			col = {
-				active = "rgba(2f0afaff)",
-				inactive = "rgba(0f0afaff)",
+				active = c.secondary,
+				inactive = c.background,
 			},
 			keep_upper_gap = false,
 			render_titles = true,

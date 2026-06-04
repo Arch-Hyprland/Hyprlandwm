@@ -2,7 +2,7 @@
 -- General window decoration
 -- name: "Blur"
 -- -----------------------------------------------------
-
+local c = require("colors")
 hl.config({
     decoration = {
         rounding = 10,
@@ -15,14 +15,14 @@ hl.config({
             enabled = true,
             range = 32,
             render_power = 2,
-            color = "rgba(00000050)",
+            color = c.shadow,
         },
 
         blur = {
             enabled   = true,
             size      = 3,
             passes    = 4,
-            new_optimizations = on,
+            new_optimizations = true,
             ignore_opacity = true,
             xray = true
         },

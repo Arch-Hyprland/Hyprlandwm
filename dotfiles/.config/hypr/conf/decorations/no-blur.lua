@@ -2,6 +2,7 @@
 -- General window decoration
 -- name: "No Blur"
 -- -----------------------------------------------------
+local c = require("colors")
 
 hl.config({
     decoration = {
@@ -15,7 +16,7 @@ hl.config({
             enabled = true,
             range = 32,
             render_power = 2,
-            color = "rgba(00000050)",
+            color = c.shadow,
         },
 
         blur = {

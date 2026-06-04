@@ -25,7 +25,7 @@ hl.config({
             clickfinger_behavior = true,
             middle_button_emulation = false,
             tap_to_click = true,
-            -- drog_lock = 2,
+            drag_lock = 2,
         },
     },
 })

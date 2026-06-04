@@ -2,6 +2,7 @@
 -- General window decoration
 -- name: "Rounding More Blur"
 -- -----------------------------------------------------
+local c = require("colors")
 
 hl.config({
     decoration = {
@@ -23,7 +24,7 @@ hl.config({
             enabled = true,
             range = 30,
             render_power = 3,
-            color = "0x66000000",
+            color = c.shadow,
         },
     }
 })
