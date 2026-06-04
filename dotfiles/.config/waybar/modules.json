@@ -153,8 +153,8 @@
   // Wallpaper
   "custom/wallpaper": {
     "format": "􀐟 ",
-    "on-click": "bash -c waypaper &",
-    "on-click-right": "~/.config/hypr/scripts/wallpaper-effects.sh",
+    "on-click": "~/.config/ml4w/scripts/ml4w-wallpaper-app",
+    "on-click-right": "~/.config/ml4w/scripts/ml4w-wallpaper-effects",
     "tooltip-format": "Left: Select a wallpaper\nRight: Select wallpaper effect"
   },
   // Waybar Themes
