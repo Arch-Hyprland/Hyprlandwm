@@ -216,9 +216,9 @@ fi
 
 # Execute matugen
 if [ "$THEME_PREF" -eq 1 ]; then
-    $MATUGEN_BIN image "$IMAGE_PATH" --source-color-index 0 -m "dark"
+    $MATUGEN_BIN image "$IMAGE_PATH" --contrast 0 -m "dark"
 else
-    $MATUGEN_BIN image "$IMAGE_PATH" --source-color-index 0 -m "light"
+    $MATUGEN_BIN image "$IMAGE_PATH" --contrast 0 -m "light"
 fi
 info "Matugen updated"
 
@@ -248,10 +248,10 @@ disown
 info "nwg-dock-hyprland reloaded"
 
 # Update Pywalfox
-if type pywalfox >/dev/null 2>&1; then
-    pywalfox update
-    info "pywalfox updated"
-fi
+# if type pywalfox >/dev/null 2>&1; then
+#     pywalfox update
+#     info "pywalfox updated"
+# fi
 
 # Update SwayNC
 sleep 0.1
