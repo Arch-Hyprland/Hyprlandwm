@@ -52,7 +52,7 @@ hl.layer_rule({
   blur = true,
   blur_popups = true,
   ignore_alpha = 0.2,
-  animation = "slidefade 20%"
+  animation = "slide right 20%"
 })
 
 hl.layer_rule({
@@ -79,7 +79,7 @@ hl.layer_rule({
   blur = true,
   blur_popups = true,
   ignore_alpha = 0.2,
-  animation = "slide"
+  animation = "slide bottom 0%"
 })
 
 hl.layer_rule({
@@ -101,7 +101,7 @@ hl.layer_rule({
 
 hl.layer_rule({
   name = "quickshell",
-  match = { namespace = "^(quickshell:.*)$" },
+  match = { namespace = "^(quickshell.*)$" },
   blur = true,
   ignore_alpha = 0.2
 })

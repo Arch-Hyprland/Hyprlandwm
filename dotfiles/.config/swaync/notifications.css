@@ -1,7 +1,7 @@
-@import '../../colors.css';
+@import 'colors.css';
 
 /* === Derived dynamic colors === */
-@define-color base alpha(@surface, 0.8);                      /* translucent blurred base */
+@define-color base alpha(@surface, 0.5);                      /* translucent blurred base */
 @define-color surface_custom alpha(@surface_container_high,0.8);
 @define-color hovercolor alpha(@surface_container_high,0.8);
 @define-color activecolor @primary_container;
@@ -13,6 +13,7 @@
 @define-color bordercolor @primary;
 @define-color fontcolor @on_surface;
 @define-color text @on_surface;
+
 
 
 * {
@@ -27,34 +28,35 @@
   all: unset;
 }
 
-.floating-notifications.background .notification-row .notification-background .notification {
-    border-radius: 16px;
-    /* background: radial-gradient(circle at 55% -80%, alpha(@primary, 1), alpha(black,0.6)) padding-box, linear-gradient(transparent, alpha(white, 0.5)) padding-box; */
-    background:  alpha(@background, 0.5);
-    border: 2px solid alpha(@on_surface, 0.1);
-    opacity: 0.9;
-    margin: 8px;
-    box-shadow: 1px 1px 5px 1px alpha(@shadow, 0.2);
+.notification-row {
+  outline: none;
+  margin: 0;
+  padding: 0px;
 }
 
-.floating-notifications.background .notification-row .notification-background .notification.critical {
-    border-radius: 16px;
-    /*background: radial-gradient(circle at 55% -80%, alpha(@primary, 1), alpha(black,0.6)) padding-box, linear-gradient(transparent, alpha(red, 0.5)) padding-box;*/
-    background:  alpha(@background, 0.5);
-    border: 2px solid alpha(@on_surface, 0.1);
-    opacity: 0.9;
-    margin: 8px;
-    box-shadow: 1px 1px 5px 1px alpha(@shadow, 0.2);
+.floating-notifications.background .notification-row .notification-background {
+  background: alpha(#000000, 0.4);       /* translucent blur */
+  border-radius: 12px;
+  border: 0px solid alpha(@primary, 0.4);
+  box-shadow: inset 0 0 6px alpha(@primary, 0.5);
+  margin: 4px;
+  padding: 0px;
 }
 
-/*This is the margin for the floating notifications on desktop only!*/
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification {
+  padding: 0.4rem;
+  border-radius: 0.8rem;
+}
 
 .floating-notifications.background
   .notification-row
   .notification-background
   .notification
   .notification-content {
-  margin: 0rem;
+  margin: 0.5rem;
 }
 
 .floating-notifications.background
@@ -63,7 +65,13 @@
   .notification
   > *:last-child
   > * {
-  min-height: 1.5em;
+  min-height: 2.0em;
+}
+.floating-notifications .notification image {
+  min-width: 48px;
+  min-height: 48px;
+  margin-right: 14px;
+  border-radius: 10px;
 }
 
 .floating-notifications.background
@@ -104,21 +112,23 @@
 
 .summary {
   font-weight: 800;
-  font-size: 1.15rem;
-  padding: 5px 15px;
+  font-size: 1rem;
 }
 
 .body {
-  padding: 5px 15px;
   font-size: 0.8rem;
 }
 
-.floating-notifications.background .notification-row .notification-background .close-button {
-  border-radius: 7px;
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .close-button {
+  background: transparent;
+  border-radius: 20px;
   color: @text;
-  background: alpha(#fff, 0.5);
+  background-color: alpha(#fff, 0.5);
   margin: 0px;
-  padding: 2px;
+  padding: 4px;
 }
 
 .floating-notifications.background
@@ -126,7 +136,6 @@
   .notification-background
   .close-button:hover {
   background-color: @primary;
-  border-radius: 12px;
 }
 
 .floating-notifications.background
