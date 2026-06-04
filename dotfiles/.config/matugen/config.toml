@@ -13,11 +13,6 @@ post_hook = 'pkill -SIGUSR1 kitty'
 input_path = '~/.config/matugen/templates/btop.theme'
 output_path = '~/.config/btop/themes/matugen.theme'
 
-[templates.hyprland]
-input_path = '~/.config/matugen/templates/hyprland-colors.conf'
-output_path = '~/.config/hypr/colors.conf'
-post_hook = 'hyprctl reload'
-
 [templates.hyprland-lua]
 input_path = '~/.config/matugen/templates/hyprland-colors.lua'
 output_path = '~/.config/hypr/colors.lua'

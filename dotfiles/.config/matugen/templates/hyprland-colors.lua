@@ -1,4 +1,5 @@
-<* for name, value in colors *>
-{{name}} = "rgba({{value.default.hex_stripped}}90)"
-<* endfor *>
+local M = {<* for name, value in colors *>
+  {{name}} = "rgba({{value.default.hex_stripped}}90)",<* endfor *>
+}
 
+return M
