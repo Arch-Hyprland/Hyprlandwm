@@ -28,7 +28,7 @@ PanelWindow {
     }
 
     margins { 
-        top: 67 // 87 - 20
+        top: 40 // 87 - 20
         bottom: 0 // 20 - 20
     }
 
@@ -177,7 +177,7 @@ PanelWindow {
     // ==========================================
     Item {
         anchors.fill: parent
-        anchors.margins: 20
+        anchors.margins: 5
 
         RectangularShadow {
             id: shadow
@@ -190,10 +190,10 @@ PanelWindow {
         Rectangle {
             id: mainBgRect
             anchors.fill: parent
-            color: Theme.background
-            border.color: Theme.primary
-            border.width: 2
-            radius: 10
+            color: Qt.rgba(Theme.secondary_container.r, Theme.secondary_container.g, Theme.secondary_container.b, 0.2)
+            border.color: Qt.rgba(Theme.secondary.r, Theme.secondary.g, Theme.secondary.b, 0.2)
+            border.width: 1
+            radius: 12
             opacity: 0.95 // Only the background is transparent
         }
 

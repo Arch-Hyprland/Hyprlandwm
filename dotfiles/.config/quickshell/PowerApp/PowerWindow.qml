@@ -97,9 +97,9 @@ PanelWindow {
         Rectangle {
             id: mainBgRect
             anchors.fill: parent
-            color: Theme.background
-            border.color: Theme.primary
-            border.width: 2
+            color: Qt.alpha(Theme.background, 0.2)
+            border.color: Qt.alpha(Theme.primary, 0.1)
+            border.width: 1
             radius: 40
             opacity: 0.9 // Only the background is transparent
         }
@@ -132,7 +132,7 @@ PanelWindow {
                     anchors.centerIn: parent
                     text: btn.iconTxt
                     font.family: "monospace" 
-                    font.pixelSize: 20
+                    font.pixelSize: 24
                     color: mouseArea.containsMouse ? Theme.background : Theme.primary
                 }
 

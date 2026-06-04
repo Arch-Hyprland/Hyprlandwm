@@ -15,13 +15,12 @@ PanelWindow {
     WlrLayershell.layer: WlrLayer.Overlay
     exclusionMode: WlrLayershell.Ignore
     
-    implicitWidth: 380
+    implicitWidth: 480
     implicitHeight: 380 
     color: "transparent"
 
     // Anchored to the Upper Side
     anchors {
-        left: true
         top: true
     }
 
@@ -212,7 +211,7 @@ PanelWindow {
     // ==========================================
     Item {
         anchors.fill: parent
-        anchors.margins: 20
+        anchors.margins: 5
 
         RectangularShadow {
             id: shadow
@@ -225,11 +224,11 @@ PanelWindow {
         Rectangle {
             id: mainBgRect
             anchors.fill: parent
-            color: Theme.background
-            border.color: Theme.primary
-            border.width: 2
-            radius: 10
-            opacity: 0.95 // Only the background is transparent
+            color: Qt.alpha(Theme.background, 0.5)
+            border.color: Qt.alpha(Theme.shadow, 0.2)
+            border.width: 1
+            radius: 14
+            opacity: 0.9 // Only the background is transparent
         }
 
         ColumnLayout {

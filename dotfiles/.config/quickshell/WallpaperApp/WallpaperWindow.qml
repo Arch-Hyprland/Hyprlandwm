@@ -28,7 +28,7 @@ PanelWindow {
     }
 
     margins { 
-        top: 67
+        top: 40
         bottom: 0
     }
 
@@ -158,13 +158,13 @@ PanelWindow {
             text: control.text
             font.family: Theme.fontFamily
             font.pixelSize: 14
-            color: control.highlighted ? Theme.background : Theme.primary 
+            color: control.highlighted ? Theme.on_primary_container : Theme.primary 
             verticalAlignment: Text.AlignVCenter
         }
         background: Rectangle {
             implicitWidth: 200
             implicitHeight: 36
-            color: control.highlighted ? Theme.primary : "transparent"
+            color: control.highlighted ? Theme.primary_container : "transparent"
             radius: 4
         }
     }
@@ -177,14 +177,14 @@ PanelWindow {
         font.family: "monospace"
         background: Rectangle { color: "transparent" }
         contentItem: Text { 
-            text: parent.text; color: Theme.primary; font.pixelSize: 18; 
+            text: parent.text; color: Theme.primary; font.pixelSize: 24; 
             verticalAlignment: Text.AlignVCenter; horizontalAlignment: Text.AlignHCenter
         }
     }
 
     Item {
         anchors.fill: parent
-        anchors.margins: 20
+        anchors.margins: 5
 
         RectangularShadow {
             id: shadow
@@ -197,11 +197,11 @@ PanelWindow {
         Rectangle {
             id: mainBgRect
             anchors.fill: parent
-            color: Theme.background
-            border.color: Theme.primary
-            border.width: 2
-            radius: 10
-            opacity: 0.95
+            color: Qt.alpha(Theme.background, 0.2)
+            border.color: Qt.alpha(Theme.primary, 0.1)
+            border.width: 1
+            radius: 14
+            opacity: 0.9
             clip: true
         
         ColumnLayout {
@@ -248,8 +248,8 @@ PanelWindow {
                         padding: 8
                         
                         background: Rectangle { 
-                            color: Theme.background 
-                            border.color: Theme.primary 
+                            color: Theme.background
+                            border.color: Qt.alpha(Theme.primary, 0.2)
                             border.width: 1 
                             radius: 8 
                         }
@@ -528,19 +528,19 @@ PanelWindow {
 
                     Rectangle {
                         anchors.fill: parent
-                        anchors.margins: 8 
-                        color: Theme.secondary 
+                        anchors.margins: 0
+                        color: Qt.alpha(Theme.secondary, 0.1)
                         
-                        border.color: mouseArea.containsMouse ? Theme.primary : "transparent"
-                        border.width: 2
-                        radius: 10
+                        border.color: mouseArea.containsMouse ? Qt.alpha(Theme.primary, 0.6) : "transparent"
+                        border.width: 6
+                        radius: 0
                         clip: true
 
                         Rectangle {
                             id: contentMask
                             anchors.fill: parent
                             anchors.margins: 2 
-                            radius: 8
+                            radius: 0
                             visible: false
                         }
 
